@@ -12,11 +12,28 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var slidingViewController: ECSlidingViewController?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let viewController : ViewController = ViewController()
+        viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Show", style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
+        let navigationController: UINavigationController = UINavigationController(rootViewController: viewController)
+        navigationController.view.backgroundColor = UIColor.whiteColor()
+        slidingViewController = ECSlidingViewController(topViewController: navigationController)
+        
+        let sideMenuVC : SideMenuViewController = SideMenuViewController()
+        slidingViewController?.underLeftViewController = sideMenuVC
+        slidingViewController?.anchorLeftRevealAmount = 250.0;
+        
+        window?.rootViewController = slidingViewController
+        window?.makeKeyAndVisible()
         return true
+    }
+    
+    func showMenu() {
+        slidingViewController?.anchorTopViewToRightAnimated(1)
     }
 
     func applicationWillResignActive(application: UIApplication) {
