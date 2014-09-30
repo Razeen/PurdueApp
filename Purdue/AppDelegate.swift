@@ -9,21 +9,25 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
 
     var window: UIWindow?
     var slidingViewController: ECSlidingViewController?
+    var topViewSnapshot: UIView?
+    
+    var rowNames: [String]?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let viewController : ViewController = ViewController()
-        viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Show", style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
-        let navigationController: UINavigationController = UINavigationController(rootViewController: viewController)
-        navigationController.view.backgroundColor = UIColor.whiteColor()
+        let viewController : GameViewController = GameViewController()
+        viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
+        let navigationController: UINavigationController = createNavController(viewController)
         slidingViewController = ECSlidingViewController(topViewController: navigationController)
         
         let sideMenuVC : SideMenuViewController = SideMenuViewController()
+        rowNames = sideMenuVC.rowNames
+        sideMenuVC.tableView.delegate = self
         slidingViewController?.underLeftViewController = sideMenuVC
         slidingViewController?.anchorLeftRevealAmount = 250.0;
         
@@ -32,8 +36,93 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func createNavController(viewController: UIViewController) -> UINavigationController {
+        let navigationController: UINavigationController = UINavigationController(navigationBarClass: PUNavigationBar.self, toolbarClass: nil)
+        navigationController.viewControllers = [viewController]
+        navigationController.view.backgroundColor = UIColor.whiteColor()
+        navigationController.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: CGFloat(25))]
+        return navigationController
+    }
+    
     func showMenu() {
-        slidingViewController?.anchorTopViewToRightAnimated(1)
+        if let view = slidingViewController?.topViewController.view {
+            freezeStatusBarToTopView(view)
+        }
+        slidingViewController?.anchorTopViewToRightAnimated(true)
+    }
+    
+    func freezeStatusBarToTopView(topView: UIView) {
+        topViewSnapshot = UIScreen.mainScreen().snapshotViewAfterScreenUpdates(true)
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.None)
+        topView.addSubview(topViewSnapshot!)
+    }
+    
+    func removeTopViewSnapshot() {
+        topViewSnapshot?.removeFromSuperview()
+        topViewSnapshot = nil
+        UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.None)
+    }
+    
+    // MARK: - Table view delegate
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let realNames = rowNames {
+            var navigationController: UINavigationController?
+            if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("GAMES", comment: "")) {
+                navigationController = createNavController(GameViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("WEATHER", comment: "")) {
+                navigationController = createNavController(WeatherViewController())
+            } else {
+                navigationController = createNavController(NewsViewController())
+            }
+            slidingViewController?.topViewController = navigationController
+            (slidingViewController?.topViewController as UINavigationController).viewControllers[0].navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
+            removeTopViewSnapshot()
+            slidingViewController?.resetTopViewAnimated(true)
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 180
+    }
+    
+    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView: UIView = UIView(frame: CGRectMake(0, 0, 250, 180))
+        let imageView: UIImageView = UIImageView(image: UIImage(named: "PU_Logo"))
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        imageView.frame = CGRectMake(30, 50, 210, 80)
+        headerView.addSubview(imageView)
+        headerView.backgroundColor = UIColor(red: 44.0/255.0, green: 44.0/255.0, blue: 44.0/255.0, alpha: 1)
+        let bottomLayer: CALayer = CALayer()
+        bottomLayer.frame = CGRectMake(0, 180-2, 1000, 2)
+        bottomLayer.backgroundColor = UIColor(white: 0.5, alpha: 0.6).CGColor
+        headerView.layer.addSublayer(bottomLayer)
+        return headerView
+    }
+    
+    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 50;
+    }
+    
+    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let footerView: UIView = UIView(frame: CGRectMake(0, 0, 250, 50))
+        footerView.backgroundColor = UIColor(red: 44.0/255.0, green: 44.0/255.0, blue: 44.0/255.0, alpha: 1)
+        let settingBtn: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        settingBtn.tintColor = UIColor.whiteColor()
+        settingBtn.frame = CGRectMake(0, 2, 48, 48)
+        settingBtn.setImage(UIImage(named: "Settings").imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
+        footerView.addSubview(settingBtn)
+        let copyrightLbl: UILabel = UILabel(frame: CGRectMake(48, 2, 250-48, 48))
+        copyrightLbl.text = "© PURDUE UNIVERSITY"
+        copyrightLbl.textColor = UIColor.whiteColor()
+        copyrightLbl.textAlignment = NSTextAlignment.Right
+        copyrightLbl.font = UIFont(name: "Avenir-Book", size: 15)
+        footerView.addSubview(copyrightLbl)
+        let upperLayer: CALayer = CALayer()
+        upperLayer.frame = CGRectMake(0, 0, 1000, 2)
+        upperLayer.backgroundColor = UIColor(white: 0.5, alpha: 0.6).CGColor
+        footerView.layer.addSublayer(upperLayer)
+        return footerView
     }
 
     func applicationWillResignActive(application: UIApplication) {

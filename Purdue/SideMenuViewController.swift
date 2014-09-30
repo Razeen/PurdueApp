@@ -7,53 +7,57 @@
 //
 
 import UIKit
+import QuartzCore
 
 class SideMenuViewController: UITableViewController {
     
-    let sectionNames: [String] = [
-        NSLocalizedString("ACADEMICS", comment: ""),
-        NSLocalizedString("LIFE", comment: ""),
-        NSLocalizedString("MAPS", comment: ""),
-        NSLocalizedString("MEDIA", comment: ""),
-        NSLocalizedString("OTHERS", comment: "")
+    let imageNames: [String] = [
+        "Mail",
+        "Blackboard",
+        "Schedule",
+        "Bus",
+        "Map",
+        "Labs",
+        "Co-Rec",
+        "Games",
+        "Menu",
+        "News",
+        "Weather",
+        "Library",
+        "Photos",
+        "Videos",
+        "Directory",
+        "Bandwidth",
+        "Store"
     ]
-    let rowNames: [[String]] = [
-        [
-            NSLocalizedString("BLACKBOARD", comment: ""),
-            NSLocalizedString("MYMAIL", comment: ""),
-            NSLocalizedString("SCHEDULE", comment: "")
-        ],
-        [
-            NSLocalizedString("BANDWIDTH", comment: ""),
-            NSLocalizedString("BUS", comment: ""),
-            NSLocalizedString("COREC", comment: ""),
-            NSLocalizedString("GAMES", comment: ""),
-            NSLocalizedString("MENU", comment: ""),
-            NSLocalizedString("NEWS", comment: ""),
-            NSLocalizedString("WEATHER", comment: "")
-        ],
-        [
-            NSLocalizedString("LABS", comment: ""),
-            NSLocalizedString("LIBRARY", comment: ""),
-            NSLocalizedString("MAP", comment: "")
-        ],
-        [
-            NSLocalizedString("PHOTOS", comment: ""),
-            NSLocalizedString("VIDEOS", comment: "")
-        ],
-        [
-            NSLocalizedString("ABOUT", comment: ""),
-            NSLocalizedString("DIRECTORY", comment: ""),
-            NSLocalizedString("SETTINGS", comment: ""),
-            NSLocalizedString("STORE", comment: "")
-        ]
+    
+    let rowNames: [String] = [
+        "MyMail",
+        "Blackboard",
+        NSLocalizedString("SCHEDULE", comment: ""),
+        NSLocalizedString("BUS", comment: ""),
+        NSLocalizedString("MAP", comment: ""),
+        NSLocalizedString("LABS", comment: ""),
+        NSLocalizedString("COREC", comment: ""),
+        NSLocalizedString("GAMES", comment: ""),
+        NSLocalizedString("MENU", comment: ""),
+        NSLocalizedString("NEWS", comment: ""),
+        NSLocalizedString("WEATHER", comment: ""),
+        NSLocalizedString("LIBRARY", comment: ""),
+        NSLocalizedString("PHOTOS", comment: ""),
+        NSLocalizedString("VIDEOS", comment: ""),
+        NSLocalizedString("DIRECTORY", comment: ""),
+        NSLocalizedString("BANDWIDTH", comment: ""),
+        NSLocalizedString("STORE", comment: "")
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.edgesForExtendedLayout = UIRectEdge.Left;
         self.extendedLayoutIncludesOpaqueBars = false;
         self.automaticallyAdjustsScrollViewInsets = false;
+        self.view.backgroundColor = UIColor(red: 44.0/255.0, green: 44.0/255.0, blue: 44.0/255.0, alpha: 1)
+        self.tableView.rowHeight = 67
+        self.tableView.separatorColor = UIColor.clearColor()
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,73 +67,61 @@ class SideMenuViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return rowNames.count
-    }
-    
-    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sectionNames[section]
-    }
-
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rowNames[section].count
+        return rowNames.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell : UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("CellIdentifier") as? UITableViewCell
+        let kImageViewId = 101
         
         if (cell == nil) {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "CellIdentifier")
+            
+            // Separators
+            if (indexPath.row < rowNames.count-1) {
+                let bottomLayer: CALayer = CALayer()
+                bottomLayer.frame = CGRectMake(0, self.tableView.rowHeight-1, 1000, 1)
+                bottomLayer.backgroundColor = UIColor(white: 0.35, alpha: 1.0).CGColor
+                cell?.layer.addSublayer(bottomLayer)
+            }
+            
+            // Trans
+            let itemSize: CGSize = CGSizeMake(30, 1)
+            UIGraphicsBeginImageContextWithOptions(itemSize, false, UIScreen.mainScreen().scale)
+            let imageRect: CGRect = CGRectMake(0, 0, itemSize.width, itemSize.height)
+            cell?.imageView?.image?.drawInRect(imageRect)
+            cell?.imageView?.image = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            
+            let imageView: UIImageView = UIImageView(frame: CGRectMake(21, 21, 25, 25))
+            imageView.tag = kImageViewId
+            imageView.tintColor = UIColor(white: 0.8, alpha: 0.8)
+            imageView.contentMode = UIViewContentMode.ScaleAspectFit
+            cell?.contentView.addSubview(imageView)
         }
         
-        cell!.textLabel?.text = rowNames[indexPath.section][indexPath.row]
-
+        let backgroundLayer: CAGradientLayer = CAGradientLayer()
+        backgroundLayer.frame = CGRectMake(0, 0, tableView.frame.width, self.tableView.rowHeight)
+        backgroundLayer.colors = [UIColor(red: 45.0/255.0, green: 45.0/255.0, blue: 45.0/255.0, alpha: 1).CGColor as AnyObject, UIColor(red: 75.0/255.0, green: 75.0/255.0, blue: 75.0/255.0, alpha: 1).CGColor as AnyObject]
+        backgroundLayer.startPoint = CGPointMake(0, 0.5)
+        backgroundLayer.endPoint = CGPointMake(1, 0.5)
+        cell?.backgroundView = UIView()
+        cell?.backgroundView?.layer.insertSublayer(backgroundLayer, atIndex: 0)
+        
+        let selectedLayer: CALayer = CALayer()
+        selectedLayer.frame = CGRectMake(0, 0, tableView.frame.width, self.tableView.rowHeight)
+        selectedLayer.backgroundColor = UIColor(white: 0.35, alpha: 1.0).CGColor
+        cell?.selectedBackgroundView = UIView()
+        cell?.selectedBackgroundView.layer .insertSublayer(selectedLayer, atIndex: 0)
+        
+        cell!.textLabel?.text = rowNames[indexPath.row]
+        cell?.textLabel?.textColor = UIColor.whiteColor()
+        cell?.textLabel?.font = UIFont(name: "Avenir-Roman", size: 18)
+        
+        (cell?.contentView.viewWithTag(kImageViewId) as UIImageView).image = UIImage(named: imageNames[indexPath.row]).imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        
         return cell!
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView!, moveRowAtIndexPath fromIndexPath: NSIndexPath!, toIndexPath: NSIndexPath!) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView!, canMoveRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  Purdue
+
+  Created by George Lo on 9/25/14.
+  Copyright (c) 2014 Purdue University. All rights reserved.
+*/
+
+"SCHEDULE" = "Schedule";
+"BUS" = "Bus";
+"MAP" = "Map";
+"LABS" = "Lab";
+"COREC" = "Co-Rec";
+"GAMES" = "Games";
+"MENU" = "Menu";
+"NEWS" = "News";
+"WEATHER" = "Weather";
+"LIBRARY" = "Library";
+"PHOTOS" = "Photos";
+"VIDEOS" = "Videos";
+"DIRECTORY" = "Directory";
+"BANDWIDTH" = "Bandwidth";
+"STORE" = "Store";
+
+"GAMES_TITLE" = "Sport Games";

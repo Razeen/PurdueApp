@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5E4B88DF19D07E0A00EEB9C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B88DE19D07E0A00EEB9C3 /* AppDelegate.swift */; };
-		5E4B88E119D07E0A00EEB9C3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B88E019D07E0A00EEB9C3 /* ViewController.swift */; };
+		5E4B88E119D07E0A00EEB9C3 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B88E019D07E0A00EEB9C3 /* WeatherViewController.swift */; };
 		5E4B88E619D07E0A00EEB9C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B88E519D07E0A00EEB9C3 /* Images.xcassets */; };
 		5E4B88F519D07E0A00EEB9C3 /* PurdueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B88F419D07E0A00EEB9C3 /* PurdueTests.swift */; };
 		5E4B88FF19D07F9C00EEB9C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B88FE19D07F9C00EEB9C3 /* LaunchScreen.xib */; };
@@ -19,6 +19,15 @@
 		5E4B891219D08B4E00EEB9C3 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B890B19D08B4E00EEB9C3 /* ECSlidingViewController.m */; };
 		5E4B891319D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B890D19D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m */; };
 		5E4B891819D0903100EEB9C3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B891719D0903100EEB9C3 /* SideMenuViewController.swift */; };
+		5E83BFE019D66D3E00C883E1 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFDF19D66D3E00C883E1 /* APIKeys.swift */; };
+		5E83BFE619D7292300C883E1 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFE519D7292300C883E1 /* NewsViewController.swift */; };
+		5E83BFEA19D729BB00C883E1 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFE919D729BB00C883E1 /* XMLReader.m */; };
+		5E83C03F19D7439700C883E1 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83C03E19D7439700C883E1 /* News.swift */; };
+		5EA4C2C019D505E900E42732 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EA4C2BF19D505E900E42732 /* Localizable.strings */; };
+		5EA4C2C219D50E0600E42732 /* PUNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4C2C119D50E0600E42732 /* PUNavigationBar.swift */; };
+		5EA4C2C419D5D36100E42732 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4C2C319D5D36100E42732 /* GameViewController.swift */; };
+		5EA4C2CA19D5ED2100E42732 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4C2C919D5ED2100E42732 /* SCLAlertView.swift */; };
+		5EB92BFD19DB26EC00176BCC /* MyMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB92BFC19DB26EC00176BCC /* MyMailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,7 +44,7 @@
 		5E4B88D919D07E0A00EEB9C3 /* Purdue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Purdue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4B88DD19D07E0A00EEB9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E4B88DE19D07E0A00EEB9C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5E4B88E019D07E0A00EEB9C3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5E4B88E019D07E0A00EEB9C3 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		5E4B88E519D07E0A00EEB9C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		5E4B88EE19D07E0A00EEB9C3 /* PurdueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurdueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4B88F319D07E0A00EEB9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -56,6 +65,16 @@
 		5E4B890D19D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
 		5E4B891619D08CE400EEB9C3 /* PurdueApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PurdueApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		5E4B891719D0903100EEB9C3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		5E83BFDF19D66D3E00C883E1 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		5E83BFE519D7292300C883E1 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		5E83BFE819D729BB00C883E1 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
+		5E83BFE919D729BB00C883E1 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
+		5E83C03E19D7439700C883E1 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		5EA4C2BF19D505E900E42732 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		5EA4C2C119D50E0600E42732 /* PUNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PUNavigationBar.swift; sourceTree = "<group>"; };
+		5EA4C2C319D5D36100E42732 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		5EA4C2C919D5ED2100E42732 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		5EB92BFC19DB26EC00176BCC /* MyMailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,14 +116,12 @@
 		5E4B88DB19D07E0A00EEB9C3 /* Purdue */ = {
 			isa = PBXGroup;
 			children = (
-				5E4B891619D08CE400EEB9C3 /* PurdueApp-Bridging-Header.h */,
-				5E4B890019D08B4E00EEB9C3 /* ECSlidingViewController */,
-				5E4B88FE19D07F9C00EEB9C3 /* LaunchScreen.xib */,
-				5E4B88DE19D07E0A00EEB9C3 /* AppDelegate.swift */,
-				5E4B88E019D07E0A00EEB9C3 /* ViewController.swift */,
+				5E83C04019D7439F00C883E1 /* Models */,
+				5EA4C2C519D5EA0700E42732 /* Libraries */,
+				5EA4C2C619D5EA1800E42732 /* UI Subclass */,
+				5EA4C2C719D5EA2600E42732 /* View Controllers */,
 				5E4B88E519D07E0A00EEB9C3 /* Images.xcassets */,
 				5E4B88DC19D07E0A00EEB9C3 /* Supporting Files */,
-				5E4B891719D0903100EEB9C3 /* SideMenuViewController.swift */,
 			);
 			path = Purdue;
 			sourceTree = "<group>";
@@ -112,7 +129,13 @@
 		5E4B88DC19D07E0A00EEB9C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5E83BFDF19D66D3E00C883E1 /* APIKeys.swift */,
+				5E4B891619D08CE400EEB9C3 /* PurdueApp-Bridging-Header.h */,
 				5E4B88DD19D07E0A00EEB9C3 /* Info.plist */,
+				5EA4C2BF19D505E900E42732 /* Localizable.strings */,
+				5E4B88DE19D07E0A00EEB9C3 /* AppDelegate.swift */,
+				5E4B891719D0903100EEB9C3 /* SideMenuViewController.swift */,
+				5E4B88FE19D07F9C00EEB9C3 /* LaunchScreen.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -152,6 +175,60 @@
 				5E4B890D19D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m */,
 			);
 			path = ECSlidingViewController;
+			sourceTree = "<group>";
+		};
+		5E83BFE719D729BB00C883E1 /* XMLReader */ = {
+			isa = PBXGroup;
+			children = (
+				5E83BFE819D729BB00C883E1 /* XMLReader.h */,
+				5E83BFE919D729BB00C883E1 /* XMLReader.m */,
+			);
+			path = XMLReader;
+			sourceTree = "<group>";
+		};
+		5E83C04019D7439F00C883E1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5E83C03E19D7439700C883E1 /* News.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		5EA4C2C519D5EA0700E42732 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				5E83BFE719D729BB00C883E1 /* XMLReader */,
+				5EA4C2C819D5ED2100E42732 /* SCLAlertView */,
+				5E4B890019D08B4E00EEB9C3 /* ECSlidingViewController */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		5EA4C2C619D5EA1800E42732 /* UI Subclass */ = {
+			isa = PBXGroup;
+			children = (
+				5EA4C2C119D50E0600E42732 /* PUNavigationBar.swift */,
+			);
+			name = "UI Subclass";
+			sourceTree = "<group>";
+		};
+		5EA4C2C719D5EA2600E42732 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5EA4C2C319D5D36100E42732 /* GameViewController.swift */,
+				5E83BFE519D7292300C883E1 /* NewsViewController.swift */,
+				5EB92BFC19DB26EC00176BCC /* MyMailViewController.swift */,
+				5E4B88E019D07E0A00EEB9C3 /* WeatherViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5EA4C2C819D5ED2100E42732 /* SCLAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				5EA4C2C919D5ED2100E42732 /* SCLAlertView.swift */,
+			);
+			path = SCLAlertView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +280,7 @@
 				TargetAttributes = {
 					5E4B88D819D07E0A00EEB9C3 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = ZP97V36F9T;
 					};
 					5E4B88ED19D07E0A00EEB9C3 = {
 						CreatedOnToolsVersion = 6.0;
@@ -234,6 +312,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EA4C2C019D505E900E42732 /* Localizable.strings in Resources */,
 				5E4B88FF19D07F9C00EEB9C3 /* LaunchScreen.xib in Resources */,
 				5E4B88E619D07E0A00EEB9C3 /* Images.xcassets in Resources */,
 			);
@@ -254,13 +333,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E4B891019D08B4E00EEB9C3 /* ECSlidingInteractiveTransition.m in Sources */,
-				5E4B88E119D07E0A00EEB9C3 /* ViewController.swift in Sources */,
+				5E4B88E119D07E0A00EEB9C3 /* WeatherViewController.swift in Sources */,
+				5E83C03F19D7439700C883E1 /* News.swift in Sources */,
+				5E83BFE019D66D3E00C883E1 /* APIKeys.swift in Sources */,
 				5E4B891219D08B4E00EEB9C3 /* ECSlidingViewController.m in Sources */,
 				5E4B891119D08B4E00EEB9C3 /* ECSlidingSegue.m in Sources */,
 				5E4B88DF19D07E0A00EEB9C3 /* AppDelegate.swift in Sources */,
 				5E4B890E19D08B4E00EEB9C3 /* ECPercentDrivenInteractiveTransition.m in Sources */,
+				5E83BFEA19D729BB00C883E1 /* XMLReader.m in Sources */,
 				5E4B891319D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m in Sources */,
 				5E4B891819D0903100EEB9C3 /* SideMenuViewController.swift in Sources */,
+				5EB92BFD19DB26EC00176BCC /* MyMailViewController.swift in Sources */,
+				5EA4C2C219D50E0600E42732 /* PUNavigationBar.swift in Sources */,
+				5EA4C2C419D5D36100E42732 /* GameViewController.swift in Sources */,
+				5E83BFE619D7292300C883E1 /* NewsViewController.swift in Sources */,
+				5EA4C2CA19D5ED2100E42732 /* SCLAlertView.swift in Sources */,
 				5E4B890F19D08B4E00EEB9C3 /* ECSlidingAnimationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,11 +454,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Purdue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Purdue/PurdueApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -379,11 +470,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Purdue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Purdue/PurdueApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
@@ -440,6 +535,7 @@
 				5E4B88FA19D07E0A00EEB9C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E4B88FB19D07E0A00EEB9C3 /* Build configuration list for PBXNativeTarget "PurdueTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +544,7 @@
 				5E4B88FD19D07E0A00EEB9C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
