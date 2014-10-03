@@ -68,10 +68,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let realNames = rowNames {
             var navigationController: UINavigationController?
-            if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("GAMES", comment: "")) {
+            
+            /*"MyMail",
+            "Blackboard",
+            NSLocalizedString("SCHEDULE", comment: ""),
+            NSLocalizedString("BUS", comment: ""),
+            NSLocalizedString("MAP", comment: ""),
+            NSLocalizedString("LABS", comment: ""),
+            NSLocalizedString("COREC", comment: ""),
+            NSLocalizedString("GAMES", comment: ""),
+            NSLocalizedString("MENU", comment: ""),
+            NSLocalizedString("NEWS", comment: ""),
+            NSLocalizedString("WEATHER", comment: ""),
+            NSLocalizedString("LIBRARY", comment: ""),
+            NSLocalizedString("PHOTOS", comment: ""),
+            NSLocalizedString("VIDEOS", comment: ""),
+            NSLocalizedString("DIRECTORY", comment: ""),
+            NSLocalizedString("BANDWIDTH", comment: ""),
+            NSLocalizedString("STORE", comment: "")*/
+            
+            if (realNames[indexPath.row] as NSString).isEqualToString("MyMail") {
+                navigationController = createNavController(MyMailViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString("Blackboard") {
+                navigationController = createNavController(BlackboardViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("SCHEDULE", comment: "")) {
+                navigationController = createNavController(GameViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("BUS", comment: "")) {
+                navigationController = createNavController(GameViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("MAP", comment: "")) {
+                navigationController = createNavController(GameViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("LABS", comment: "")) {
+                navigationController = createNavController(GameViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("COREC", comment: "")) {
+                navigationController = createNavController(GameViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("GAMES", comment: "")) {
+                navigationController = createNavController(GameViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("MENU", comment: "")) {
+                navigationController = createNavController(GameViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("NEWS", comment: "")) {
                 navigationController = createNavController(GameViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("WEATHER", comment: "")) {
                 navigationController = createNavController(WeatherViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("LIBRARY", comment: "")) {
+                navigationController = createNavController(GameViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("PHOTOS", comment: "")) {
+                navigationController = createNavController(PhotoViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("VIDEOS", comment: "")) {
+                navigationController = createNavController(VideoViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("DIRECTORY", comment: "")) {
+                navigationController = createNavController(GameViewController())
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("BANDWIDTH", comment: "")) {
+                navigationController = createNavController(GameViewController())
             } else {
                 navigationController = createNavController(NewsViewController())
             }

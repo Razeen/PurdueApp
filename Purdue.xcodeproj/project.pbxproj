@@ -28,6 +28,18 @@
 		5EA4C2C419D5D36100E42732 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4C2C319D5D36100E42732 /* GameViewController.swift */; };
 		5EA4C2CA19D5ED2100E42732 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4C2C919D5ED2100E42732 /* SCLAlertView.swift */; };
 		5EB92BFD19DB26EC00176BCC /* MyMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB92BFC19DB26EC00176BCC /* MyMailViewController.swift */; };
+		5EEB696019DF3BBF005619BA /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB695F19DF3BBF005619BA /* PhotoViewController.swift */; };
+		5EEB696219DF3BCC005619BA /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696119DF3BCB005619BA /* VideoViewController.swift */; };
+		5EEB696419DF3CE1005619BA /* BlackboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696319DF3CE1005619BA /* BlackboardViewController.swift */; };
+		5EEB696619DF3EFC005619BA /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696519DF3EFC005619BA /* ScheduleViewController.swift */; };
+		5EEB696819DF3F12005619BA /* BusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696719DF3F12005619BA /* BusViewController.swift */; };
+		5EEB696A19DF3F18005619BA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696919DF3F18005619BA /* MapViewController.swift */; };
+		5EEB696C19DF3F30005619BA /* LabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696B19DF3F30005619BA /* LabsViewController.swift */; };
+		5EEB696E19DF3F39005619BA /* CorecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696D19DF3F39005619BA /* CorecViewController.swift */; };
+		5EEB697019DF3F54005619BA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696F19DF3F54005619BA /* MenuViewController.swift */; };
+		5EEB697219DF3F8B005619BA /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB697119DF3F8A005619BA /* LibraryViewController.swift */; };
+		5EEB697419DF3F9A005619BA /* DirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB697319DF3F9A005619BA /* DirectoryViewController.swift */; };
+		5EEB697619DF3FB5005619BA /* BandwidthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB697519DF3FB5005619BA /* BandwidthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +87,18 @@
 		5EA4C2C319D5D36100E42732 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5EA4C2C919D5ED2100E42732 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		5EB92BFC19DB26EC00176BCC /* MyMailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMailViewController.swift; sourceTree = "<group>"; };
+		5EEB695F19DF3BBF005619BA /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		5EEB696119DF3BCB005619BA /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
+		5EEB696319DF3CE1005619BA /* BlackboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackboardViewController.swift; sourceTree = "<group>"; };
+		5EEB696519DF3EFC005619BA /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		5EEB696719DF3F12005619BA /* BusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusViewController.swift; sourceTree = "<group>"; };
+		5EEB696919DF3F18005619BA /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		5EEB696B19DF3F30005619BA /* LabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsViewController.swift; sourceTree = "<group>"; };
+		5EEB696D19DF3F39005619BA /* CorecViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorecViewController.swift; sourceTree = "<group>"; };
+		5EEB696F19DF3F54005619BA /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		5EEB697119DF3F8A005619BA /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		5EEB697319DF3F9A005619BA /* DirectoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryViewController.swift; sourceTree = "<group>"; };
+		5EEB697519DF3FB5005619BA /* BandwidthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BandwidthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,9 +239,21 @@
 		5EA4C2C719D5EA2600E42732 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5EEB697519DF3FB5005619BA /* BandwidthViewController.swift */,
+				5EEB696319DF3CE1005619BA /* BlackboardViewController.swift */,
+				5EEB696719DF3F12005619BA /* BusViewController.swift */,
+				5EEB696D19DF3F39005619BA /* CorecViewController.swift */,
+				5EEB697319DF3F9A005619BA /* DirectoryViewController.swift */,
 				5EA4C2C319D5D36100E42732 /* GameViewController.swift */,
-				5E83BFE519D7292300C883E1 /* NewsViewController.swift */,
+				5EEB696B19DF3F30005619BA /* LabsViewController.swift */,
+				5EEB697119DF3F8A005619BA /* LibraryViewController.swift */,
+				5EEB696919DF3F18005619BA /* MapViewController.swift */,
+				5EEB696F19DF3F54005619BA /* MenuViewController.swift */,
 				5EB92BFC19DB26EC00176BCC /* MyMailViewController.swift */,
+				5E83BFE519D7292300C883E1 /* NewsViewController.swift */,
+				5EEB695F19DF3BBF005619BA /* PhotoViewController.swift */,
+				5EEB696519DF3EFC005619BA /* ScheduleViewController.swift */,
+				5EEB696119DF3BCB005619BA /* VideoViewController.swift */,
 				5E4B88E019D07E0A00EEB9C3 /* WeatherViewController.swift */,
 			);
 			name = "View Controllers";
@@ -337,15 +373,27 @@
 				5E83C03F19D7439700C883E1 /* News.swift in Sources */,
 				5E83BFE019D66D3E00C883E1 /* APIKeys.swift in Sources */,
 				5E4B891219D08B4E00EEB9C3 /* ECSlidingViewController.m in Sources */,
+				5EEB696219DF3BCC005619BA /* VideoViewController.swift in Sources */,
+				5EEB696019DF3BBF005619BA /* PhotoViewController.swift in Sources */,
+				5EEB697219DF3F8B005619BA /* LibraryViewController.swift in Sources */,
+				5EEB697019DF3F54005619BA /* MenuViewController.swift in Sources */,
+				5EEB696819DF3F12005619BA /* BusViewController.swift in Sources */,
 				5E4B891119D08B4E00EEB9C3 /* ECSlidingSegue.m in Sources */,
+				5EEB697619DF3FB5005619BA /* BandwidthViewController.swift in Sources */,
+				5EEB696A19DF3F18005619BA /* MapViewController.swift in Sources */,
 				5E4B88DF19D07E0A00EEB9C3 /* AppDelegate.swift in Sources */,
+				5EEB696419DF3CE1005619BA /* BlackboardViewController.swift in Sources */,
+				5EEB696E19DF3F39005619BA /* CorecViewController.swift in Sources */,
+				5EEB696C19DF3F30005619BA /* LabsViewController.swift in Sources */,
 				5E4B890E19D08B4E00EEB9C3 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				5E83BFEA19D729BB00C883E1 /* XMLReader.m in Sources */,
+				5EEB696619DF3EFC005619BA /* ScheduleViewController.swift in Sources */,
 				5E4B891319D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m in Sources */,
 				5E4B891819D0903100EEB9C3 /* SideMenuViewController.swift in Sources */,
 				5EB92BFD19DB26EC00176BCC /* MyMailViewController.swift in Sources */,
 				5EA4C2C219D50E0600E42732 /* PUNavigationBar.swift in Sources */,
 				5EA4C2C419D5D36100E42732 /* GameViewController.swift in Sources */,
+				5EEB697419DF3F9A005619BA /* DirectoryViewController.swift in Sources */,
 				5E83BFE619D7292300C883E1 /* NewsViewController.swift in Sources */,
 				5EA4C2CA19D5ED2100E42732 /* SCLAlertView.swift in Sources */,
 				5E4B890F19D08B4E00EEB9C3 /* ECSlidingAnimationController.m in Sources */,
