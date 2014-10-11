@@ -19,6 +19,7 @@
 		5E4B891219D08B4E00EEB9C3 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B890B19D08B4E00EEB9C3 /* ECSlidingViewController.m */; };
 		5E4B891319D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B890D19D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m */; };
 		5E4B891819D0903100EEB9C3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B891719D0903100EEB9C3 /* SideMenuViewController.swift */; };
+		5E76EFC119E6C74C0059930E /* WeatherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76EFC019E6C74C0059930E /* WeatherHelper.swift */; };
 		5E83BFE019D66D3E00C883E1 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFDF19D66D3E00C883E1 /* APIKeys.swift */; };
 		5E83BFE619D7292300C883E1 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFE519D7292300C883E1 /* NewsViewController.swift */; };
 		5E83BFEA19D729BB00C883E1 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFE919D729BB00C883E1 /* XMLReader.m */; };
@@ -77,6 +78,7 @@
 		5E4B890D19D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
 		5E4B891619D08CE400EEB9C3 /* PurdueApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PurdueApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		5E4B891719D0903100EEB9C3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		5E76EFC019E6C74C0059930E /* WeatherHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHelper.swift; sourceTree = "<group>"; };
 		5E83BFDF19D66D3E00C883E1 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		5E83BFE519D7292300C883E1 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		5E83BFE819D729BB00C883E1 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		5E4B88DB19D07E0A00EEB9C3 /* Purdue */ = {
 			isa = PBXGroup;
 			children = (
+				5E76EFC219E6C7510059930E /* Helpers */,
 				5E83C04019D7439F00C883E1 /* Models */,
 				5EA4C2C519D5EA0700E42732 /* Libraries */,
 				5EA4C2C619D5EA1800E42732 /* UI Subclass */,
@@ -199,6 +202,14 @@
 				5E4B890D19D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m */,
 			);
 			path = ECSlidingViewController;
+			sourceTree = "<group>";
+		};
+		5E76EFC219E6C7510059930E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5E76EFC019E6C74C0059930E /* WeatherHelper.swift */,
+			);
+			name = Helpers;
 			sourceTree = "<group>";
 		};
 		5E83BFE719D729BB00C883E1 /* XMLReader */ = {
@@ -384,6 +395,7 @@
 				5E4B88DF19D07E0A00EEB9C3 /* AppDelegate.swift in Sources */,
 				5EEB696419DF3CE1005619BA /* BlackboardViewController.swift in Sources */,
 				5EEB696E19DF3F39005619BA /* CorecViewController.swift in Sources */,
+				5E76EFC119E6C74C0059930E /* WeatherHelper.swift in Sources */,
 				5EEB696C19DF3F30005619BA /* LabsViewController.swift in Sources */,
 				5E4B890E19D08B4E00EEB9C3 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				5E83BFEA19D729BB00C883E1 /* XMLReader.m in Sources */,
