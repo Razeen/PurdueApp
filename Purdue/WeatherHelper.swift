@@ -18,7 +18,7 @@ class WeatherHelper: NSObject {
         if weatherCode / 100 == 2 { // Thunderstorm
             urlString = "https://ssl.gstatic.com/onebox/weather/\(dimension)/rain_s_cloudy.png"
         } else if weatherCode / 100 == 3 { // Drizzle
-            urlString = "https://ssl.gstatic.com/onebox/weather/\(dimension)/light_rain.png"
+            urlString = "https://ssl.gstatic.com/onebox/weather/\(dimension)/rain.png"
         } else if weatherCode / 100 == 5 { // Rain
             urlString = "https://ssl.gstatic.com/onebox/weather/\(dimension)/rain.png"
         } else if weatherCode / 100 == 6 { // Snow

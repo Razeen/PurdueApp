@@ -22,14 +22,7 @@ class WeatherViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = NSLocalizedString("WEATHER", comment: "")
-        self.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
-        
         self.view.backgroundColor = UIColor.whiteColor()
-        
-        self.navigationController?.navigationBar.titleTextAttributes = [
-            NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: CGFloat(24)),
-            NSForegroundColorAttributeName: UIColor(white: 0.2, alpha: 1.0)
-        ]
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
@@ -149,24 +142,26 @@ class WeatherViewController: UIViewController {
             let weatherDict: NSDictionary = NSJSONSerialization.JSONObjectWithData(weatherData, options: NSJSONReadingOptions.AllowFragments, error: &error) as NSDictionary
             let weatherCode: Int = (weatherDict["weather"] as NSArray)[0]["id"] as Int
             let iconURL: NSURL = WeatherHelper.getIconURL(weatherCode, dimension: 256)
-            weatherImage.image = UIImage(data: NSData.dataWithContentsOfURL(iconURL, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &error))
-            setTemperature(Int((weatherDict["main"] as NSDictionary)["temp"] as Float))
-            
-            let humidity: Int = (weatherDict["main"] as NSDictionary)["humidity"] as Int
-            let humidDetailLabel: UILabel = UILabel(frame: CGRectMake(32.5, 20, humidityView.frame.width-32.5, 20))
-            humidDetailLabel.text = "\(humidity)%"
-            humidDetailLabel.font = UIFont(name: "Avenir", size: 15)
-            humidDetailLabel.textColor = UIColor(white: 0.3, alpha: 1.0)
-            humidityView.addSubview(humidDetailLabel)
-            
-            let windSpeed: Int = Int(round((weatherDict["wind"] as NSDictionary)["speed"] as Float))
-            let windDetailLabel: UILabel = UILabel(frame: CGRectMake(32.5, 20, windView.frame.width-32.5, 20))
-            windDetailLabel.text = "\(windSpeed) mph"
-            windDetailLabel.font = UIFont(name: "Avenir", size: 15)
-            windDetailLabel.textColor = UIColor(white: 0.3, alpha: 1.0)
-            windView.addSubview(windDetailLabel)
-            
-            println(weatherDict);
+            NSLog("%@", iconURL.absoluteString!)
+            var iconData: NSData? = NSData.dataWithContentsOfURL(iconURL, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &error)?
+            if iconData != nil {
+                weatherImage.image = UIImage(data: iconData!)
+                setTemperature(Int((weatherDict["main"] as NSDictionary)["temp"] as Float))
+                
+                let humidity: Int = (weatherDict["main"] as NSDictionary)["humidity"] as Int
+                let humidDetailLabel: UILabel = UILabel(frame: CGRectMake(32.5, 20, humidityView.frame.width-32.5, 20))
+                humidDetailLabel.text = "\(humidity)%"
+                humidDetailLabel.font = UIFont(name: "Avenir", size: 15)
+                humidDetailLabel.textColor = UIColor(white: 0.3, alpha: 1.0)
+                humidityView.addSubview(humidDetailLabel)
+                
+                let windSpeed: Int = Int(round((weatherDict["wind"] as NSDictionary)["speed"] as Float))
+                let windDetailLabel: UILabel = UILabel(frame: CGRectMake(32.5, 20, windView.frame.width-32.5, 20))
+                windDetailLabel.text = "\(windSpeed) mph"
+                windDetailLabel.font = UIFont(name: "Avenir", size: 15)
+                windDetailLabel.textColor = UIColor(white: 0.3, alpha: 1.0)
+                windView.addSubview(windDetailLabel)
+            }
         }
     }
     

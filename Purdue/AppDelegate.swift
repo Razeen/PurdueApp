@@ -20,8 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let viewController : WeatherViewController = WeatherViewController()
+        let viewController = PhotoViewController()
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
+        viewController.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
         let navigationController: UINavigationController = createNavController(viewController)
         slidingViewController = ECSlidingViewController(topViewController: navigationController)
         
@@ -69,61 +70,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
         if let realNames = rowNames {
             var navigationController: UINavigationController?
             
-            /*"MyMail",
-            "Blackboard",
-            NSLocalizedString("SCHEDULE", comment: ""),
-            NSLocalizedString("BUS", comment: ""),
-            NSLocalizedString("MAP", comment: ""),
-            NSLocalizedString("LABS", comment: ""),
-            NSLocalizedString("COREC", comment: ""),
-            NSLocalizedString("GAMES", comment: ""),
-            NSLocalizedString("MENU", comment: ""),
-            NSLocalizedString("NEWS", comment: ""),
-            NSLocalizedString("WEATHER", comment: ""),
-            NSLocalizedString("LIBRARY", comment: ""),
-            NSLocalizedString("PHOTOS", comment: ""),
-            NSLocalizedString("VIDEOS", comment: ""),
-            NSLocalizedString("DIRECTORY", comment: ""),
-            NSLocalizedString("BANDWIDTH", comment: ""),
-            NSLocalizedString("STORE", comment: "")*/
-            
             if (realNames[indexPath.row] as NSString).isEqualToString("MyMail") {
                 navigationController = createNavController(MyMailViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString("Blackboard") {
                 navigationController = createNavController(BlackboardViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("SCHEDULE", comment: "")) {
-                navigationController = createNavController(GameViewController())
+                navigationController = createNavController(ScheduleViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("BUS", comment: "")) {
-                navigationController = createNavController(GameViewController())
+                navigationController = createNavController(BusViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("MAP", comment: "")) {
-                navigationController = createNavController(GameViewController())
+                navigationController = createNavController(MapViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("LABS", comment: "")) {
-                navigationController = createNavController(GameViewController())
+                navigationController = createNavController(LabsViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("COREC", comment: "")) {
-                navigationController = createNavController(GameViewController())
+                navigationController = createNavController(CorecViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("GAMES", comment: "")) {
                 navigationController = createNavController(GameViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("MENU", comment: "")) {
-                navigationController = createNavController(GameViewController())
+                navigationController = createNavController(MenuViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("NEWS", comment: "")) {
-                navigationController = createNavController(GameViewController())
+                navigationController = createNavController(NewsViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("WEATHER", comment: "")) {
                 navigationController = createNavController(WeatherViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("LIBRARY", comment: "")) {
-                navigationController = createNavController(GameViewController())
+                navigationController = createNavController(LibraryViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("PHOTOS", comment: "")) {
                 navigationController = createNavController(PhotoViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("VIDEOS", comment: "")) {
                 navigationController = createNavController(VideoViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("DIRECTORY", comment: "")) {
-                navigationController = createNavController(GameViewController())
+                navigationController = createNavController(DirectoryViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("BANDWIDTH", comment: "")) {
-                navigationController = createNavController(GameViewController())
-            } else {
-                navigationController = createNavController(NewsViewController())
+                navigationController = createNavController(BandwidthViewController())
             }
             slidingViewController?.topViewController = navigationController
             (slidingViewController?.topViewController as UINavigationController).viewControllers[0].navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: .Done, target: self, action: "showMenu")
+            (slidingViewController?.topViewController as UINavigationController).viewControllers[0].navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
             removeTopViewSnapshot()
             slidingViewController?.resetTopViewAnimated(true)
         }

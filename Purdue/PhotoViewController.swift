@@ -8,16 +8,34 @@
 
 import UIKit
 
-class PhotoViewController: UITableViewController {
-
+class PhotoViewController: UITableViewController, MWPhotoBrowserDelegate {
+    var loading: Bool = true
+    let photosArray: NSMutableArray = NSMutableArray()
+    let displayPhotos: NSMutableArray = NSMutableArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.tableView.separatorColor = UIColor(white: 0.85, alpha: 0.5)
+        self.tableView.rowHeight = 70
+        self.navigationItem.title = NSLocalizedString("PHOTOS", comment: "")
+        
+        let photoData: NSData = NSData(contentsOfURL: NSURL(string: "http://purdue.photoshelter.com/gallery-list/?feed=json"))
+        if (photoData != NSNull()) {
+            var error: NSError?
+            let photoDict: NSDictionary = NSJSONSerialization.JSONObjectWithData(photoData, options: NSJSONReadingOptions.AllowFragments, error: &error) as NSDictionary
+            for photoDetails: NSDictionary in photoDict["clcGal"] as [NSDictionary] {
+                if (photoDetails["A_MODE"] as String == "PUB") {
+                    let photo = Photo()
+                    photo.imageId = photoDetails["I_ID"] as String
+                    photo.galleryId = photoDetails["G_ID"] as String
+                    photo.name = photoDetails["G_NAME"] as String
+                    photo.numImages = (photoDetails["NUM_IMAGES"] as String).toInt()!
+                    photo.setTime(photoDetails["G_MTIME"] as String)
+                    photosArray.addObject(photo)
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,71 +45,115 @@ class PhotoViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return photosArray.count
     }
 
-    /*
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell : UITableViewCell? = tableView.dequeueReusableCellWithIdentifier("CellIdentifier") as? UITableViewCell
+        let kPhotoTag: Int = 101
+        let kTitleTag: Int = 102
+        let kDetailTag: Int = 103
+        let kRightTag: Int = 104
+        
+        let photo = photosArray[indexPath.row] as Photo
 
-        // Configure the cell...
-
-        return cell
+        if (cell == nil) {
+            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "CellIdentifier")
+            
+            let photoView: AsyncImageView = AsyncImageView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width*3/10, self.tableView.rowHeight))
+            photoView.tag = kPhotoTag
+            cell?.contentView.addSubview(photoView)
+            
+            let titleLabel: UILabel = UILabel(frame: CGRectMake(UIScreen.mainScreen().bounds.width*3/10+15, 10, UIScreen.mainScreen().bounds.width*7/10-15, 30))
+            titleLabel.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 19)
+            titleLabel.tag = kTitleTag
+            cell?.contentView.addSubview(titleLabel)
+            
+            let detailLabel: UILabel = UILabel(frame: CGRectMake(UIScreen.mainScreen().bounds.width*3/10+15, 40, UIScreen.mainScreen().bounds.width*7/10-15, 25))
+            detailLabel.font = UIFont(name: "AppleSDGothicNeo-Light", size: 15)
+            detailLabel.tag = kDetailTag
+            cell?.contentView.addSubview(detailLabel)
+            
+            let rightView: UIImageView = UIImageView(frame: CGRectMake(UIScreen.mainScreen().bounds.width-30, self.tableView.rowHeight-30, 20, 20))
+            rightView.image = UIImage(named: "ToRight").imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            rightView.tintColor = UIColor(white: 0.5, alpha: 0.5)
+            rightView.tag = 104
+            cell?.contentView.addSubview(rightView)
+        }
+        
+        if indexPath.row % 2 == 0 {
+            cell?.backgroundColor = UIColor(white: 0.96, alpha: 1.0)
+        } else {
+            cell?.backgroundColor = UIColor(white: 0.92, alpha: 1.0)
+        }
+        
+        (cell?.contentView.viewWithTag(kPhotoTag) as AsyncImageView).imageURL = NSURL(string: "http://cdn.c.photoshelter.com/img-get/\(photo.imageId)/t/200/\(photo.imageId).jpg")
+        (cell?.contentView.viewWithTag(kTitleTag) as UILabel).text = photo.name
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        (cell?.contentView.viewWithTag(kDetailTag) as UILabel).text = "\(formatter.stringFromDate(photo.time))  |  \(photo.numImages) Photos"
+        
+        return cell!
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let spinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        spinner.center = CGPointMake(UIScreen.mainScreen().bounds.width-20, self.tableView.rowHeight-20)
+        spinner.hidesWhenStopped = true
+        (tableView.cellForRowAtIndexPath(indexPath)?.contentView.viewWithTag(104) as UIImageView).alpha = 0
+        tableView.cellForRowAtIndexPath(indexPath)?.contentView.addSubview(spinner)
+        spinner.startAnimating()
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            var err: NSError?
+            let photo = self.photosArray[indexPath.row] as Photo
+            let data: NSData = NSData(contentsOfURL: NSURL(string: "http://purdue.photoshelter.com/gallery/\(photo.galleryId)/?feed=json"))
+            let dict: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &err) as NSDictionary
+            self.displayPhotos.removeAllObjects()
+            for imageDict: NSDictionary in dict["images"] as [NSDictionary] {
+                let url: NSString = imageDict["src"] as NSString
+                let photo: MWPhoto = MWPhoto(URL: NSURL(string: url))
+                self.displayPhotos.addObject(photo)
+            }
+            
+            let browser = MWPhotoBrowser(delegate: self)
+            browser.displayNavArrows = true
+            browser.zoomPhotosToFill = true
+            browser.startOnGrid = true
+            dispatch_async(dispatch_get_main_queue(), {
+                (tableView.cellForRowAtIndexPath(indexPath)?.contentView.viewWithTag(104) as UIImageView).alpha = 1
+                spinner.stopAnimating()
+                self.presentViewController(UINavigationController(rootViewController: browser), animated: true, completion: nil)
+            })
+        })
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func numberOfPhotosInPhotoBrowser(photoBrowser: MWPhotoBrowser!) -> UInt {
+        return UInt(self.displayPhotos.count);
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView!, moveRowAtIndexPath fromIndexPath: NSIndexPath!, toIndexPath: NSIndexPath!) {
-
+    
+    func photoBrowser(photoBrowser: MWPhotoBrowser!, photoAtIndex index: UInt) -> MWPhotoProtocol! {
+        if index < UInt(self.displayPhotos.count) {
+            return self.displayPhotos[Int(index)] as MWPhotoProtocol
+        }
+        return nil
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView!, canMoveRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
+    
+    func photoBrowser(photoBrowser: MWPhotoBrowser!, thumbPhotoAtIndex index: UInt) -> MWPhotoProtocol! {
+        if index < UInt(self.displayPhotos.count) {
+            return self.displayPhotos[Int(index)] as MWPhotoProtocol
+        }
+        return nil
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
