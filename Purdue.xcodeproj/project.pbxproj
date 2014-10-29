@@ -44,9 +44,7 @@
 		5EB5FF1319FFF70300491C22 /* MWZoomingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEBC19FFF70300491C22 /* MWZoomingScrollView.m */; };
 		5EB5FF1419FFF70300491C22 /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEC019FFF70300491C22 /* DACircularProgressView.m */; };
 		5EB5FF1519FFF70300491C22 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEC319FFF70300491C22 /* MBProgressHUD.m */; };
-		5EB5FF1619FFF70300491C22 /* README.mdown in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEC419FFF70300491C22 /* README.mdown */; };
 		5EB5FF2419FFF70300491C22 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 5EB5FEE319FFF70300491C22 /* LICENSE */; };
-		5EB5FF2519FFF70300491C22 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEE419FFF70300491C22 /* README.md */; };
 		5EB5FF2619FFF70300491C22 /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEE719FFF70300491C22 /* MKAnnotationView+WebCache.m */; };
 		5EB5FF2719FFF70300491C22 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEE919FFF70300491C22 /* NSData+ImageContentType.m */; };
 		5EB5FF2819FFF70300491C22 /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEEB19FFF70300491C22 /* SDImageCache.m */; };
@@ -168,9 +166,7 @@
 		5EB5FEC019FFF70300491C22 /* DACircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DACircularProgressView.m; sourceTree = "<group>"; };
 		5EB5FEC219FFF70300491C22 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		5EB5FEC319FFF70300491C22 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		5EB5FEC419FFF70300491C22 /* README.mdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.mdown; sourceTree = "<group>"; };
 		5EB5FEE319FFF70300491C22 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		5EB5FEE419FFF70300491C22 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5EB5FEE619FFF70300491C22 /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		5EB5FEE719FFF70300491C22 /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		5EB5FEE819FFF70300491C22 /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -515,7 +511,6 @@
 			children = (
 				5EB5FEC219FFF70300491C22 /* MBProgressHUD.h */,
 				5EB5FEC319FFF70300491C22 /* MBProgressHUD.m */,
-				5EB5FEC419FFF70300491C22 /* README.mdown */,
 			);
 			path = MBProgressHUD;
 			sourceTree = "<group>";
@@ -524,7 +519,6 @@
 			isa = PBXGroup;
 			children = (
 				5EB5FEE319FFF70300491C22 /* LICENSE */,
-				5EB5FEE419FFF70300491C22 /* README.md */,
 				5EB5FEE519FFF70300491C22 /* SDWebImage */,
 			);
 			path = SDWebImage;
@@ -736,7 +730,6 @@
 				5EEB696819DF3F12005619BA /* BusViewController.swift in Sources */,
 				5E4B891119D08B4E00EEB9C3 /* ECSlidingSegue.m in Sources */,
 				5EB5FF2819FFF70300491C22 /* SDImageCache.m in Sources */,
-				5EB5FF1619FFF70300491C22 /* README.mdown in Sources */,
 				5EB5FF2619FFF70300491C22 /* MKAnnotationView+WebCache.m in Sources */,
 				5EEB697619DF3FB5005619BA /* BandwidthViewController.swift in Sources */,
 				5EB5FF2F19FFF70300491C22 /* UIButton+WebCache.m in Sources */,
@@ -769,7 +762,6 @@
 				5EEB697419DF3F9A005619BA /* DirectoryViewController.swift in Sources */,
 				5E83BFE619D7292300C883E1 /* NewsViewController.swift in Sources */,
 				5EB5FF2D19FFF70300491C22 /* SDWebImageManager.m in Sources */,
-				5EB5FF2519FFF70300491C22 /* README.md in Sources */,
 				5EA4C2CA19D5ED2100E42732 /* SCLAlertView.swift in Sources */,
 				5EB5FF0F19FFF70300491C22 /* MWPhoto.m in Sources */,
 				5EB5FF5A19FFF82200491C22 /* PSTCollectionView.m in Sources */,

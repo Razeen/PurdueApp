@@ -12,6 +12,10 @@ class VideoViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /*
+        http://gdata.youtube.com/feeds/api/users/PurdueUniversity/uploads?alt=json&start-index=1&v=2
+        */
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

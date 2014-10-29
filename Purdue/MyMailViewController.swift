@@ -15,7 +15,7 @@ class MyMailViewController: UIViewController, UIWebViewDelegate {
 
         let webView: UIWebView = UIWebView(frame: self.view.bounds)
         webView.delegate = self
-        webView.loadRequest(NSURLRequest(URL: NSURL.URLWithString("https://mymail.purdue.edu/")))
+        webView.loadRequest(NSURLRequest(URL: NSURL(string: "https://mymail.purdue.edu/")!))
         self.view.addSubview(webView)
     }
 

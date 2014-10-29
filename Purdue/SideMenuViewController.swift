@@ -90,8 +90,8 @@ class SideMenuViewController: UITableViewController {
             let itemSize: CGSize = CGSizeMake(30, 1)
             UIGraphicsBeginImageContextWithOptions(itemSize, false, UIScreen.mainScreen().scale)
             let imageRect: CGRect = CGRectMake(0, 0, itemSize.width, itemSize.height)
-            cell?.imageView?.image?.drawInRect(imageRect)
-            cell?.imageView?.image = UIGraphicsGetImageFromCurrentImageContext()
+            cell?.imageView.image?.drawInRect(imageRect)
+            cell?.imageView.image = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             
             let imageView: UIImageView = UIImageView(frame: CGRectMake(21, 21, 25, 25))
@@ -115,11 +115,11 @@ class SideMenuViewController: UITableViewController {
         cell?.selectedBackgroundView = UIView()
         cell?.selectedBackgroundView.layer .insertSublayer(selectedLayer, atIndex: 0)
         
-        cell!.textLabel?.text = rowNames[indexPath.row]
-        cell?.textLabel?.textColor = UIColor.whiteColor()
-        cell?.textLabel?.font = UIFont(name: "Avenir-Roman", size: 18)
+        cell!.textLabel.text = rowNames[indexPath.row]
+        cell?.textLabel.textColor = UIColor.whiteColor()
+        cell?.textLabel.font = UIFont(name: "Avenir-Roman", size: 18)
         
-        (cell?.contentView.viewWithTag(kImageViewId) as UIImageView).image = UIImage(named: imageNames[indexPath.row]).imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        (cell?.contentView.viewWithTag(kImageViewId) as UIImageView).image = UIImage(named: imageNames[indexPath.row])?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         
         return cell!
     }

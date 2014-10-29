@@ -12,6 +12,14 @@ class MenuViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        /*
+        http://api.hfs.purdue.edu/menus/v2/locations/Earhart/2014-10-28
+        http://api.hfs.purdue.edu/menus/v2/locations
+        http://api.hfs.purdue.edu/menus/v2/retail
+        http://api.hfs.purdue.edu/menus/v2/file/E4E5C98C-9B70-40B1-878E-01BC2840FDD5
+        */
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

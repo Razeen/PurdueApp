@@ -10,7 +10,7 @@ import UIKit
 
 class WeatherViewController: UIViewController {
     
-    let locationImage: UIImageView = UIImageView(image: UIImage(named: "Location").imageWithRenderingMode(.AlwaysTemplate))
+    let locationImage: UIImageView = UIImageView(image: UIImage(named: "Location")?.imageWithRenderingMode(.AlwaysTemplate))
     let locationLabel: UILabel = UILabel(frame: CGRectMake(UIScreen.mainScreen().bounds.width/2-130/2+7.5, 85.0, 130, 20))
     let weatherImage: UIImageView = UIImageView(frame: CGRectMake(UIScreen.mainScreen().bounds.width/4, 105, UIScreen.mainScreen().bounds.width/2, UIScreen.mainScreen().bounds.width/2))
     let temperatureLabel: UILabel = UILabel(frame: CGRectMake(0, 105+UIScreen.mainScreen().bounds.width/2-5, UIScreen.mainScreen().bounds.width, 85))
@@ -46,7 +46,7 @@ class WeatherViewController: UIViewController {
         temperatureLabel.textAlignment = .Center
         
         let humidIcon: UIImageView = UIImageView(frame: CGRectMake(10, 2.5, 15, 15))
-        humidIcon.image = UIImage(named: "Humidity").imageWithRenderingMode(.AlwaysTemplate)
+        humidIcon.image = UIImage(named: "Humidity")?.imageWithRenderingMode(.AlwaysTemplate)
         humidIcon.contentMode = UIViewContentMode.ScaleAspectFit
         humidIcon.tintColor = UIColor(white: 0.5, alpha: 1.0)
         let humidTitleLabel: UILabel = UILabel(frame: CGRectMake(32.5, 0, humidityView.frame.width-32.5, 20))
@@ -57,7 +57,7 @@ class WeatherViewController: UIViewController {
         humidityView.addSubview(humidTitleLabel)
         
         let windIcon: UIImageView = UIImageView(frame: CGRectMake(10, 2.5, 15, 15))
-        windIcon.image = UIImage(named: "Wind").imageWithRenderingMode(.AlwaysTemplate)
+        windIcon.image = UIImage(named: "Wind")?.imageWithRenderingMode(.AlwaysTemplate)
         windIcon.contentMode = UIViewContentMode.ScaleAspectFit
         windIcon.tintColor = UIColor(white: 0.5, alpha: 1.0)
         let windTitleLabel: UILabel = UILabel(frame: CGRectMake(32.5, 0, windView.frame.width-32.5, 20))
@@ -81,7 +81,7 @@ class WeatherViewController: UIViewController {
         ]
         let dayNames: [String] = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"]
         var error: NSError?
-        let weatherData: NSData = NSData(contentsOfURL: NSURL.URLWithString("http://api.openweathermap.org/data/2.5/forecast/daily?lat=40.424113&lon=-86.921410&units=imperial&cnt=7"), options: NSDataReadingOptions.DataReadingUncached, error: &error)
+        let weatherData: NSData = NSData(contentsOfURL: NSURL(string: "http://api.openweathermap.org/data/2.5/forecast/daily?lat=40.424113&lon=-86.921410&units=imperial&cnt=7")!, options: NSDataReadingOptions.DataReadingUncached, error: &error)!
         if weatherData != NSNull() {
             let weatherDict: NSDictionary = NSJSONSerialization.JSONObjectWithData(weatherData, options: NSJSONReadingOptions.AllowFragments, error: &error) as NSDictionary
             let weatherDates: [NSDictionary] = weatherDict["list"] as [NSDictionary]
@@ -89,7 +89,9 @@ class WeatherViewController: UIViewController {
             for weatherDetails: NSDictionary in weatherDates {
                 let weatherCode: Int = (weatherDetails["weather"] as NSArray)[0]["id"] as Int
                 let iconURL: NSURL = WeatherHelper.getIconURL(weatherCode, dimension: 128)
-                let cardView: UIView = makeCard(i, color: dayColors[i], title: dayNames[(i+NSCalendar(calendarIdentifier: NSGregorianCalendar).components(.WeekdayCalendarUnit, fromDate: NSDate.date()).weekday-1)%7], iconUrl: iconURL, temperature: Int((weatherDetails["temp"] as NSDictionary)["day"] as Float))
+                let myComponents = NSCalendar(calendarIdentifier: NSGregorianCalendar)?.components(NSCalendarUnit.WeekdayCalendarUnit, fromDate: NSDate())
+                let weekDay = myComponents!.weekday
+                let cardView: UIView = makeCard(i, color: dayColors[i], title: dayNames[(i+weekDay-1)%7], iconUrl: iconURL, temperature: Int((weatherDetails["temp"] as NSDictionary)["day"] as Float))
                 cardSV.addSubview(cardView)
                 i++
             }
@@ -119,11 +121,14 @@ class WeatherViewController: UIViewController {
         
         let weatherIcon: UIImageView = UIImageView(frame: CGRectMake(0, cardView.frame.height*0.30, UIScreen.mainScreen().bounds.height*0.15, cardView.frame.height*0.45))
         weatherIcon.contentMode = UIViewContentMode.ScaleAspectFit
-        weatherIcon.image = UIImage(data: NSData.dataWithContentsOfURL(iconUrl, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &error))
+        weatherIcon.image = UIImage(data: NSData(contentsOfURL: iconUrl, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &error)!)
         
         let temperatureLabel: UILabel = UILabel(frame: CGRectMake(0, cardView.frame.height*0.75, UIScreen.mainScreen().bounds.height*0.15, cardView.frame.height*0.20))
-        let attrString: NSMutableAttributedString = NSMutableAttributedString(string: "\(temperature)o", attributes: [NSFontAttributeName: UIFont(name: "Avenir", size: 20), NSForegroundColorAttributeName: UIColor.whiteColor()])
-        attrString.addAttributes([NSFontAttributeName: UIFont(name: "Avenir", size: 9), NSBaselineOffsetAttributeName: 14], range: NSMakeRange(attrString.length-1, 1))
+        var attrString = NSMutableAttributedString(string: "\(temperature)o")
+        attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "Avenir", size: 20)!, range: NSMakeRange(0, attrString.length))
+        attrString.addAttribute(NSForegroundColorAttributeName, value: UIColor.whiteColor(), range: NSMakeRange(0, attrString.length))
+        attrString.addAttribute(NSFontAttributeName, value: UIFont(name: "Avenir", size: 9)!, range: NSMakeRange(attrString.length-1, 1))
+        attrString.addAttribute(NSBaselineOffsetAttributeName, value: 14, range: NSMakeRange(attrString.length-1, 1))
         let parStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
         parStyle.alignment = NSTextAlignment.Center
         attrString.addAttribute(NSParagraphStyleAttributeName, value: parStyle, range: NSMakeRange(0, attrString.length))
@@ -137,13 +142,13 @@ class WeatherViewController: UIViewController {
     
     func loadWeather() {
         var error: NSError?
-        let weatherData: NSData = NSData(contentsOfURL: NSURL.URLWithString("http://api.openweathermap.org/data/2.5/weather?lat=40.424113&lon=-86.921410&units=imperial"), options: NSDataReadingOptions.DataReadingUncached, error: &error)
+        let weatherData: NSData = NSData(contentsOfURL: NSURL(string: "http://api.openweathermap.org/data/2.5/weather?lat=40.424113&lon=-86.921410&units=imperial")!, options: NSDataReadingOptions.DataReadingUncached, error: &error)!
         if weatherData != NSNull() {
             let weatherDict: NSDictionary = NSJSONSerialization.JSONObjectWithData(weatherData, options: NSJSONReadingOptions.AllowFragments, error: &error) as NSDictionary
             let weatherCode: Int = (weatherDict["weather"] as NSArray)[0]["id"] as Int
             let iconURL: NSURL = WeatherHelper.getIconURL(weatherCode, dimension: 256)
             NSLog("%@", iconURL.absoluteString!)
-            var iconData: NSData? = NSData.dataWithContentsOfURL(iconURL, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &error)?
+            var iconData: NSData? = NSData(contentsOfURL: iconURL, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &error)?
             if iconData != nil {
                 weatherImage.image = UIImage(data: iconData!)
                 setTemperature(Int((weatherDict["main"] as NSDictionary)["temp"] as Float))
@@ -166,8 +171,8 @@ class WeatherViewController: UIViewController {
     }
     
     func setTemperature(temperature: Int) {
-        let attrString: NSMutableAttributedString = NSMutableAttributedString(string: "\(temperature)o", attributes: [NSFontAttributeName: UIFont(name: "Avenir", size: 100)])
-        attrString.addAttributes([NSFontAttributeName: UIFont(name: "Avenir", size: 20), NSBaselineOffsetAttributeName: 64], range: NSMakeRange(attrString.length-1, 1))
+        let attrString: NSMutableAttributedString = NSMutableAttributedString(string: "\(temperature)o", attributes: [NSFontAttributeName: UIFont(name: "Avenir", size: 100)!])
+        attrString.addAttributes([NSFontAttributeName: UIFont(name: "Avenir", size: 20)!, NSBaselineOffsetAttributeName: 64], range: NSMakeRange(attrString.length-1, 1))
         let parStyle: NSMutableParagraphStyle = NSMutableParagraphStyle()
         parStyle.alignment = NSTextAlignment.Center
         attrString.addAttribute(NSParagraphStyleAttributeName, value: parStyle, range: NSMakeRange(0, attrString.length))

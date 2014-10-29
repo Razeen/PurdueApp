@@ -19,7 +19,7 @@ class NewsViewController: UITableViewController {
         self.tableView.rowHeight = 100
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             var error: NSError?
-            var data: NSData = NSData.dataWithContentsOfURL(NSURL(string: "http://www.purdue.edu/newsroom/rss/FeaturedNews.xml"), options: NSDataReadingOptions.UncachedRead, error: &error)
+            var data: NSData = NSData(contentsOfURL: NSURL(string: "http://www.purdue.edu/newsroom/rss/FeaturedNews.xml")!, options: NSDataReadingOptions.UncachedRead, error: &error)!
             let dict: NSDictionary = XMLReader.dictionaryForXMLData(data, error: &error)
             let rss: NSDictionary = dict["rss"] as NSDictionary
             let channel: NSDictionary = rss["channel"] as NSDictionary
@@ -61,9 +61,9 @@ class NewsViewController: UITableViewController {
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "CellIdentifier")
         }
         
-        cell!.textLabel?.text = news[indexPath.row].title
-        cell?.textLabel?.textColor = UIColor(red: 163.0/255.0, green: 121.0/255.0, blue: 44.0/255.0, alpha: 1)
-        cell?.textLabel?.font = UIFont(name: "HelveticaNeue", size: 17)
+        cell!.textLabel.text = news[indexPath.row].title
+        cell?.textLabel.textColor = UIColor(red: 163.0/255.0, green: 121.0/255.0, blue: 44.0/255.0, alpha: 1)
+        cell?.textLabel.font = UIFont(name: "HelveticaNeue", size: 17)
         
         return cell!
     }

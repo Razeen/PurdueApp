@@ -20,7 +20,7 @@ class PhotoViewController: UITableViewController, MWPhotoBrowserDelegate {
         self.tableView.rowHeight = 70
         self.navigationItem.title = NSLocalizedString("PHOTOS", comment: "")
         
-        let photoData: NSData = NSData(contentsOfURL: NSURL(string: "http://purdue.photoshelter.com/gallery-list/?feed=json"))
+        let photoData: NSData = NSData(contentsOfURL: NSURL(string: "http://purdue.photoshelter.com/gallery-list/?feed=json")!)!
         if (photoData != NSNull()) {
             var error: NSError?
             let photoDict: NSDictionary = NSJSONSerialization.JSONObjectWithData(photoData, options: NSJSONReadingOptions.AllowFragments, error: &error) as NSDictionary
@@ -85,7 +85,7 @@ class PhotoViewController: UITableViewController, MWPhotoBrowserDelegate {
             cell?.contentView.addSubview(detailLabel)
             
             let rightView: UIImageView = UIImageView(frame: CGRectMake(UIScreen.mainScreen().bounds.width-30, self.tableView.rowHeight-30, 20, 20))
-            rightView.image = UIImage(named: "ToRight").imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            rightView.image = UIImage(named: "ToRight")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
             rightView.tintColor = UIColor(white: 0.5, alpha: 0.5)
             rightView.tag = 104
             cell?.contentView.addSubview(rightView)
@@ -116,7 +116,7 @@ class PhotoViewController: UITableViewController, MWPhotoBrowserDelegate {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             var err: NSError?
             let photo = self.photosArray[indexPath.row] as Photo
-            let data: NSData = NSData(contentsOfURL: NSURL(string: "http://purdue.photoshelter.com/gallery/\(photo.galleryId)/?feed=json"))
+            let data: NSData = NSData(contentsOfURL: NSURL(string: "http://purdue.photoshelter.com/gallery/\(photo.galleryId)/?feed=json")!)!
             let dict: NSDictionary = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &err) as NSDictionary
             self.displayPhotos.removeAllObjects()
             for imageDict: NSDictionary in dict["images"] as [NSDictionary] {

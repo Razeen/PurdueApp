@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
         let navigationController: UINavigationController = UINavigationController(navigationBarClass: PUNavigationBar.self, toolbarClass: nil)
         navigationController.viewControllers = [viewController]
         navigationController.view.backgroundColor = UIColor.whiteColor()
-        navigationController.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: CGFloat(25))]
+        navigationController.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: CGFloat(25))!]
         return navigationController
     }
     
@@ -139,7 +139,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
         let settingBtn: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         settingBtn.tintColor = UIColor.whiteColor()
         settingBtn.frame = CGRectMake(0, 2, 48, 48)
-        settingBtn.setImage(UIImage(named: "Settings").imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
+        settingBtn.setImage(UIImage(named: "Settings")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
         footerView.addSubview(settingBtn)
         let copyrightLbl: UILabel = UILabel(frame: CGRectMake(48, 2, 250-48, 48))
         copyrightLbl.text = "© PURDUE UNIVERSITY"

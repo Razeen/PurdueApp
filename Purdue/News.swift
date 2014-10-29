@@ -20,6 +20,6 @@ class News: NSObject {
         var dateFormatter: NSDateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss zzz"
         self.date = dateFormatter.dateFromString(date)!
-        self.link = NSURL.URLWithString(link)
+        self.link = NSURL(string: link.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)!)!
     }
 }

@@ -69,7 +69,7 @@ class WeatherHelper: NSObject {
             }
         }
         
-        let iconUrl: NSURL = NSURL.URLWithString(urlString)
+        let iconUrl: NSURL = NSURL(string: urlString)!
         return iconUrl
     }
 

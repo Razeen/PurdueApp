@@ -20,7 +20,7 @@ class GameViewController: UIViewController, UIWebViewDelegate {
         self.view.addSubview(gameWebView)
         gameWebView.delegate = self
         let URL = NSURL(string: "http://mobile.rivals.com/schedule.asp?TeamCode=PURDUE&Sport=1")
-        gameWebView.loadRequest(NSURLRequest(URL: URL))
+        gameWebView.loadRequest(NSURLRequest(URL: URL!))
     }
     
     func webViewDidStartLoad(webView: UIWebView) {
