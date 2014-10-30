@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let viewController = PhotoViewController()
+        let viewController = NewsViewController()
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
         viewController.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
         let navigationController: UINavigationController = createNavController(viewController)
@@ -102,6 +102,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
                 navigationController = createNavController(DirectoryViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("BANDWIDTH", comment: "")) {
                 navigationController = createNavController(BandwidthViewController())
+            } else {
+                navigationController = createNavController(StoreViewController())
             }
             slidingViewController?.topViewController = navigationController
             (slidingViewController?.topViewController as UINavigationController).viewControllers[0].navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: .Done, target: self, action: "showMenu")

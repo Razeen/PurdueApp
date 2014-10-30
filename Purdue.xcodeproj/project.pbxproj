@@ -76,6 +76,8 @@
 		5EB5FF6319FFF82200491C22 /* PSTGridLayoutItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FF5419FFF82200491C22 /* PSTGridLayoutItem.m */; };
 		5EB5FF6419FFF82200491C22 /* PSTGridLayoutRow.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FF5619FFF82200491C22 /* PSTGridLayoutRow.m */; };
 		5EB5FF6519FFF82200491C22 /* PSTGridLayoutSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FF5819FFF82200491C22 /* PSTGridLayoutSection.m */; };
+		5EB6510B1A01B12000AB7257 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6510A1A01B12000AB7257 /* StoreViewController.swift */; };
+		5EB6510D1A01D33600AB7257 /* NewsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6510C1A01D33600AB7257 /* NewsDetailViewController.swift */; };
 		5EB92BFD19DB26EC00176BCC /* MyMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB92BFC19DB26EC00176BCC /* MyMailViewController.swift */; };
 		5EEB696019DF3BBF005619BA /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB695F19DF3BBF005619BA /* PhotoViewController.swift */; };
 		5EEB696219DF3BCC005619BA /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696119DF3BCB005619BA /* VideoViewController.swift */; };
@@ -230,6 +232,8 @@
 		5EB5FF5619FFF82200491C22 /* PSTGridLayoutRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutRow.m; sourceTree = "<group>"; };
 		5EB5FF5719FFF82200491C22 /* PSTGridLayoutSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSTGridLayoutSection.h; sourceTree = "<group>"; };
 		5EB5FF5819FFF82200491C22 /* PSTGridLayoutSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSTGridLayoutSection.m; sourceTree = "<group>"; };
+		5EB6510A1A01B12000AB7257 /* StoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		5EB6510C1A01D33600AB7257 /* NewsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailViewController.swift; sourceTree = "<group>"; };
 		5EB92BFC19DB26EC00176BCC /* MyMailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMailViewController.swift; sourceTree = "<group>"; };
 		5EEB695F19DF3BBF005619BA /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		5EEB696119DF3BCB005619BA /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -413,10 +417,12 @@
 				5EEB696F19DF3F54005619BA /* MenuViewController.swift */,
 				5EB92BFC19DB26EC00176BCC /* MyMailViewController.swift */,
 				5E83BFE519D7292300C883E1 /* NewsViewController.swift */,
+				5EB6510C1A01D33600AB7257 /* NewsDetailViewController.swift */,
 				5EEB695F19DF3BBF005619BA /* PhotoViewController.swift */,
 				5EEB696519DF3EFC005619BA /* ScheduleViewController.swift */,
 				5EEB696119DF3BCB005619BA /* VideoViewController.swift */,
 				5E4B88E019D07E0A00EEB9C3 /* WeatherViewController.swift */,
+				5EB6510A1A01B12000AB7257 /* StoreViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -734,6 +740,7 @@
 				5EEB697619DF3FB5005619BA /* BandwidthViewController.swift in Sources */,
 				5EB5FF2F19FFF70300491C22 /* UIButton+WebCache.m in Sources */,
 				5EEB696A19DF3F18005619BA /* MapViewController.swift in Sources */,
+				5EB6510B1A01B12000AB7257 /* StoreViewController.swift in Sources */,
 				5EB5FF1419FFF70300491C22 /* DACircularProgressView.m in Sources */,
 				5E4B88DF19D07E0A00EEB9C3 /* AppDelegate.swift in Sources */,
 				5EEB696419DF3CE1005619BA /* BlackboardViewController.swift in Sources */,
@@ -748,6 +755,7 @@
 				5EEB696619DF3EFC005619BA /* ScheduleViewController.swift in Sources */,
 				5E4B891319D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m in Sources */,
 				5EB5FF1019FFF70300491C22 /* MWPhotoBrowser.m in Sources */,
+				5EB6510D1A01D33600AB7257 /* NewsDetailViewController.swift in Sources */,
 				5EB5FF3419FFF70300491C22 /* UIImageView+WebCache.m in Sources */,
 				5EB5FF0D19FFF70300491C22 /* MWGridCell.m in Sources */,
 				5E4B891819D0903100EEB9C3 /* SideMenuViewController.swift in Sources */,
@@ -879,6 +887,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Purdue/Info.plist;
@@ -897,6 +906,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Purdue/Info.plist;
