@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        let viewController = NewsViewController()
+        let viewController = VideoViewController()
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
         viewController.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
         let navigationController: UINavigationController = createNavController(viewController)

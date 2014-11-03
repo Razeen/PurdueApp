@@ -63,7 +63,6 @@ class PhotoViewController: UITableViewController, MWPhotoBrowserDelegate {
         let kPhotoTag: Int = 101
         let kTitleTag: Int = 102
         let kDetailTag: Int = 103
-        let kRightTag: Int = 104
         
         let photo = photosArray[indexPath.row] as Photo
 
@@ -87,7 +86,6 @@ class PhotoViewController: UITableViewController, MWPhotoBrowserDelegate {
             let rightView: UIImageView = UIImageView(frame: CGRectMake(UIScreen.mainScreen().bounds.width-30, self.tableView.rowHeight-30, 20, 20))
             rightView.image = UIImage(named: "ToRight")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
             rightView.tintColor = UIColor(white: 0.5, alpha: 0.5)
-            rightView.tag = 104
             cell?.contentView.addSubview(rightView)
         }
         
