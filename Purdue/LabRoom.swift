@@ -9,5 +9,12 @@
 import UIKit
 
 class LabRoom: NSObject {
-   
+    var name: String?
+    var status: String? // Closed, Class in Session, Open
+    var windows: String?
+    var mac: String?
+    var unknown: String?
+    
+    override init() {
+    }
 }

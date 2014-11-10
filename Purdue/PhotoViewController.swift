@@ -86,6 +86,7 @@ class PhotoViewController: UITableViewController, MWPhotoBrowserDelegate {
             let rightView: UIImageView = UIImageView(frame: CGRectMake(UIScreen.mainScreen().bounds.width-30, self.tableView.rowHeight-30, 20, 20))
             rightView.image = UIImage(named: "ToRight")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
             rightView.tintColor = UIColor(white: 0.5, alpha: 0.5)
+            rightView.tag = 104
             cell?.contentView.addSubview(rightView)
         }
         

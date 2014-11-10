@@ -11,3 +11,6 @@
 #import "XMLReader.h"
 #import "AsyncImageView.h"
 #import "MWPhotoBrowser.h"
+#import <GoogleMaps/GoogleMaps.h>
+#import "MRProgress.h"
+#import "SMCalloutView.h"

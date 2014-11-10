@@ -27,7 +27,6 @@ class SideMenuViewController: UITableViewController {
         "Photos",
         "Videos",
         "Directory",
-        "Bandwidth",
         "Store"
     ]
     
@@ -47,7 +46,6 @@ class SideMenuViewController: UITableViewController {
         NSLocalizedString("PHOTOS", comment: ""),
         NSLocalizedString("VIDEOS", comment: ""),
         NSLocalizedString("DIRECTORY", comment: ""),
-        NSLocalizedString("BANDWIDTH", comment: ""),
         NSLocalizedString("STORE", comment: "")
     ]
     

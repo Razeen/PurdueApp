@@ -82,6 +82,34 @@
 		5EB92BFD19DB26EC00176BCC /* MyMailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB92BFC19DB26EC00176BCC /* MyMailViewController.swift */; };
 		5EDAF99B1A06BF5800B954A9 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDAF99A1A06BF5800B954A9 /* VideoDetailViewController.swift */; };
 		5EDAF99D1A06C29800B954A9 /* DirectoryStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDAF99C1A06C29800B954A9 /* DirectoryStudent.swift */; };
+		5EE14FFE1A0FE54F008C9825 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE14FFD1A0FE54F008C9825 /* GoogleMaps.framework */; };
+		5EE150001A0FE5A0008C9825 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5EE14FFF1A0FE5A0008C9825 /* GoogleMaps.bundle */; };
+		5EE150021A0FE5B4008C9825 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE150011A0FE5B3008C9825 /* AVFoundation.framework */; };
+		5EE150041A0FE5B8008C9825 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE150031A0FE5B8008C9825 /* CoreLocation.framework */; };
+		5EE150061A0FE5C3008C9825 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE150051A0FE5C3008C9825 /* CoreData.framework */; };
+		5EE150081A0FE5C9008C9825 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE150071A0FE5C9008C9825 /* CoreText.framework */; };
+		5EE1500A1A0FE5D3008C9825 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE150091A0FE5D3008C9825 /* GLKit.framework */; };
+		5EE1500C1A0FE5EF008C9825 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE1500B1A0FE5EF008C9825 /* libc++.dylib */; };
+		5EE1500E1A0FE600008C9825 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE1500D1A0FE600008C9825 /* libicucore.dylib */; };
+		5EE150101A0FE609008C9825 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE1500F1A0FE609008C9825 /* libz.dylib */; };
+		5EE150121A0FE617008C9825 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE150111A0FE617008C9825 /* OpenGLES.framework */; };
+		5EE150141A0FE80A008C9825 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE150131A0FE80A008C9825 /* SystemConfiguration.framework */; };
+		5EE1503C1A0FEBC8008C9825 /* MRBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE150181A0FEBC8008C9825 /* MRBlurView.m */; };
+		5EE1503D1A0FEBC8008C9825 /* UIImage+MRImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1501A1A0FEBC8008C9825 /* UIImage+MRImageEffects.m */; };
+		5EE1503E1A0FEBC8008C9825 /* MRActivityIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1501D1A0FEBC8008C9825 /* MRActivityIndicatorView.m */; };
+		5EE1503F1A0FEBC8008C9825 /* MRCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1501F1A0FEBC8008C9825 /* MRCircularProgressView.m */; };
+		5EE150401A0FEBC8008C9825 /* MRIconView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE150211A0FEBC8008C9825 /* MRIconView.m */; };
+		5EE150411A0FEBC8008C9825 /* MRNavigationBarProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE150231A0FEBC8008C9825 /* MRNavigationBarProgressView.m */; };
+		5EE150421A0FEBC8008C9825 /* MRProgressOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE150251A0FEBC8008C9825 /* MRProgressOverlayView.m */; };
+		5EE150431A0FEBC8008C9825 /* MRProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE150271A0FEBC8008C9825 /* MRProgressView.m */; };
+		5EE150441A0FEBC8008C9825 /* MRStopButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1502A1A0FEBC8008C9825 /* MRStopButton.m */; };
+		5EE150481A0FEBC8008C9825 /* MRMessageInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE150361A0FEBC8008C9825 /* MRMessageInterceptor.m */; };
+		5EE150491A0FEBC8008C9825 /* MRMethodCopier.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE150381A0FEBC8008C9825 /* MRMethodCopier.m */; };
+		5EE1504A1A0FEBC8008C9825 /* MRWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1503B1A0FEBC8008C9825 /* MRWeakProxy.m */; };
+		5EE150691A100FE5008C9825 /* LabBuilding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE150681A100FE5008C9825 /* LabBuilding.swift */; };
+		5EE1506B1A101001008C9825 /* LabRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1506A1A101001008C9825 /* LabRoom.swift */; };
+		5EE1506F1A102C9D008C9825 /* SMCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1506E1A102C9D008C9825 /* SMCalloutView.m */; };
+		5EE150731A103E18008C9825 /* LabDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE150721A103E18008C9825 /* LabDetailsViewController.swift */; };
 		5EEB696019DF3BBF005619BA /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB695F19DF3BBF005619BA /* PhotoViewController.swift */; };
 		5EEB696219DF3BCC005619BA /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696119DF3BCB005619BA /* VideoViewController.swift */; };
 		5EEB696419DF3CE1005619BA /* BlackboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696319DF3CE1005619BA /* BlackboardViewController.swift */; };
@@ -93,7 +121,6 @@
 		5EEB697019DF3F54005619BA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696F19DF3F54005619BA /* MenuViewController.swift */; };
 		5EEB697219DF3F8B005619BA /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB697119DF3F8A005619BA /* LibraryViewController.swift */; };
 		5EEB697419DF3F9A005619BA /* DirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB697319DF3F9A005619BA /* DirectoryViewController.swift */; };
-		5EEB697619DF3FB5005619BA /* BandwidthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB697519DF3FB5005619BA /* BandwidthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -241,6 +268,50 @@
 		5EB92BFC19DB26EC00176BCC /* MyMailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMailViewController.swift; sourceTree = "<group>"; };
 		5EDAF99A1A06BF5800B954A9 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
 		5EDAF99C1A06C29800B954A9 /* DirectoryStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryStudent.swift; sourceTree = "<group>"; };
+		5EE14FFD1A0FE54F008C9825 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		5EE14FFF1A0FE5A0008C9825 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
+		5EE150011A0FE5B3008C9825 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5EE150031A0FE5B8008C9825 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5EE150051A0FE5C3008C9825 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		5EE150071A0FE5C9008C9825 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		5EE150091A0FE5D3008C9825 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		5EE1500B1A0FE5EF008C9825 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		5EE1500D1A0FE600008C9825 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		5EE1500F1A0FE609008C9825 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		5EE150111A0FE617008C9825 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		5EE150131A0FE80A008C9825 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5EE150171A0FEBC8008C9825 /* MRBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRBlurView.h; sourceTree = "<group>"; };
+		5EE150181A0FEBC8008C9825 /* MRBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRBlurView.m; sourceTree = "<group>"; };
+		5EE150191A0FEBC8008C9825 /* UIImage+MRImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+MRImageEffects.h"; sourceTree = "<group>"; };
+		5EE1501A1A0FEBC8008C9825 /* UIImage+MRImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+MRImageEffects.m"; sourceTree = "<group>"; };
+		5EE1501C1A0FEBC8008C9825 /* MRActivityIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRActivityIndicatorView.h; sourceTree = "<group>"; };
+		5EE1501D1A0FEBC8008C9825 /* MRActivityIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRActivityIndicatorView.m; sourceTree = "<group>"; };
+		5EE1501E1A0FEBC8008C9825 /* MRCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRCircularProgressView.h; sourceTree = "<group>"; };
+		5EE1501F1A0FEBC8008C9825 /* MRCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRCircularProgressView.m; sourceTree = "<group>"; };
+		5EE150201A0FEBC8008C9825 /* MRIconView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRIconView.h; sourceTree = "<group>"; };
+		5EE150211A0FEBC8008C9825 /* MRIconView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRIconView.m; sourceTree = "<group>"; };
+		5EE150221A0FEBC8008C9825 /* MRNavigationBarProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRNavigationBarProgressView.h; sourceTree = "<group>"; };
+		5EE150231A0FEBC8008C9825 /* MRNavigationBarProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRNavigationBarProgressView.m; sourceTree = "<group>"; };
+		5EE150241A0FEBC8008C9825 /* MRProgressOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgressOverlayView.h; sourceTree = "<group>"; };
+		5EE150251A0FEBC8008C9825 /* MRProgressOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRProgressOverlayView.m; sourceTree = "<group>"; };
+		5EE150261A0FEBC8008C9825 /* MRProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgressView.h; sourceTree = "<group>"; };
+		5EE150271A0FEBC8008C9825 /* MRProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRProgressView.m; sourceTree = "<group>"; };
+		5EE150281A0FEBC8008C9825 /* MRStopableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRStopableView.h; sourceTree = "<group>"; };
+		5EE150291A0FEBC8008C9825 /* MRStopButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRStopButton.h; sourceTree = "<group>"; };
+		5EE1502A1A0FEBC8008C9825 /* MRStopButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRStopButton.m; sourceTree = "<group>"; };
+		5EE1502B1A0FEBC8008C9825 /* MRProgress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgress.h; sourceTree = "<group>"; };
+		5EE150351A0FEBC8008C9825 /* MRMessageInterceptor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMessageInterceptor.h; sourceTree = "<group>"; };
+		5EE150361A0FEBC8008C9825 /* MRMessageInterceptor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMessageInterceptor.m; sourceTree = "<group>"; };
+		5EE150371A0FEBC8008C9825 /* MRMethodCopier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRMethodCopier.h; sourceTree = "<group>"; };
+		5EE150381A0FEBC8008C9825 /* MRMethodCopier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRMethodCopier.m; sourceTree = "<group>"; };
+		5EE150391A0FEBC8008C9825 /* MRProgressHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRProgressHelper.h; sourceTree = "<group>"; };
+		5EE1503A1A0FEBC8008C9825 /* MRWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRWeakProxy.h; sourceTree = "<group>"; };
+		5EE1503B1A0FEBC8008C9825 /* MRWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRWeakProxy.m; sourceTree = "<group>"; };
+		5EE150681A100FE5008C9825 /* LabBuilding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabBuilding.swift; sourceTree = "<group>"; };
+		5EE1506A1A101001008C9825 /* LabRoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabRoom.swift; sourceTree = "<group>"; };
+		5EE1506D1A102C9D008C9825 /* SMCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCalloutView.h; sourceTree = "<group>"; };
+		5EE1506E1A102C9D008C9825 /* SMCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMCalloutView.m; sourceTree = "<group>"; };
+		5EE150721A103E18008C9825 /* LabDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabDetailsViewController.swift; sourceTree = "<group>"; };
 		5EEB695F19DF3BBF005619BA /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		5EEB696119DF3BCB005619BA /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		5EEB696319DF3CE1005619BA /* BlackboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackboardViewController.swift; sourceTree = "<group>"; };
@@ -252,7 +323,6 @@
 		5EEB696F19DF3F54005619BA /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5EEB697119DF3F8A005619BA /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		5EEB697319DF3F9A005619BA /* DirectoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryViewController.swift; sourceTree = "<group>"; };
-		5EEB697519DF3FB5005619BA /* BandwidthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BandwidthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,11 +330,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EE150141A0FE80A008C9825 /* SystemConfiguration.framework in Frameworks */,
+				5EB5FE1719FFE7C600491C22 /* QuartzCore.framework in Frameworks */,
+				5EE150121A0FE617008C9825 /* OpenGLES.framework in Frameworks */,
+				5EE150101A0FE609008C9825 /* libz.dylib in Frameworks */,
+				5EE1500E1A0FE600008C9825 /* libicucore.dylib in Frameworks */,
+				5EE1500C1A0FE5EF008C9825 /* libc++.dylib in Frameworks */,
+				5EB5FE1519FFE7B500491C22 /* ImageIO.framework in Frameworks */,
+				5EE1500A1A0FE5D3008C9825 /* GLKit.framework in Frameworks */,
+				5EE150081A0FE5C9008C9825 /* CoreText.framework in Frameworks */,
+				5EE150061A0FE5C3008C9825 /* CoreData.framework in Frameworks */,
+				5EE150041A0FE5B8008C9825 /* CoreLocation.framework in Frameworks */,
+				5EE150021A0FE5B4008C9825 /* AVFoundation.framework in Frameworks */,
+				5EE14FFE1A0FE54F008C9825 /* GoogleMaps.framework in Frameworks */,
 				5EB5FF3B19FFF77000491C22 /* UIKit.framework in Frameworks */,
 				5EB5FE1819FFE7C900491C22 /* AssetsLibrary.framework in Frameworks */,
-				5EB5FE1719FFE7C600491C22 /* QuartzCore.framework in Frameworks */,
 				5EB5FE1619FFE7BE00491C22 /* MessageUI.framework in Frameworks */,
-				5EB5FE1519FFE7B500491C22 /* ImageIO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +467,8 @@
 				5E83C03E19D7439700C883E1 /* News.swift */,
 				5E1BA79319EDBC7400F66539 /* Photo.swift */,
 				5EB6510E1A02BC3A00AB7257 /* Video.swift */,
+				5EE150681A100FE5008C9825 /* LabBuilding.swift */,
+				5EE1506A1A101001008C9825 /* LabRoom.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -393,6 +476,8 @@
 		5EA4C2C519D5EA0700E42732 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				5EE1506C1A102C9D008C9825 /* SMCalloutView */,
+				5EE150151A0FEBC8008C9825 /* MRProgress */,
 				5EB5FEA819FFF70300491C22 /* MWPhotoBrowser */,
 				5EB5FD7D19FFDF2600491C22 /* AsyncImageView */,
 				5E83BFE719D729BB00C883E1 /* XMLReader */,
@@ -413,13 +498,13 @@
 		5EA4C2C719D5EA2600E42732 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5EEB697519DF3FB5005619BA /* BandwidthViewController.swift */,
 				5EEB696319DF3CE1005619BA /* BlackboardViewController.swift */,
 				5EEB696719DF3F12005619BA /* BusViewController.swift */,
 				5EEB696D19DF3F39005619BA /* CorecViewController.swift */,
 				5EEB697319DF3F9A005619BA /* DirectoryViewController.swift */,
 				5EA4C2C319D5D36100E42732 /* GameViewController.swift */,
 				5EEB696B19DF3F30005619BA /* LabsViewController.swift */,
+				5EE150721A103E18008C9825 /* LabDetailsViewController.swift */,
 				5EEB697119DF3F8A005619BA /* LibraryViewController.swift */,
 				5EEB696919DF3F18005619BA /* MapViewController.swift */,
 				5EEB696F19DF3F54005619BA /* MenuViewController.swift */,
@@ -456,6 +541,18 @@
 		5EB5FE1419FFE7A800491C22 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5EE150131A0FE80A008C9825 /* SystemConfiguration.framework */,
+				5EE150111A0FE617008C9825 /* OpenGLES.framework */,
+				5EE1500F1A0FE609008C9825 /* libz.dylib */,
+				5EE1500D1A0FE600008C9825 /* libicucore.dylib */,
+				5EE1500B1A0FE5EF008C9825 /* libc++.dylib */,
+				5EE150091A0FE5D3008C9825 /* GLKit.framework */,
+				5EE150071A0FE5C9008C9825 /* CoreText.framework */,
+				5EE150051A0FE5C3008C9825 /* CoreData.framework */,
+				5EE150031A0FE5B8008C9825 /* CoreLocation.framework */,
+				5EE150011A0FE5B3008C9825 /* AVFoundation.framework */,
+				5EE14FFF1A0FE5A0008C9825 /* GoogleMaps.bundle */,
+				5EE14FFD1A0FE54F008C9825 /* GoogleMaps.framework */,
 				5EB5FF3A19FFF77000491C22 /* UIKit.framework */,
 				5EB5FE1219FFE7A400491C22 /* ImageIO.framework */,
 				5EB5FE1019FFE79F00491C22 /* AssetsLibrary.framework */,
@@ -614,6 +711,74 @@
 			path = PSTCollectionView;
 			sourceTree = "<group>";
 		};
+		5EE150151A0FEBC8008C9825 /* MRProgress */ = {
+			isa = PBXGroup;
+			children = (
+				5EE150161A0FEBC8008C9825 /* Blur */,
+				5EE1501B1A0FEBC8008C9825 /* Components */,
+				5EE1502B1A0FEBC8008C9825 /* MRProgress.h */,
+				5EE150341A0FEBC8008C9825 /* Utils */,
+			);
+			name = MRProgress;
+			path = src;
+			sourceTree = "<group>";
+		};
+		5EE150161A0FEBC8008C9825 /* Blur */ = {
+			isa = PBXGroup;
+			children = (
+				5EE150171A0FEBC8008C9825 /* MRBlurView.h */,
+				5EE150181A0FEBC8008C9825 /* MRBlurView.m */,
+				5EE150191A0FEBC8008C9825 /* UIImage+MRImageEffects.h */,
+				5EE1501A1A0FEBC8008C9825 /* UIImage+MRImageEffects.m */,
+			);
+			path = Blur;
+			sourceTree = "<group>";
+		};
+		5EE1501B1A0FEBC8008C9825 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1501C1A0FEBC8008C9825 /* MRActivityIndicatorView.h */,
+				5EE1501D1A0FEBC8008C9825 /* MRActivityIndicatorView.m */,
+				5EE1501E1A0FEBC8008C9825 /* MRCircularProgressView.h */,
+				5EE1501F1A0FEBC8008C9825 /* MRCircularProgressView.m */,
+				5EE150201A0FEBC8008C9825 /* MRIconView.h */,
+				5EE150211A0FEBC8008C9825 /* MRIconView.m */,
+				5EE150221A0FEBC8008C9825 /* MRNavigationBarProgressView.h */,
+				5EE150231A0FEBC8008C9825 /* MRNavigationBarProgressView.m */,
+				5EE150241A0FEBC8008C9825 /* MRProgressOverlayView.h */,
+				5EE150251A0FEBC8008C9825 /* MRProgressOverlayView.m */,
+				5EE150261A0FEBC8008C9825 /* MRProgressView.h */,
+				5EE150271A0FEBC8008C9825 /* MRProgressView.m */,
+				5EE150281A0FEBC8008C9825 /* MRStopableView.h */,
+				5EE150291A0FEBC8008C9825 /* MRStopButton.h */,
+				5EE1502A1A0FEBC8008C9825 /* MRStopButton.m */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		5EE150341A0FEBC8008C9825 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5EE150351A0FEBC8008C9825 /* MRMessageInterceptor.h */,
+				5EE150361A0FEBC8008C9825 /* MRMessageInterceptor.m */,
+				5EE150371A0FEBC8008C9825 /* MRMethodCopier.h */,
+				5EE150381A0FEBC8008C9825 /* MRMethodCopier.m */,
+				5EE150391A0FEBC8008C9825 /* MRProgressHelper.h */,
+				5EE1503A1A0FEBC8008C9825 /* MRWeakProxy.h */,
+				5EE1503B1A0FEBC8008C9825 /* MRWeakProxy.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		5EE1506C1A102C9D008C9825 /* SMCalloutView */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1506D1A102C9D008C9825 /* SMCalloutView.h */,
+				5EE1506E1A102C9D008C9825 /* SMCalloutView.m */,
+			);
+			path = SMCalloutView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -698,6 +863,7 @@
 				5EA4C2C019D505E900E42732 /* Localizable.strings in Resources */,
 				5E4B88FF19D07F9C00EEB9C3 /* LaunchScreen.xib in Resources */,
 				5EB5FF2419FFF70300491C22 /* LICENSE in Resources */,
+				5EE150001A0FE5A0008C9825 /* GoogleMaps.bundle in Resources */,
 				5E4B88E619D07E0A00EEB9C3 /* Images.xcassets in Resources */,
 				5EB5FF3619FFF70300491C22 /* MWPhotoBrowser.bundle in Resources */,
 			);
@@ -726,6 +892,7 @@
 				5E83C03F19D7439700C883E1 /* News.swift in Sources */,
 				5EB5FF1119FFF70300491C22 /* MWTapDetectingImageView.m in Sources */,
 				5E83BFE019D66D3E00C883E1 /* APIKeys.swift in Sources */,
+				5EE150421A0FEBC8008C9825 /* MRProgressOverlayView.m in Sources */,
 				5E4B891219D08B4E00EEB9C3 /* ECSlidingViewController.m in Sources */,
 				5EEB696219DF3BCC005619BA /* VideoViewController.swift in Sources */,
 				5EB5FF5B19FFF82200491C22 /* PSTCollectionViewCell.m in Sources */,
@@ -735,19 +902,25 @@
 				5EB5FF3119FFF70300491C22 /* UIImage+MultiFormat.m in Sources */,
 				5EEB696019DF3BBF005619BA /* PhotoViewController.swift in Sources */,
 				5EB5FD8019FFDF2600491C22 /* AsyncImageView.m in Sources */,
+				5EE1503F1A0FEBC8008C9825 /* MRCircularProgressView.m in Sources */,
+				5EE1503E1A0FEBC8008C9825 /* MRActivityIndicatorView.m in Sources */,
 				5EB5FF2719FFF70300491C22 /* NSData+ImageContentType.m in Sources */,
 				5EEB697219DF3F8B005619BA /* LibraryViewController.swift in Sources */,
 				5EEB697019DF3F54005619BA /* MenuViewController.swift in Sources */,
 				5EB5FF3519FFF70300491C22 /* UIView+WebCacheOperation.m in Sources */,
+				5EE1506F1A102C9D008C9825 /* SMCalloutView.m in Sources */,
 				5EB5FF2C19FFF70300491C22 /* SDWebImageDownloaderOperation.m in Sources */,
 				5EB5FF1519FFF70300491C22 /* MBProgressHUD.m in Sources */,
 				5EB5FF2B19FFF70300491C22 /* SDWebImageDownloader.m in Sources */,
 				5EEB696819DF3F12005619BA /* BusViewController.swift in Sources */,
+				5EE150431A0FEBC8008C9825 /* MRProgressView.m in Sources */,
+				5EE150441A0FEBC8008C9825 /* MRStopButton.m in Sources */,
+				5EE150491A0FEBC8008C9825 /* MRMethodCopier.m in Sources */,
 				5E4B891119D08B4E00EEB9C3 /* ECSlidingSegue.m in Sources */,
 				5EB5FF2819FFF70300491C22 /* SDImageCache.m in Sources */,
+				5EE1504A1A0FEBC8008C9825 /* MRWeakProxy.m in Sources */,
 				5EDAF99B1A06BF5800B954A9 /* VideoDetailViewController.swift in Sources */,
 				5EB5FF2619FFF70300491C22 /* MKAnnotationView+WebCache.m in Sources */,
-				5EEB697619DF3FB5005619BA /* BandwidthViewController.swift in Sources */,
 				5EB5FF2F19FFF70300491C22 /* UIButton+WebCache.m in Sources */,
 				5EEB696A19DF3F18005619BA /* MapViewController.swift in Sources */,
 				5EB6510B1A01B12000AB7257 /* StoreViewController.swift in Sources */,
@@ -756,6 +929,7 @@
 				5EEB696419DF3CE1005619BA /* BlackboardViewController.swift in Sources */,
 				5EDAF99D1A06C29800B954A9 /* DirectoryStudent.swift in Sources */,
 				5EEB696E19DF3F39005619BA /* CorecViewController.swift in Sources */,
+				5EE150481A0FEBC8008C9825 /* MRMessageInterceptor.m in Sources */,
 				5E76EFC119E6C74C0059930E /* WeatherHelper.swift in Sources */,
 				5E1BA79419EDBC7400F66539 /* Photo.swift in Sources */,
 				5EB6510F1A02BC3A00AB7257 /* Video.swift in Sources */,
@@ -764,10 +938,12 @@
 				5EB5FF6519FFF82200491C22 /* PSTGridLayoutSection.m in Sources */,
 				5E4B890E19D08B4E00EEB9C3 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				5E83BFEA19D729BB00C883E1 /* XMLReader.m in Sources */,
+				5EE1503D1A0FEBC8008C9825 /* UIImage+MRImageEffects.m in Sources */,
 				5EEB696619DF3EFC005619BA /* ScheduleViewController.swift in Sources */,
 				5E4B891319D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m in Sources */,
 				5EB5FF1019FFF70300491C22 /* MWPhotoBrowser.m in Sources */,
 				5EB6510D1A01D33600AB7257 /* NewsDetailViewController.swift in Sources */,
+				5EE1503C1A0FEBC8008C9825 /* MRBlurView.m in Sources */,
 				5EB5FF3419FFF70300491C22 /* UIImageView+WebCache.m in Sources */,
 				5EB5FF0D19FFF70300491C22 /* MWGridCell.m in Sources */,
 				5E4B891819D0903100EEB9C3 /* SideMenuViewController.swift in Sources */,
@@ -777,7 +953,9 @@
 				5EB5FF5E19FFF82200491C22 /* PSTCollectionViewFlowLayout.m in Sources */,
 				5EA4C2C419D5D36100E42732 /* GameViewController.swift in Sources */,
 				5EB5FF6019FFF82200491C22 /* PSTCollectionViewLayout.m in Sources */,
+				5EE150731A103E18008C9825 /* LabDetailsViewController.swift in Sources */,
 				5EB5FF1319FFF70300491C22 /* MWZoomingScrollView.m in Sources */,
+				5EE150411A0FEBC8008C9825 /* MRNavigationBarProgressView.m in Sources */,
 				5EB5FF6119FFF82200491C22 /* PSTCollectionViewUpdateItem.m in Sources */,
 				5EEB697419DF3F9A005619BA /* DirectoryViewController.swift in Sources */,
 				5E83BFE619D7292300C883E1 /* NewsViewController.swift in Sources */,
@@ -788,7 +966,10 @@
 				5EB5FF5C19FFF82200491C22 /* PSTCollectionViewController.m in Sources */,
 				5EB5FF2E19FFF70300491C22 /* SDWebImagePrefetcher.m in Sources */,
 				5EB5FF5F19FFF82200491C22 /* PSTCollectionViewItemKey.m in Sources */,
+				5EE150691A100FE5008C9825 /* LabBuilding.swift in Sources */,
+				5EE150401A0FEBC8008C9825 /* MRIconView.m in Sources */,
 				5EB5FF3219FFF70300491C22 /* UIImage+WebP.m in Sources */,
+				5EE1506B1A101001008C9825 /* LabRoom.swift in Sources */,
 				5E4B890F19D08B4E00EEB9C3 /* ECSlidingAnimationController.m in Sources */,
 				5EB5FF1219FFF70300491C22 /* MWTapDetectingView.m in Sources */,
 				5EB5FF5919FFF82200491C22 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
@@ -902,9 +1083,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Purdue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Purdue/PurdueApp-Bridging-Header.h";
@@ -921,9 +1107,14 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Purdue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Purdue/PurdueApp-Bridging-Header.h";
