@@ -44,6 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
         navigationController.viewControllers = [viewController]
         navigationController.view.backgroundColor = UIColor.whiteColor()
         navigationController.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont(name: "HelveticaNeue-Bold", size: CGFloat(25))!]
+        navigationController.view.layer.shadowOpacity = 0.95
+        navigationController.view.layer.shadowRadius = 20.0
+        navigationController.view.layer.shadowColor = UIColor.blackColor().CGColor
         return navigationController
     }
     
@@ -54,8 +57,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
         slidingViewController?.anchorTopViewToRightAnimated(true)
     }
     
+    func closeMenu() {
+        removeTopViewSnapshot()
+        slidingViewController?.resetTopViewAnimated(true)
+    }
+    
     func freezeStatusBarToTopView(topView: UIView) {
         topViewSnapshot = UIScreen.mainScreen().snapshotViewAfterScreenUpdates(true)
+        topViewSnapshot?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "closeMenu"))
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.None)
         topView.addSubview(topViewSnapshot!)
     }
@@ -108,8 +117,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
             slidingViewController?.topViewController = navigationController
             (slidingViewController?.topViewController as UINavigationController).viewControllers[0].navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: .Done, target: self, action: "showMenu")
             (slidingViewController?.topViewController as UINavigationController).viewControllers[0].navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
-            removeTopViewSnapshot()
-            slidingViewController?.resetTopViewAnimated(true)
+            closeMenu()
         }
     }
     
