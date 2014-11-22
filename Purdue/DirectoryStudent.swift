@@ -9,5 +9,8 @@
 import UIKit
 
 class DirectoryStudent: NSObject {
-   
+    var alias: NSString?
+    var name: NSString?
+    var school: NSString?
+    var email: NSString?
 }

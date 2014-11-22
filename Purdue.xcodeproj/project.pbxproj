@@ -25,6 +25,14 @@
 		5E83BFE619D7292300C883E1 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFE519D7292300C883E1 /* NewsViewController.swift */; };
 		5E83BFEA19D729BB00C883E1 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFE919D729BB00C883E1 /* XMLReader.m */; };
 		5E83C03F19D7439700C883E1 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83C03E19D7439700C883E1 /* News.swift */; };
+		5E8582161A210C59006E6539 /* DirectoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8582151A210C59006E6539 /* DirectoryDetailViewController.swift */; };
+		5E85823D1A2157E0006E6539 /* Folder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8582311A2157E0006E6539 /* Folder.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5E85823E1A2157E0006E6539 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8582331A2157E0006E6539 /* Message.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5E85823F1A2157E0006E6539 /* MessageLite.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8582351A2157E0006E6539 /* MessageLite.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5E8582401A2157E0006E6539 /* OWAParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8582371A2157E0006E6539 /* OWAParser.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5E8582411A2157E0006E6539 /* NSDictionary+UrlEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E85823A1A2157E0006E6539 /* NSDictionary+UrlEncoding.m */; };
+		5E8582421A2157E0006E6539 /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E85823C1A2157E0006E6539 /* XPathQuery.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		5E8582441A21589E006E6539 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E8582431A21589E006E6539 /* libxml2.dylib */; };
 		5EA4C2C019D505E900E42732 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5EA4C2BF19D505E900E42732 /* Localizable.strings */; };
 		5EA4C2C219D50E0600E42732 /* PUNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4C2C119D50E0600E42732 /* PUNavigationBar.swift */; };
 		5EA4C2C419D5D36100E42732 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4C2C319D5D36100E42732 /* GameViewController.swift */; };
@@ -117,7 +125,6 @@
 		5EEB696819DF3F12005619BA /* BusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696719DF3F12005619BA /* BusViewController.swift */; };
 		5EEB696A19DF3F18005619BA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696919DF3F18005619BA /* MapViewController.swift */; };
 		5EEB696C19DF3F30005619BA /* LabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696B19DF3F30005619BA /* LabsViewController.swift */; };
-		5EEB696E19DF3F39005619BA /* CorecViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696D19DF3F39005619BA /* CorecViewController.swift */; };
 		5EEB697019DF3F54005619BA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696F19DF3F54005619BA /* MenuViewController.swift */; };
 		5EEB697219DF3F8B005619BA /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB697119DF3F8A005619BA /* LibraryViewController.swift */; };
 		5EEB697419DF3F9A005619BA /* DirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB697319DF3F9A005619BA /* DirectoryViewController.swift */; };
@@ -165,6 +172,21 @@
 		5E83BFE819D729BB00C883E1 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
 		5E83BFE919D729BB00C883E1 /* XMLReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLReader.m; sourceTree = "<group>"; };
 		5E83C03E19D7439700C883E1 /* News.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		5E8582151A210C59006E6539 /* DirectoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryDetailViewController.swift; sourceTree = "<group>"; };
+		5E85822C1A21515D006E6539 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		5E8582301A2157E0006E6539 /* Folder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Folder.h; sourceTree = "<group>"; };
+		5E8582311A2157E0006E6539 /* Folder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Folder.m; sourceTree = "<group>"; };
+		5E8582321A2157E0006E6539 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		5E8582331A2157E0006E6539 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		5E8582341A2157E0006E6539 /* MessageLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageLite.h; sourceTree = "<group>"; };
+		5E8582351A2157E0006E6539 /* MessageLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageLite.m; sourceTree = "<group>"; };
+		5E8582361A2157E0006E6539 /* OWAParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OWAParser.h; sourceTree = "<group>"; };
+		5E8582371A2157E0006E6539 /* OWAParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OWAParser.m; sourceTree = "<group>"; };
+		5E8582391A2157E0006E6539 /* NSDictionary+UrlEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+UrlEncoding.h"; sourceTree = "<group>"; };
+		5E85823A1A2157E0006E6539 /* NSDictionary+UrlEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+UrlEncoding.m"; sourceTree = "<group>"; };
+		5E85823B1A2157E0006E6539 /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		5E85823C1A2157E0006E6539 /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		5E8582431A21589E006E6539 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		5EA4C2BF19D505E900E42732 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		5EA4C2C119D50E0600E42732 /* PUNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PUNavigationBar.swift; sourceTree = "<group>"; };
 		5EA4C2C319D5D36100E42732 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -319,7 +341,6 @@
 		5EEB696719DF3F12005619BA /* BusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusViewController.swift; sourceTree = "<group>"; };
 		5EEB696919DF3F18005619BA /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5EEB696B19DF3F30005619BA /* LabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsViewController.swift; sourceTree = "<group>"; };
-		5EEB696D19DF3F39005619BA /* CorecViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CorecViewController.swift; sourceTree = "<group>"; };
 		5EEB696F19DF3F54005619BA /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		5EEB697119DF3F8A005619BA /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		5EEB697319DF3F9A005619BA /* DirectoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryViewController.swift; sourceTree = "<group>"; };
@@ -330,6 +351,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E8582441A21589E006E6539 /* libxml2.dylib in Frameworks */,
 				5EE150141A0FE80A008C9825 /* SystemConfiguration.framework in Frameworks */,
 				5EB5FE1719FFE7C600491C22 /* QuartzCore.framework in Frameworks */,
 				5EE150121A0FE617008C9825 /* OpenGLES.framework in Frameworks */,
@@ -473,9 +495,45 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		5E85822E1A2157E0006E6539 /* OWAParser */ = {
+			isa = PBXGroup;
+			children = (
+				5E85822F1A2157E0006E6539 /* Entities */,
+				5E8582361A2157E0006E6539 /* OWAParser.h */,
+				5E8582371A2157E0006E6539 /* OWAParser.m */,
+				5E8582381A2157E0006E6539 /* Utilities */,
+			);
+			path = OWAParser;
+			sourceTree = "<group>";
+		};
+		5E85822F1A2157E0006E6539 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5E8582301A2157E0006E6539 /* Folder.h */,
+				5E8582311A2157E0006E6539 /* Folder.m */,
+				5E8582321A2157E0006E6539 /* Message.h */,
+				5E8582331A2157E0006E6539 /* Message.m */,
+				5E8582341A2157E0006E6539 /* MessageLite.h */,
+				5E8582351A2157E0006E6539 /* MessageLite.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		5E8582381A2157E0006E6539 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				5E8582391A2157E0006E6539 /* NSDictionary+UrlEncoding.h */,
+				5E85823A1A2157E0006E6539 /* NSDictionary+UrlEncoding.m */,
+				5E85823B1A2157E0006E6539 /* XPathQuery.h */,
+				5E85823C1A2157E0006E6539 /* XPathQuery.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		5EA4C2C519D5EA0700E42732 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				5E85822E1A2157E0006E6539 /* OWAParser */,
 				5EE1506C1A102C9D008C9825 /* SMCalloutView */,
 				5EE150151A0FEBC8008C9825 /* MRProgress */,
 				5EB5FEA819FFF70300491C22 /* MWPhotoBrowser */,
@@ -500,8 +558,8 @@
 			children = (
 				5EEB696319DF3CE1005619BA /* BlackboardViewController.swift */,
 				5EEB696719DF3F12005619BA /* BusViewController.swift */,
-				5EEB696D19DF3F39005619BA /* CorecViewController.swift */,
 				5EEB697319DF3F9A005619BA /* DirectoryViewController.swift */,
+				5E8582151A210C59006E6539 /* DirectoryDetailViewController.swift */,
 				5EA4C2C319D5D36100E42732 /* GameViewController.swift */,
 				5EEB696B19DF3F30005619BA /* LabsViewController.swift */,
 				5EE150721A103E18008C9825 /* LabDetailsViewController.swift */,
@@ -541,6 +599,8 @@
 		5EB5FE1419FFE7A800491C22 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5E8582431A21589E006E6539 /* libxml2.dylib */,
+				5E85822C1A21515D006E6539 /* libxml2.2.dylib */,
 				5EE150131A0FE80A008C9825 /* SystemConfiguration.framework */,
 				5EE150111A0FE617008C9825 /* OpenGLES.framework */,
 				5EE1500F1A0FE609008C9825 /* libz.dylib */,
@@ -886,6 +946,7 @@
 				5EB5FF6319FFF82200491C22 /* PSTGridLayoutItem.m in Sources */,
 				5E4B891019D08B4E00EEB9C3 /* ECSlidingInteractiveTransition.m in Sources */,
 				5EB5FF0E19FFF70300491C22 /* MWGridViewController.m in Sources */,
+				5E8582401A2157E0006E6539 /* OWAParser.m in Sources */,
 				5E4B88E119D07E0A00EEB9C3 /* WeatherViewController.swift in Sources */,
 				5EB5FF5D19FFF82200491C22 /* PSTCollectionViewData.m in Sources */,
 				5EB5FF3319FFF70300491C22 /* UIImageView+HighlightedWebCache.m in Sources */,
@@ -894,6 +955,7 @@
 				5E83BFE019D66D3E00C883E1 /* APIKeys.swift in Sources */,
 				5EE150421A0FEBC8008C9825 /* MRProgressOverlayView.m in Sources */,
 				5E4B891219D08B4E00EEB9C3 /* ECSlidingViewController.m in Sources */,
+				5E8582421A2157E0006E6539 /* XPathQuery.m in Sources */,
 				5EEB696219DF3BCC005619BA /* VideoViewController.swift in Sources */,
 				5EB5FF5B19FFF82200491C22 /* PSTCollectionViewCell.m in Sources */,
 				5EB5FF2919FFF70300491C22 /* SDWebImageCompat.m in Sources */,
@@ -907,6 +969,7 @@
 				5EB5FF2719FFF70300491C22 /* NSData+ImageContentType.m in Sources */,
 				5EEB697219DF3F8B005619BA /* LibraryViewController.swift in Sources */,
 				5EEB697019DF3F54005619BA /* MenuViewController.swift in Sources */,
+				5E8582161A210C59006E6539 /* DirectoryDetailViewController.swift in Sources */,
 				5EB5FF3519FFF70300491C22 /* UIView+WebCacheOperation.m in Sources */,
 				5EE1506F1A102C9D008C9825 /* SMCalloutView.m in Sources */,
 				5EB5FF2C19FFF70300491C22 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -928,7 +991,6 @@
 				5E4B88DF19D07E0A00EEB9C3 /* AppDelegate.swift in Sources */,
 				5EEB696419DF3CE1005619BA /* BlackboardViewController.swift in Sources */,
 				5EDAF99D1A06C29800B954A9 /* DirectoryStudent.swift in Sources */,
-				5EEB696E19DF3F39005619BA /* CorecViewController.swift in Sources */,
 				5EE150481A0FEBC8008C9825 /* MRMessageInterceptor.m in Sources */,
 				5E76EFC119E6C74C0059930E /* WeatherHelper.swift in Sources */,
 				5E1BA79419EDBC7400F66539 /* Photo.swift in Sources */,
@@ -954,12 +1016,16 @@
 				5EA4C2C419D5D36100E42732 /* GameViewController.swift in Sources */,
 				5EB5FF6019FFF82200491C22 /* PSTCollectionViewLayout.m in Sources */,
 				5EE150731A103E18008C9825 /* LabDetailsViewController.swift in Sources */,
+				5E85823F1A2157E0006E6539 /* MessageLite.m in Sources */,
+				5E85823D1A2157E0006E6539 /* Folder.m in Sources */,
 				5EB5FF1319FFF70300491C22 /* MWZoomingScrollView.m in Sources */,
 				5EE150411A0FEBC8008C9825 /* MRNavigationBarProgressView.m in Sources */,
 				5EB5FF6119FFF82200491C22 /* PSTCollectionViewUpdateItem.m in Sources */,
 				5EEB697419DF3F9A005619BA /* DirectoryViewController.swift in Sources */,
+				5E85823E1A2157E0006E6539 /* Message.m in Sources */,
 				5E83BFE619D7292300C883E1 /* NewsViewController.swift in Sources */,
 				5EB5FF2D19FFF70300491C22 /* SDWebImageManager.m in Sources */,
+				5E8582411A2157E0006E6539 /* NSDictionary+UrlEncoding.m in Sources */,
 				5EA4C2CA19D5ED2100E42732 /* SCLAlertView.swift in Sources */,
 				5EB5FF0F19FFF70300491C22 /* MWPhoto.m in Sources */,
 				5EB5FF5A19FFF82200491C22 /* PSTCollectionView.m in Sources */,
@@ -1087,6 +1153,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = Purdue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1110,6 +1181,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = Purdue/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

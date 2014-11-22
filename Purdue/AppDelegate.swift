@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
         
         GMSServices.provideAPIKey(APIKeys.GoogleMaps.rawValue)
         
-        let viewController = LabsViewController()
+        let viewController = DirectoryViewController()
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
         viewController.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
         let navigationController: UINavigationController = createNavController(viewController)
@@ -93,8 +93,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
                 navigationController = createNavController(MapViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("LABS", comment: "")) {
                 navigationController = createNavController(LabsViewController())
-            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("COREC", comment: "")) {
-                navigationController = createNavController(CorecViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("GAMES", comment: "")) {
                 navigationController = createNavController(GameViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("MENU", comment: "")) {
