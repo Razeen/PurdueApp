@@ -147,7 +147,6 @@ class WeatherViewController: UIViewController {
             let weatherDict: NSDictionary = NSJSONSerialization.JSONObjectWithData(weatherData, options: NSJSONReadingOptions.AllowFragments, error: &error) as NSDictionary
             let weatherCode: Int = (weatherDict["weather"] as NSArray)[0]["id"] as Int
             let iconURL: NSURL = WeatherHelper.getIconURL(weatherCode, dimension: 256)
-            NSLog("%@", iconURL.absoluteString!)
             var iconData: NSData? = NSData(contentsOfURL: iconURL, options: NSDataReadingOptions.DataReadingMappedIfSafe, error: &error)?
             if iconData != nil {
                 weatherImage.image = UIImage(data: iconData!)

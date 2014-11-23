@@ -164,7 +164,7 @@ class DirectoryViewController: UITableViewController, UISearchBarDelegate {
         return cell!
     }
     
-    override func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailVC = DirectoryDetailViewController()
         detailVC.alias = students[indexPath.row].alias
         tableView.deselectRowAtIndexPath(indexPath, animated: true)

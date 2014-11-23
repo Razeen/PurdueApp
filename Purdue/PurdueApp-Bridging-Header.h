@@ -14,4 +14,4 @@
 #import <GoogleMaps/GoogleMaps.h>
 #import "MRProgress.h"
 #import "SMCalloutView.h"
-#import "OWAParser.h"
+#import <MailCore/MailCore.h>
