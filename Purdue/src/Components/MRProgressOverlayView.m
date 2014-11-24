@@ -639,9 +639,9 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
 
 // Don't overwrite layoutSubviews here. This would cause issues with animation.
 - (void)manualLayoutSubviews {
-    if (!MRSystemVersionGreaterThanOrEqualTo8()) {
+    //if (!MRSystemVersionGreaterThanOrEqualTo8()) {
         self.transform = self.transformForOrientation;
-    }
+    //}
     
     CGRect bounds = self.superview.bounds;
     UIEdgeInsets insets = UIEdgeInsetsZero;
@@ -654,16 +654,16 @@ static void *MRProgressOverlayViewObservationContext = &MRProgressOverlayViewObs
     self.center = CGPointMake((bounds.size.width - insets.left - insets.right) / 2.0f,
                               (bounds.size.height - insets.top - insets.bottom) / 2.0f);
 
-    if (MRSystemVersionGreaterThanOrEqualTo8()) {
+    //if (MRSystemVersionGreaterThanOrEqualTo8()) {
         self.bounds = (CGRect){CGPointZero, bounds.size};
-    } else {
+    //} else {
         if ([self.superview isKindOfClass:UIWindow.class] && UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication.statusBarOrientation)) {
             // Swap width and height
             self.bounds = (CGRect){CGPointZero, {bounds.size.height, bounds.size.width}};
         } else {
             self.bounds = (CGRect){CGPointZero, bounds.size};
         }
-    }
+    //}
     
     const CGFloat dialogPadding = 15;
     const CGFloat modePadding = 30;
