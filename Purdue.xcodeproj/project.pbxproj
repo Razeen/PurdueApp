@@ -8,9 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5E1BA79419EDBC7400F66539 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1BA79319EDBC7400F66539 /* Photo.swift */; };
-		5E48FD5D1A216F1A004FE8B7 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E48FD501A216EC7004FE8B7 /* libMailCore-ios.a */; };
 		5E48FD5F1A216F31004FE8B7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E48FD5E1A216F31004FE8B7 /* CFNetwork.framework */; };
 		5E48FD611A216F37004FE8B7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E48FD601A216F37004FE8B7 /* Security.framework */; };
+		5E48FD641A217649004FE8B7 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E48FD631A217649004FE8B7 /* KeychainWrapper.swift */; };
+		5E48FD661A21767A004FE8B7 /* AccountUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E48FD651A21767A004FE8B7 /* AccountUtils.swift */; };
+		5E48FD681A217801004FE8B7 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E48FD671A217801004FE8B7 /* SignInViewController.swift */; };
+		5E48FD6C1A21826A004FE8B7 /* FXBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E48FD6B1A21826A004FE8B7 /* FXBlurView.m */; };
+		5E48FD801A21A8FB004FE8B7 /* UIViewController+CWPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E48FD7F1A21A8FB004FE8B7 /* UIViewController+CWPopup.m */; };
+		5E48FD9B1A21A995004FE8B7 /* libMailCore-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E48FD8E1A21A982004FE8B7 /* libMailCore-ios.a */; };
 		5E4B88DF19D07E0A00EEB9C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B88DE19D07E0A00EEB9C3 /* AppDelegate.swift */; };
 		5E4B88E119D07E0A00EEB9C3 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B88E019D07E0A00EEB9C3 /* WeatherViewController.swift */; };
 		5E4B88E619D07E0A00EEB9C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B88E519D07E0A00EEB9C3 /* Images.xcassets */; };
@@ -23,7 +28,7 @@
 		5E4B891219D08B4E00EEB9C3 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B890B19D08B4E00EEB9C3 /* ECSlidingViewController.m */; };
 		5E4B891319D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B890D19D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m */; };
 		5E4B891819D0903100EEB9C3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B891719D0903100EEB9C3 /* SideMenuViewController.swift */; };
-		5E76EFC119E6C74C0059930E /* WeatherHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76EFC019E6C74C0059930E /* WeatherHelper.swift */; };
+		5E76EFC119E6C74C0059930E /* WeatherUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76EFC019E6C74C0059930E /* WeatherUtils.swift */; };
 		5E83BFE019D66D3E00C883E1 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFDF19D66D3E00C883E1 /* APIKeys.swift */; };
 		5E83BFE619D7292300C883E1 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFE519D7292300C883E1 /* NewsViewController.swift */; };
 		5E83BFEA19D729BB00C883E1 /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFE919D729BB00C883E1 /* XMLReader.m */; };
@@ -33,6 +38,10 @@
 		5EA4C2C219D50E0600E42732 /* PUNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4C2C119D50E0600E42732 /* PUNavigationBar.swift */; };
 		5EA4C2C419D5D36100E42732 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4C2C319D5D36100E42732 /* GameViewController.swift */; };
 		5EA4C2CA19D5ED2100E42732 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4C2C919D5ED2100E42732 /* SCLAlertView.swift */; };
+		5EA8414C1A2396D8009A4A9F /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA841451A2396D8009A4A9F /* BButton.m */; };
+		5EA8414D1A2396D8009A4A9F /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA841471A2396D8009A4A9F /* NSString+FontAwesome.m */; };
+		5EA8414E1A2396D8009A4A9F /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA841491A2396D8009A4A9F /* UIColor+BButton.m */; };
+		5EA8414F1A2396D8009A4A9F /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EA8414B1A2396D8009A4A9F /* FontAwesome.ttf */; };
 		5EB5FD8019FFDF2600491C22 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FD7F19FFDF2600491C22 /* AsyncImageView.m */; };
 		5EB5FE1519FFE7B500491C22 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB5FE1219FFE7A400491C22 /* ImageIO.framework */; };
 		5EB5FE1619FFE7BE00491C22 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB5FE0C19FFE79200491C22 /* MessageUI.framework */; };
@@ -127,58 +136,58 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5E48FD4D1A216EC7004FE8B7 /* PBXContainerItemProxy */ = {
+		5E48FD8B1A21A982004FE8B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5E48FD431A216EC6004FE8B7 /* mailcore2.xcodeproj */;
+			containerPortal = 5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C64EA537169E772200778456;
 			remoteInfo = "static mailcore2 osx";
 		};
-		5E48FD4F1A216EC7004FE8B7 /* PBXContainerItemProxy */ = {
+		5E48FD8D1A21A982004FE8B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5E48FD431A216EC6004FE8B7 /* mailcore2.xcodeproj */;
+			containerPortal = 5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C6BA2C191705F4E6003F0E9E;
 			remoteInfo = "static mailcore2 ios";
 		};
-		5E48FD511A216EC7004FE8B7 /* PBXContainerItemProxy */ = {
+		5E48FD8F1A21A982004FE8B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5E48FD431A216EC6004FE8B7 /* mailcore2.xcodeproj */;
+			containerPortal = 5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C64EA78C169F259200778456;
 			remoteInfo = tests;
 		};
-		5E48FD531A216EC7004FE8B7 /* PBXContainerItemProxy */ = {
+		5E48FD911A21A982004FE8B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5E48FD431A216EC6004FE8B7 /* mailcore2.xcodeproj */;
+			containerPortal = 5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C6A81B911706840C00882C15;
 			remoteInfo = "test-ios";
 		};
-		5E48FD551A216EC7004FE8B7 /* PBXContainerItemProxy */ = {
+		5E48FD931A21A982004FE8B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5E48FD431A216EC6004FE8B7 /* mailcore2.xcodeproj */;
+			containerPortal = 5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C6BD288D170BD71100A91AC1;
 			remoteInfo = "mailcore osx";
 		};
-		5E48FD571A216EC7004FE8B7 /* PBXContainerItemProxy */ = {
+		5E48FD951A21A982004FE8B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5E48FD431A216EC6004FE8B7 /* mailcore2.xcodeproj */;
+			containerPortal = 5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 27780C3A19CF9CD100C77E44;
 			remoteInfo = "mailcore ios";
 		};
-		5E48FD591A216EC7004FE8B7 /* PBXContainerItemProxy */ = {
+		5E48FD971A21A982004FE8B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5E48FD431A216EC6004FE8B7 /* mailcore2.xcodeproj */;
+			containerPortal = 5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = C6B5AE0219F630B3001352A6;
 			remoteInfo = unittest;
 		};
-		5E48FD5B1A216F0B004FE8B7 /* PBXContainerItemProxy */ = {
+		5E48FD991A21A98E004FE8B7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5E48FD431A216EC6004FE8B7 /* mailcore2.xcodeproj */;
+			containerPortal = 5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = C6BA2B091705F4E6003F0E9E;
 			remoteInfo = "static mailcore2 ios";
@@ -194,9 +203,16 @@
 
 /* Begin PBXFileReference section */
 		5E1BA79319EDBC7400F66539 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		5E48FD431A216EC6004FE8B7 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "../../../../Downloads/mailcore2-master/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
 		5E48FD5E1A216F31004FE8B7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5E48FD601A216F37004FE8B7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		5E48FD631A217649004FE8B7 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		5E48FD651A21767A004FE8B7 /* AccountUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountUtils.swift; sourceTree = "<group>"; };
+		5E48FD671A217801004FE8B7 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5E48FD6A1A21826A004FE8B7 /* FXBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FXBlurView.h; sourceTree = "<group>"; };
+		5E48FD6B1A21826A004FE8B7 /* FXBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FXBlurView.m; sourceTree = "<group>"; };
+		5E48FD7E1A21A8FB004FE8B7 /* UIViewController+CWPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+CWPopup.h"; sourceTree = "<group>"; };
+		5E48FD7F1A21A8FB004FE8B7 /* UIViewController+CWPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+CWPopup.m"; sourceTree = "<group>"; };
+		5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mailcore2.xcodeproj; path = "mailcore2/build-mac/mailcore2.xcodeproj"; sourceTree = "<group>"; };
 		5E4B88D919D07E0A00EEB9C3 /* Purdue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Purdue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4B88DD19D07E0A00EEB9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E4B88DE19D07E0A00EEB9C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -221,7 +237,7 @@
 		5E4B890D19D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
 		5E4B891619D08CE400EEB9C3 /* PurdueApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PurdueApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		5E4B891719D0903100EEB9C3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
-		5E76EFC019E6C74C0059930E /* WeatherHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHelper.swift; sourceTree = "<group>"; };
+		5E76EFC019E6C74C0059930E /* WeatherUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherUtils.swift; sourceTree = "<group>"; };
 		5E83BFDF19D66D3E00C883E1 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		5E83BFE519D7292300C883E1 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		5E83BFE819D729BB00C883E1 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
@@ -232,6 +248,13 @@
 		5EA4C2C119D50E0600E42732 /* PUNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PUNavigationBar.swift; sourceTree = "<group>"; };
 		5EA4C2C319D5D36100E42732 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		5EA4C2C919D5ED2100E42732 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
+		5EA841441A2396D8009A4A9F /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BButton.h; sourceTree = "<group>"; };
+		5EA841451A2396D8009A4A9F /* BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BButton.m; sourceTree = "<group>"; };
+		5EA841461A2396D8009A4A9F /* NSString+FontAwesome.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FontAwesome.h"; sourceTree = "<group>"; };
+		5EA841471A2396D8009A4A9F /* NSString+FontAwesome.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FontAwesome.m"; sourceTree = "<group>"; };
+		5EA841481A2396D8009A4A9F /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
+		5EA841491A2396D8009A4A9F /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
+		5EA8414B1A2396D8009A4A9F /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		5EB5FD7E19FFDF2600491C22 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		5EB5FD7F19FFDF2600491C22 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		5EB5FE0C19FFE79200491C22 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -392,9 +415,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E48FD9B1A21A995004FE8B7 /* libMailCore-ios.a in Frameworks */,
 				5E48FD611A216F37004FE8B7 /* Security.framework in Frameworks */,
 				5E48FD5F1A216F31004FE8B7 /* CFNetwork.framework in Frameworks */,
-				5E48FD5D1A216F1A004FE8B7 /* libMailCore-ios.a in Frameworks */,
 				5EE150141A0FE80A008C9825 /* SystemConfiguration.framework in Frameworks */,
 				5EB5FE1719FFE7C600491C22 /* QuartzCore.framework in Frameworks */,
 				5EE150121A0FE617008C9825 /* OpenGLES.framework in Frameworks */,
@@ -424,16 +447,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5E48FD441A216EC6004FE8B7 /* Products */ = {
+		5E48FD621A217649004FE8B7 /* KeychainWrapper */ = {
 			isa = PBXGroup;
 			children = (
-				5E48FD4E1A216EC7004FE8B7 /* libMailCore.a */,
-				5E48FD501A216EC7004FE8B7 /* libMailCore-ios.a */,
-				5E48FD521A216EC7004FE8B7 /* tests */,
-				5E48FD541A216EC7004FE8B7 /* test-ios.app */,
-				5E48FD561A216EC7004FE8B7 /* MailCore.framework */,
-				5E48FD581A216EC7004FE8B7 /* MailCore.framework */,
-				5E48FD5A1A216EC7004FE8B7 /* unittest.xctest */,
+				5E48FD631A217649004FE8B7 /* KeychainWrapper.swift */,
+			);
+			path = KeychainWrapper;
+			sourceTree = "<group>";
+		};
+		5E48FD691A21826A004FE8B7 /* FXBlurView */ = {
+			isa = PBXGroup;
+			children = (
+				5E48FD6A1A21826A004FE8B7 /* FXBlurView.h */,
+				5E48FD6B1A21826A004FE8B7 /* FXBlurView.m */,
+			);
+			path = FXBlurView;
+			sourceTree = "<group>";
+		};
+		5E48FD7D1A21A8FB004FE8B7 /* CWPopup */ = {
+			isa = PBXGroup;
+			children = (
+				5E48FD7E1A21A8FB004FE8B7 /* UIViewController+CWPopup.h */,
+				5E48FD7F1A21A8FB004FE8B7 /* UIViewController+CWPopup.m */,
+			);
+			path = CWPopup;
+			sourceTree = "<group>";
+		};
+		5E48FD821A21A981004FE8B7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5E48FD8C1A21A982004FE8B7 /* libMailCore.a */,
+				5E48FD8E1A21A982004FE8B7 /* libMailCore-ios.a */,
+				5E48FD901A21A982004FE8B7 /* tests */,
+				5E48FD921A21A982004FE8B7 /* test-ios.app */,
+				5E48FD941A21A982004FE8B7 /* MailCore.framework */,
+				5E48FD961A21A982004FE8B7 /* MailCore.framework */,
+				5E48FD981A21A982004FE8B7 /* unittest.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -525,7 +574,9 @@
 		5E76EFC219E6C7510059930E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				5E76EFC019E6C74C0059930E /* WeatherHelper.swift */,
+				5E48FD651A21767A004FE8B7 /* AccountUtils.swift */,
+				5E48FD671A217801004FE8B7 /* SignInViewController.swift */,
+				5E76EFC019E6C74C0059930E /* WeatherUtils.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -555,7 +606,11 @@
 		5EA4C2C519D5EA0700E42732 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				5E48FD431A216EC6004FE8B7 /* mailcore2.xcodeproj */,
+				5EA841421A2396D8009A4A9F /* BButton */,
+				5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */,
+				5E48FD7D1A21A8FB004FE8B7 /* CWPopup */,
+				5E48FD691A21826A004FE8B7 /* FXBlurView */,
+				5E48FD621A217649004FE8B7 /* KeychainWrapper */,
 				5EE1506C1A102C9D008C9825 /* SMCalloutView */,
 				5EE150151A0FEBC8008C9825 /* MRProgress */,
 				5EB5FEA819FFF70300491C22 /* MWPhotoBrowser */,
@@ -607,6 +662,36 @@
 				5EA4C2C919D5ED2100E42732 /* SCLAlertView.swift */,
 			);
 			path = SCLAlertView;
+			sourceTree = "<group>";
+		};
+		5EA841421A2396D8009A4A9F /* BButton */ = {
+			isa = PBXGroup;
+			children = (
+				5EA841431A2396D8009A4A9F /* Classes */,
+				5EA8414A1A2396D8009A4A9F /* resources */,
+			);
+			path = BButton;
+			sourceTree = "<group>";
+		};
+		5EA841431A2396D8009A4A9F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				5EA841441A2396D8009A4A9F /* BButton.h */,
+				5EA841451A2396D8009A4A9F /* BButton.m */,
+				5EA841461A2396D8009A4A9F /* NSString+FontAwesome.h */,
+				5EA841471A2396D8009A4A9F /* NSString+FontAwesome.m */,
+				5EA841481A2396D8009A4A9F /* UIColor+BButton.h */,
+				5EA841491A2396D8009A4A9F /* UIColor+BButton.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		5EA8414A1A2396D8009A4A9F /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				5EA8414B1A2396D8009A4A9F /* FontAwesome.ttf */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 		5EB5FD7D19FFDF2600491C22 /* AsyncImageView */ = {
@@ -875,7 +960,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				5E48FD5C1A216F0B004FE8B7 /* PBXTargetDependency */,
+				5E48FD9A1A21A98E004FE8B7 /* PBXTargetDependency */,
 			);
 			name = Purdue;
 			productName = Purdue;
@@ -932,8 +1017,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 5E48FD441A216EC6004FE8B7 /* Products */;
-					ProjectRef = 5E48FD431A216EC6004FE8B7 /* mailcore2.xcodeproj */;
+					ProductGroup = 5E48FD821A21A981004FE8B7 /* Products */;
+					ProjectRef = 5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -945,53 +1030,53 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5E48FD4E1A216EC7004FE8B7 /* libMailCore.a */ = {
+		5E48FD8C1A21A982004FE8B7 /* libMailCore.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libMailCore.a;
-			remoteRef = 5E48FD4D1A216EC7004FE8B7 /* PBXContainerItemProxy */;
+			remoteRef = 5E48FD8B1A21A982004FE8B7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5E48FD501A216EC7004FE8B7 /* libMailCore-ios.a */ = {
+		5E48FD8E1A21A982004FE8B7 /* libMailCore-ios.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = "libMailCore-ios.a";
-			remoteRef = 5E48FD4F1A216EC7004FE8B7 /* PBXContainerItemProxy */;
+			remoteRef = 5E48FD8D1A21A982004FE8B7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5E48FD521A216EC7004FE8B7 /* tests */ = {
+		5E48FD901A21A982004FE8B7 /* tests */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
 			path = tests;
-			remoteRef = 5E48FD511A216EC7004FE8B7 /* PBXContainerItemProxy */;
+			remoteRef = 5E48FD8F1A21A982004FE8B7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5E48FD541A216EC7004FE8B7 /* test-ios.app */ = {
+		5E48FD921A21A982004FE8B7 /* test-ios.app */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.application;
 			path = "test-ios.app";
-			remoteRef = 5E48FD531A216EC7004FE8B7 /* PBXContainerItemProxy */;
+			remoteRef = 5E48FD911A21A982004FE8B7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5E48FD561A216EC7004FE8B7 /* MailCore.framework */ = {
+		5E48FD941A21A982004FE8B7 /* MailCore.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = MailCore.framework;
-			remoteRef = 5E48FD551A216EC7004FE8B7 /* PBXContainerItemProxy */;
+			remoteRef = 5E48FD931A21A982004FE8B7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5E48FD581A216EC7004FE8B7 /* MailCore.framework */ = {
+		5E48FD961A21A982004FE8B7 /* MailCore.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = MailCore.framework;
-			remoteRef = 5E48FD571A216EC7004FE8B7 /* PBXContainerItemProxy */;
+			remoteRef = 5E48FD951A21A982004FE8B7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		5E48FD5A1A216EC7004FE8B7 /* unittest.xctest */ = {
+		5E48FD981A21A982004FE8B7 /* unittest.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = unittest.xctest;
-			remoteRef = 5E48FD591A216EC7004FE8B7 /* PBXContainerItemProxy */;
+			remoteRef = 5E48FD971A21A982004FE8B7 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -1002,6 +1087,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EA4C2C019D505E900E42732 /* Localizable.strings in Resources */,
+				5EA8414F1A2396D8009A4A9F /* FontAwesome.ttf in Resources */,
 				5E4B88FF19D07F9C00EEB9C3 /* LaunchScreen.xib in Resources */,
 				5EB5FF2419FFF70300491C22 /* LICENSE in Resources */,
 				5EE150001A0FE5A0008C9825 /* GoogleMaps.bundle in Resources */,
@@ -1026,6 +1112,7 @@
 			files = (
 				5EB5FF6319FFF82200491C22 /* PSTGridLayoutItem.m in Sources */,
 				5E4B891019D08B4E00EEB9C3 /* ECSlidingInteractiveTransition.m in Sources */,
+				5E48FD6C1A21826A004FE8B7 /* FXBlurView.m in Sources */,
 				5EB5FF0E19FFF70300491C22 /* MWGridViewController.m in Sources */,
 				5E4B88E119D07E0A00EEB9C3 /* WeatherViewController.swift in Sources */,
 				5EB5FF5D19FFF82200491C22 /* PSTCollectionViewData.m in Sources */,
@@ -1059,6 +1146,7 @@
 				5EE150441A0FEBC8008C9825 /* MRStopButton.m in Sources */,
 				5EE150491A0FEBC8008C9825 /* MRMethodCopier.m in Sources */,
 				5E4B891119D08B4E00EEB9C3 /* ECSlidingSegue.m in Sources */,
+				5EA8414E1A2396D8009A4A9F /* UIColor+BButton.m in Sources */,
 				5EB5FF2819FFF70300491C22 /* SDImageCache.m in Sources */,
 				5EE1504A1A0FEBC8008C9825 /* MRWeakProxy.m in Sources */,
 				5EDAF99B1A06BF5800B954A9 /* VideoDetailViewController.swift in Sources */,
@@ -1069,15 +1157,17 @@
 				5EB5FF1419FFF70300491C22 /* DACircularProgressView.m in Sources */,
 				5E4B88DF19D07E0A00EEB9C3 /* AppDelegate.swift in Sources */,
 				5EEB696419DF3CE1005619BA /* BlackboardViewController.swift in Sources */,
+				5E48FD641A217649004FE8B7 /* KeychainWrapper.swift in Sources */,
 				5EDAF99D1A06C29800B954A9 /* DirectoryStudent.swift in Sources */,
 				5EE150481A0FEBC8008C9825 /* MRMessageInterceptor.m in Sources */,
-				5E76EFC119E6C74C0059930E /* WeatherHelper.swift in Sources */,
+				5E76EFC119E6C74C0059930E /* WeatherUtils.swift in Sources */,
 				5E1BA79419EDBC7400F66539 /* Photo.swift in Sources */,
 				5EB6510F1A02BC3A00AB7257 /* Video.swift in Sources */,
 				5EEB696C19DF3F30005619BA /* LabsViewController.swift in Sources */,
 				5EB5FF6419FFF82200491C22 /* PSTGridLayoutRow.m in Sources */,
 				5EB5FF6519FFF82200491C22 /* PSTGridLayoutSection.m in Sources */,
 				5E4B890E19D08B4E00EEB9C3 /* ECPercentDrivenInteractiveTransition.m in Sources */,
+				5EA8414D1A2396D8009A4A9F /* NSString+FontAwesome.m in Sources */,
 				5E83BFEA19D729BB00C883E1 /* XMLReader.m in Sources */,
 				5EE1503D1A0FEBC8008C9825 /* UIImage+MRImageEffects.m in Sources */,
 				5EEB696619DF3EFC005619BA /* ScheduleViewController.swift in Sources */,
@@ -1097,13 +1187,17 @@
 				5EE150731A103E18008C9825 /* LabDetailsViewController.swift in Sources */,
 				5EB5FF1319FFF70300491C22 /* MWZoomingScrollView.m in Sources */,
 				5EE150411A0FEBC8008C9825 /* MRNavigationBarProgressView.m in Sources */,
+				5E48FD801A21A8FB004FE8B7 /* UIViewController+CWPopup.m in Sources */,
 				5EB5FF6119FFF82200491C22 /* PSTCollectionViewUpdateItem.m in Sources */,
+				5EA8414C1A2396D8009A4A9F /* BButton.m in Sources */,
 				5EEB697419DF3F9A005619BA /* DirectoryViewController.swift in Sources */,
 				5E83BFE619D7292300C883E1 /* NewsViewController.swift in Sources */,
 				5EB5FF2D19FFF70300491C22 /* SDWebImageManager.m in Sources */,
 				5EA4C2CA19D5ED2100E42732 /* SCLAlertView.swift in Sources */,
 				5EB5FF0F19FFF70300491C22 /* MWPhoto.m in Sources */,
+				5E48FD661A21767A004FE8B7 /* AccountUtils.swift in Sources */,
 				5EB5FF5A19FFF82200491C22 /* PSTCollectionView.m in Sources */,
+				5E48FD681A217801004FE8B7 /* SignInViewController.swift in Sources */,
 				5EB5FF5C19FFF82200491C22 /* PSTCollectionViewController.m in Sources */,
 				5EB5FF2E19FFF70300491C22 /* SDWebImagePrefetcher.m in Sources */,
 				5EB5FF5F19FFF82200491C22 /* PSTCollectionViewItemKey.m in Sources */,
@@ -1129,10 +1223,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5E48FD5C1A216F0B004FE8B7 /* PBXTargetDependency */ = {
+		5E48FD9A1A21A98E004FE8B7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "static mailcore2 ios";
-			targetProxy = 5E48FD5B1A216F0B004FE8B7 /* PBXContainerItemProxy */;
+			targetProxy = 5E48FD991A21A98E004FE8B7 /* PBXContainerItemProxy */;
 		};
 		5E4B88F019D07E0A00EEB9C3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

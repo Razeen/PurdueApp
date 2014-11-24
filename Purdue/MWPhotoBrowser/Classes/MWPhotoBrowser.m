@@ -1623,8 +1623,8 @@
 
 - (void)actuallyCopyPhoto:(id<MWPhoto>)photo {
     if ([photo underlyingImage]) {
-        [[UIPasteboard generalPasteboard] setData:UIImagePNGRepresentation([photo underlyingImage])
-                                forPasteboardType:@"public.png"];
+        //[[UIPasteboard generalPasteboard] setData:UIImagePNGRepresentation([photo underlyingImage]) forPasteboardType:@"public.png"];
+        
         [self showProgressHUDCompleteMessage:NSLocalizedString(@"Copied", @"Informing the user an item has finished copying")];
         [self hideControlsAfterDelay]; // Continue as normal...
     }
