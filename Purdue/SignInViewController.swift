@@ -11,9 +11,10 @@ import UIKit
 class SignInViewController: UIViewController, UITextFieldDelegate {
     
     var signInBtn: UIButton?
-    var username: String?
-    var password: String?
     var originalY: CGFloat = -1
+    
+    var userTF: UITextField?
+    var passTF: UITextField?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,31 +47,51 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         let tfwidth = baseView.frame.width - 30
         let tfheight = CGFloat(44)
-        let userTF = self.makeTF(CGRectMake((baseView.frame.width - tfwidth) / 2, baseView.frame.height * 0.575, tfwidth, 44), tag: 0, delegate: self, placeholder: "Username", imageName: "Username")
-        let passTF = self.makeTF(CGRectMake((baseView.frame.width - tfwidth) / 2, baseView.frame.height * 0.7, tfwidth, 44), tag: 1, delegate: self, placeholder: "Password", imageName: "Password")
-        passTF.secureTextEntry = true
-        blackOverlay.addSubview(userTF)
-        blackOverlay.addSubview(passTF)
+        userTF = self.makeTF(CGRectMake((baseView.frame.width - tfwidth) / 2, baseView.frame.height * 0.575, tfwidth, 44), tag: 0, delegate: self, placeholder: "Username", imageName: "Username")
+        passTF = self.makeTF(CGRectMake((baseView.frame.width - tfwidth) / 2, baseView.frame.height * 0.7, tfwidth, 44), tag: 1, delegate: self, placeholder: "Password", imageName: "Password")
+        passTF!.secureTextEntry = true
+        blackOverlay.addSubview(userTF!)
+        blackOverlay.addSubview(passTF!)
         
         signInBtn = self.makeBT(CGRectMake((baseView.frame.width - tfwidth) / 2, baseView.frame.height * 0.85, tfwidth, 44), title: "SIGN IN")
         signInBtn!.addTarget(self, action: "signIn", forControlEvents: UIControlEvents.TouchUpInside)
         blackOverlay.addSubview(self.signInBtn!)
-        /**/
+    }
+    
+    func signIn() {
+        userTF?.resignFirstResponder()
+        passTF?.resignFirstResponder()
         
-        /*
+        if self.originalY != -1 {
+            UIView.animateWithDuration(0.3, animations: {
+                self.view.frame = CGRectMake(self.view.frame.origin.x, self.originalY, self.view.frame.size.width, self.view.frame.size.height)
+            })
+        }
         
-        
-        let session = MCOIMAPSession()
-        session.hostname = "mymail.purdue.edu"
-        session.port = 993
-        session.connectionType = MCOConnectionType.TLS
-        session.fetchAllFoldersOperation().start( { (err: NSError!, folders: [AnyObject]!) in
-            if err != nil {
-                println("Error: \(err)")
-            } else {
-                println("Folders: \(folders)")
-            }
-        })*/
+        if userTF?.text.utf16Count <= 0 {
+            SCLAlertView().showWarning((UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!, title: "Error", subTitle: "Username cannot be blank")
+        } else if passTF?.text.utf16Count <= 0 {
+            SCLAlertView().showWarning((UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!, title: "Error", subTitle: "Password cannot be blank")
+        } else {
+            let session = MCOIMAPSession()
+            session.hostname = "mymail.purdue.edu"
+            session.username = userTF!.text
+            session.password = passTF!.text
+            session.port = 993 // MyMail TLS Protocol port
+            session.connectionType = MCOConnectionType.TLS
+            // TODO: Need to use a faster operation
+            session.fetchAllFoldersOperation().start( { (err: NSError!, folders: [AnyObject]!) in
+                if err == nil {
+                    (UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!.dismissPopupViewControllerAnimated(true, completion: {
+                        AccountUtils.setUsername(self.userTF!.text)
+                        AccountUtils.setPassword(self.passTF!.text)
+                        NSNotificationCenter.defaultCenter().postNotificationName("signInSuccess", object: self)
+                    })
+                } else {
+                    SCLAlertView().showError((UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!, title: "Sorry", subTitle: "Username/Password pair not found")
+                }
+            })
+        }
     }
     
     func makeBT(rect: CGRect, title: NSString) -> UIButton {
@@ -115,14 +136,6 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         UIView.animateWithDuration(0.3, animations: {
             self.view.frame = CGRectMake(self.view.frame.origin.x, -210, self.view.frame.size.width, self.view.frame.size.height)
         })
-    }
-    
-    func textFieldDidEndEditing(textField: UITextField) {
-        if textField.tag == 0 {
-            username = textField.text
-        } else {
-            password = textField.text
-        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

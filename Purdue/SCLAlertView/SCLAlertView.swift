@@ -350,7 +350,8 @@ class SCLAlertView: UIViewController {
 		for btn in buttons {
 			btn.backgroundColor = viewColor
 			if style == SCLAlertViewStyle.Warning {
-				btn.setTitleColor(UIColor.blackColor(), forState:UIControlState.Normal)
+				//btn.setTitleColor(UIColor.blackColor(), forState:UIControlState.Normal)
+                btn.setTitleColor(UIColor.whiteColor(), forState:UIControlState.Normal)
 			}
 		}
 		
@@ -506,7 +507,8 @@ class SCLAlertViewStyleKit : NSObject {
     
     class func drawWarning() {
         //// Color Declarations
-        let greyColor = UIColor(red: 0.236, green: 0.236, blue: 0.236, alpha: 1.000)
+        //let greyColor = UIColor(red: 0.236, green: 0.236, blue: 0.236, alpha: 1.000)
+        let greyColor = UIColor.whiteColor()
         
         //// Warning Group
         //// Warning Circle Drawing
