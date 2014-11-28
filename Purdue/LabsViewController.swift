@@ -139,14 +139,10 @@ class LabsViewController: UIViewController, GMSMapViewDelegate {
             let detailVC = LabDetailsViewController()
             detailVC.rooms = rooms
             detailVC.navigationItem.title = building.name
-            detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self, action: "goBack")
+            detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
             detailVC.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
             self.navigationController?.pushViewController(detailVC, animated: true)
         }
-    }
-    
-    func goBack() {
-        self.navigationController?.popViewControllerAnimated(true)
     }
     
     func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {

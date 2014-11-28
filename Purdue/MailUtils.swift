@@ -10,14 +10,22 @@ import UIKit
 
 class MailUtils: NSObject {
     class func getFolders() {
-        let session = MCOIMAPSession()
-        session.hostname = "mymail.purdue.edu"
-        session.username = AccountUtils.getUsername()!
-        session.password = AccountUtils.getPassword()!
-        session.port = 993 // MyMail TLS Protocol port
-        session.connectionType = MCOConnectionType.TLS
-        session.fetchAllFoldersOperation().start( { (err: NSError!, folders: [AnyObject]!) in
+        AccountUtils.sharedIMAPSession.fetchAllFoldersOperation().start( { (err: NSError!, folders: [AnyObject]!) in
             NSNotificationCenter.defaultCenter().postNotificationName("GotFolders", object: self, userInfo: ["Mail": folders])
         })
+    }
+    
+    class func getMessages(folderName: NSString) {
+        let requestKind = MCOIMAPMessagesRequestKind.FullHeaders | MCOIMAPMessagesRequestKind.Flags | MCOIMAPMessagesRequestKind.Structure
+        let uids = MCOIndexSet(range: MCORangeMake(1, UINT64_MAX))
+        
+        AccountUtils.sharedIMAPSession.fetchMessagesOperationWithFolder(folderName, requestKind: requestKind, uids: uids).start( {
+            (err: NSError!, fetchedMessages: [AnyObject]!, vanishedMessages: MCOIndexSet!) in
+            NSNotificationCenter.defaultCenter().postNotificationName("GotMessages", object: self, userInfo: ["Mail": fetchedMessages.reverse()])
+        })
+    }
+    
+    class func getBody(folderName: String!, message: MCOIMAPMessage) {
+        
     }
 }

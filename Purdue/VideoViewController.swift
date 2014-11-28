@@ -141,14 +141,10 @@ class VideoViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let viewController = VideoDetailViewController()
         viewController.selectedVideo = videos[indexPath.row] as? Video
-        viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self, action: "goBack")
+        viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
         viewController.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
         self.navigationController?.pushViewController(viewController, animated: true)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-    
-    func goBack() {
-        self.navigationController?.popViewControllerAnimated(true)
     }
 
 }

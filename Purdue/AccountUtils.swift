@@ -9,6 +9,28 @@
 import UIKit
 
 class AccountUtils: NSObject {
+    struct Static {
+        static var session: MCOIMAPSession?
+    }
+    
+    class var sharedIMAPSession: MCOIMAPSession {
+        if Static.session == nil {
+            Static.session = getIMAPSession()
+        }
+        
+        return Static.session!
+    }
+
+    class func getIMAPSession() -> MCOIMAPSession {
+        let session = MCOIMAPSession()
+        session.hostname = "mymail.purdue.edu"
+        session.username = AccountUtils.getUsername()!
+        session.password = AccountUtils.getPassword()!
+        session.port = 993 // MyMail TLS Protocol port
+        session.connectionType = MCOConnectionType.TLS
+        return session
+    }
+    
     class func getUsername() -> String? {
         return KeychainWrapper.stringForKey("Username")
     }

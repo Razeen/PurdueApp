@@ -168,12 +168,8 @@ class DirectoryViewController: UITableViewController, UISearchBarDelegate {
         let detailVC = DirectoryDetailViewController()
         detailVC.alias = students[indexPath.row].alias
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self, action: "goBack")
+        detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
         detailVC.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
         self.navigationController?.pushViewController(detailVC, animated: true)
-    }
-    
-    func goBack() {
-        self.navigationController?.popViewControllerAnimated(true)
     }
 }

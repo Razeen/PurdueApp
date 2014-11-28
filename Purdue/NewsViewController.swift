@@ -194,14 +194,10 @@ class NewsViewController: UITableViewController, UIActionSheetDelegate {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let detailVC = NewsDetailViewController()
         detailVC.url = (news[indexPath.row] as News).link
-        detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self, action: "goBack")
+        detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
         detailVC.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
         self.navigationController?.pushViewController(detailVC, animated: true)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-    }
-    
-    func goBack() {
-        self.navigationController?.popViewControllerAnimated(true)
     }
     
 }
