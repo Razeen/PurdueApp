@@ -18,3 +18,4 @@
 #import "FXBlurView.h"
 #import "UIViewController+CWPopup.h"
 #import "BButton.h"
+#import "KINWebBrowserViewController.h"

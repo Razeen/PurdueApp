@@ -94,9 +94,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("LABS", comment: "")) {
                 navigationController = createNavController(LabsViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("GAMES", comment: "")) {
-                navigationController = createNavController(GameViewController())
+                let webBrowser = KINWebBrowserViewController.webBrowser()
+                webBrowser.navigationItem.title = NSLocalizedString("GAMES_TITLE", comment: "")
+                navigationController = createNavController(webBrowser)
+                webBrowser.loadURLString("http://mobile.rivals.com/schedule.asp?TeamCode=PURDUE&Sport=1")
+                webBrowser.showsPageTitleInNavigationBar = true
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("MENU", comment: "")) {
-                navigationController = createNavController(MenuViewController())
+                let webBrowser = KINWebBrowserViewController.webBrowser()
+                webBrowser.navigationItem.title = NSLocalizedString("MENU_TITLE", comment: "")
+                navigationController = createNavController(webBrowser)
+                webBrowser.loadURLString("http://www.housing.purdue.edu/Menus/")
+                //navigationController = createNavController(MenuViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("NEWS", comment: "")) {
                 navigationController = createNavController(NewsViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("WEATHER", comment: "")) {
