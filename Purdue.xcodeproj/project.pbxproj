@@ -32,6 +32,8 @@
 		5E1BA79419EDBC7400F66539 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1BA79319EDBC7400F66539 /* Photo.swift */; };
 		5E1FB5AF1A27AB9900349305 /* MessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FB5AE1A27AB9900349305 /* MessagesCell.swift */; };
 		5E1FB5B11A27FAD300349305 /* MyMailBodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FB5B01A27FAD300349305 /* MyMailBodyViewController.swift */; };
+		5E307F2E1A323A9500B19FBB /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E307F2D1A323A9500B19FBB /* Course.swift */; };
+		5E307F301A323DE400B19FBB /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 5E307F2F1A323DE400B19FBB /* TODO */; };
 		5E48FD5F1A216F31004FE8B7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E48FD5E1A216F31004FE8B7 /* CFNetwork.framework */; };
 		5E48FD611A216F37004FE8B7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E48FD601A216F37004FE8B7 /* Security.framework */; };
 		5E48FD641A217649004FE8B7 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E48FD631A217649004FE8B7 /* KeychainWrapper.swift */; };
@@ -290,6 +292,8 @@
 		5E1FB5AE1A27AB9900349305 /* MessagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesCell.swift; sourceTree = "<group>"; };
 		5E1FB5B01A27FAD300349305 /* MyMailBodyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMailBodyViewController.swift; sourceTree = "<group>"; };
 		5E219D661A2E6A1D00B94D54 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		5E307F2D1A323A9500B19FBB /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		5E307F2F1A323DE400B19FBB /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		5E48FD5E1A216F31004FE8B7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5E48FD601A216F37004FE8B7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5E48FD631A217649004FE8B7 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
@@ -714,6 +718,7 @@
 				5EA4C2C719D5EA2600E42732 /* View Controllers */,
 				5E4B88E519D07E0A00EEB9C3 /* Images.xcassets */,
 				5E4B88DC19D07E0A00EEB9C3 /* Supporting Files */,
+				5E307F2F1A323DE400B19FBB /* TODO */,
 			);
 			path = Purdue;
 			sourceTree = "<group>";
@@ -798,6 +803,7 @@
 				5EB6510E1A02BC3A00AB7257 /* Video.swift */,
 				5EE150681A100FE5008C9825 /* LabBuilding.swift */,
 				5EE1506A1A101001008C9825 /* LabRoom.swift */,
+				5E307F2D1A323A9500B19FBB /* Course.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1330,6 +1336,7 @@
 				5EB5FF2419FFF70300491C22 /* LICENSE in Resources */,
 				5EE150001A0FE5A0008C9825 /* GoogleMaps.bundle in Resources */,
 				5E0B13071A2AF60100F57DFD /* backbutton@3x.png in Resources */,
+				5E307F301A323DE400B19FBB /* TODO in Resources */,
 				5E0B13061A2AF60100F57DFD /* backbutton@2x.png in Resources */,
 				5E0B12D21A2AF42C00F57DFD /* ARChromeActivity~ipad.png in Resources */,
 				5E0B12CD1A2AF42C00F57DFD /* ARChromeActivity.png in Resources */,
@@ -1386,6 +1393,7 @@
 				5E8582161A210C59006E6539 /* DirectoryDetailViewController.swift in Sources */,
 				5EB5FF3519FFF70300491C22 /* UIView+WebCacheOperation.m in Sources */,
 				5EE1506F1A102C9D008C9825 /* SMCalloutView.m in Sources */,
+				5E307F2E1A323A9500B19FBB /* Course.swift in Sources */,
 				5E9ABA0D1A25AC9600800B25 /* FolderCell.swift in Sources */,
 				5EB5FF2C19FFF70300491C22 /* SDWebImageDownloaderOperation.m in Sources */,
 				5EB5FF1519FFF70300491C22 /* MBProgressHUD.m in Sources */,
