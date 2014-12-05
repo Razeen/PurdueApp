@@ -15,14 +15,12 @@
 		5E0B12D01A2AF42C00F57DFD /* ARChromeActivity@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12C91A2AF42C00F57DFD /* ARChromeActivity@3x.png */; };
 		5E0B12D11A2AF42C00F57DFD /* ARChromeActivity@3x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12CA1A2AF42C00F57DFD /* ARChromeActivity@3x~ipad.png */; };
 		5E0B12D21A2AF42C00F57DFD /* ARChromeActivity~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12CB1A2AF42C00F57DFD /* ARChromeActivity~ipad.png */; };
-		5E0B12F31A2AF44300F57DFD /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12D51A2AF44300F57DFD /* .gitkeep */; };
 		5E0B12F41A2AF44300F57DFD /* TUSafariActivity.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12D61A2AF44300F57DFD /* TUSafariActivity.strings */; };
 		5E0B12F51A2AF44300F57DFD /* safari.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12E61A2AF44300F57DFD /* safari.png */; };
 		5E0B12F61A2AF44300F57DFD /* safari@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12E71A2AF44300F57DFD /* safari@2x.png */; };
 		5E0B12F71A2AF44300F57DFD /* safari@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12E81A2AF44300F57DFD /* safari@3x.png */; };
 		5E0B12F81A2AF44300F57DFD /* safari~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12E91A2AF44300F57DFD /* safari~iPad.png */; };
 		5E0B12F91A2AF44300F57DFD /* safari~iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12EA1A2AF44300F57DFD /* safari~iPad@2x.png */; };
-		5E0B12FA1A2AF44300F57DFD /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12F01A2AF44300F57DFD /* .gitkeep */; };
 		5E0B12FB1A2AF44300F57DFD /* TUSafariActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B12F21A2AF44300F57DFD /* TUSafariActivity.m */; };
 		5E0B12FD1A2AF4E800F57DFD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E0B12FC1A2AF4E800F57DFD /* WebKit.framework */; };
 		5E0B13051A2AF60100F57DFD /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12FF1A2AF60100F57DFD /* backbutton.png */; };
@@ -229,6 +227,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5E219D7B1A2E6A1D00B94D54 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5E0B12BA1A2AF34400F57DFD /* KINWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KINWebBrowserViewController.h; sourceTree = "<group>"; };
 		5E0B12BB1A2AF34400F57DFD /* KINWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KINWebBrowserViewController.m; sourceTree = "<group>"; };
@@ -278,6 +289,7 @@
 		5E1BA79319EDBC7400F66539 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		5E1FB5AE1A27AB9900349305 /* MessagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesCell.swift; sourceTree = "<group>"; };
 		5E1FB5B01A27FAD300349305 /* MyMailBodyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMailBodyViewController.swift; sourceTree = "<group>"; };
+		5E219D661A2E6A1D00B94D54 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		5E48FD5E1A216F31004FE8B7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5E48FD601A216F37004FE8B7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5E48FD631A217649004FE8B7 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
@@ -597,6 +609,42 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		5E307F231A32328700B19FBB /* Labs */ = {
+			isa = PBXGroup;
+			children = (
+				5EEB696B19DF3F30005619BA /* LabsViewController.swift */,
+				5EE150721A103E18008C9825 /* LabDetailsViewController.swift */,
+			);
+			name = Labs;
+			sourceTree = "<group>";
+		};
+		5E307F2A1A32328C00B19FBB /* Directory */ = {
+			isa = PBXGroup;
+			children = (
+				5EEB697319DF3F9A005619BA /* DirectoryViewController.swift */,
+				5E8582151A210C59006E6539 /* DirectoryDetailViewController.swift */,
+			);
+			name = Directory;
+			sourceTree = "<group>";
+		};
+		5E307F2B1A32329500B19FBB /* News */ = {
+			isa = PBXGroup;
+			children = (
+				5E83BFE519D7292300C883E1 /* NewsViewController.swift */,
+				5EB6510C1A01D33600AB7257 /* NewsDetailViewController.swift */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
+		5E307F2C1A32329A00B19FBB /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				5EEB696119DF3BCB005619BA /* VideoViewController.swift */,
+				5EDAF99A1A06BF5800B954A9 /* VideoDetailViewController.swift */,
+			);
+			name = Videos;
+			sourceTree = "<group>";
+		};
 		5E48FD621A217649004FE8B7 /* KeychainWrapper */ = {
 			isa = PBXGroup;
 			children = (
@@ -801,20 +849,16 @@
 			children = (
 				5EEB696319DF3CE1005619BA /* BlackboardViewController.swift */,
 				5EEB696719DF3F12005619BA /* BusViewController.swift */,
-				5EEB697319DF3F9A005619BA /* DirectoryViewController.swift */,
-				5E8582151A210C59006E6539 /* DirectoryDetailViewController.swift */,
-				5EEB696B19DF3F30005619BA /* LabsViewController.swift */,
-				5EE150721A103E18008C9825 /* LabDetailsViewController.swift */,
+				5E307F2A1A32328C00B19FBB /* Directory */,
+				5E307F231A32328700B19FBB /* Labs */,
 				5EEB697119DF3F8A005619BA /* LibraryViewController.swift */,
 				5EEB696919DF3F18005619BA /* MapViewController.swift */,
 				5EEB696F19DF3F54005619BA /* MenuViewController.swift */,
 				5E9ABA0E1A25B51C00800B25 /* MyMail */,
-				5E83BFE519D7292300C883E1 /* NewsViewController.swift */,
-				5EB6510C1A01D33600AB7257 /* NewsDetailViewController.swift */,
+				5E307F2B1A32329500B19FBB /* News */,
 				5EEB695F19DF3BBF005619BA /* PhotoViewController.swift */,
 				5EEB696519DF3EFC005619BA /* ScheduleViewController.swift */,
-				5EEB696119DF3BCB005619BA /* VideoViewController.swift */,
-				5EDAF99A1A06BF5800B954A9 /* VideoDetailViewController.swift */,
+				5E307F2C1A32329A00B19FBB /* Videos */,
 				5E4B88E019D07E0A00EEB9C3 /* WeatherViewController.swift */,
 				5EB6510A1A01B12000AB7257 /* StoreViewController.swift */,
 			);
@@ -891,6 +935,7 @@
 				5EB5FE1019FFE79F00491C22 /* AssetsLibrary.framework */,
 				5EB5FE0E19FFE79900491C22 /* QuartzCore.framework */,
 				5EB5FE0C19FFE79200491C22 /* MessageUI.framework */,
+				5E219D661A2E6A1D00B94D54 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1122,6 +1167,7 @@
 				5E4B88D519D07E0A00EEB9C3 /* Sources */,
 				5E4B88D619D07E0A00EEB9C3 /* Frameworks */,
 				5E4B88D719D07E0A00EEB9C3 /* Resources */,
+				5E219D7B1A2E6A1D00B94D54 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
@@ -1278,7 +1324,6 @@
 				5E0B12CE1A2AF42C00F57DFD /* ARChromeActivity@2x.png in Resources */,
 				5E0B12D11A2AF42C00F57DFD /* ARChromeActivity@3x~ipad.png in Resources */,
 				5E0B13081A2AF60100F57DFD /* forwardbutton.png in Resources */,
-				5E0B12FA1A2AF44300F57DFD /* .gitkeep in Resources */,
 				5E4B88FF19D07F9C00EEB9C3 /* LaunchScreen.xib in Resources */,
 				5E0B13051A2AF60100F57DFD /* backbutton.png in Resources */,
 				5E0B12F41A2AF44300F57DFD /* TUSafariActivity.strings in Resources */,
@@ -1296,7 +1341,6 @@
 				5EB5FF3619FFF70300491C22 /* MWPhotoBrowser.bundle in Resources */,
 				5E0B12F91A2AF44300F57DFD /* safari~iPad@2x.png in Resources */,
 				5E0B12F61A2AF44300F57DFD /* safari@2x.png in Resources */,
-				5E0B12F31A2AF44300F57DFD /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1564,6 +1608,7 @@
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1606,6 +1651,7 @@
 				CLANG_CXX_LIBRARY = "libstdc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

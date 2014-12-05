@@ -8,12 +8,30 @@
 
 import UIKit
 
-class BusViewController: UIViewController {
+class BusViewController: UIViewController, UIWebViewDelegate {
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.navigationItem.title = NSLocalizedString("BUS_TITLE", comment: "")
+        
+        let webView = UIWebView()
+        webView.delegate = self
+        self.view = webView
+        webView.loadRequest(NSURLRequest(URL: NSURL(string: "http://citybus.doublemap.com/map/mobile")!))
+    }
+    
+    func webViewDidStartLoad(webView: UIWebView) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView) {
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
 
     override func didReceiveMemoryWarning() {

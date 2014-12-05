@@ -24,3 +24,7 @@
 
 "GAMES_TITLE" = "Sport Games";
 "MENU_TITLE" = "Menus";
+"MAP_TITLE" = "Map";
+"STORE_TITLE" = "Store";
+"BUS_TITLE" = "Bus";
+"CALENDAR_TITLE" = "Calendar";

@@ -40,49 +40,59 @@ class LabsViewController: UIViewController, GMSMapViewDelegate {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             var err: NSError?
             let htmlString = NSString(contentsOfURL: NSURL(string: "https://lslab.ics.purdue.edu/icsWeb/LabMap")!, encoding: NSUTF8StringEncoding, error: &err)
-            for i in 1...23 {
-                let patternStringArray = [
-                    "maparray\\[\(i)\\]\\[0\\] = \"(.*?)\";",
-                    "maparray\\[\(i)\\]\\[1\\] = (.*?);",
-                    "maparray\\[\(i)\\]\\[2\\] = (.*?);",
-                    "maparray\\[\(i)\\]\\[3\\] = (.*?);",
-                    "maparray\\[\(i)\\]\\[4\\] = \"(.*?)\";",
-                ]
-                
-                var building = LabBuilding()
-                for j in 0...4 {
-                    let regex = NSRegularExpression(pattern: patternStringArray[j], options: NSRegularExpressionOptions.DotMatchesLineSeparators, error: &err)
-                    let matches = regex?.matchesInString(htmlString!, options: NSMatchingOptions.allZeros, range: NSMakeRange(0, htmlString!.length)) as [NSTextCheckingResult]
-                    for match in matches {
-                        let matchRange = match.rangeAtIndex(1)
-                        var matchString: NSString = htmlString!.substringWithRange(matchRange)
-                        if j == 0 {
-                            building.name = matchString
-                        } else if j == 1 {
-                            building.latitude = matchString.doubleValue
-                        } else if j == 2 {
-                            building.longitude = matchString.doubleValue
-                        } else if j == 3 {
-                            building.availability = matchString.integerValue
-                        } else {
-                            matchString = matchString.substringToIndex(matchString.length - 4)
-                            matchString = matchString.stringByReplacingOccurrencesOfString("<br><br>", withString: "\n\n").stringByReplacingOccurrencesOfString("<br>", withString: "\n")
-                            matchString = matchString.stringByReplacingOccurrencesOfString("<[^>]+>", withString: "", options: .RegularExpressionSearch, range: NSMakeRange(0, matchString.length))
-                            let roomMatches = matchString.componentsSeparatedByString("\n\n") as [NSString]
-                            for roomMatch in roomMatches {
-                                let infoMatch = roomMatch.componentsSeparatedByString("\n") as [NSString]
-                                var room = LabRoom()
-                                for k in 0...infoMatch.count-1 {
-                                    let info: NSString = infoMatch[k]
-                                    if k == 0 {
-                                        room.name = info
-                                    } else if k == 1 {
-                                        if info.rangeOfString("CLOSED", options: NSStringCompareOptions.CaseInsensitiveSearch).location != NSNotFound {
-                                            room.status = "Closed"
-                                        } else if info.rangeOfString("Class in Session", options: NSStringCompareOptions.CaseInsensitiveSearch).location != NSNotFound {
-                                            room.status = "Class in Session"
+            if htmlString != nil {
+                for i in 1...23 {
+                    let patternStringArray = [
+                        "maparray\\[\(i)\\]\\[0\\] = \"(.*?)\";",
+                        "maparray\\[\(i)\\]\\[1\\] = (.*?);",
+                        "maparray\\[\(i)\\]\\[2\\] = (.*?);",
+                        "maparray\\[\(i)\\]\\[3\\] = (.*?);",
+                        "maparray\\[\(i)\\]\\[4\\] = \"(.*?)\";",
+                    ]
+                    
+                    var building = LabBuilding()
+                    for j in 0...4 {
+                        let regex = NSRegularExpression(pattern: patternStringArray[j], options: NSRegularExpressionOptions.DotMatchesLineSeparators, error: &err)
+                        let matches = regex?.matchesInString(htmlString!, options: NSMatchingOptions.allZeros, range: NSMakeRange(0, htmlString!.length)) as [NSTextCheckingResult]
+                        for match in matches {
+                            let matchRange = match.rangeAtIndex(1)
+                            var matchString: NSString = htmlString!.substringWithRange(matchRange)
+                            if j == 0 {
+                                building.name = matchString
+                            } else if j == 1 {
+                                building.latitude = matchString.doubleValue
+                            } else if j == 2 {
+                                building.longitude = matchString.doubleValue
+                            } else if j == 3 {
+                                building.availability = matchString.integerValue
+                            } else {
+                                matchString = matchString.substringToIndex(matchString.length - 4)
+                                matchString = matchString.stringByReplacingOccurrencesOfString("<br><br>", withString: "\n\n").stringByReplacingOccurrencesOfString("<br>", withString: "\n")
+                                matchString = matchString.stringByReplacingOccurrencesOfString("<[^>]+>", withString: "", options: .RegularExpressionSearch, range: NSMakeRange(0, matchString.length))
+                                let roomMatches = matchString.componentsSeparatedByString("\n\n") as [NSString]
+                                for roomMatch in roomMatches {
+                                    let infoMatch = roomMatch.componentsSeparatedByString("\n") as [NSString]
+                                    var room = LabRoom()
+                                    for k in 0...infoMatch.count-1 {
+                                        let info: NSString = infoMatch[k]
+                                        if k == 0 {
+                                            room.name = info
+                                        } else if k == 1 {
+                                            if info.rangeOfString("CLOSED", options: NSStringCompareOptions.CaseInsensitiveSearch).location != NSNotFound {
+                                                room.status = "Closed"
+                                            } else if info.rangeOfString("Class in Session", options: NSStringCompareOptions.CaseInsensitiveSearch).location != NSNotFound {
+                                                room.status = "Class in Session"
+                                            } else {
+                                                room.status = "Open"
+                                                if info.rangeOfString("Windows", options: NSStringCompareOptions.CaseInsensitiveSearch).location != NSNotFound {
+                                                    room.windows = info.stringByReplacingOccurrencesOfString("Windows 7 Enterprise SP1 stations a", withString: "A")
+                                                } else if info.rangeOfString("Mac", options: NSStringCompareOptions.CaseInsensitiveSearch).location != NSNotFound {
+                                                    room.mac = info.stringByReplacingOccurrencesOfString("Mac OS X 10.6.8  stations a", withString: "A")
+                                                } else {
+                                                    room.unknown = info.stringByReplacingOccurrencesOfString("unknown stations a", withString: "A")
+                                                }
+                                            }
                                         } else {
-                                            room.status = "Open"
                                             if info.rangeOfString("Windows", options: NSStringCompareOptions.CaseInsensitiveSearch).location != NSNotFound {
                                                 room.windows = info.stringByReplacingOccurrencesOfString("Windows 7 Enterprise SP1 stations a", withString: "A")
                                             } else if info.rangeOfString("Mac", options: NSStringCompareOptions.CaseInsensitiveSearch).location != NSNotFound {
@@ -91,34 +101,31 @@ class LabsViewController: UIViewController, GMSMapViewDelegate {
                                                 room.unknown = info.stringByReplacingOccurrencesOfString("unknown stations a", withString: "A")
                                             }
                                         }
-                                    } else {
-                                        if info.rangeOfString("Windows", options: NSStringCompareOptions.CaseInsensitiveSearch).location != NSNotFound {
-                                            room.windows = info.stringByReplacingOccurrencesOfString("Windows 7 Enterprise SP1 stations a", withString: "A")
-                                        } else if info.rangeOfString("Mac", options: NSStringCompareOptions.CaseInsensitiveSearch).location != NSNotFound {
-                                            room.mac = info.stringByReplacingOccurrencesOfString("Mac OS X 10.6.8  stations a", withString: "A")
-                                        } else {
-                                            room.unknown = info.stringByReplacingOccurrencesOfString("unknown stations a", withString: "A")
-                                        }
                                     }
+                                    building.addLabRoom(room)
                                 }
-                                building.addLabRoom(room)
                             }
                         }
                     }
+                    self.buildings[building.name!] = building
+                    dispatch_async(dispatch_get_main_queue(), {
+                        var marker = GMSMarker()
+                        marker.position = CLLocationCoordinate2DMake(building.latitude!, building.longitude!)
+                        marker.title = building.name!
+                        marker.snippet = "\(building.availability) Computers available"
+                        marker.appearAnimation = kGMSMarkerAnimationPop
+                        if building.availability > 0 && building.availability <= 15 {
+                            marker.icon = GMSMarker.markerImageWithColor(UIColor(red: 0.953, green: 0.612, blue: 0.071, alpha: 1))
+                        } else if building.availability > 15 {
+                            marker.icon = GMSMarker.markerImageWithColor(UIColor(red: 0.153, green: 0.682, blue: 0.376, alpha: 1))
+                        }
+                        marker.map = self.mapView
+                    })
                 }
-                self.buildings[building.name!] = building
+            } else {
                 dispatch_async(dispatch_get_main_queue(), {
-                    var marker = GMSMarker()
-                    marker.position = CLLocationCoordinate2DMake(building.latitude!, building.longitude!)
-                    marker.title = building.name!
-                    marker.snippet = "\(building.availability) Computers available"
-                    marker.appearAnimation = kGMSMarkerAnimationPop
-                    if building.availability > 0 && building.availability <= 15 {
-                        marker.icon = GMSMarker.markerImageWithColor(UIColor(red: 0.953, green: 0.612, blue: 0.071, alpha: 1))
-                    } else if building.availability > 15 {
-                        marker.icon = GMSMarker.markerImageWithColor(UIColor(red: 0.153, green: 0.682, blue: 0.376, alpha: 1))
-                    }
-                    marker.map = self.mapView
+                    println("Error")
+                    SCLAlertView().showError(self, title: "Error Loading", subTitle: "Please try reloading later")
                 })
             }
         })

@@ -12,8 +12,26 @@ class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        self.navigationItem.title = NSLocalizedString("MAP_TITLE", comment: "")
+        
+        var mapView: GMSMapView = GMSMapView.mapWithFrame(CGRectZero, camera:GMSCameraPosition.cameraWithLatitude(40.427821,
+            longitude:-86.917633, zoom:15))
+        mapView.mapType = kGMSTypeNormal
+        mapView.myLocationEnabled = true
+        mapView.settings.compassButton = true
+        mapView.settings.myLocationButton = true
+        mapView.settings.indoorPicker = true
+        self.view = mapView
+        
+        let southWest = CLLocationCoordinate2DMake(40.412660, -86.934770)
+        let northEast = CLLocationCoordinate2DMake(40.437060, -86.908370)
+        let overlayBounds = GMSCoordinateBounds(coordinate: southWest, coordinate: northEast)
+        
+        let buildings = UIImage(named: "Buildings")
+        let overlay = GMSGroundOverlay(bounds: overlayBounds, icon: buildings)
+        overlay.bearing = 0
+        overlay.map = mapView
     }
 
     override func didReceiveMemoryWarning() {
