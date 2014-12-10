@@ -10,7 +10,7 @@ import UIKit
 
 class DirectoryDetailViewController: UITableViewController {
     
-    let progress = MRActivityIndicatorView(frame: CGRectMake((UIScreen.mainScreen().bounds.width - 30 ) / 2, 64, 30, 30))
+    let progress = MRActivityIndicatorView(frame: CGRectMake((UIScreen.mainScreen().bounds.width - 30 ) / 2, 20, 30, 30))
     var alias: NSString?
     
     var careerLogin: NSString?
@@ -91,38 +91,38 @@ class DirectoryDetailViewController: UITableViewController {
             cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "CellIdentifier")
         }
         
-        cell?.textLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
-        cell?.detailTextLabel?.font = UIFont(name: "HelveticaNeue", size: 17)
+        cell!.textLabel!.font = UIFont(name: "HelveticaNeue-Bold", size: 20)
+        cell!.detailTextLabel?.font = UIFont(name: "HelveticaNeue", size: 17)
         
         if self.email != nil {
             if indexPath.row == 0 {
-                cell?.textLabel.text = "Career Login"
+                cell!.textLabel!.text = "Career Login"
                 cell?.detailTextLabel?.text = self.careerLogin
             } else if indexPath.row == 1 {
-                cell?.textLabel.text = "Email"
+                cell!.textLabel!.text = "Email"
                 cell?.detailTextLabel?.text = self.email
             } else if indexPath.row == 2 {
-                cell?.textLabel.text = "School"
+                cell!.textLabel!.text = "School"
                 cell?.detailTextLabel?.text = self.school
             } else if indexPath.row == 3 {
-                cell?.textLabel.text = "Campus"
+                cell!.textLabel!.text = "Campus"
                 cell?.detailTextLabel?.text = self.campus
             } else if indexPath.row == 4 {
-                cell?.textLabel.text = "Qualified Name"
+                cell!.textLabel!.text = "Qualified Name"
                 cell?.detailTextLabel?.text = self.qualifiedName
             }
         } else {
             if indexPath.row == 0 {
-                cell?.textLabel.text = "Career Login"
+                cell!.textLabel!.text = "Career Login"
                 cell?.detailTextLabel?.text = self.careerLogin
             } else if indexPath.row == 1 {
-                cell?.textLabel.text = "School"
+                cell!.textLabel!.text = "School"
                 cell?.detailTextLabel?.text = self.school
             } else if indexPath.row == 2 {
-                cell?.textLabel.text = "Campus"
+                cell!.textLabel!.text = "Campus"
                 cell?.detailTextLabel?.text = self.campus
             } else if indexPath.row == 3 {
-                cell?.textLabel.text = "Qualified Name"
+                cell!.textLabel!.text = "Qualified Name"
                 cell?.detailTextLabel?.text = self.qualifiedName
             }
         }

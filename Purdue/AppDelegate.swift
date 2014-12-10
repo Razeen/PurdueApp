@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
         
         GMSServices.provideAPIKey(APIKeys.GoogleMaps.rawValue)
         
-        let viewController = BlackboardViewController()
+        let viewController = MapViewController()
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
         viewController.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
         let navigationController: UINavigationController = createNavController(viewController)
@@ -125,7 +125,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
                 let webBrowser = KINWebBrowserViewController.webBrowser()
                 webBrowser.navigationItem.title = NSLocalizedString("STORE_TITLE", comment: "")
                 navigationController = createNavController(webBrowser)
-                webBrowser.loadURLString("http://purdue.amazon.com/")
+                webBrowser.loadURLString("https://purdue.amazon.com/")
             }
             slidingViewController?.topViewController = navigationController
             (slidingViewController?.topViewController as UINavigationController).viewControllers[0].navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: .Done, target: self, action: "showMenu")

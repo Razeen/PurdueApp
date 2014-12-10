@@ -32,6 +32,7 @@
 		5E1BA79419EDBC7400F66539 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1BA79319EDBC7400F66539 /* Photo.swift */; };
 		5E1FB5AF1A27AB9900349305 /* MessagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FB5AE1A27AB9900349305 /* MessagesCell.swift */; };
 		5E1FB5B11A27FAD300349305 /* MyMailBodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1FB5B01A27FAD300349305 /* MyMailBodyViewController.swift */; };
+		5E22189D1A36EF3C0086E49D /* MapUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E22189C1A36EF3C0086E49D /* MapUtils.swift */; };
 		5E307F2E1A323A9500B19FBB /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E307F2D1A323A9500B19FBB /* Course.swift */; };
 		5E307F301A323DE400B19FBB /* TODO in Resources */ = {isa = PBXBuildFile; fileRef = 5E307F2F1A323DE400B19FBB /* TODO */; };
 		5E48FD5F1A216F31004FE8B7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E48FD5E1A216F31004FE8B7 /* CFNetwork.framework */; };
@@ -70,6 +71,7 @@
 		5EA8414D1A2396D8009A4A9F /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA841471A2396D8009A4A9F /* NSString+FontAwesome.m */; };
 		5EA8414E1A2396D8009A4A9F /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA841491A2396D8009A4A9F /* UIColor+BButton.m */; };
 		5EA8414F1A2396D8009A4A9F /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EA8414B1A2396D8009A4A9F /* FontAwesome.ttf */; };
+		5EB2899C1A32403100CEE2AF /* BlackboardCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB2899B1A32403100CEE2AF /* BlackboardCourseViewController.swift */; };
 		5EB5FD8019FFDF2600491C22 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FD7F19FFDF2600491C22 /* AsyncImageView.m */; };
 		5EB5FE1519FFE7B500491C22 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB5FE1219FFE7A400491C22 /* ImageIO.framework */; };
 		5EB5FE1619FFE7BE00491C22 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EB5FE0C19FFE79200491C22 /* MessageUI.framework */; };
@@ -123,8 +125,6 @@
 		5EB92BFD19DB26EC00176BCC /* MyMailFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB92BFC19DB26EC00176BCC /* MyMailFolderViewController.swift */; };
 		5EDAF99B1A06BF5800B954A9 /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDAF99A1A06BF5800B954A9 /* VideoDetailViewController.swift */; };
 		5EDAF99D1A06C29800B954A9 /* DirectoryStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDAF99C1A06C29800B954A9 /* DirectoryStudent.swift */; };
-		5EE14FFE1A0FE54F008C9825 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE14FFD1A0FE54F008C9825 /* GoogleMaps.framework */; };
-		5EE150001A0FE5A0008C9825 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5EE14FFF1A0FE5A0008C9825 /* GoogleMaps.bundle */; };
 		5EE150021A0FE5B4008C9825 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE150011A0FE5B3008C9825 /* AVFoundation.framework */; };
 		5EE150041A0FE5B8008C9825 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE150031A0FE5B8008C9825 /* CoreLocation.framework */; };
 		5EE150061A0FE5C3008C9825 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE150051A0FE5C3008C9825 /* CoreData.framework */; };
@@ -151,6 +151,8 @@
 		5EE1506B1A101001008C9825 /* LabRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1506A1A101001008C9825 /* LabRoom.swift */; };
 		5EE1506F1A102C9D008C9825 /* SMCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1506E1A102C9D008C9825 /* SMCalloutView.m */; };
 		5EE150731A103E18008C9825 /* LabDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE150721A103E18008C9825 /* LabDetailsViewController.swift */; };
+		5EE913121A3809E900640CF9 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5EE913111A3809E900640CF9 /* GoogleMaps.framework */; };
+		5EE913151A380AAD00640CF9 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5EE913141A380AAD00640CF9 /* GoogleMaps.bundle */; };
 		5EEB696019DF3BBF005619BA /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB695F19DF3BBF005619BA /* PhotoViewController.swift */; };
 		5EEB696219DF3BCC005619BA /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696119DF3BCB005619BA /* VideoViewController.swift */; };
 		5EEB696419DF3CE1005619BA /* BlackboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEB696319DF3CE1005619BA /* BlackboardViewController.swift */; };
@@ -292,6 +294,7 @@
 		5E1FB5AE1A27AB9900349305 /* MessagesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessagesCell.swift; sourceTree = "<group>"; };
 		5E1FB5B01A27FAD300349305 /* MyMailBodyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMailBodyViewController.swift; sourceTree = "<group>"; };
 		5E219D661A2E6A1D00B94D54 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		5E22189C1A36EF3C0086E49D /* MapUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapUtils.swift; sourceTree = "<group>"; };
 		5E307F2D1A323A9500B19FBB /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		5E307F2F1A323DE400B19FBB /* TODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TODO; sourceTree = "<group>"; };
 		5E48FD5E1A216F31004FE8B7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -348,6 +351,7 @@
 		5EA841481A2396D8009A4A9F /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
 		5EA841491A2396D8009A4A9F /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
 		5EA8414B1A2396D8009A4A9F /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
+		5EB2899B1A32403100CEE2AF /* BlackboardCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackboardCourseViewController.swift; sourceTree = "<group>"; };
 		5EB5FD7E19FFDF2600491C22 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		5EB5FD7F19FFDF2600491C22 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		5EB5FE0C19FFE79200491C22 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -447,8 +451,6 @@
 		5EB92BFC19DB26EC00176BCC /* MyMailFolderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMailFolderViewController.swift; sourceTree = "<group>"; };
 		5EDAF99A1A06BF5800B954A9 /* VideoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
 		5EDAF99C1A06C29800B954A9 /* DirectoryStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryStudent.swift; sourceTree = "<group>"; };
-		5EE14FFD1A0FE54F008C9825 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
-		5EE14FFF1A0FE5A0008C9825 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		5EE150011A0FE5B3008C9825 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		5EE150031A0FE5B8008C9825 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5EE150051A0FE5C3008C9825 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -491,6 +493,8 @@
 		5EE1506D1A102C9D008C9825 /* SMCalloutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMCalloutView.h; sourceTree = "<group>"; };
 		5EE1506E1A102C9D008C9825 /* SMCalloutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMCalloutView.m; sourceTree = "<group>"; };
 		5EE150721A103E18008C9825 /* LabDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabDetailsViewController.swift; sourceTree = "<group>"; };
+		5EE913111A3809E900640CF9 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		5EE913141A380AAD00640CF9 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 		5EEB695F19DF3BBF005619BA /* PhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		5EEB696119DF3BCB005619BA /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		5EEB696319DF3CE1005619BA /* BlackboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackboardViewController.swift; sourceTree = "<group>"; };
@@ -524,9 +528,9 @@
 				5EE150061A0FE5C3008C9825 /* CoreData.framework in Frameworks */,
 				5EE150041A0FE5B8008C9825 /* CoreLocation.framework in Frameworks */,
 				5EE150021A0FE5B4008C9825 /* AVFoundation.framework in Frameworks */,
-				5EE14FFE1A0FE54F008C9825 /* GoogleMaps.framework in Frameworks */,
 				5EB5FF3B19FFF77000491C22 /* UIKit.framework in Frameworks */,
 				5EB5FE1819FFE7C900491C22 /* AssetsLibrary.framework in Frameworks */,
+				5EE913121A3809E900640CF9 /* GoogleMaps.framework in Frameworks */,
 				5EB5FE1619FFE7BE00491C22 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,6 +785,7 @@
 				5E48FD671A217801004FE8B7 /* SignInViewController.swift */,
 				5E76EFC019E6C74C0059930E /* WeatherUtils.swift */,
 				5E9ABA041A2581D300800B25 /* MailUtils.swift */,
+				5E22189C1A36EF3C0086E49D /* MapUtils.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -853,7 +858,7 @@
 		5EA4C2C719D5EA2600E42732 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				5EEB696319DF3CE1005619BA /* BlackboardViewController.swift */,
+				5EB289A31A32403B00CEE2AF /* Blackboard */,
 				5EEB696719DF3F12005619BA /* BusViewController.swift */,
 				5E307F2A1A32328C00B19FBB /* Directory */,
 				5E307F231A32328700B19FBB /* Labs */,
@@ -909,6 +914,15 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
+		5EB289A31A32403B00CEE2AF /* Blackboard */ = {
+			isa = PBXGroup;
+			children = (
+				5EEB696319DF3CE1005619BA /* BlackboardViewController.swift */,
+				5EB2899B1A32403100CEE2AF /* BlackboardCourseViewController.swift */,
+			);
+			name = Blackboard;
+			sourceTree = "<group>";
+		};
 		5EB5FD7D19FFDF2600491C22 /* AsyncImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -921,6 +935,8 @@
 		5EB5FE1419FFE7A800491C22 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5EE913141A380AAD00640CF9 /* GoogleMaps.bundle */,
+				5EE913111A3809E900640CF9 /* GoogleMaps.framework */,
 				5E0B12FC1A2AF4E800F57DFD /* WebKit.framework */,
 				5E48FD601A216F37004FE8B7 /* Security.framework */,
 				5E48FD5E1A216F31004FE8B7 /* CFNetwork.framework */,
@@ -934,8 +950,6 @@
 				5EE150051A0FE5C3008C9825 /* CoreData.framework */,
 				5EE150031A0FE5B8008C9825 /* CoreLocation.framework */,
 				5EE150011A0FE5B3008C9825 /* AVFoundation.framework */,
-				5EE14FFF1A0FE5A0008C9825 /* GoogleMaps.bundle */,
-				5EE14FFD1A0FE54F008C9825 /* GoogleMaps.framework */,
 				5EB5FF3A19FFF77000491C22 /* UIKit.framework */,
 				5EB5FE1219FFE7A400491C22 /* ImageIO.framework */,
 				5EB5FE1019FFE79F00491C22 /* AssetsLibrary.framework */,
@@ -1334,7 +1348,6 @@
 				5E0B13051A2AF60100F57DFD /* backbutton.png in Resources */,
 				5E0B12F41A2AF44300F57DFD /* TUSafariActivity.strings in Resources */,
 				5EB5FF2419FFF70300491C22 /* LICENSE in Resources */,
-				5EE150001A0FE5A0008C9825 /* GoogleMaps.bundle in Resources */,
 				5E0B13071A2AF60100F57DFD /* backbutton@3x.png in Resources */,
 				5E307F301A323DE400B19FBB /* TODO in Resources */,
 				5E0B13061A2AF60100F57DFD /* backbutton@2x.png in Resources */,
@@ -1342,6 +1355,7 @@
 				5E0B12CD1A2AF42C00F57DFD /* ARChromeActivity.png in Resources */,
 				5E0B12F81A2AF44300F57DFD /* safari~iPad.png in Resources */,
 				5E0B12CF1A2AF42C00F57DFD /* ARChromeActivity@2x~ipad.png in Resources */,
+				5EE913151A380AAD00640CF9 /* GoogleMaps.bundle in Resources */,
 				5E0B12F71A2AF44300F57DFD /* safari@3x.png in Resources */,
 				5E0B13091A2AF60100F57DFD /* forwardbutton@2x.png in Resources */,
 				5E4B88E619D07E0A00EEB9C3 /* Images.xcassets in Resources */,
@@ -1385,6 +1399,7 @@
 				5EB5FF3119FFF70300491C22 /* UIImage+MultiFormat.m in Sources */,
 				5EEB696019DF3BBF005619BA /* PhotoViewController.swift in Sources */,
 				5EB5FD8019FFDF2600491C22 /* AsyncImageView.m in Sources */,
+				5EB2899C1A32403100CEE2AF /* BlackboardCourseViewController.swift in Sources */,
 				5EE1503F1A0FEBC8008C9825 /* MRCircularProgressView.m in Sources */,
 				5EE1503E1A0FEBC8008C9825 /* MRActivityIndicatorView.m in Sources */,
 				5EB5FF2719FFF70300491C22 /* NSData+ImageContentType.m in Sources */,
@@ -1407,6 +1422,7 @@
 				5EA8414E1A2396D8009A4A9F /* UIColor+BButton.m in Sources */,
 				5E0B12BC1A2AF34400F57DFD /* KINWebBrowserViewController.m in Sources */,
 				5EB5FF2819FFF70300491C22 /* SDImageCache.m in Sources */,
+				5E22189D1A36EF3C0086E49D /* MapUtils.swift in Sources */,
 				5EE1504A1A0FEBC8008C9825 /* MRWeakProxy.m in Sources */,
 				5E1FB5AF1A27AB9900349305 /* MessagesCell.swift in Sources */,
 				5EDAF99B1A06BF5800B954A9 /* VideoDetailViewController.swift in Sources */,

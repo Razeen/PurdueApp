@@ -177,15 +177,15 @@ class MyMailFolderViewController: UIViewController, UITableViewDataSource, UITab
             cell = FolderCell(style: UITableViewCellStyle.Default, reuseIdentifier: "CellIdentifier")
         }
         
-        cell?.imageView.tintColor = UIColor(red: 0, green: 0.5, blue: 1, alpha: 1)
+        cell!.imageView!.tintColor = UIColor(red: 0, green: 0.5, blue: 1, alpha: 1)
         if indexPath.row <= 5 {
-            cell?.imageView.image = UIImage(named: pathCache[indexPath.row])?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            cell!.imageView!.image = UIImage(named: pathCache[indexPath.row])?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         } else {
-            cell?.imageView.image = UIImage(named: "Folder")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            cell!.imageView!.image = UIImage(named: "Folder")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
         }
         
-        cell?.textLabel.text = pathCache[indexPath.row]
-        cell?.textLabel.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 19)
+        cell!.textLabel!.text = pathCache[indexPath.row]
+        cell!.textLabel!.font = UIFont(name: "AppleSDGothicNeo-Bold", size: 19)
         
         cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         

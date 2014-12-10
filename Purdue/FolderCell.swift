@@ -23,10 +23,10 @@ class FolderCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        self.imageView.frame = CGRectMake(self.layoutMargins.left, (self.frame.height - 28) / 2 - 1, 28, 28)
-        self.imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        self.imageView!.frame = CGRectMake(self.layoutMargins.left, (self.frame.height - 28) / 2 - 1, 28, 28)
+        self.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
         
-        self.textLabel.frame = CGRectMake(self.layoutMargins.left + 43, 0, self.frame.width - self.layoutMargins.left - 43 - 30, self.frame.height)
+        self.textLabel!.frame = CGRectMake(self.layoutMargins.left + 43, 0, self.frame.width - self.layoutMargins.left - 43 - 30, self.frame.height)
     }
     
 }

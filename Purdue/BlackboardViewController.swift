@@ -107,7 +107,7 @@ class BlackboardViewController: UIViewController, UITableViewDataSource, UITable
             for currCourse in courses {
                 let course = Course()
                 course.name = currCourse["name"] as NSString!
-                course.id = currCourse["courseid"] as NSString!
+                course.id = currCourse["bbid"] as NSString!
                 self.courses.append(course)
             }
             dispatch_async(dispatch_get_main_queue(), {
@@ -146,21 +146,20 @@ class BlackboardViewController: UIViewController, UITableViewDataSource, UITable
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "CellIdentifier")
         }
         
-        cell?.textLabel.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 20)
-        cell?.textLabel.text = courses[indexPath.row].name!
+        cell?.textLabel?.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 20)
+        cell?.textLabel?.text = courses[indexPath.row].name!
         cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        /*
-        let viewController = MyMailMessagesViewController()
-        viewController.navigationItem.title = pathCache[indexPath.row]
+        let viewController = BlackboardCourseViewController()
+        viewController.navigationItem.title = courses[indexPath.row].name
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
         viewController.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
-        viewController.folderName = folders![indexPath.row].path
-        self.navigationController?.pushViewController(viewController, animated: true)*/
+        viewController.courseid = courses[indexPath.row].id
+        self.navigationController?.pushViewController(viewController, animated: true)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 }

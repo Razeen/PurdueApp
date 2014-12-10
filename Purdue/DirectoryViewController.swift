@@ -13,12 +13,26 @@ class DirectoryViewController: UITableViewController, UISearchBarDelegate {
     let progress = MRActivityIndicatorView(frame: CGRectMake((UIScreen.mainScreen().bounds.width - 30 ) / 2, 64, 30, 30))
     var students: [DirectoryStudent] = []
     
+    let kNameTag = 101
+    let kSchoolLabelTag = 104
+    let kEmailLabelTag = 105
+    
+    
+    var imageView = UIImageView(image: UIImage(named: "Oops"))
+    var statusLabel: UILabel?
+    
     convenience override init() {
         self.init(style: .Grouped)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        imageView.frame = CGRectMake((UIScreen.mainScreen().bounds.width - imageView.frame.width / 1.5) / 2, 44 + 40, imageView.frame.width / 1.5, imageView.frame.height / 1.5)
+        statusLabel = UILabel(frame: CGRectMake(20, imageView.frame.height + imageView.frame.origin.y + 40, UIScreen.mainScreen().bounds.width - 40, 50))
+        statusLabel!.font = UIFont(name: "ArialRoundedMTBold", size: 20)
+        statusLabel!.numberOfLines = 2
+        statusLabel!.textAlignment = NSTextAlignment.Center
 
         self.navigationItem.title = "Directory"
         let searchBar = UISearchBar(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 44))
@@ -58,6 +72,7 @@ class DirectoryViewController: UITableViewController, UISearchBarDelegate {
             request.HTTPBody = postData
             request.setValue("\(postData?.length)", forHTTPHeaderField: "Content-Length")
             let data = NSURLConnection.sendSynchronousRequest(request, returningResponse: nil, error: nil)
+            var statusString: NSString?
             if data != nil {
                 var response = NSString(data: data!, encoding: NSUTF8StringEncoding)
                 response = response?.stringByReplacingOccurrencesOfString("\t", withString: "")
@@ -76,11 +91,26 @@ class DirectoryViewController: UITableViewController, UISearchBarDelegate {
                     }
                     self.students.append(student)
                 }
+                
+                if self.students.count == 0 {
+                    if response?.containsString("Your search returned no results.") == true {
+                        statusString = "Your search returned no results"
+                    } else {
+                        statusString = "Your search has returned too many results"
+                    }
+                }
             }
             dispatch_async(dispatch_get_main_queue(), {
                 self.progress.stopAnimating()
                 self.progress.removeFromSuperview()
+                self.imageView.removeFromSuperview()
+                self.statusLabel!.removeFromSuperview()
                 self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
+                if self.students.count == 0 {
+                    self.statusLabel!.text = statusString!
+                    self.view.addSubview(self.imageView)
+                    self.view.addSubview(self.statusLabel!)
+                }
             })
         })
     }
@@ -105,18 +135,11 @@ class DirectoryViewController: UITableViewController, UISearchBarDelegate {
     }
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if students[indexPath.row].email != nil {
-            return 75
-        }
-        return 55
+        return 80
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("CellIdentifier") as? UITableViewCell
-        
-        let kNameTag = 101
-        let kSchoolLabelTag = 104
-        let kEmailLabelTag = 105
         
         let student = students[indexPath.row]
 
@@ -129,34 +152,44 @@ class DirectoryViewController: UITableViewController, UISearchBarDelegate {
             cell?.contentView.addSubview(nameLabel)
             
             let schoolImage = UIImageView(image: UIImage(named: "DirectorySchool")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate))
-            schoolImage.frame = CGRectMake(30, 32.5, 15, 15)
+            schoolImage.frame = CGRectMake(30, 33.5, 15, 15)
             schoolImage.contentMode = UIViewContentMode.ScaleAspectFill
-            schoolImage.tintColor = UIColor(red: 0, green: 0.5, blue: 1, alpha: 1)
+            schoolImage.tintColor = UIColor(red: 163.0/255, green: 121.0/255, blue: 44.0/255, alpha: 1)
             cell?.contentView.addSubview(schoolImage)
             
-            let schoolLabel = UILabel(frame: CGRectMake(54, 30, UIScreen.mainScreen().bounds.width - 54 - 44, 20))
+            let schoolLabel = UILabel(frame: CGRectMake(54, 31, UIScreen.mainScreen().bounds.width - 54 - 44, 20))
             schoolLabel.tag = kSchoolLabelTag
             schoolLabel.font = UIFont (name: "Avenir", size: 16)
             cell?.contentView.addSubview(schoolLabel)
             
-            if student.email != nil {
-                let emailImage = UIImageView(image: UIImage(named: "DirectoryEmail")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate))
-                emailImage.frame = CGRectMake(30, 53.5, 15, 13)
-                emailImage.contentMode = UIViewContentMode.ScaleAspectFill
-                emailImage.tintColor = UIColor(red: 0, green: 0.5, blue: 1, alpha: 1)
-                cell?.contentView.addSubview(emailImage)
-                
-                let emailLabel = UILabel(frame: CGRectMake(54, 50, UIScreen.mainScreen().bounds.width - 54 - 44, 20))
-                emailLabel.tag = kEmailLabelTag
-                emailLabel.font = UIFont (name: "Avenir", size: 16)
-                cell?.contentView.addSubview(emailLabel)
-            }
+            let emailImage = UIImageView(image: UIImage(named: "DirectoryEmail")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate))
+            emailImage.frame = CGRectMake(28, 56, 19, 12.5)
+            emailImage.contentMode = UIViewContentMode.ScaleToFill
+            emailImage.tintColor = UIColor(red: 114.0/255, green: 153.0/255, blue: 198.0/255, alpha: 1)
+            cell?.contentView.addSubview(emailImage)
+            
+            let emailLabel = UILabel(frame: CGRectMake(54, 52, UIScreen.mainScreen().bounds.width - 54 - 44, 20))
+            emailLabel.tag = kEmailLabelTag
+            emailLabel.font = UIFont (name: "Avenir", size: 16)
+            cell?.contentView.addSubview(emailLabel)
         }
         
-        (cell?.contentView.viewWithTag(kNameTag) as UILabel).text = student.name
-        (cell?.contentView.viewWithTag(kSchoolLabelTag) as UILabel).text = student.school
+        if let label = (cell?.contentView.viewWithTag(kNameTag) as? UILabel) {
+            label.text = student.name
+        }
+        if let label = (cell?.contentView.viewWithTag(kSchoolLabelTag) as? UILabel) {
+            label.text = student.school
+        }
         if student.email != nil {
-            (cell?.contentView.viewWithTag(kEmailLabelTag) as UILabel).text = student.email
+            if let label = (cell?.contentView.viewWithTag(kEmailLabelTag) as? UILabel) {
+                label.font = UIFont (name: "Avenir", size: 16)
+                label.text = student.email
+            }
+        } else {
+            if let label = (cell?.contentView.viewWithTag(kEmailLabelTag) as? UILabel) {
+                label.font = UIFont(name: "Avenir-Oblique", size: 14)
+                label.text = "N/A"
+            }
         }
         
         cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator

@@ -30,7 +30,6 @@ class MapViewController: UIViewController {
         
         let buildings = UIImage(named: "Buildings")
         let overlay = GMSGroundOverlay(bounds: overlayBounds, icon: buildings)
-        overlay.bearing = 0
         overlay.map = mapView
     }
 
