@@ -150,6 +150,7 @@ class NewsViewController: UITableViewController, UIActionSheetDelegate {
             cell?.contentView.addSubview(imageIV)
             
             let titleTV: UITextView = UITextView(frame: CGRectMake(45, 2, UIScreen.mainScreen().bounds.width*7/10, 52))
+            titleTV.backgroundColor = UIColor.clearColor()
             titleTV.font = UIFont(name: "AppleSDGothicNeo-SemiBold", size: 15)
             titleTV.tag = kTitleTag
             titleTV.scrollEnabled = false
@@ -159,6 +160,7 @@ class NewsViewController: UITableViewController, UIActionSheetDelegate {
             cell?.contentView.addSubview(titleTV)
             
             let detailTV: UITextView = UITextView(frame: CGRectMake(45, 42, UIScreen.mainScreen().bounds.width-45-10, 66))
+            detailTV.backgroundColor = UIColor.clearColor()
             detailTV.font = UIFont(name: "AppleSDGothicNeo-Light", size: 13)
             detailTV.tag = kDetailTag
             detailTV.scrollEnabled = false
