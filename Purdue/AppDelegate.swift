@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
         
         GMSServices.provideAPIKey(APIKeys.GoogleMaps.rawValue)
         
-        let viewController = MapViewController()
+        let viewController = LibraryViewController()
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
         viewController.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
         let navigationController: UINavigationController = createNavController(viewController)

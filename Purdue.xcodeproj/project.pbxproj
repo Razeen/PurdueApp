@@ -55,6 +55,7 @@
 		5E4B891319D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B890D19D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m */; };
 		5E4B891819D0903100EEB9C3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B891719D0903100EEB9C3 /* SideMenuViewController.swift */; };
 		5E6A81571A477A7C008277F2 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A81561A477A7C008277F2 /* Library.swift */; };
+		5E6A81591A47C3AD008277F2 /* LibraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A81581A47C3AD008277F2 /* LibraryDetailViewController.swift */; };
 		5E76EFC119E6C74C0059930E /* WeatherUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76EFC019E6C74C0059930E /* WeatherUtils.swift */; };
 		5E83BFE019D66D3E00C883E1 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFDF19D66D3E00C883E1 /* APIKeys.swift */; };
 		5E83BFE619D7292300C883E1 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFE519D7292300C883E1 /* NewsViewController.swift */; };
@@ -329,6 +330,7 @@
 		5E4B891619D08CE400EEB9C3 /* PurdueApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PurdueApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		5E4B891719D0903100EEB9C3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		5E6A81561A477A7C008277F2 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		5E6A81581A47C3AD008277F2 /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
 		5E76EFC019E6C74C0059930E /* WeatherUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherUtils.swift; sourceTree = "<group>"; };
 		5E83BFDF19D66D3E00C883E1 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		5E83BFE519D7292300C883E1 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -755,6 +757,15 @@
 			path = ECSlidingViewController;
 			sourceTree = "<group>";
 		};
+		5E6A815A1A480704008277F2 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				5EEB697119DF3F8A005619BA /* LibraryViewController.swift */,
+				5E6A81581A47C3AD008277F2 /* LibraryDetailViewController.swift */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
 		5E76EFC219E6C7510059930E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -839,7 +850,7 @@
 				5EEB696719DF3F12005619BA /* BusViewController.swift */,
 				5E307F2A1A32328C00B19FBB /* Directory */,
 				5E307F231A32328700B19FBB /* Labs */,
-				5EEB697119DF3F8A005619BA /* LibraryViewController.swift */,
+				5E6A815A1A480704008277F2 /* Library */,
 				5EEB696919DF3F18005619BA /* MapViewController.swift */,
 				5EEB696F19DF3F54005619BA /* MenuViewController.swift */,
 				5E9ABA0E1A25B51C00800B25 /* MyMail */,
@@ -1440,6 +1451,7 @@
 				5EE150731A103E18008C9825 /* LabDetailsViewController.swift in Sources */,
 				5EB5FF1319FFF70300491C22 /* MWZoomingScrollView.m in Sources */,
 				5EE150411A0FEBC8008C9825 /* MRNavigationBarProgressView.m in Sources */,
+				5E6A81591A47C3AD008277F2 /* LibraryDetailViewController.swift in Sources */,
 				5E48FD801A21A8FB004FE8B7 /* UIViewController+CWPopup.m in Sources */,
 				5E9ABA101A25B57000800B25 /* MyMailMessagesViewController.swift in Sources */,
 				5EBDC5B01A3D9F7300BA2FDA /* SettingsViewController.swift in Sources */,

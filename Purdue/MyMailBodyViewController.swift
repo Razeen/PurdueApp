@@ -228,7 +228,6 @@ class MyMailBodyViewController: UIViewController, UIWebViewDelegate {
             
             let messageParser = MCOMessageParser(data: data!)
             var msgHTMLBody = messageParser.htmlBodyRendering() as NSString
-            println("1: 46 \(msgHTMLBody.length - 46 - 7)")
             msgHTMLBody = msgHTMLBody.substringWithRange(NSMakeRange(46, msgHTMLBody.length - 46 - 7))
             
             let fontSizeDict = NSMutableDictionary()
@@ -252,7 +251,6 @@ class MyMailBodyViewController: UIViewController, UIWebViewDelegate {
             
             if self.message?.attachments().count > 0 {
                 let hrLoc = msgHTMLBody.rangeOfString("<hr/>", options: NSStringCompareOptions.BackwardsSearch).location
-                println("2: \(hrLoc + 5) \(msgHTMLBody.length - hrLoc - 5)")
                 msgHTMLBody = "\(msgHTMLBody.substringWithRange(NSMakeRange(0, hrLoc)))\(msgHTMLBody.substringWithRange(NSMakeRange(hrLoc + 5, msgHTMLBody.length - hrLoc - 5)))"
                 
                 fontSizeDict.removeAllObjects()
