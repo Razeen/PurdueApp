@@ -109,7 +109,7 @@ class SideMenuViewController: UITableViewController {
         selectedLayer.frame = CGRectMake(0, 0, tableView.frame.width, self.tableView.rowHeight)
         selectedLayer.backgroundColor = UIColor(white: 0.35, alpha: 1.0).CGColor
         cell?.selectedBackgroundView = UIView()
-        cell?.selectedBackgroundView.layer .insertSublayer(selectedLayer, atIndex: 0)
+        cell?.selectedBackgroundView.layer.insertSublayer(selectedLayer, atIndex: 0)
         
         cell!.textLabel!.text = rowNames[indexPath.row]
         cell!.textLabel!.textColor = UIColor.whiteColor()

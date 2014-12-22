@@ -98,36 +98,38 @@ class MyMailBodyViewController: UIViewController, UIWebViewDelegate {
                 self.headerHeight = 20 + fromDetail.frame.height
             }
             
-            let toTitle = UILabel(frame: CGRectZero)
-            toTitle.font = UIFont(name: "HelveticaNeue", size: 15)
-            toTitle.textColor = UIColor(white: 0.4, alpha: 1)
-            toTitle.text = "To:"
-            toTitle.sizeToFit()
-            toTitle.frame = CGRectMake(10, 10 + self.headerHeight, toTitle.frame.width, toTitle.frame.height)
-            self.scrollView.addSubview(toTitle)
-            
-            let toDetail = UILabel(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width - 30 - toTitle.frame.width, 0))
-            toDetail.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
-            toDetail.textColor = UIColor(red: 0, green: 0.5, blue: 1, alpha: 1)
-            toDetail.text = ""
-            for i in 0 ... self.message!.header.to.count - 1 {
-                let addr = self.message!.header.to[i] as MCOAddress
-                var str = addr.displayName != nil ? "\(addr.displayName)<\(addr.mailbox)>" : addr.mailbox
-                if i != self.message!.header.to.count - 1 {
-                    str = str + ", "
+            if self.message?.header.to.count > 0 {
+                let toTitle = UILabel(frame: CGRectZero)
+                toTitle.font = UIFont(name: "HelveticaNeue", size: 15)
+                toTitle.textColor = UIColor(white: 0.4, alpha: 1)
+                toTitle.text = "To:"
+                toTitle.sizeToFit()
+                toTitle.frame = CGRectMake(10, 10 + self.headerHeight, toTitle.frame.width, toTitle.frame.height)
+                self.scrollView.addSubview(toTitle)
+                
+                let toDetail = UILabel(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width - 30 - toTitle.frame.width, 0))
+                toDetail.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
+                toDetail.textColor = UIColor(red: 0, green: 0.5, blue: 1, alpha: 1)
+                toDetail.text = ""
+                for i in 0 ... self.message!.header.to.count - 1 {
+                    let addr = self.message!.header.to[i] as MCOAddress
+                    var str = addr.displayName != nil ? "\(addr.displayName)<\(addr.mailbox)>" : addr.mailbox
+                    if i != self.message!.header.to.count - 1 {
+                        str = str + ", "
+                    }
+                    toDetail.text = toDetail.text! + str
                 }
-                toDetail.text = toDetail.text! + str
+                toDetail.numberOfLines = 0;
+                toDetail.sizeToFit()
+                toDetail.frame = CGRectMake(20 + toTitle.frame.width, 10 + self.headerHeight, toDetail.frame.width, toDetail.frame.height)
+                self.scrollView.addSubview(toDetail)
+                
+                let toSeparator = UIView(frame: CGRectMake(0, 10 + toDetail.frame.origin.y + toDetail.frame.height - 0.25, UIScreen.mainScreen().bounds.width, 0.5))
+                toSeparator.backgroundColor = UIColor(white: 0.3, alpha: 0.7)
+                self.scrollView.addSubview(toSeparator)
+                
+                self.headerHeight = 10 + toDetail.frame.origin.y + toDetail.frame.height
             }
-            toDetail.numberOfLines = 0;
-            toDetail.sizeToFit()
-            toDetail.frame = CGRectMake(20 + toTitle.frame.width, 10 + self.headerHeight, toDetail.frame.width, toDetail.frame.height)
-            self.scrollView.addSubview(toDetail)
-            
-            let toSeparator = UIView(frame: CGRectMake(0, 10 + toDetail.frame.origin.y + toDetail.frame.height - 0.25, UIScreen.mainScreen().bounds.width, 0.5))
-            toSeparator.backgroundColor = UIColor(white: 0.3, alpha: 0.7)
-            self.scrollView.addSubview(toSeparator)
-            
-            self.headerHeight = 10 + toDetail.frame.origin.y + toDetail.frame.height
             
             if self.message!.header.cc != nil {
                 let ccTitle = UILabel(frame: CGRectZero)
@@ -226,6 +228,7 @@ class MyMailBodyViewController: UIViewController, UIWebViewDelegate {
             
             let messageParser = MCOMessageParser(data: data!)
             var msgHTMLBody = messageParser.htmlBodyRendering() as NSString
+            println("1: 46 \(msgHTMLBody.length - 46 - 7)")
             msgHTMLBody = msgHTMLBody.substringWithRange(NSMakeRange(46, msgHTMLBody.length - 46 - 7))
             
             let fontSizeDict = NSMutableDictionary()
@@ -249,6 +252,7 @@ class MyMailBodyViewController: UIViewController, UIWebViewDelegate {
             
             if self.message?.attachments().count > 0 {
                 let hrLoc = msgHTMLBody.rangeOfString("<hr/>", options: NSStringCompareOptions.BackwardsSearch).location
+                println("2: \(hrLoc + 5) \(msgHTMLBody.length - hrLoc - 5)")
                 msgHTMLBody = "\(msgHTMLBody.substringWithRange(NSMakeRange(0, hrLoc)))\(msgHTMLBody.substringWithRange(NSMakeRange(hrLoc + 5, msgHTMLBody.length - hrLoc - 5)))"
                 
                 fontSizeDict.removeAllObjects()

@@ -139,11 +139,12 @@ class VideoViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let viewController = VideoDetailViewController()
-        viewController.selectedVideo = videos[indexPath.row] as? Video
-        viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
-        viewController.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
-        self.navigationController?.pushViewController(viewController, animated: true)
+        let webBrowser = KINWebBrowserViewController.webBrowser()
+        webBrowser.navigationItem.title = "Video"
+        webBrowser.loadURLString((videos[indexPath.row] as Video).url!.absoluteString!)
+        webBrowser.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
+        webBrowser.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
+        self.navigationController?.pushViewController(webBrowser, animated: true)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 

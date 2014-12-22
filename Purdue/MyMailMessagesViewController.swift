@@ -14,32 +14,26 @@ class MyMailMessagesViewController: UITableViewController {
     let progress = MRActivityIndicatorView(frame: CGRectMake((UIScreen.mainScreen().bounds.width - 30 ) / 2, 20, 30, 30))
     var messages: [MCOIMAPMessage] = []
     var bodyCache: NSMutableDictionary = NSMutableDictionary()
-    
-    override func viewWillAppear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "gotMessages:", name: "GotMessages", object: nil)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
-    }
-    
-    func gotMessages(notification: NSNotification) {
-        let dict = notification.userInfo!
-        messages = dict["Mail"] as [MCOIMAPMessage]!
-        
-        progress.stopAnimating()
-        progress.removeFromSuperview()
-        
-        self.tableView.separatorColor = UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1)
-        self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MailUtils.getMessages(folderName!)
         self.view.addSubview(progress)
         progress.startAnimating()
+        
+        AccountUtils.sharedIMAPSession.fetchMessagesOperationWithFolder(folderName,
+            requestKind: MCOIMAPMessagesRequestKind.FullHeaders | MCOIMAPMessagesRequestKind.Flags | MCOIMAPMessagesRequestKind.Structure,
+            uids: MCOIndexSet(range: MCORangeMake(1, UINT64_MAX))
+            ).start( {
+            (err: NSError!, fetchedMessages: [AnyObject]!, vanishedMessages: MCOIndexSet!) in
+            self.messages = fetchedMessages.reverse() as [MCOIMAPMessage]
+            
+            self.progress.stopAnimating()
+            self.progress.removeFromSuperview()
+            
+            self.tableView.separatorColor = UIColor(red: 224.0/255.0, green: 224.0/255.0, blue: 224.0/255.0, alpha: 1)
+            self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
+        })
         
         self.tableView.separatorColor = UIColor.clearColor()
         self.tableView.rowHeight = 90
@@ -47,7 +41,6 @@ class MyMailMessagesViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source

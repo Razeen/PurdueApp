@@ -15,7 +15,7 @@ class MapViewController: UIViewController {
         
         self.navigationItem.title = NSLocalizedString("MAP_TITLE", comment: "")
         
-        var mapView: GMSMapView = GMSMapView.mapWithFrame(CGRectZero, camera:GMSCameraPosition.cameraWithLatitude(40.427821,
+        let mapView: GMSMapView = GMSMapView.mapWithFrame(CGRectZero, camera:GMSCameraPosition.cameraWithLatitude(40.427821,
             longitude:-86.917633, zoom:15))
         mapView.mapType = kGMSTypeNormal
         mapView.myLocationEnabled = true
@@ -31,6 +31,9 @@ class MapViewController: UIViewController {
         let buildings = UIImage(named: "Buildings")
         let overlay = GMSGroundOverlay(bounds: overlayBounds, icon: buildings)
         overlay.map = mapView
+        
+        var err: NSError?
+        let dict = XMLReader.dictionaryForXMLString(MapUtils.getXMLString(), error: &err)
     }
 
     override func didReceiveMemoryWarning() {

@@ -102,7 +102,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
                 webBrowser.navigationItem.title = NSLocalizedString("GAMES_TITLE", comment: "")
                 navigationController = createNavController(webBrowser)
                 webBrowser.loadURLString("http://m.purduesports.com/index-mobile.html")
-                //webBrowser.loadURLString("http://mobile.rivals.com/schedule.asp?TeamCode=PURDUE&Sport=1")
             } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("MENU", comment: "")) {
                 let webBrowser = KINWebBrowserViewController.webBrowser()
                 webBrowser.navigationItem.title = NSLocalizedString("MENU_TITLE", comment: "")
@@ -153,13 +152,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 50;
+        return 50
     }
     
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView: UIView = UIView(frame: CGRectMake(0, 0, 250, 50))
         footerView.backgroundColor = UIColor(red: 44.0/255.0, green: 44.0/255.0, blue: 44.0/255.0, alpha: 1)
         let settingBtn: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
+        settingBtn.addTarget(self, action: "showSettings", forControlEvents: UIControlEvents.TouchUpInside)
         settingBtn.tintColor = UIColor.whiteColor()
         settingBtn.frame = CGRectMake(0, 2, 48, 48)
         settingBtn.setImage(UIImage(named: "Settings")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
@@ -175,6 +175,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
         upperLayer.backgroundColor = UIColor(white: 0.5, alpha: 0.6).CGColor
         footerView.layer.addSublayer(upperLayer)
         return footerView
+    }
+    
+    func showSettings() {
+        slidingViewController!.presentViewController(createNavController(SettingsViewController()), animated: true, completion: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {

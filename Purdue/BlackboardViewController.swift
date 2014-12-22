@@ -11,7 +11,7 @@ import UIKit
 class BlackboardViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
     
     var signInBtn: BButton?
-    let viewController = SignInViewController()
+    var viewController: UIViewController?
     let progress = MRActivityIndicatorView(frame: CGRectMake((UIScreen.mainScreen().bounds.width - 30 ) / 2, 84 + 20, 30, 30))
     var courses: [Course] = []
     
@@ -35,6 +35,7 @@ class BlackboardViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         
         self.navigationItem.title = "Blackboard"
+        viewController = SignInViewController(source: (UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!)
         
         if AccountUtils.getUsername() == nil || AccountUtils.getPassword() == nil {
             let defaultHeight = CGFloat(20 + 64) // StatusBar + NavigationBar
@@ -123,7 +124,7 @@ class BlackboardViewController: UIViewController, UITableViewDataSource, UITable
     }
 
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
-        return touch.view != viewController.view
+        return touch.view != viewController!.view
     }
     
     override func didReceiveMemoryWarning() {

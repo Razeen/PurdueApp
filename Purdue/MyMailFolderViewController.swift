@@ -11,7 +11,7 @@ import UIKit
 class MyMailFolderViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIGestureRecognizerDelegate {
     
     var signInBtn: BButton?
-    let viewController = SignInViewController()
+    var viewController: UIViewController?
     let progress = MRActivityIndicatorView(frame: CGRectMake((UIScreen.mainScreen().bounds.width - 30 ) / 2, 84 + 20, 30, 30))
     var folders: [MCOIMAPFolder]?
     
@@ -21,7 +21,6 @@ class MyMailFolderViewController: UIViewController, UITableViewDataSource, UITab
     
     override func viewWillAppear(animated: Bool) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivedNotification:", name: "signInSuccess", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "gotFolders:", name: "GotFolders", object: nil)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -40,6 +39,7 @@ class MyMailFolderViewController: UIViewController, UITableViewDataSource, UITab
         super.viewDidLoad()
         
         self.navigationItem.title = "MyMail"
+        viewController = SignInViewController(source: (UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!)
         
         if AccountUtils.getUsername() == nil || AccountUtils.getPassword() == nil {
             let defaultHeight = CGFloat(20 + 64) // StatusBar + NavigationBar
@@ -93,68 +93,66 @@ class MyMailFolderViewController: UIViewController, UITableViewDataSource, UITab
         }
         self.view.addSubview(progress)
         progress.startAnimating()
-        MailUtils.getFolders()
-    }
-    
-    func gotFolders(notification: NSNotification) {
-        let dict = notification.userInfo!
-        folders = dict["Mail"] as [MCOIMAPFolder]!
-        var inboxFolder: MCOIMAPFolder?
-        var chatsFolder: MCOIMAPFolder?
-        var sentFolder: MCOIMAPFolder?
-        var draftsFolder: MCOIMAPFolder?
-        var junkFolder: MCOIMAPFolder?
-        var trashFolder: MCOIMAPFolder?
         
-        for i in 0 ... folders!.count - 6 {
-            if folders![i].path == "INBOX" {
-                inboxFolder = folders![i]
-                folders?.removeAtIndex(i)
-            } else if folders![i].path == "Chats" {
-                chatsFolder = folders![i]
-                folders?.removeAtIndex(i)
-            } else if folders![i].path == "Sent" {
-                sentFolder = folders![i]
-                folders?.removeAtIndex(i)
-            } else if folders![i].path == "Drafts" {
-                draftsFolder = folders![i]
-                folders?.removeAtIndex(i)
-            } else if folders![i].path == "Junk" {
-                junkFolder = folders![i]
-                folders?.removeAtIndex(i)
-            } else if folders![i].path == "Trash" {
-                trashFolder = folders![i]
-                folders?.removeAtIndex(i)
+        AccountUtils.sharedIMAPSession.fetchAllFoldersOperation().start( { (err: NSError!, folders: [AnyObject]!) in
+            self.folders = folders as? [MCOIMAPFolder]
+            var inboxFolder: MCOIMAPFolder?
+            var chatsFolder: MCOIMAPFolder?
+            var sentFolder: MCOIMAPFolder?
+            var draftsFolder: MCOIMAPFolder?
+            var junkFolder: MCOIMAPFolder?
+            var trashFolder: MCOIMAPFolder?
+            
+            for i in 0 ... folders.count - 6 {
+                if self.folders![i].path == "INBOX" {
+                    inboxFolder = self.folders![i]
+                    self.folders!.removeAtIndex(i)
+                } else if self.folders![i].path == "Chats" {
+                    chatsFolder = self.folders![i]
+                    self.folders!.removeAtIndex(i)
+                } else if self.folders![i].path == "Sent" {
+                    sentFolder = self.folders![i]
+                    self.folders!.removeAtIndex(i)
+                } else if self.folders![i].path == "Drafts" {
+                    draftsFolder = self.folders![i]
+                    self.folders!.removeAtIndex(i)
+                } else if self.folders![i].path == "Junk" {
+                    junkFolder = self.folders![i]
+                    self.folders!.removeAtIndex(i)
+                } else if self.folders![i].path == "Trash" {
+                    trashFolder = self.folders![i]
+                    self.folders!.removeAtIndex(i)
+                }
             }
-        }
-        folders?.insert(inboxFolder!, atIndex: 0)
-        folders?.insert(chatsFolder!, atIndex: 1)
-        folders?.insert(sentFolder!, atIndex: 2)
-        folders?.insert(draftsFolder!, atIndex: 3)
-        folders?.insert(junkFolder!, atIndex: 4)
-        folders?.insert(trashFolder!, atIndex: 5)
-        
-        for i in 0 ... folders!.count - 1 {
-            var pathParts = (folders![i].path as NSString).componentsSeparatedByString("/") as [String]
-            subCount.append(pathParts.count)
-            if (i == 0) {
-                pathCache.append("Inbox")
-            } else {
-                pathCache.append(pathParts[pathParts.count - 1])
+            self.folders!.insert(inboxFolder!, atIndex: 0)
+            self.folders!.insert(chatsFolder!, atIndex: 1)
+            self.folders!.insert(sentFolder!, atIndex: 2)
+            self.folders!.insert(draftsFolder!, atIndex: 3)
+            self.folders!.insert(junkFolder!, atIndex: 4)
+            self.folders!.insert(trashFolder!, atIndex: 5)
+            
+            for i in 0 ... folders.count - 1 {
+                var pathParts = (self.folders![i].path as NSString).componentsSeparatedByString("/") as [String]
+                self.subCount.append(pathParts.count)
+                if (i == 0) {
+                    self.pathCache.append("Inbox")
+                } else {
+                    self.pathCache.append(pathParts[pathParts.count - 1])
+                }
             }
-        }
-        
-        progress.stopAnimating()
-        progress.removeFromSuperview()
-        let tableView = UITableView(frame: CGRectZero)
-        tableView.rowHeight = 60
-        tableView.dataSource = self
-        tableView.delegate = self
-        self.view = tableView
+            
+            self.progress.stopAnimating()
+            self.progress.removeFromSuperview()
+            let tableView = UITableView(frame: CGRectZero)
+            tableView.rowHeight = 60
+            tableView.dataSource = self
+            tableView.delegate = self
+            self.view = tableView
+        })
     }
     
     func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
-        return touch.view != viewController.view
+        return touch.view != viewController!.view
     }
 
     override func didReceiveMemoryWarning() {

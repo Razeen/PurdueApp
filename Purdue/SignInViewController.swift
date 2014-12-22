@@ -15,6 +15,21 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     
     var userTF: UITextField?
     var passTF: UITextField?
+    
+    var source: UIViewController?
+    
+    required init(source: UIViewController) {
+        super.init()
+        self.source = source
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,24 +88,35 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         } else if passTF?.text.utf16Count <= 0 {
             SCLAlertView().showWarning((UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!, title: "Error", subTitle: "Password cannot be blank")
         } else {
-            let session = MCOIMAPSession()
-            session.hostname = "mymail.purdue.edu"
-            session.username = userTF!.text
-            session.password = passTF!.text
-            session.port = 993 // MyMail TLS Protocol port
-            session.connectionType = MCOConnectionType.TLS
-            // TODO: Need to use a faster operation
-            session.fetchAllFoldersOperation().start( { (err: NSError!, folders: [AnyObject]!) in
-                if err == nil {
-                    (UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!.dismissPopupViewControllerAnimated(true, completion: {
-                        AccountUtils.setUsername(self.userTF!.text)
-                        AccountUtils.setPassword(self.passTF!.text)
-                        NSNotificationCenter.defaultCenter().postNotificationName("signInSuccess", object: self)
-                    })
-                } else {
-                    SCLAlertView().showError((UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!, title: "Sorry", subTitle: "Username/Password pair not found")
-                }
-            })
+            /**
+                Purdue Account - Authentication
+                
+                :info: Using Blackboard API since it's faster than IMAP
+            */
+            
+            // prepare the POST params
+            let postString = NSString(format: "username=%@&password=%@", userTF!.text, passTF!.text)
+            
+            // set the POST request
+            let request = NSMutableURLRequest(URL: NSURL(string: "https://mycourses.purdue.edu/webapps/Bb-mobile-BBLEARN/sslUserLogin?v=2&f=xml&ver=4.1.2&registration_id=11946")!)
+            request.HTTPMethod = "POST"
+            request.setValue("\(postString.length)", forHTTPHeaderField: "Content-Length")
+            request.HTTPBody = postString.dataUsingEncoding(NSASCIIStringEncoding, allowLossyConversion: true)
+            
+            // send the request
+            let data = NSURLConnection.sendSynchronousRequest(request, returningResponse: nil, error: nil)
+            let resp = NSString(data: data!, encoding: NSUTF8StringEncoding)
+            
+            // parse the response
+            if resp?.containsString("OK") == true {
+                self.source!.dismissPopupViewControllerAnimated(true, completion: {
+                    AccountUtils.setUsername(self.userTF!.text)
+                    AccountUtils.setPassword(self.passTF!.text)
+                    NSNotificationCenter.defaultCenter().postNotificationName("signInSuccess", object: self)
+                })
+            } else {
+                SCLAlertView().showError(self.source!, title: "Sorry", subTitle: "Username/Password pair not found")
+            }
         }
     }
     
@@ -150,16 +176,5 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
