@@ -7,30 +7,29 @@
 //
 
 import UIKit
+import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UISearchDisplayDelegate {
 
+    var allBuildings: [Building] = []
+    var resBuildings: [Building] = []
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationItem.title = I18N.localizedString("MAP_TITLE")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = NSLocalizedString("MAP_TITLE", comment: "")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "Search"), style: UIBarButtonItemStyle.Done, target: self, action: "showSearchVC")
         
-        let mapView: GMSMapView = GMSMapView.mapWithFrame(CGRectZero, camera:GMSCameraPosition.cameraWithLatitude(40.427821,
-            longitude:-86.917633, zoom:15))
-        mapView.mapType = kGMSTypeNormal
-        mapView.myLocationEnabled = true
-        mapView.settings.compassButton = true
-        mapView.settings.myLocationButton = true
-        mapView.settings.indoorPicker = true
+        let mapView: MKMapView = MKMapView(frame: CGRectZero)
+        mapView.setRegion(MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(40.427821, -86.917633), 1000, 1000), animated: true)
+        mapView.addOverlay(BuildingOverlay())
+        mapView.delegate = self
         self.view = mapView
-        
-        let southWest = CLLocationCoordinate2DMake(40.412660, -86.934770)
-        let northEast = CLLocationCoordinate2DMake(40.437060, -86.908370)
-        let overlayBounds = GMSCoordinateBounds(coordinate: southWest, coordinate: northEast)
-        
-        let buildings = UIImage(named: "Buildings")
-        let overlay = GMSGroundOverlay(bounds: overlayBounds, icon: buildings)
-        overlay.map = mapView
         
         var err: NSError?
         let dict = XMLReader.dictionaryForXMLString(MapUtils.getXMLString(), error: &err)
@@ -38,18 +37,36 @@ class MapViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func mapView(mapView: MKMapView!, rendererForOverlay overlay: MKOverlay!) -> MKOverlayRenderer! {
+        if overlay.isKindOfClass(BuildingOverlay.classForCoder()) {
+            return BuildingOverlayView(overlay: overlay, overlayImage: UIImage(named: "Buildings")!)
+        }
+        
+        return nil
     }
-    */
-
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return resBuildings.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let CellIdentifier = "CellIdentifier"
+        
+        var cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as? UITableViewCell
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: CellIdentifier)
+        }
+        
+        let building = resBuildings[indexPath.row]
+        cell?.textLabel?.text = building.fullname
+        cell?.detailTextLabel?.text = building.abbreviation
+        
+        return cell!
+    }
 }

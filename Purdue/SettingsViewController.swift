@@ -10,7 +10,6 @@ import UIKit
 
 class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGestureRecognizerDelegate {
     
-    var signOutAS: UIActionSheet?
     var viewController: UIViewController?
     
     convenience override init() {
@@ -31,36 +30,42 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
     
     func receivedNotification(notification: NSNotification) {
         if notification.name == "signInSuccess" {
-            setSignOutFooter()
+            setFooter()
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         viewController = SignInViewController(source: self.navigationController!)
-        self.navigationItem.title = NSLocalizedString("SETTINGS_TITLE", comment: "")
+        
+        self.navigationItem.title = I18N.localizedString("SETTINGS_TITLE")
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Close"), style: UIBarButtonItemStyle.Done, target: self, action: "dismissViewController")
         
-        signOutAS = UIActionSheet(title: "Are you sure you want to sign out?", delegate: self, cancelButtonTitle: "Cancel", destructiveButtonTitle: "Sign Out")
-        
-        if AccountUtils.getUsername() == nil || AccountUtils.getPassword() == nil {
-            setSignInFooter()
-        } else {
-            setSignOutFooter()
-        }
+        setFooter()
         
         self.tableView.rowHeight = 50
     }
     
-    func setSignInFooter() {
-        let footerView = UILabel(frame: CGRectMake(0, 0, self.view.bounds.width, 50))
-        footerView.text = "SIGN IN"
-        footerView.textAlignment = NSTextAlignment.Center
-        footerView.textColor = UIColor.whiteColor()
-        footerView.backgroundColor = UIColor(red: 46.0/255, green: 204.0/255, blue: 113.0/255, alpha: 1.0)
-        footerView.userInteractionEnabled = true
-        footerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "signIn"))
-        self.tableView.tableFooterView = footerView
+    func setFooter() {
+        if AccountUtils.getUsername() == nil || AccountUtils.getPassword() == nil {
+            let footerView = UILabel(frame: CGRectMake(0, 0, self.view.bounds.width, 50))
+            footerView.text = I18N.localizedString("UPPERCASE_SIGN_IN")
+            footerView.textAlignment = NSTextAlignment.Center
+            footerView.textColor = UIColor.whiteColor()
+            footerView.backgroundColor = UIColor(red: 46.0/255, green: 204.0/255, blue: 113.0/255, alpha: 1.0)
+            footerView.userInteractionEnabled = true
+            footerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "signIn"))
+            self.tableView.tableFooterView = footerView
+        } else {
+            let footerView = UILabel(frame: CGRectMake(0, 0, self.view.bounds.width, 50))
+            footerView.text = I18N.localizedString("UPPERCASE_SIGN_OUT")
+            footerView.textAlignment = NSTextAlignment.Center
+            footerView.textColor = UIColor.whiteColor()
+            footerView.backgroundColor = UIColor.redColor()
+            footerView.userInteractionEnabled = true
+            footerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "signOut"))
+            self.tableView.tableFooterView = footerView
+        }
     }
     
     func signIn() {
@@ -78,19 +83,8 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
         return touch.view != viewController!.view
     }
     
-    func setSignOutFooter() {
-        let footerView = UILabel(frame: CGRectMake(0, 0, self.view.bounds.width, 50))
-        footerView.text = "SIGN OUT"
-        footerView.textAlignment = NSTextAlignment.Center
-        footerView.textColor = UIColor.whiteColor()
-        footerView.backgroundColor = UIColor.redColor()
-        footerView.userInteractionEnabled = true
-        footerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "signOut"))
-        self.tableView.tableFooterView = footerView
-    }
-    
     func signOut() {
-        signOutAS?.showFromRect(self.tableView.tableFooterView!.bounds, inView: self.view, animated: true)
+        UIActionSheet(title: I18N.localizedString("SETTINGS_SIGNOUT_PROMPT"), delegate: self, cancelButtonTitle: I18N.localizedString("CANCEL"), destructiveButtonTitle: I18N.localizedString("NORMALCASE_SIGN_OUT")).showFromRect(self.tableView.tableFooterView!.bounds, inView: self.view, animated: true)
     }
     
     
@@ -111,9 +105,9 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == 0 {
-           return "General"
+           return I18N.localizedString("GENERAL")
         } else {
-            return "Others"
+            return I18N.localizedString("OTHERS")
         }
     }
     
@@ -137,24 +131,51 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
         
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                cell?.textLabel?.text = "Language"
-                cell?.detailTextLabel?.text = "English"
+                cell?.textLabel?.text = I18N.localizedString("LANGUAGE")
+                let languageCode = (NSUserDefaults.standardUserDefaults().objectForKey("AppleLanguages") as NSArray)[0] as String
+                if languageCode == "en" {
+                    cell?.detailTextLabel?.text = "English"
+                } else if languageCode == "zh-Hant" {
+                    cell?.detailTextLabel?.text = "繁體中文"
+                }
             }
         }
+        
+        cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
 
         return cell!
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            if indexPath.row == 0 {
+                UIActionSheet(title: I18N.localizedString("SETTINGS_LANG_PROMPT"), delegate: self, cancelButtonTitle: I18N.localizedString("CANCEL"), destructiveButtonTitle: nil, otherButtonTitles: "English", "繁體中文").showFromRect(tableView.cellForRowAtIndexPath(indexPath)!.frame, inView: self.view, animated: true)
+            }
+        }
+        
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func actionSheet(actionSheet: UIActionSheet, clickedButtonAtIndex buttonIndex: Int) {
-        if actionSheet == signOutAS {
-            if actionSheet.buttonTitleAtIndex(buttonIndex) == "Sign Out" {
+        let buttonTitle = actionSheet.buttonTitleAtIndex(buttonIndex)
+        if buttonTitle == I18N.localizedString("CANCEL") {
+            return
+        }
+        
+        if actionSheet.title == I18N.localizedString("SETTINGS_LANG_PROMPT") {
+            if buttonTitle == "English" {
+                I18N.setLanguage("en")
+            } else if buttonTitle == "繁體中文" {
+                I18N.setLanguage("zh-Hant")
+            }
+            self.navigationItem.title = I18N.localizedString("SETTINGS_TITLE")
+            self.tableView.reloadData()
+            setFooter()
+        } else if actionSheet.title == I18N.localizedString("SETTINGS_SIGNOUT_PROMPT") {
+            if buttonTitle == I18N.localizedString("NORMALCASE_SIGN_OUT") {
                 AccountUtils.removeUsername()
                 AccountUtils.removePassword()
-                setSignInFooter()
+                setFooter()
             }
         }
     }

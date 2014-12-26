@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  Purdue
+
+  Created by George Lo on 9/25/14.
+  Copyright (c) 2014 Purdue University. All rights reserved.
+*/
+
+"SIDEMENU_SCHEDULE" = "行程表";
+"SIDEMENU_BUS" = "巴士";
+"SIDEMENU_MAP" = "地圖";
+"SIDEMENU_LABS" = "電腦室";
+"SIDEMENU_GAMES" = "體育競賽";
+"SIDEMENU_MENU" = "菜單";
+"SIDEMENU_NEWS" = "新聞";
+"SIDEMENU_WEATHER" = "天氣";
+"SIDEMENU_LIBRARY" = "圖書館";
+"SIDEMENU_PHOTOS" = "照片";
+"SIDEMENU_VIDEOS" = "影片";
+"SIDEMENU_DIRECTORY" = "普渡名錄";
+"SIDEMENU_STORE" = "商店";
+
+"GAMES_TITLE" = "體育競賽";
+"MENU_TITLE" = "菜單";
+"MAP_TITLE" = "地圖";
+"STORE_TITLE" = "普渡Amazon商店";
+"BUS_TITLE" = "巴士";
+"CALENDAR_TITLE" = "行程表";
+"LIBRARY_TITLE" = "圖書館";
+
+"SETTINGS_TITLE" = "設定";
+"SETTINGS_LANG_PROMPT" = "請選擇一個語言";
+"SETTINGS_SIGNOUT_PROMPT" = "您確定要登出嗎？";
+
+"GENERAL" = "一般";
+"LANGUAGE" = "語言";
+"OTHERS" = "其他";
+"NORMALCASE_SIGN_IN" = "登入";
+"NORMALCASE_SIGN_OUT" = "登出";
+"UPPERCASE_SIGN_IN" = "登入";
+"UPPERCASE_SIGN_OUT" = "登出";

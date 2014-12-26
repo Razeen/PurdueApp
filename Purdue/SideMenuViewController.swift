@@ -32,19 +32,19 @@ class SideMenuViewController: UITableViewController {
     let rowNames: [String] = [
         "MyMail",
         "Blackboard",
-        NSLocalizedString("SCHEDULE", comment: ""),
-        NSLocalizedString("BUS", comment: ""),
-        NSLocalizedString("MAP", comment: ""),
-        NSLocalizedString("LABS", comment: ""),
-        NSLocalizedString("GAMES", comment: ""),
-        NSLocalizedString("MENU", comment: ""),
-        NSLocalizedString("NEWS", comment: ""),
-        NSLocalizedString("WEATHER", comment: ""),
-        NSLocalizedString("LIBRARY", comment: ""),
-        NSLocalizedString("PHOTOS", comment: ""),
-        NSLocalizedString("VIDEOS", comment: ""),
-        NSLocalizedString("DIRECTORY", comment: ""),
-        NSLocalizedString("STORE", comment: "")
+        I18N.localizedString("SIDEMENU_SCHEDULE"),
+        I18N.localizedString("SIDEMENU_BUS"),
+        I18N.localizedString("SIDEMENU_MAP"),
+        I18N.localizedString("SIDEMENU_LABS"),
+        I18N.localizedString("SIDEMENU_GAMES"),
+        I18N.localizedString("SIDEMENU_MENU"),
+        I18N.localizedString("SIDEMENU_NEWS"),
+        I18N.localizedString("SIDEMENU_WEATHER"),
+        I18N.localizedString("SIDEMENU_LIBRARY"),
+        I18N.localizedString("SIDEMENU_PHOTOS"),
+        I18N.localizedString("SIDEMENU_VIDEOS"),
+        I18N.localizedString("SIDEMENU_DIRECTORY"),
+        I18N.localizedString("SIDEMENU_STORE")
     ]
     
     override func viewDidLoad() {

@@ -7,30 +7,20 @@
 //
 
 import UIKit
+import MapKit
 
-class LabsViewController: UIViewController, GMSMapViewDelegate {
+class LabsViewController: UIViewController, MKMapViewDelegate {
     
     // <LabBuildingName>: <LabBuilding> for faster mapping
     var buildings = NSMutableDictionary()
-    let calloutView = SMCalloutView()
-    let emptyCalloutView = UIView(frame: CGRectZero)
-    var mapView: GMSMapView = GMSMapView.mapWithFrame(CGRectZero, camera:GMSCameraPosition.cameraWithLatitude(40.427821,
-        longitude:-86.917633, zoom:15))
+    var mapView: MKMapView = MKMapView(frame: CGRectZero)
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = "ITaP Labs";
-        
-        let button = UIButton.buttonWithType(.DetailDisclosure) as UIButton
-        button.addTarget(self, action: "calloutAccessoryButtonTapped", forControlEvents: UIControlEvents.TouchUpInside)
-        calloutView.rightAccessoryView = button
 
-        mapView.mapType = kGMSTypeNormal
-        mapView.myLocationEnabled = true
-        mapView.settings.compassButton = true
-        mapView.settings.myLocationButton = true
-        mapView.settings.indoorPicker = true
+        mapView.setRegion(MKCoordinateRegionMake(CLLocationCoordinate2DMake(40.427821, -86.917633), MKCoordinateSpanMake(0.0380936352247474, 0.0294399289282126)), animated: true)
         mapView.delegate = self
         
         mapView.frame = self.view.frame
@@ -109,17 +99,11 @@ class LabsViewController: UIViewController, GMSMapViewDelegate {
                     }
                     self.buildings[building.name!] = building
                     dispatch_async(dispatch_get_main_queue(), {
-                        var marker = GMSMarker()
-                        marker.position = CLLocationCoordinate2DMake(building.latitude!, building.longitude!)
-                        marker.title = building.name!
-                        marker.snippet = "\(building.availability) Computers available"
-                        marker.appearAnimation = kGMSMarkerAnimationPop
-                        if building.availability > 0 && building.availability <= 15 {
-                            marker.icon = GMSMarker.markerImageWithColor(UIColor(red: 0.953, green: 0.612, blue: 0.071, alpha: 1))
-                        } else if building.availability > 15 {
-                            marker.icon = GMSMarker.markerImageWithColor(UIColor(red: 0.153, green: 0.682, blue: 0.376, alpha: 1))
-                        }
-                        marker.map = self.mapView
+                        let annotation = MKPointAnnotation()
+                        annotation.title = building.name!
+                        annotation.subtitle = "\(building.availability) Computers available"
+                        annotation.coordinate = CLLocationCoordinate2DMake(building.latitude!, building.longitude!)
+                        self.mapView.addAnnotation(annotation)
                     })
                 }
             } else {
@@ -138,56 +122,38 @@ class LabsViewController: UIViewController, GMSMapViewDelegate {
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     }
     
-    func calloutAccessoryButtonTapped() {
-        if self.mapView.selectedMarker != nil {
-            let marker = self.mapView.selectedMarker
-            let building = buildings[marker.title] as LabBuilding
-            let rooms = building.rooms
-            let detailVC = LabDetailsViewController()
-            detailVC.rooms = rooms
-            detailVC.navigationItem.title = building.name
-            detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
-            detailVC.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
-            self.navigationController?.pushViewController(detailVC, animated: true)
-        }
-    }
-    
-    func mapView(mapView: GMSMapView!, markerInfoWindow marker: GMSMarker!) -> UIView! {
-        let anchor =  marker.position;
-        let point = mapView.projection.pointForCoordinate(anchor)
-        
-        self.calloutView.title = marker.title
-        self.calloutView.subtitle = marker.snippet
-        self.calloutView.calloutOffset = CGPointMake(0, -40)
-        
-        self.calloutView.hidden = false
-        
-        let calloutRect = CGRectMake(point.x, point.y, 0, 0)
-        self.calloutView.presentCalloutFromRect(calloutRect, inView: mapView, constrainedToView: mapView, animated: true)
-        
-        return self.emptyCalloutView
-    }
-    
-    func mapView(mapView: GMSMapView!, didChangeCameraPosition position: GMSCameraPosition!) {
-        if (mapView.selectedMarker != nil && self.calloutView.hidden == false) {
-            let anchor = mapView.selectedMarker.position
-            let arrowPt = self.calloutView.backgroundView.arrowPoint
-            var pt = mapView.projection.pointForCoordinate(anchor)
-            pt = CGPointMake(pt.x - arrowPt.x, pt.y - arrowPt.y - 40)
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation!) -> MKAnnotationView! {
+        var pinAnnotation: MKPinAnnotationView?
+        if annotation.isKindOfClass(MKPointAnnotation.classForCoder()) {
+            let PinIdentifier = "PinIdentifier"
+            pinAnnotation = mapView.dequeueReusableAnnotationViewWithIdentifier(PinIdentifier) as? MKPinAnnotationView
+            if pinAnnotation == nil {
+                pinAnnotation = MKPinAnnotationView(annotation: annotation, reuseIdentifier: PinIdentifier)
+            }
+            pinAnnotation?.canShowCallout = true
+            pinAnnotation?.rightCalloutAccessoryView = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as UIButton
             
-            self.calloutView.frame = CGRectMake(pt.x, pt.y, self.calloutView.frame.width, self.calloutView.frame.height)
-        } else {
-            self.calloutView.hidden = true
+            let availability = annotation.subtitle?.componentsSeparatedByString(" ").first!.toInt()
+            if availability == 0 {
+                pinAnnotation?.pinColor = MKPinAnnotationColor.Red
+            } else if availability > 0 && availability <= 15 {
+                pinAnnotation?.pinColor = MKPinAnnotationColor.Purple
+            } else if availability > 15 {
+                pinAnnotation?.pinColor = MKPinAnnotationColor.Green
+            }
         }
+        return pinAnnotation
     }
     
-    func mapView(mapView: GMSMapView!, didTapAtCoordinate coordinate: CLLocationCoordinate2D) {
-        self.calloutView.hidden = true
-    }
-    
-    func mapView(mapView: GMSMapView!, didTapMarker marker: GMSMarker!) -> Bool {
-        mapView.selectedMarker = marker
-        return true
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        let annotation = view.annotation
+        let building = buildings[annotation.title!] as LabBuilding
+        let rooms = building.rooms
+        let detailVC = LabDetailsViewController()
+        detailVC.rooms = rooms
+        detailVC.navigationItem.title = building.name
+        detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

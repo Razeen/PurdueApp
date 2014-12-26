@@ -117,7 +117,6 @@ class MyMailMessagesViewController: UITableViewController {
         let viewController = MyMailBodyViewController()
         viewController.navigationItem.title = "Mail"
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
-        viewController.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
         viewController.message = messages[indexPath.row]
         viewController.folder = folderName!
         self.navigationController?.pushViewController(viewController, animated: true)

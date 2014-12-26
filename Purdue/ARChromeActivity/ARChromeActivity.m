@@ -79,7 +79,6 @@ static NSString *encodeByAddingPercentEscapes(NSString *input) {
                 _activityURL = (NSURL *)item;
                 return;
             }
-            
         }
     }
 }

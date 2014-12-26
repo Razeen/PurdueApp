@@ -20,11 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        GMSServices.provideAPIKey(APIKeys.GoogleMaps.rawValue)
+        UIBarButtonItem.appearance().tintColor = UIColor(white: 0.3, alpha: 1.0)
         
-        let viewController = LibraryViewController()
+        let viewController = MapViewController()
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
-        viewController.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
         let navigationController: UINavigationController = createNavController(viewController)
         slidingViewController = ECSlidingViewController(topViewController: navigationController)
         
@@ -85,50 +84,49 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
                 navigationController = createNavController(MyMailFolderViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString("Blackboard") {
                 navigationController = createNavController(BlackboardViewController())
-            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("SCHEDULE", comment: "")) {
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_SCHEDULE")) {
                 let webBrowser = KINWebBrowserViewController.webBrowser()
-                webBrowser.navigationItem.title = NSLocalizedString("CALENDAR_TITLE", comment: "")
+                webBrowser.navigationItem.title = I18N.localizedString("CALENDAR_TITLE")
                 navigationController = createNavController(webBrowser)
                 webBrowser.loadURLString("https://calendar.purdue.edu/")
                 //navigationController = createNavController(ScheduleViewController())
-            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("BUS", comment: "")) {
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_BUS")) {
                 navigationController = createNavController(BusViewController())
-            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("MAP", comment: "")) {
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_MAP")) {
                 navigationController = createNavController(MapViewController())
-            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("LABS", comment: "")) {
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_LABS")) {
                 navigationController = createNavController(LabsViewController())
-            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("GAMES", comment: "")) {
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_GAMES")) {
                 let webBrowser = KINWebBrowserViewController.webBrowser()
-                webBrowser.navigationItem.title = NSLocalizedString("GAMES_TITLE", comment: "")
+                webBrowser.navigationItem.title = I18N.localizedString("GAMES_TITLE")
                 navigationController = createNavController(webBrowser)
                 webBrowser.loadURLString("http://m.purduesports.com/index-mobile.html")
-            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("MENU", comment: "")) {
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_MENU")) {
                 let webBrowser = KINWebBrowserViewController.webBrowser()
-                webBrowser.navigationItem.title = NSLocalizedString("MENU_TITLE", comment: "")
+                webBrowser.navigationItem.title = I18N.localizedString("MENU_TITLE")
                 navigationController = createNavController(webBrowser)
                 webBrowser.loadURLString("http://www.housing.purdue.edu/Menus/")
                 //navigationController = createNavController(MenuViewController())
-            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("NEWS", comment: "")) {
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_NEWS")) {
                 navigationController = createNavController(NewsViewController())
-            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("WEATHER", comment: "")) {
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_WEATHER")) {
                 navigationController = createNavController(WeatherViewController())
-            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("LIBRARY", comment: "")) {
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_LIBRARY")) {
                 navigationController = createNavController(LibraryViewController())
-            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("PHOTOS", comment: "")) {
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_PHOTOS")) {
                 navigationController = createNavController(PhotoViewController())
-            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("VIDEOS", comment: "")) {
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_VIDEOS")) {
                 navigationController = createNavController(VideoViewController())
-            } else if (realNames[indexPath.row] as NSString).isEqualToString(NSLocalizedString("DIRECTORY", comment: "")) {
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_DIRECTORY")) {
                 navigationController = createNavController(DirectoryViewController())
             } else {
                 let webBrowser = KINWebBrowserViewController.webBrowser()
-                webBrowser.navigationItem.title = NSLocalizedString("STORE_TITLE", comment: "")
+                webBrowser.navigationItem.title = I18N.localizedString("STORE_TITLE")
                 navigationController = createNavController(webBrowser)
                 webBrowser.loadURLString("https://purdue.amazon.com/")
             }
             slidingViewController?.topViewController = navigationController
             (slidingViewController?.topViewController as UINavigationController).viewControllers[0].navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: .Done, target: self, action: "showMenu")
-            (slidingViewController?.topViewController as UINavigationController).viewControllers[0].navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
             closeMenu()
         }
     }
@@ -139,15 +137,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
     
     func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView: UIView = UIView(frame: CGRectMake(0, 0, 250, 180))
+        headerView.backgroundColor = UIColor(red: 44.0/255.0, green: 44.0/255.0, blue: 44.0/255.0, alpha: 1)
+        
         let imageView: UIImageView = UIImageView(image: UIImage(named: "PU_Logo"))
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
         imageView.frame = CGRectMake(30, 50, 210, 80)
         headerView.addSubview(imageView)
-        headerView.backgroundColor = UIColor(red: 44.0/255.0, green: 44.0/255.0, blue: 44.0/255.0, alpha: 1)
+        
         let bottomLayer: CALayer = CALayer()
-        bottomLayer.frame = CGRectMake(0, 180-2, 1000, 2)
+        bottomLayer.frame = CGRectMake(0, 180 - 2, 1000, 2)
         bottomLayer.backgroundColor = UIColor(white: 0.5, alpha: 0.6).CGColor
         headerView.layer.addSublayer(bottomLayer)
+        
         return headerView
     }
     
@@ -158,22 +159,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
     func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         let footerView: UIView = UIView(frame: CGRectMake(0, 0, 250, 50))
         footerView.backgroundColor = UIColor(red: 44.0/255.0, green: 44.0/255.0, blue: 44.0/255.0, alpha: 1)
+        
         let settingBtn: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as UIButton
         settingBtn.addTarget(self, action: "showSettings", forControlEvents: UIControlEvents.TouchUpInside)
         settingBtn.tintColor = UIColor.whiteColor()
         settingBtn.frame = CGRectMake(0, 2, 48, 48)
         settingBtn.setImage(UIImage(named: "Settings")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate), forState: UIControlState.Normal)
         footerView.addSubview(settingBtn)
-        let copyrightLbl: UILabel = UILabel(frame: CGRectMake(48, 2, 250-48, 48))
+        
+        let copyrightLbl: UILabel = UILabel(frame: CGRectMake(48, 2, 250 - 48, 48))
         copyrightLbl.text = "© PURDUE UNIVERSITY"
         copyrightLbl.textColor = UIColor.whiteColor()
         copyrightLbl.textAlignment = NSTextAlignment.Right
         copyrightLbl.font = UIFont(name: "Avenir-Book", size: 15)
         footerView.addSubview(copyrightLbl)
+        
         let upperLayer: CALayer = CALayer()
         upperLayer.frame = CGRectMake(0, 0, 1000, 2)
         upperLayer.backgroundColor = UIColor(white: 0.5, alpha: 0.6).CGColor
         footerView.layer.addSublayer(upperLayer)
+        
         return footerView
     }
     

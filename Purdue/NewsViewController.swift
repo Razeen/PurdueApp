@@ -18,9 +18,7 @@ class NewsViewController: UITableViewController, UIActionSheetDelegate {
         self.navigationItem.title = "Featured"
         self.tableView.rowHeight = 104
         let academicItem = UIBarButtonItem(image: UIImage(named: "NewsAcademics"), style: .Done, target: self, action: "showAcademicOptions")
-        academicItem.tintColor = UIColor(white: 0.3, alpha: 1.0)
         let topicItem = UIBarButtonItem(image: UIImage(named: "NewsTopics"), style: .Done, target: self, action: "showTopicOptions")
-        topicItem.tintColor = UIColor(white: 0.3, alpha: 1.0)
         self.navigationItem.rightBarButtonItems = [topicItem, academicItem]
         loadURL("http://www.purdue.edu/newsroom/rss/FeaturedNews.xml")
     }
@@ -198,7 +196,6 @@ class NewsViewController: UITableViewController, UIActionSheetDelegate {
         webBrowser.navigationItem.title = "Purdue News"
         webBrowser.loadURLString((news[indexPath.row] as News).link.absoluteString!)
         webBrowser.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
-        webBrowser.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
         self.navigationController?.pushViewController(webBrowser, animated: true)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }

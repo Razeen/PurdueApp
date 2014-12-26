@@ -10,5 +10,4 @@ import Foundation
 
 enum APIKeys: String {
     case Readability = "2zNH3agHQbJ3cNZ4jjtS5PDWRGR37p35"
-    case GoogleMaps = "AIzaSyBwbsA7bKd9OimtAvgR3LgCnXgemK7u424"
 }

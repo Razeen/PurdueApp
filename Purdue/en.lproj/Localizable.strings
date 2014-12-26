@@ -1,0 +1,41 @@
+/* 
+  Localizable.strings
+  Purdue
+
+  Created by George Lo on 9/25/14.
+  Copyright (c) 2014 Purdue University. All rights reserved.
+*/
+
+"SIDEMENU_SCHEDULE" = "Schedule";
+"SIDEMENU_BUS" = "Bus";
+"SIDEMENU_MAP" = "Map";
+"SIDEMENU_LABS" = "Lab";
+"SIDEMENU_GAMES" = "Games";
+"SIDEMENU_MENU" = "Menu";
+"SIDEMENU_NEWS" = "News";
+"SIDEMENU_WEATHER" = "Weather";
+"SIDEMENU_LIBRARY" = "Library";
+"SIDEMENU_PHOTOS" = "Photos";
+"SIDEMENU_VIDEOS" = "Videos";
+"SIDEMENU_DIRECTORY" = "Directory";
+"SIDEMENU_STORE" = "Store";
+
+"GAMES_TITLE" = "Sport Games";
+"MENU_TITLE" = "Menus";
+"MAP_TITLE" = "Map";
+"STORE_TITLE" = "Amazon Store";
+"BUS_TITLE" = "Bus";
+"CALENDAR_TITLE" = "Calendar";
+"LIBRARY_TITLE" = "Library";
+
+"SETTINGS_TITLE" = "Settings";
+"SETTINGS_LANG_PROMPT" = "Choose a language";
+"SETTINGS_SIGNOUT_PROMPT" = "Are you sure you want to sign out?";
+
+"GENERAL" = "General";
+"LANGUAGE" = "Language";
+"OTHERS" = "Others";
+"NORMALCASE_SIGN_IN" = "Sign In";
+"NORMALCASE_SIGN_OUT" = "Sign Out";
+"UPPERCASE_SIGN_IN" = "SIGN IN";
+"UPPERCASE_SIGN_OUT" = "SIGN OUT";

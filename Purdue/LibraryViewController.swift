@@ -70,7 +70,6 @@ class LibraryViewController: UIViewController, MKMapViewDelegate {
                 let viewController = LibraryDetailViewController()
                 viewController.currentLibrary = library
                 viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
-                viewController.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
                 self.navigationController?.pushViewController(viewController, animated: true)
             }
         }

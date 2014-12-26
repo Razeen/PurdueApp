@@ -158,7 +158,6 @@ class BlackboardViewController: UIViewController, UITableViewDataSource, UITable
         let viewController = BlackboardCourseViewController()
         viewController.navigationItem.title = courses[indexPath.row].name
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
-        viewController.navigationItem.leftBarButtonItem?.tintColor = UIColor(white: 0.3, alpha: 1.0)
         viewController.courseid = courses[indexPath.row].id
         self.navigationController?.pushViewController(viewController, animated: true)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
