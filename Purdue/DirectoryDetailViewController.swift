@@ -22,8 +22,9 @@ class DirectoryDetailViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Information"
-
+        self.navigationItem.title = I18N.localizedString("INFORMATION")
+        
+        self.progress.tintColor = ColorUtils.Core.Brown
         self.progress.startAnimating()
         self.view.addSubview(progress)
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
@@ -73,7 +74,6 @@ class DirectoryDetailViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         if self.careerLogin == nil {
             return 0
@@ -96,33 +96,33 @@ class DirectoryDetailViewController: UITableViewController {
         
         if self.email != nil {
             if indexPath.row == 0 {
-                cell!.textLabel!.text = "Career Login"
+                cell!.textLabel!.text = I18N.localizedString("CAREER_LOGIN")
                 cell?.detailTextLabel?.text = self.careerLogin
             } else if indexPath.row == 1 {
-                cell!.textLabel!.text = "Email"
+                cell!.textLabel!.text = I18N.localizedString("EMAIL")
                 cell?.detailTextLabel?.text = self.email
             } else if indexPath.row == 2 {
-                cell!.textLabel!.text = "School"
+                cell!.textLabel!.text = I18N.localizedString("SCHOOL")
                 cell?.detailTextLabel?.text = self.school
             } else if indexPath.row == 3 {
-                cell!.textLabel!.text = "Campus"
+                cell!.textLabel!.text = I18N.localizedString("CAMPUS")
                 cell?.detailTextLabel?.text = self.campus
             } else if indexPath.row == 4 {
-                cell!.textLabel!.text = "Qualified Name"
+                cell!.textLabel!.text = I18N.localizedString("QUALIFIED_NAME")
                 cell?.detailTextLabel?.text = self.qualifiedName
             }
         } else {
             if indexPath.row == 0 {
-                cell!.textLabel!.text = "Career Login"
+                cell!.textLabel!.text = I18N.localizedString("CAREER_LOGIN")
                 cell?.detailTextLabel?.text = self.careerLogin
             } else if indexPath.row == 1 {
-                cell!.textLabel!.text = "School"
+                cell!.textLabel!.text = I18N.localizedString("SCHOOL")
                 cell?.detailTextLabel?.text = self.school
             } else if indexPath.row == 2 {
-                cell!.textLabel!.text = "Campus"
+                cell!.textLabel!.text = I18N.localizedString("CAMPUS")
                 cell?.detailTextLabel?.text = self.campus
             } else if indexPath.row == 3 {
-                cell!.textLabel!.text = "Qualified Name"
+                cell!.textLabel!.text = I18N.localizedString("QUALIFIED_NAME")
                 cell?.detailTextLabel?.text = self.qualifiedName
             }
         }

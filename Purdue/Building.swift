@@ -11,9 +11,13 @@ import UIKit
 class Building: NSObject {
     var fullname: String?
     var abbreviation: String?
+    var latitude: Double
+    var longitude: Double
     
-    init(fullname: String, abbreviation: String) {
+    init(fullname: String, abbreviation: String, latitude: Double, longitude: Double) {
         self.fullname = fullname
         self.abbreviation = abbreviation
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }

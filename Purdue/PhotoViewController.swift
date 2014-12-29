@@ -18,7 +18,7 @@ class PhotoViewController: UITableViewController, MWPhotoBrowserDelegate {
         
         self.tableView.separatorColor = UIColor(white: 0.85, alpha: 0.5)
         self.tableView.rowHeight = 70
-        self.navigationItem.title = NSLocalizedString("PHOTOS", comment: "")
+        self.navigationItem.title = I18N.localizedString("PHOTOS_TITLE")
         
         let photoData: NSData = NSData(contentsOfURL: NSURL(string: "http://purdue.photoshelter.com/gallery-list/?feed=json")!)!
         if (photoData != NSNull()) {
@@ -100,7 +100,7 @@ class PhotoViewController: UITableViewController, MWPhotoBrowserDelegate {
         (cell?.contentView.viewWithTag(kTitleTag) as UILabel).text = photo.name
         let formatter = NSDateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        (cell?.contentView.viewWithTag(kDetailTag) as UILabel).text = "\(formatter.stringFromDate(photo.time))  |  \(photo.numImages) Photos"
+        (cell?.contentView.viewWithTag(kDetailTag) as UILabel).text = "\(formatter.stringFromDate(photo.time))  |  \(photo.numImages) " + I18N.localizedString("PHOTOS")
         
         return cell!
     }

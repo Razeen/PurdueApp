@@ -35,7 +35,7 @@ class LabDetailsViewController: UIViewController {
             if room.status == "Closed" {
                 let statusLabel = UILabel(frame: CGRectMake(15, cardHeight, scrollView.frame.width - 10, 25))
                 statusLabel.font = UIFont(name: "Avenir", size: 15)
-                statusLabel.text = room.status
+                statusLabel.text = I18N.localizedString("LAB_CLOSED")
                 statusLabel.textColor = UIColor.redColor()
                 statusLabel.contentMode = UIViewContentMode.Center
                 statusLabel.textAlignment = NSTextAlignment.Left
@@ -44,7 +44,7 @@ class LabDetailsViewController: UIViewController {
             } else if room.status == "Class in Session" {
                 let statusLabel = UILabel(frame: CGRectMake(15, cardHeight, scrollView.frame.width - 10, 25))
                 statusLabel.font = UIFont(name: "Avenir", size: 15)
-                statusLabel.text = room.status
+                statusLabel.text = I18N.localizedString("LAB_CLASS_IN_SESSION")
                 statusLabel.textColor = UIColor.orangeColor()
                 statusLabel.contentMode = UIViewContentMode.Center
                 statusLabel.textAlignment = NSTextAlignment.Left

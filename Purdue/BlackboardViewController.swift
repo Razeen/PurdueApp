@@ -35,6 +35,8 @@ class BlackboardViewController: UIViewController, UITableViewDataSource, UITable
         super.viewDidLoad()
         
         self.navigationItem.title = "Blackboard"
+        
+        self.progress.tintColor = ColorUtils.Core.Brown
         viewController = SignInViewController(source: (UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!)
         
         if AccountUtils.getUsername() == nil || AccountUtils.getPassword() == nil {
@@ -44,7 +46,7 @@ class BlackboardViewController: UIViewController, UITableViewDataSource, UITable
             oopsLabel.textColor = UIColor(white: 0.8, alpha: 1.0)
             oopsLabel.textAlignment = NSTextAlignment.Center
             oopsLabel.font = UIFont(name: "ArialRoundedMTBold", size: 60)
-            oopsLabel.text = "Oops!"
+            oopsLabel.text = I18N.localizedString("BLACKBOARD_OOPS")
             self.view.addSubview(oopsLabel)
             
             let hintLabel = UILabel(frame: CGRectMake(0, UIScreen.mainScreen().bounds.height / 10 * 2.25 + defaultHeight, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height / 10 * 1.5))
@@ -52,12 +54,12 @@ class BlackboardViewController: UIViewController, UITableViewDataSource, UITable
             hintLabel.textAlignment = NSTextAlignment.Center
             hintLabel.font = UIFont(name: "ArialRoundedMTBold", size: 24)
             hintLabel.numberOfLines = 2
-            hintLabel.text = "Please sign in by\ntapping the button below"
+            hintLabel.text = I18N.localizedString("BLACKBOARD_SIGN_IN_PROMPT")
             self.view.addSubview(hintLabel)
             
             let btnHeight = CGFloat(60)
             signInBtn = BButton(frame: CGRectMake((UIScreen.mainScreen().bounds.width - 160) / 2, UIScreen.mainScreen().bounds.height * 0.425 + defaultHeight, 160, btnHeight), type: BButtonType.Success, style: BButtonStyle.BootstrapV3)
-            signInBtn!.setTitle("Sign In", forState: UIControlState.Normal)
+            signInBtn!.setTitle(I18N.localizedString("SIGN_IN"), forState: UIControlState.Normal)
             signInBtn!.titleLabel?.font = UIFont.boldSystemFontOfSize(20)
             signInBtn!.addTarget(self, action: "showSignIn", forControlEvents: UIControlEvents.TouchUpInside)
             signInBtn!.buttonCornerRadius = 7.5

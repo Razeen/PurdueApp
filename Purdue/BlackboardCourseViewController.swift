@@ -20,6 +20,7 @@ class BlackboardCourseViewController: UIViewController, UITableViewDataSource, U
         self.navigationItem.title = "Blackboard"
         self.view.backgroundColor = UIColor.whiteColor()
         
+        self.progress.tintColor = ColorUtils.Core.Brown
         self.view.addSubview(progress)
         progress.startAnimating()
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {

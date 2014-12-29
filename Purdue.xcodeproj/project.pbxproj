@@ -8,20 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5E0B12BC1A2AF34400F57DFD /* KINWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B12BB1A2AF34400F57DFD /* KINWebBrowserViewController.m */; };
-		5E0B12CC1A2AF42C00F57DFD /* ARChromeActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B12C51A2AF42C00F57DFD /* ARChromeActivity.m */; };
-		5E0B12CD1A2AF42C00F57DFD /* ARChromeActivity.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12C61A2AF42C00F57DFD /* ARChromeActivity.png */; };
-		5E0B12CE1A2AF42C00F57DFD /* ARChromeActivity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12C71A2AF42C00F57DFD /* ARChromeActivity@2x.png */; };
-		5E0B12CF1A2AF42C00F57DFD /* ARChromeActivity@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12C81A2AF42C00F57DFD /* ARChromeActivity@2x~ipad.png */; };
-		5E0B12D01A2AF42C00F57DFD /* ARChromeActivity@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12C91A2AF42C00F57DFD /* ARChromeActivity@3x.png */; };
-		5E0B12D11A2AF42C00F57DFD /* ARChromeActivity@3x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12CA1A2AF42C00F57DFD /* ARChromeActivity@3x~ipad.png */; };
-		5E0B12D21A2AF42C00F57DFD /* ARChromeActivity~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12CB1A2AF42C00F57DFD /* ARChromeActivity~ipad.png */; };
-		5E0B12F41A2AF44300F57DFD /* TUSafariActivity.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12D61A2AF44300F57DFD /* TUSafariActivity.strings */; };
-		5E0B12F51A2AF44300F57DFD /* safari.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12E61A2AF44300F57DFD /* safari.png */; };
-		5E0B12F61A2AF44300F57DFD /* safari@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12E71A2AF44300F57DFD /* safari@2x.png */; };
-		5E0B12F71A2AF44300F57DFD /* safari@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12E81A2AF44300F57DFD /* safari@3x.png */; };
-		5E0B12F81A2AF44300F57DFD /* safari~iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12E91A2AF44300F57DFD /* safari~iPad.png */; };
-		5E0B12F91A2AF44300F57DFD /* safari~iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12EA1A2AF44300F57DFD /* safari~iPad@2x.png */; };
-		5E0B12FB1A2AF44300F57DFD /* TUSafariActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B12F21A2AF44300F57DFD /* TUSafariActivity.m */; };
 		5E0B13051A2AF60100F57DFD /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12FF1A2AF60100F57DFD /* backbutton.png */; };
 		5E0B13061A2AF60100F57DFD /* backbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B13001A2AF60100F57DFD /* backbutton@2x.png */; };
 		5E0B13071A2AF60100F57DFD /* backbutton@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B13011A2AF60100F57DFD /* backbutton@3x.png */; };
@@ -65,6 +51,9 @@
 		5E8582161A210C59006E6539 /* DirectoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E8582151A210C59006E6539 /* DirectoryDetailViewController.swift */; };
 		5E9ABA0D1A25AC9600800B25 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9ABA0C1A25AC9600800B25 /* FolderCell.swift */; };
 		5E9ABA101A25B57000800B25 /* MyMailMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E9ABA0F1A25B57000800B25 /* MyMailMessagesViewController.swift */; };
+		5EA3BA3F1A4F33D20029F704 /* ColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3BA3E1A4F33D20029F704 /* ColorUtils.swift */; };
+		5EA3BA471A50E75B0029F704 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3BA461A50E75B0029F704 /* Route.swift */; };
+		5EA3BA491A50E7D80029F704 /* Stop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA3BA481A50E7D80029F704 /* Stop.swift */; };
 		5EA4C2C219D50E0600E42732 /* PUNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4C2C119D50E0600E42732 /* PUNavigationBar.swift */; };
 		5EA4C2CA19D5ED2100E42732 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EA4C2C919D5ED2100E42732 /* SCLAlertView.swift */; };
 		5EA8414C1A2396D8009A4A9F /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA841451A2396D8009A4A9F /* BButton.m */; };
@@ -231,24 +220,6 @@
 /* Begin PBXFileReference section */
 		5E0B12BA1A2AF34400F57DFD /* KINWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KINWebBrowserViewController.h; sourceTree = "<group>"; };
 		5E0B12BB1A2AF34400F57DFD /* KINWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KINWebBrowserViewController.m; sourceTree = "<group>"; };
-		5E0B12C41A2AF42C00F57DFD /* ARChromeActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARChromeActivity.h; sourceTree = "<group>"; };
-		5E0B12C51A2AF42C00F57DFD /* ARChromeActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARChromeActivity.m; sourceTree = "<group>"; };
-		5E0B12C61A2AF42C00F57DFD /* ARChromeActivity.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ARChromeActivity.png; sourceTree = "<group>"; };
-		5E0B12C71A2AF42C00F57DFD /* ARChromeActivity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity@2x.png"; sourceTree = "<group>"; };
-		5E0B12C81A2AF42C00F57DFD /* ARChromeActivity@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity@2x~ipad.png"; sourceTree = "<group>"; };
-		5E0B12C91A2AF42C00F57DFD /* ARChromeActivity@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity@3x.png"; sourceTree = "<group>"; };
-		5E0B12CA1A2AF42C00F57DFD /* ARChromeActivity@3x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity@3x~ipad.png"; sourceTree = "<group>"; };
-		5E0B12CB1A2AF42C00F57DFD /* ARChromeActivity~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ARChromeActivity~ipad.png"; sourceTree = "<group>"; };
-		5E0B12D51A2AF44300F57DFD /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		5E0B12D91A2AF44300F57DFD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TUSafariActivity.strings; sourceTree = "<group>"; };
-		5E0B12E61A2AF44300F57DFD /* safari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = safari.png; sourceTree = "<group>"; };
-		5E0B12E71A2AF44300F57DFD /* safari@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari@2x.png"; sourceTree = "<group>"; };
-		5E0B12E81A2AF44300F57DFD /* safari@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari@3x.png"; sourceTree = "<group>"; };
-		5E0B12E91A2AF44300F57DFD /* safari~iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari~iPad.png"; sourceTree = "<group>"; };
-		5E0B12EA1A2AF44300F57DFD /* safari~iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "safari~iPad@2x.png"; sourceTree = "<group>"; };
-		5E0B12F01A2AF44300F57DFD /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		5E0B12F11A2AF44300F57DFD /* TUSafariActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TUSafariActivity.h; sourceTree = "<group>"; };
-		5E0B12F21A2AF44300F57DFD /* TUSafariActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TUSafariActivity.m; sourceTree = "<group>"; };
 		5E0B12FF1A2AF60100F57DFD /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
 		5E0B13001A2AF60100F57DFD /* backbutton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbutton@2x.png"; sourceTree = "<group>"; };
 		5E0B13011A2AF60100F57DFD /* backbutton@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbutton@3x.png"; sourceTree = "<group>"; };
@@ -260,7 +231,6 @@
 		5E1FB5B01A27FAD300349305 /* MyMailBodyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMailBodyViewController.swift; sourceTree = "<group>"; };
 		5E22189C1A36EF3C0086E49D /* MapUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapUtils.swift; sourceTree = "<group>"; };
 		5E2EE9E81A4BF98E0082357F /* I18N.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = I18N.swift; sourceTree = "<group>"; };
-		5E2EE9EA1A4BFBC80082357F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/TUSafariActivity.strings"; sourceTree = "<group>"; };
 		5E2EE9EC1A4BFBD30082357F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E2EE9EE1A4BFBD50082357F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		5E307F2D1A323A9500B19FBB /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -309,6 +279,9 @@
 		5E8582151A210C59006E6539 /* DirectoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryDetailViewController.swift; sourceTree = "<group>"; };
 		5E9ABA0C1A25AC9600800B25 /* FolderCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
 		5E9ABA0F1A25B57000800B25 /* MyMailMessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMailMessagesViewController.swift; sourceTree = "<group>"; };
+		5EA3BA3E1A4F33D20029F704 /* ColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorUtils.swift; sourceTree = "<group>"; };
+		5EA3BA461A50E75B0029F704 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		5EA3BA481A50E7D80029F704 /* Stop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stop.swift; sourceTree = "<group>"; };
 		5EA4C2C119D50E0600E42732 /* PUNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PUNavigationBar.swift; sourceTree = "<group>"; };
 		5EA4C2C919D5ED2100E42732 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		5EA841441A2396D8009A4A9F /* BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BButton.h; sourceTree = "<group>"; };
@@ -489,55 +462,6 @@
 			path = KINWebBrowser;
 			sourceTree = "<group>";
 		};
-		5E0B12C31A2AF42C00F57DFD /* ARChromeActivity */ = {
-			isa = PBXGroup;
-			children = (
-				5E0B12C41A2AF42C00F57DFD /* ARChromeActivity.h */,
-				5E0B12C51A2AF42C00F57DFD /* ARChromeActivity.m */,
-				5E0B12C61A2AF42C00F57DFD /* ARChromeActivity.png */,
-				5E0B12C71A2AF42C00F57DFD /* ARChromeActivity@2x.png */,
-				5E0B12C81A2AF42C00F57DFD /* ARChromeActivity@2x~ipad.png */,
-				5E0B12C91A2AF42C00F57DFD /* ARChromeActivity@3x.png */,
-				5E0B12CA1A2AF42C00F57DFD /* ARChromeActivity@3x~ipad.png */,
-				5E0B12CB1A2AF42C00F57DFD /* ARChromeActivity~ipad.png */,
-			);
-			path = ARChromeActivity;
-			sourceTree = "<group>";
-		};
-		5E0B12D31A2AF44300F57DFD /* TUSafariActivity */ = {
-			isa = PBXGroup;
-			children = (
-				5E0B12D41A2AF44300F57DFD /* Assets */,
-				5E0B12EF1A2AF44300F57DFD /* Classes */,
-			);
-			name = TUSafariActivity;
-			path = Pod;
-			sourceTree = "<group>";
-		};
-		5E0B12D41A2AF44300F57DFD /* Assets */ = {
-			isa = PBXGroup;
-			children = (
-				5E0B12D51A2AF44300F57DFD /* .gitkeep */,
-				5E0B12D61A2AF44300F57DFD /* TUSafariActivity.strings */,
-				5E0B12E61A2AF44300F57DFD /* safari.png */,
-				5E0B12E71A2AF44300F57DFD /* safari@2x.png */,
-				5E0B12E81A2AF44300F57DFD /* safari@3x.png */,
-				5E0B12E91A2AF44300F57DFD /* safari~iPad.png */,
-				5E0B12EA1A2AF44300F57DFD /* safari~iPad@2x.png */,
-			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		5E0B12EF1A2AF44300F57DFD /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				5E0B12F01A2AF44300F57DFD /* .gitkeep */,
-				5E0B12F11A2AF44300F57DFD /* TUSafariActivity.h */,
-				5E0B12F21A2AF44300F57DFD /* TUSafariActivity.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		5E0B12FE1A2AF60100F57DFD /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -711,6 +635,7 @@
 				5E48FD671A217801004FE8B7 /* SignInViewController.swift */,
 				5E76EFC019E6C74C0059930E /* WeatherUtils.swift */,
 				5E22189C1A36EF3C0086E49D /* MapUtils.swift */,
+				5EA3BA3E1A4F33D20029F704 /* ColorUtils.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -736,6 +661,8 @@
 				5E307F2D1A323A9500B19FBB /* Course.swift */,
 				5E6A81561A477A7C008277F2 /* Library.swift */,
 				5EEEEDEF1A493D8E00F95BE1 /* Building.swift */,
+				5EA3BA461A50E75B0029F704 /* Route.swift */,
+				5EA3BA481A50E7D80029F704 /* Stop.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -753,8 +680,6 @@
 		5EA4C2C519D5EA0700E42732 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				5E0B12D31A2AF44300F57DFD /* TUSafariActivity */,
-				5E0B12C31A2AF42C00F57DFD /* ARChromeActivity */,
 				5E0B12B91A2AF34400F57DFD /* KINWebBrowser */,
 				5EA841421A2396D8009A4A9F /* BButton */,
 				5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */,
@@ -1229,29 +1154,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E0B130A1A2AF60100F57DFD /* forwardbutton@3x.png in Resources */,
-				5E0B12D01A2AF42C00F57DFD /* ARChromeActivity@3x.png in Resources */,
 				5E2EE9EB1A4BFBD30082357F /* Localizable.strings in Resources */,
 				5EA8414F1A2396D8009A4A9F /* FontAwesome.ttf in Resources */,
-				5E0B12F51A2AF44300F57DFD /* safari.png in Resources */,
-				5E0B12CE1A2AF42C00F57DFD /* ARChromeActivity@2x.png in Resources */,
-				5E0B12D11A2AF42C00F57DFD /* ARChromeActivity@3x~ipad.png in Resources */,
 				5E0B13081A2AF60100F57DFD /* forwardbutton.png in Resources */,
 				5E4B88FF19D07F9C00EEB9C3 /* LaunchScreen.xib in Resources */,
 				5E0B13051A2AF60100F57DFD /* backbutton.png in Resources */,
-				5E0B12F41A2AF44300F57DFD /* TUSafariActivity.strings in Resources */,
 				5EB5FF2419FFF70300491C22 /* LICENSE in Resources */,
 				5E0B13071A2AF60100F57DFD /* backbutton@3x.png in Resources */,
 				5E0B13061A2AF60100F57DFD /* backbutton@2x.png in Resources */,
-				5E0B12D21A2AF42C00F57DFD /* ARChromeActivity~ipad.png in Resources */,
-				5E0B12CD1A2AF42C00F57DFD /* ARChromeActivity.png in Resources */,
-				5E0B12F81A2AF44300F57DFD /* safari~iPad.png in Resources */,
-				5E0B12CF1A2AF42C00F57DFD /* ARChromeActivity@2x~ipad.png in Resources */,
-				5E0B12F71A2AF44300F57DFD /* safari@3x.png in Resources */,
 				5E0B13091A2AF60100F57DFD /* forwardbutton@2x.png in Resources */,
 				5E4B88E619D07E0A00EEB9C3 /* Images.xcassets in Resources */,
 				5EB5FF3619FFF70300491C22 /* MWPhotoBrowser.bundle in Resources */,
-				5E0B12F91A2AF44300F57DFD /* safari~iPad@2x.png in Resources */,
-				5E0B12F61A2AF44300F57DFD /* safari@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1310,6 +1223,7 @@
 				5E1FB5B11A27FAD300349305 /* MyMailBodyViewController.swift in Sources */,
 				5EA8414E1A2396D8009A4A9F /* UIColor+BButton.m in Sources */,
 				5E0B12BC1A2AF34400F57DFD /* KINWebBrowserViewController.m in Sources */,
+				5EA3BA3F1A4F33D20029F704 /* ColorUtils.swift in Sources */,
 				5EB5FF2819FFF70300491C22 /* SDImageCache.m in Sources */,
 				5E22189D1A36EF3C0086E49D /* MapUtils.swift in Sources */,
 				5EE1504A1A0FEBC8008C9825 /* MRWeakProxy.m in Sources */,
@@ -1325,7 +1239,6 @@
 				5E48FD641A217649004FE8B7 /* KeychainWrapper.swift in Sources */,
 				5EDAF99D1A06C29800B954A9 /* DirectoryStudent.swift in Sources */,
 				5EE150481A0FEBC8008C9825 /* MRMessageInterceptor.m in Sources */,
-				5E0B12CC1A2AF42C00F57DFD /* ARChromeActivity.m in Sources */,
 				5E76EFC119E6C74C0059930E /* WeatherUtils.swift in Sources */,
 				5E1BA79419EDBC7400F66539 /* Photo.swift in Sources */,
 				5EB6510F1A02BC3A00AB7257 /* Video.swift in Sources */,
@@ -1343,7 +1256,6 @@
 				5EB5FF3419FFF70300491C22 /* UIImageView+WebCache.m in Sources */,
 				5EB5FF0D19FFF70300491C22 /* MWGridCell.m in Sources */,
 				5E4B891819D0903100EEB9C3 /* SideMenuViewController.swift in Sources */,
-				5E0B12FB1A2AF44300F57DFD /* TUSafariActivity.m in Sources */,
 				5EB5FF3019FFF70300491C22 /* UIImage+GIF.m in Sources */,
 				5EB92BFD19DB26EC00176BCC /* MyMailFolderViewController.swift in Sources */,
 				5EA4C2C219D50E0600E42732 /* PUNavigationBar.swift in Sources */,
@@ -1361,6 +1273,7 @@
 				5EEB697419DF3F9A005619BA /* DirectoryViewController.swift in Sources */,
 				5E83BFE619D7292300C883E1 /* NewsViewController.swift in Sources */,
 				5EEEEDEA1A48CEF100F95BE1 /* BuildingOverlay.swift in Sources */,
+				5EA3BA491A50E7D80029F704 /* Stop.swift in Sources */,
 				5EB5FF2D19FFF70300491C22 /* SDWebImageManager.m in Sources */,
 				5EA4C2CA19D5ED2100E42732 /* SCLAlertView.swift in Sources */,
 				5EB5FF0F19FFF70300491C22 /* MWPhoto.m in Sources */,
@@ -1375,6 +1288,7 @@
 				5EB5FF3219FFF70300491C22 /* UIImage+WebP.m in Sources */,
 				5EE1506B1A101001008C9825 /* LabRoom.swift in Sources */,
 				5EEEEDEE1A48E9DC00F95BE1 /* BuildingOverlayView.swift in Sources */,
+				5EA3BA471A50E75B0029F704 /* Route.swift in Sources */,
 				5E4B890F19D08B4E00EEB9C3 /* ECSlidingAnimationController.m in Sources */,
 				5EB5FF1219FFF70300491C22 /* MWTapDetectingView.m in Sources */,
 				5EB5FF5919FFF82200491C22 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
@@ -1407,15 +1321,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		5E0B12D61A2AF44300F57DFD /* TUSafariActivity.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				5E0B12D91A2AF44300F57DFD /* en */,
-				5E2EE9EA1A4BFBC80082357F /* zh-Hant */,
-			);
-			name = TUSafariActivity.strings;
-			sourceTree = "<group>";
-		};
 		5E2EE9ED1A4BFBD30082357F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

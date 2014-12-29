@@ -54,7 +54,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         blackOverlay.addSubview(iconIV)
         
         let titleLabel = UILabel(frame: CGRectMake(0, baseView.frame.height * 0.425 + 10, baseView.frame.width, baseView.frame.height * 0.1 - 10))
-        titleLabel.text = "Purdue Account"
+        titleLabel.text = I18N.localizedString("SIGNIN_PURDUE_ACCOUNT")
         titleLabel.textColor = UIColor.whiteColor()
         titleLabel.textAlignment = NSTextAlignment.Center
         titleLabel.font = UIFont(name: "Avenir-Heavy", size: 27)
@@ -62,13 +62,13 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         
         let tfwidth = baseView.frame.width - 30
         let tfheight = CGFloat(44)
-        userTF = self.makeTF(CGRectMake((baseView.frame.width - tfwidth) / 2, baseView.frame.height * 0.575, tfwidth, 44), tag: 0, delegate: self, placeholder: "Username", imageName: "Username")
-        passTF = self.makeTF(CGRectMake((baseView.frame.width - tfwidth) / 2, baseView.frame.height * 0.7, tfwidth, 44), tag: 1, delegate: self, placeholder: "Password", imageName: "Password")
+        userTF = self.makeTF(CGRectMake((baseView.frame.width - tfwidth) / 2, baseView.frame.height * 0.575, tfwidth, 44), tag: 0, delegate: self, placeholder: I18N.localizedString("USERNAME"), imageName: "Username")
+        passTF = self.makeTF(CGRectMake((baseView.frame.width - tfwidth) / 2, baseView.frame.height * 0.7, tfwidth, 44), tag: 1, delegate: self, placeholder: I18N.localizedString("PASSWORD"), imageName: "Password")
         passTF!.secureTextEntry = true
         blackOverlay.addSubview(userTF!)
         blackOverlay.addSubview(passTF!)
         
-        signInBtn = self.makeBT(CGRectMake((baseView.frame.width - tfwidth) / 2, baseView.frame.height * 0.85, tfwidth, 44), title: "SIGN IN")
+        signInBtn = self.makeBT(CGRectMake((baseView.frame.width - tfwidth) / 2, baseView.frame.height * 0.85, tfwidth, 44), title: I18N.localizedString("SIGNIN_SIGN_IN"))
         signInBtn!.addTarget(self, action: "signIn", forControlEvents: UIControlEvents.TouchUpInside)
         blackOverlay.addSubview(self.signInBtn!)
     }
@@ -84,9 +84,9 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
         
         if userTF?.text.utf16Count <= 0 {
-            SCLAlertView().showWarning((UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!, title: "Error", subTitle: "Username cannot be blank")
+            SCLAlertView().showWarning((UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!, title: I18N.localizedString("ERROR"), subTitle: I18N.localizedString("SIGNIN_ERR_USERNAME_BLANK"))
         } else if passTF?.text.utf16Count <= 0 {
-            SCLAlertView().showWarning((UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!, title: "Error", subTitle: "Password cannot be blank")
+            SCLAlertView().showWarning((UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!, title: I18N.localizedString("ERROR"), subTitle: I18N.localizedString("SIGNIN_ERR_PASSWORD_BLANK"))
         } else {
             /**
                 Purdue Account - Authentication
@@ -115,7 +115,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
                     NSNotificationCenter.defaultCenter().postNotificationName("signInSuccess", object: self)
                 })
             } else {
-                SCLAlertView().showError(self.source!, title: "Sorry", subTitle: "Username/Password pair not found")
+                SCLAlertView().showError(self.source!, title: I18N.localizedString("ERROR"), subTitle: I18N.localizedString("SIGNIN_ERR_NOT_FOUND"))
             }
         }
     }

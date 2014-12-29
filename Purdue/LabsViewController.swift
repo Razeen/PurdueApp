@@ -18,7 +18,7 @@ class LabsViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "ITaP Labs";
+        self.navigationItem.title = I18N.localizedString("LAB_TITLE");
 
         mapView.setRegion(MKCoordinateRegionMake(CLLocationCoordinate2DMake(40.427821, -86.917633), MKCoordinateSpanMake(0.0380936352247474, 0.0294399289282126)), animated: true)
         mapView.delegate = self
@@ -101,15 +101,17 @@ class LabsViewController: UIViewController, MKMapViewDelegate {
                     dispatch_async(dispatch_get_main_queue(), {
                         let annotation = MKPointAnnotation()
                         annotation.title = building.name!
-                        annotation.subtitle = "\(building.availability) Computers available"
+                        let COMPUTERS_AVAIL = I18N.localizedString("LAB_COMPUTERS_AVAILABLE")
+                        annotation.subtitle = "\(building.availability) \(COMPUTERS_AVAIL)"
                         annotation.coordinate = CLLocationCoordinate2DMake(building.latitude!, building.longitude!)
                         self.mapView.addAnnotation(annotation)
                     })
                 }
             } else {
                 dispatch_async(dispatch_get_main_queue(), {
-                    println("Error")
-                    SCLAlertView().showError(self, title: "Error Loading", subTitle: "Please try reloading later")
+                    let title = I18N.localizedString("ERROR")
+                    let subtitle = I18N.localizedString("TRY_LATER")
+                    SCLAlertView().showError(self, title: title, subTitle: subtitle)
                 })
             }
         })

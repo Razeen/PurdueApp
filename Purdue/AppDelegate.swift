@@ -20,11 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        UIBarButtonItem.appearance().tintColor = UIColor(white: 0.3, alpha: 1.0)
-        
-        let viewController = MapViewController()
+        let viewController = BusViewController()
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
-        let navigationController: UINavigationController = createNavController(viewController)
+        let navigationController: UINavigationController = AppDelegate.createNavController(viewController)
         slidingViewController = ECSlidingViewController(topViewController: navigationController)
         
         let sideMenuVC : SideMenuViewController = SideMenuViewController()
@@ -38,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
         return true
     }
     
-    func createNavController(viewController: UIViewController) -> UINavigationController {
+    class func createNavController(viewController: UIViewController) -> UINavigationController {
         let navigationController: UINavigationController = UINavigationController(navigationBarClass: PUNavigationBar.self, toolbarClass: nil)
         navigationController.viewControllers = [viewController]
         navigationController.view.backgroundColor = UIColor.whiteColor()
@@ -77,52 +75,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
     // MARK: - Table view delegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if let realNames = rowNames {
             var navigationController: UINavigationController?
             
             if (realNames[indexPath.row] as NSString).isEqualToString("MyMail") {
-                navigationController = createNavController(MyMailFolderViewController())
+                navigationController = AppDelegate.createNavController(MyMailFolderViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString("Blackboard") {
-                navigationController = createNavController(BlackboardViewController())
+                navigationController = AppDelegate.createNavController(BlackboardViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_SCHEDULE")) {
                 let webBrowser = KINWebBrowserViewController.webBrowser()
                 webBrowser.navigationItem.title = I18N.localizedString("CALENDAR_TITLE")
-                navigationController = createNavController(webBrowser)
+                webBrowser.showsURLInNavigationBar = false
+                webBrowser.showsPageTitleInNavigationBar = false
+                navigationController = AppDelegate.createNavController(webBrowser)
                 webBrowser.loadURLString("https://calendar.purdue.edu/")
-                //navigationController = createNavController(ScheduleViewController())
+                //navigationController = AppDelegate.createNavController(ScheduleViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_BUS")) {
-                navigationController = createNavController(BusViewController())
+                navigationController = AppDelegate.createNavController(BusViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_MAP")) {
-                navigationController = createNavController(MapViewController())
+                navigationController = AppDelegate.createNavController(MapViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_LABS")) {
-                navigationController = createNavController(LabsViewController())
+                navigationController = AppDelegate.createNavController(LabsViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_GAMES")) {
                 let webBrowser = KINWebBrowserViewController.webBrowser()
                 webBrowser.navigationItem.title = I18N.localizedString("GAMES_TITLE")
-                navigationController = createNavController(webBrowser)
+                webBrowser.showsURLInNavigationBar = false
+                webBrowser.showsPageTitleInNavigationBar = false
+                navigationController = AppDelegate.createNavController(webBrowser)
                 webBrowser.loadURLString("http://m.purduesports.com/index-mobile.html")
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_MENU")) {
                 let webBrowser = KINWebBrowserViewController.webBrowser()
                 webBrowser.navigationItem.title = I18N.localizedString("MENU_TITLE")
-                navigationController = createNavController(webBrowser)
+                webBrowser.showsURLInNavigationBar = false
+                webBrowser.showsPageTitleInNavigationBar = false
+                navigationController = AppDelegate.createNavController(webBrowser)
                 webBrowser.loadURLString("http://www.housing.purdue.edu/Menus/")
-                //navigationController = createNavController(MenuViewController())
+                //navigationController = AppDelegate.createNavController(MenuViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_NEWS")) {
-                navigationController = createNavController(NewsViewController())
+                navigationController = AppDelegate.createNavController(NewsViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_WEATHER")) {
-                navigationController = createNavController(WeatherViewController())
+                navigationController = AppDelegate.createNavController(WeatherViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_LIBRARY")) {
-                navigationController = createNavController(LibraryViewController())
+                navigationController = AppDelegate.createNavController(LibraryViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_PHOTOS")) {
-                navigationController = createNavController(PhotoViewController())
+                navigationController = AppDelegate.createNavController(PhotoViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_VIDEOS")) {
-                navigationController = createNavController(VideoViewController())
+                navigationController = AppDelegate.createNavController(VideoViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_DIRECTORY")) {
-                navigationController = createNavController(DirectoryViewController())
+                navigationController = AppDelegate.createNavController(DirectoryViewController())
             } else {
                 let webBrowser = KINWebBrowserViewController.webBrowser()
                 webBrowser.navigationItem.title = I18N.localizedString("STORE_TITLE")
-                navigationController = createNavController(webBrowser)
+                webBrowser.showsURLInNavigationBar = false
+                webBrowser.showsPageTitleInNavigationBar = false
+                navigationController = AppDelegate.createNavController(webBrowser)
                 webBrowser.loadURLString("https://purdue.amazon.com/")
             }
             slidingViewController?.topViewController = navigationController
@@ -183,7 +190,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
     }
     
     func showSettings() {
-        slidingViewController!.presentViewController(createNavController(SettingsViewController()), animated: true, completion: nil)
+        slidingViewController!.presentViewController(AppDelegate.createNavController(SettingsViewController()), animated: true, completion: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {

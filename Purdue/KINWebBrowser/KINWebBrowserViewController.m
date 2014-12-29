@@ -32,9 +32,6 @@
 
 #import "KINWebBrowserViewController.h"
 
-#import "TUSafariActivity.h"
-#import <ARChromeActivity/ARChromeActivity.h>
-
 static void *KINContext = &KINContext;
 
 @interface KINWebBrowserViewController ()
@@ -140,11 +137,16 @@ static void *KINContext = &KINContext;
         [self.view addSubview:self.uiWebView];
     }
     
-    
     self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     [self.progressView setTrackTintColor:[UIColor colorWithWhite:1.0f alpha:0.0f]];
     [self.progressView setFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height-self.progressView.frame.size.height, self.view.frame.size.width, self.progressView.frame.size.height)];
+    self.progressView.tintColor = [UIColor colorWithRed:0 green:0.5 blue:1 alpha:1];
     [self.progressView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
+    
+    UIColor *oldGold = [UIColor colorWithRed: 163.0/255 green: 121.0/255 blue: 44.0/255 alpha: 1];
+    [self.progressView setTintColor:oldGold];
+    [self.navigationController.navigationBar setTintColor:oldGold];
+    [self.navigationController.toolbar setTintColor:oldGold];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -152,6 +154,7 @@ static void *KINContext = &KINContext;
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [self.navigationController setToolbarHidden:NO animated:YES];
+    self.navigationController.toolbar.translucent = false;
     
     [self.navigationController.navigationBar addSubview:self.progressView];
     
@@ -414,9 +417,7 @@ static void *KINContext = &KINContext;
         URLForActivityItem = self.uiWebView.request.URL;
     }
     dispatch_async(dispatch_get_main_queue(), ^{
-        TUSafariActivity *safariActivity = [[TUSafariActivity alloc] init];
-        ARChromeActivity *chromeActivity = [[ARChromeActivity alloc] init];
-        UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[URLForActivityItem] applicationActivities:@[safariActivity, chromeActivity]];
+        UIActivityViewController *controller = [[UIActivityViewController alloc] initWithActivityItems:@[URLForActivityItem] applicationActivities:nil];
         if(UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             if(self.actionPopoverController) {
                 [self.actionPopoverController dismissPopoverAnimated:YES];

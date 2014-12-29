@@ -22,20 +22,82 @@
 
 "GAMES_TITLE" = "Sport Games";
 "MENU_TITLE" = "Menus";
-"MAP_TITLE" = "Map";
 "STORE_TITLE" = "Amazon Store";
-"BUS_TITLE" = "Bus";
 "CALENDAR_TITLE" = "Calendar";
 "LIBRARY_TITLE" = "Library";
+
+"BLACKBOARD_OOPS" = "Oops!";
+"BLACKBOARD_SIGN_IN_PROMPT" = "Please sign in by\ntapping the button below";
+
+"BUS_TITLE" = "Bus";
+"BUS_ROUTES" = "Routes";
+"BUS_STOPS" = "Stops";
+"BUS_MAP" = "Map";
+"BUS_BOOKMARKS" = "Bookmarks";
+
+"DIRECTORY_TITLE" = "Directory";
+"DIRECTORY_SEARCH_PROMPT" = "People search";
+"DIRECTORY_ERR_NONE" = "Your search returned no results";
+"DIRECTORY_ERR_MANY" = "Your search has returned too many results";
+
+"LAB_TITLE" = "ITaP Labs";
+"LAB_CLOSED" = "Closed";
+"LAB_CLASS_IN_SESSION" = "Class in session";
+"LAB_COMPUTERS_AVAILABLE" = " computers available";
+
+"MAP_TITLE" = "Map";
+"MAP_BUILDING_SEARCH" = "Building Search";
+"MAP_BUILDING_SEARCH_PROMPT" = "Search for a building";
+
+"PHOTOS_TITLE" = "Photo Albums";
 
 "SETTINGS_TITLE" = "Settings";
 "SETTINGS_LANG_PROMPT" = "Choose a language";
 "SETTINGS_SIGNOUT_PROMPT" = "Are you sure you want to sign out?";
 
+"SIGNIN_PURDUE_ACCOUNT" = "Purdue Account";
+"SIGNIN_SIGN_IN" = "SIGN IN";
+"SIGNIN_ERR_USERNAME_BLANK" = "Username field cannot be blank";
+"SIGNIN_ERR_PASSWORD_BLANK" = "Password field cannot be blank";
+"SIGNIN_ERR_NOT_FOUND" = "Username/Password pair not found";
+
+"VIDEOS_TITLE" = "Videos";
+"VIDEOS_VIEWS" = "views";
+
+"WEATHER_TITLE" = "Weather";
+"WEATHER_SUN" = "Sun";
+"WEATHER_MON" = "Mon";
+"WEATHER_TUE" = "Tue";
+"WEATHER_WED" = "Wed";
+"WEATHER_THU" = "Thu";
+"WEATHER_FRI" = "Fri";
+"WEATHER_SAT" = "Sat";
+
+"ADDRESS" = "Address";
+"CAMPUS" = "Campus";
+"CANCEL" = "Cancel";
+"CAREER_LOGIN" = "Career Login";
+"EMAIL" = "Email";
+"ERROR" = "Error";
 "GENERAL" = "General";
+"HOURS" = "Hours";
+"HUMIDITY" = "Humidity";
+"INFORMATION" = "Information";
 "LANGUAGE" = "Language";
-"OTHERS" = "Others";
+"LOCATION" = "Location";
+"NAME" = "Name";
 "NORMALCASE_SIGN_IN" = "Sign In";
 "NORMALCASE_SIGN_OUT" = "Sign Out";
+"OTHERS" = "Others";
+"PASSWORD" = "Password";
+"PHONE" = "Phone";
+"PHOTOS" = "Photos";
+"QUALIFIED_NAME" = "Qualified Name";
+"SCHOOL" = "School";
+"SIGN_IN" = "Sign In";
+"SPECIAL_NOTE" = "Special Note";
+"TRY_LATER" = "Please try reloading later";
 "UPPERCASE_SIGN_IN" = "SIGN IN";
 "UPPERCASE_SIGN_OUT" = "SIGN OUT";
+"USERNAME" = "Username";
+"WIND" = "Wind";

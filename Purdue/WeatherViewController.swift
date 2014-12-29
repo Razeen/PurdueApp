@@ -21,7 +21,7 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = NSLocalizedString("WEATHER", comment: "")
+        self.navigationItem.title = I18N.localizedString("WEATHER_TITLE")
         self.view.backgroundColor = UIColor.whiteColor()
         
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
@@ -50,7 +50,7 @@ class WeatherViewController: UIViewController {
         humidIcon.contentMode = UIViewContentMode.ScaleAspectFit
         humidIcon.tintColor = UIColor(white: 0.5, alpha: 1.0)
         let humidTitleLabel: UILabel = UILabel(frame: CGRectMake(32.5, 0, humidityView.frame.width-32.5, 20))
-        humidTitleLabel.text = "Humidity"
+        humidTitleLabel.text = I18N.localizedString("HUMIDITY")
         humidTitleLabel.font = UIFont(name: "Avenir-Heavy", size: 15)
         humidTitleLabel.textColor = UIColor(white: 0.3, alpha: 1.0)
         humidityView.addSubview(humidIcon)
@@ -61,7 +61,7 @@ class WeatherViewController: UIViewController {
         windIcon.contentMode = UIViewContentMode.ScaleAspectFit
         windIcon.tintColor = UIColor(white: 0.5, alpha: 1.0)
         let windTitleLabel: UILabel = UILabel(frame: CGRectMake(32.5, 0, windView.frame.width-32.5, 20))
-        windTitleLabel.text = "Wind"
+        windTitleLabel.text = I18N.localizedString("WIND")
         windTitleLabel.font = UIFont(name: "Avenir-Heavy", size: 15)
         windTitleLabel.textColor = UIColor(white: 0.3, alpha: 1.0)
         windView.addSubview(windIcon)
@@ -79,7 +79,7 @@ class WeatherViewController: UIViewController {
             UIColor(red: 0.173, green: 0.243, blue: 0.314, alpha: 1),
             UIColor(red: 0.953, green: 0.612, blue: 0.071, alpha: 1)
         ]
-        let dayNames: [String] = ["Sun", "Mon", "Tues", "Wed", "Thu", "Fri", "Sat"]
+        let dayNames: [String] = ["WEATHER_SUN", "WEATHER_MON", "WEATHER_TUE", "WEATHER_WED", "WEATHER_THU", "WEATHER_FRI", "WEATHER_SAT"]
         var error: NSError?
         let weatherData: NSData = NSData(contentsOfURL: NSURL(string: "http://api.openweathermap.org/data/2.5/forecast/daily?lat=40.424113&lon=-86.921410&units=imperial&cnt=7")!, options: NSDataReadingOptions.DataReadingUncached, error: &error)!
         if weatherData != NSNull() {
@@ -112,7 +112,7 @@ class WeatherViewController: UIViewController {
         cardView.backgroundColor = color
         
         let titleLabel: UILabel = UILabel(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.height*0.15, cardView.frame.height*0.30))
-        titleLabel.text = title
+        titleLabel.text = I18N.localizedString(title)
         titleLabel.textAlignment = .Center
         titleLabel.textColor = UIColor.whiteColor()
         titleLabel.font = UIFont(name: "Avenir-Heavy", size: 20)

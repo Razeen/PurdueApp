@@ -22,20 +22,82 @@
 
 "GAMES_TITLE" = "體育競賽";
 "MENU_TITLE" = "菜單";
-"MAP_TITLE" = "地圖";
 "STORE_TITLE" = "普渡Amazon商店";
-"BUS_TITLE" = "巴士";
 "CALENDAR_TITLE" = "行程表";
 "LIBRARY_TITLE" = "圖書館";
+
+"BLACKBOARD_OOPS" = "不好意思";
+"BLACKBOARD_SIGN_IN_PROMPT" = "請先點擊下方的\n按鈕登入帳號";
+
+"BUS_TITLE" = "巴士";
+"BUS_ROUTES" = "路線";
+"BUS_STOPS" = "停靠站";
+"BUS_MAP" = "地圖";
+"BUS_BOOKMARKS" = "書籤";
+
+"DIRECTORY_TITLE" = "普渡名冊";
+"DIRECTORY_SEARCH_PROMPT" = "搜尋教職員或學生";
+"DIRECTORY_ERR_NONE" = "您的搜尋沒有回傳任何結果";
+"DIRECTORY_ERR_MANY" = "您的搜尋回傳過多結果";
+
+"LAB_TITLE" = "ITaP 電腦室";
+"LAB_CLOSED" = "關閉";
+"LAB_CLASS_IN_SESSION" = "上課中";
+"LAB_COMPUTERS_AVAILABLE" = "台電腦開放";
+
+"MAP_TITLE" = "地圖";
+"MAP_BUILDING_SEARCH" = "建築物搜尋";
+"MAP_BUILDING_SEARCH_PROMPT" = "搜尋學校的建築物";
+
+"PHOTOS_TITLE" = "相簿";
 
 "SETTINGS_TITLE" = "設定";
 "SETTINGS_LANG_PROMPT" = "請選擇一個語言";
 "SETTINGS_SIGNOUT_PROMPT" = "您確定要登出嗎？";
 
+"SIGNIN_PURDUE_ACCOUNT" = "普渡帳號";
+"SIGNIN_SIGN_IN" = "登入";
+"SIGNIN_ERR_USERNAME_BLANK" = "帳號欄位不能為空白";
+"SIGNIN_ERR_PASSWORD_BLANK" = "密碼欄位不能為空白";
+"SIGNIN_ERR_NOT_FOUND" = "帳號或密碼有錯誤";
+
+"VIDEOS_TITLE" = "影片";
+"VIDEOS_VIEWS" = "觀看次數";
+
+"WEATHER_TITLE" = "天氣";
+"WEATHER_SUN" = "星期日";
+"WEATHER_MON" = "星期一";
+"WEATHER_TUE" = "星期二";
+"WEATHER_WED" = "星期三";
+"WEATHER_THU" = "星期四";
+"WEATHER_FRI" = "星期五";
+"WEATHER_SAT" = "星期六";
+
+"ADDRESS" = "地址";
+"CAMPUS" = "分校";
+"CANCEL" = "取消";
+"CAREER_LOGIN" = "登入帳號";
+"EMAIL" = "電子信箱";
+"ERROR" = "錯誤";
 "GENERAL" = "一般";
+"HOURS" = "時間";
+"HUMIDITY" = "濕度";
+"INFORMATION" = "資訊";
 "LANGUAGE" = "語言";
-"OTHERS" = "其他";
+"LOCATION" = "地點";
+"NAME" = "名稱";
 "NORMALCASE_SIGN_IN" = "登入";
 "NORMALCASE_SIGN_OUT" = "登出";
+"OTHERS" = "其他";
+"PASSWORD" = "密碼";
+"PHONE" = "電話";
+"PHOTOS" = "張照片";
+"QUALIFIED_NAME" = "合法名";
+"SCHOOL" = "學院";
+"SPECIAL_NOTE" = "備註";
+"SIGN_IN" = "登入";
+"TRY_LATER" = "請稍候重新嘗試載入";
 "UPPERCASE_SIGN_IN" = "登入";
 "UPPERCASE_SIGN_OUT" = "登出";
+"USERNAME" = "帳號";
+"WIND" = "風力";

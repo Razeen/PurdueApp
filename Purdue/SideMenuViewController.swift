@@ -29,7 +29,7 @@ class SideMenuViewController: UITableViewController {
         "Store"
     ]
     
-    let rowNames: [String] = [
+    var rowNames: [String] = [
         "MyMail",
         "Blackboard",
         I18N.localizedString("SIDEMENU_SCHEDULE"),
@@ -46,6 +46,29 @@ class SideMenuViewController: UITableViewController {
         I18N.localizedString("SIDEMENU_DIRECTORY"),
         I18N.localizedString("SIDEMENU_STORE")
     ]
+    
+    override func viewWillAppear(animated: Bool) {
+        if rowNames[2] != I18N.localizedString("SIDEMENU_SCHEDULE") { // Detects a language change
+            rowNames = [
+                "MyMail",
+                "Blackboard",
+                I18N.localizedString("SIDEMENU_SCHEDULE"),
+                I18N.localizedString("SIDEMENU_BUS"),
+                I18N.localizedString("SIDEMENU_MAP"),
+                I18N.localizedString("SIDEMENU_LABS"),
+                I18N.localizedString("SIDEMENU_GAMES"),
+                I18N.localizedString("SIDEMENU_MENU"),
+                I18N.localizedString("SIDEMENU_NEWS"),
+                I18N.localizedString("SIDEMENU_WEATHER"),
+                I18N.localizedString("SIDEMENU_LIBRARY"),
+                I18N.localizedString("SIDEMENU_PHOTOS"),
+                I18N.localizedString("SIDEMENU_VIDEOS"),
+                I18N.localizedString("SIDEMENU_DIRECTORY"),
+                I18N.localizedString("SIDEMENU_STORE")
+            ]
+            self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

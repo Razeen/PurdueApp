@@ -21,6 +21,7 @@ class PUNavigationBar: UINavigationBar {
     override func layoutSubviews() {
         super.layoutSubviews()
         self.barTintColor = UIColor.whiteColor()
+        self.tintColor = UIColor(white: 0.3, alpha: 1.0)
         self.translucent = true
         self.setTitleVerticalPositionAdjustment(-barIncrease * 0.3  , forBarMetrics: UIBarMetrics.Default)
         self.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AppleSDGothicNeo-Bold", size: CGFloat(22))!,

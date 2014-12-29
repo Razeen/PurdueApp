@@ -17,7 +17,6 @@ class DirectoryViewController: UITableViewController, UISearchBarDelegate {
     let kSchoolLabelTag = 104
     let kEmailLabelTag = 105
     
-    
     var imageView = UIImageView(image: UIImage(named: "Oops"))
     var statusLabel: UILabel?
     
@@ -28,16 +27,18 @@ class DirectoryViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        progress.tintColor = ColorUtils.Core.Brown
+        
         imageView.frame = CGRectMake((UIScreen.mainScreen().bounds.width - imageView.frame.width / 1.5) / 2, 44 + 40, imageView.frame.width / 1.5, imageView.frame.height / 1.5)
         statusLabel = UILabel(frame: CGRectMake(20, imageView.frame.height + imageView.frame.origin.y + 40, UIScreen.mainScreen().bounds.width - 40, 50))
         statusLabel!.font = UIFont(name: "ArialRoundedMTBold", size: 20)
         statusLabel!.numberOfLines = 2
         statusLabel!.textAlignment = NSTextAlignment.Center
 
-        self.navigationItem.title = "Directory"
+        self.navigationItem.title = I18N.localizedString("DIRECTORY_TITLE")
         let searchBar = UISearchBar(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 44))
         searchBar.delegate = self
-        searchBar.placeholder = "People Search"
+        searchBar.placeholder = I18N.localizedString("DIRECTORY_SEARCH_PROMPT")
         self.tableView.tableHeaderView = searchBar
     }
     
@@ -94,9 +95,9 @@ class DirectoryViewController: UITableViewController, UISearchBarDelegate {
                 
                 if self.students.count == 0 {
                     if response?.containsString("Your search returned no results.") == true {
-                        statusString = "Your search returned no results"
+                        statusString = I18N.localizedString("DIRECTORY_ERR_NONE")
                     } else {
-                        statusString = "Your search has returned too many results"
+                        statusString = I18N.localizedString("DIRECTORY_ERR_MANY")
                     }
                 }
             }
@@ -123,13 +124,11 @@ class DirectoryViewController: UITableViewController, UISearchBarDelegate {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return students.count
     }

@@ -20,7 +20,7 @@ class VideoViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Videos"
+        self.navigationItem.title = I18N.localizedString("VIDEOS_TITLE")
         self.tableView.rowHeight = 90;
         
         UIApplication.sharedApplication().networkActivityIndicatorVisible = true
@@ -44,7 +44,7 @@ class VideoViewController: UITableViewController {
                 dateFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
                 let uploadTime: NSDate = dateFormatter.dateFromString((entryDict["published"] as NSDictionary)["$t"] as String)!
                 
-                let views: String = (entryDict["yt$statistics"] as Dictionary)["viewCount"]! + " views"
+                let views: String = (entryDict["yt$statistics"] as Dictionary)["viewCount"]! + " " + I18N.localizedString("VIDEOS_VIEWS")
                 
                 let video = Video(title: title, duration: duration, url: url, thumbnailUrl: thumbnailUrl, uploadTime: uploadTime, views: views)
                 self.videos.addObject(video)
@@ -140,7 +140,7 @@ class VideoViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let webBrowser = KINWebBrowserViewController.webBrowser()
-        webBrowser.navigationItem.title = "Video"
+        webBrowser.navigationItem.title = I18N.localizedString("VIDEOS_TITLE")
         webBrowser.loadURLString((videos[indexPath.row] as Video).url!.absoluteString!)
         webBrowser.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
         self.navigationController?.pushViewController(webBrowser, animated: true)

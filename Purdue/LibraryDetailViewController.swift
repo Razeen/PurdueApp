@@ -10,7 +10,7 @@ import UIKit
 
 class LibraryDetailViewController: UITableViewController {
     
-    var titles = ["Name", "Location", "Phone", "Email", "Address", "Hours"]
+    var titles = [I18N.localizedString("NAME"), I18N.localizedString("LOCATION"), I18N.localizedString("PHONE"), I18N.localizedString("EMAIL"), I18N.localizedString("ADDRESS"), I18N.localizedString("HOURS")]
     var currentLibrary: Library?
 
     override func viewDidLoad() {
@@ -18,7 +18,7 @@ class LibraryDetailViewController: UITableViewController {
 
         self.navigationItem.title = currentLibrary?.name?.stringByReplacingOccurrencesOfString(" Library", withString: "")
         if currentLibrary?.note != nil {
-            titles.append("Special Note")
+            titles.append(I18N.localizedString("SPECIAL_NOTE"))
         }
         
         let imageView = UIImageView(image: UIImage(named: currentLibrary!.imageName!))
