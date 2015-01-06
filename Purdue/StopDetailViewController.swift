@@ -16,6 +16,8 @@ class StopDetailViewController: UITableViewController {
     
     var routeAry: [NSNumber] = []
     var etaAry: [Int] = []
+    
+    let bookmarks = NSUserDefaults.standardUserDefaults().objectForKey("Bus_Bookmarks") as NSMutableArray
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,6 @@ class StopDetailViewController: UITableViewController {
         self.tableView.rowHeight = 50
         self.navigationController?.setToolbarHidden(true, animated: false)
         
-        // 30%
         let headerView = MKMapView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height * 0.3))
         let annotation = MKPointAnnotation()
         annotation.title = self.stop!.name
@@ -39,7 +40,7 @@ class StopDetailViewController: UITableViewController {
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
             for stopId in self.stop!.idArray {
-                let data = NSData(contentsOfURL: NSURL(string: "http://citybus.doublemap.com/map/v2/eta?stop=\(stopId)")!)!
+                let data = NSData(contentsOfURL: NSURL(string: "https://citybus.doublemap.com/map/v2/eta?stop=\(stopId)")!)!
                 if data.length > 2 {
                     let dict = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.allZeros, error: nil) as NSDictionary
                     for etaDict in ((dict["etas"] as NSDictionary)["\(self.stop!.id)"] as NSDictionary)["etas"] as [NSDictionary] {
@@ -53,6 +54,27 @@ class StopDetailViewController: UITableViewController {
                 self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
             })
         })
+        
+        if bookmarks.indexOfObject(stop!.name!) == NSNotFound {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "EmptyStar"), style: UIBarButtonItemStyle.Done, target: self, action: "addToBookmarks")
+        } else {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "FilledStar"), style: UIBarButtonItemStyle.Done, target: self, action: "removeFromBookmarks")
+        }
+        self.navigationItem.rightBarButtonItem?.tintColor = ColorUtils.Core.Brown
+    }
+    
+    func addToBookmarks() {
+        bookmarks.addObject(stop!.name!)
+        NSUserDefaults.standardUserDefaults().setObject(bookmarks, forKey: "Bus_Bookmarks")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "FilledStar"), style: UIBarButtonItemStyle.Done, target: self, action: "removeFromBookmarks")
+        self.navigationItem.rightBarButtonItem?.tintColor = ColorUtils.Core.Brown
+    }
+    
+    func removeFromBookmarks() {
+        bookmarks.removeObject(stop!.name!)
+        NSUserDefaults.standardUserDefaults().setObject(bookmarks, forKey: "Bus_Bookmarks")
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "EmptyStar"), style: UIBarButtonItemStyle.Done, target: self, action: "addToBookmarks")
+        self.navigationItem.rightBarButtonItem?.tintColor = ColorUtils.Core.Brown
     }
 
     override func didReceiveMemoryWarning() {

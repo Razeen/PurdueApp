@@ -22,11 +22,11 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let bookmarksButton = UIButton.buttonWithType(UIButtonType.System) as UIButton
     var selectedIndex: UInt8 = 0
     
-    var routesDict: NSMutableDictionary = NSMutableDictionary()
-    var stopsDict: NSMutableDictionary = NSMutableDictionary()
+    var routesDict = NSMutableDictionary()
+    var stopsDict = NSMutableDictionary()
     var routes = NSMutableArray()
     var stops = NSMutableArray()
-    var bookmarks: [String] = []
+    var bookmarks = NSUserDefaults.standardUserDefaults().objectForKey("Bus_Bookmarks") as NSMutableArray
     
     let routesTV = UITableView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height - 84 - 44))
     let stopsTV = UITableView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height - 84 - 44))
@@ -36,12 +36,17 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.setToolbarHidden(false, animated: false)
+        bookmarks = NSUserDefaults.standardUserDefaults().objectForKey("Bus_Bookmarks") as NSMutableArray
+        self.bookmarksTV.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.title = NSLocalizedString("BUS_TITLE", comment: "")
+        if NSUserDefaults.standardUserDefaults().objectForKey("Bus_Bookmarks") == nil {
+            NSUserDefaults.standardUserDefaults().setObject(NSMutableArray(), forKey: "Bus_Bookmarks")
+        }
         
         if NSUserDefaults.standardUserDefaults().objectForKey("Bus_Routes") == nil || NSUserDefaults.standardUserDefaults().objectForKey("Bus_Stops") == nil {
             let ScreenWidth = UIScreen.mainScreen().bounds.width
@@ -146,12 +151,13 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
     func drawRouteImage(color: UIColor, text: NSString) -> UIImage {
         let len: CGFloat = 34
         
+        // Draw the Circle
         UIGraphicsBeginImageContextWithOptions(CGSizeMake(len, len), false, 0)
         let context = UIGraphicsGetCurrentContext()
-        
         CGContextSetFillColorWithColor(context, color.CGColor)
         CGContextFillEllipseInRect(context, CGRectMake(0, 0, len, len))
         
+        // Draw the Text
         let paraStyle = NSParagraphStyle.defaultParagraphStyle().mutableCopy() as NSMutableParagraphStyle
         paraStyle.alignment = NSTextAlignment.Center
         let fontAttributes = [
@@ -169,8 +175,15 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
     
     func downloadRoutesAndStops(completion: () -> Void) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
-            let routesArray = NSJSONSerialization.JSONObjectWithData(NSData(contentsOfURL: NSURL(string: "http://citybus.doublemap.com/map/v2/routes")!)!, options: NSJSONReadingOptions.AllowFragments, error: nil) as [NSDictionary]!
+            let routesArray = NSJSONSerialization.JSONObjectWithData(NSData(contentsOfURL: NSURL(string: "https://citybus.doublemap.com/map/v2/routes")!)!, options: NSJSONReadingOptions.AllowFragments, error: nil) as [NSDictionary]!
             for routesDict in routesArray {
+                /**
+                
+                    RoutesDict <RouteId, Route> for constant time mapping in Routes and Stops tab
+                    - Time Complexity: O(1)
+                    - Space Complexity: O(n)
+                
+                */
                 let currentRoute = Route()
                 currentRoute.id = routesDict["id"] as NSInteger
                 let nameAry = NSMutableArray(array: (routesDict["name"] as NSString!).componentsSeparatedByString(" "))
@@ -201,13 +214,23 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 self.routesDict.setObject(currentRoute, forKey: NSNumber(integer: currentRoute.id))
             }
             
-            let stopsArray = NSJSONSerialization.JSONObjectWithData(NSData(contentsOfURL: NSURL(string: "http://citybus.doublemap.com/map/v2/stops")!)!, options: NSJSONReadingOptions.AllowFragments, error: nil) as [NSDictionary]
+            let stopsArray = NSJSONSerialization.JSONObjectWithData(NSData(contentsOfURL: NSURL(string: "https://citybus.doublemap.com/map/v2/stops")!)!, options: NSJSONReadingOptions.AllowFragments, error: nil) as [NSDictionary]
             for stopsDict in stopsArray {
+                /**
+                    
+                    StopsDict <StopId, Stop> for constant time mapping in Routes and Stops tab
+                    - Time Complexity: O(1)
+                    - Space Complexity: O(n)
+                
+                */
                 if self.stopsDict[NSNumber(integer: stopsDict["id"] as NSInteger)] == nil {
                     let currentStop = Stop()
                     currentStop.id = stopsDict["id"] as NSInteger
                     currentStop.idArray.append(stopsDict["id"] as NSInteger)
                     currentStop.name = (stopsDict["name"] as NSString!).componentsSeparatedByString("-")[0] as? NSString
+                    if currentStop.name!.substringFromIndex(currentStop.name!.length - 1) == " " {
+                        currentStop.name = currentStop.name!.substringToIndex(currentStop.name!.length - 1)
+                    }
                     currentStop.coordinate = CLLocationCoordinate2DMake(stopsDict["lat"] as Double, stopsDict["lon"] as Double)
                     self.stopsDict.setObject(currentStop, forKey: NSNumber(integer: stopsDict["id"] as NSInteger))
                 } else {
@@ -338,7 +361,11 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
             cell?.textLabel?.numberOfLines = 2
             cell?.textLabel?.text = stop.name
         } else if tableView == bookmarksTV {
-            let bookmark = bookmarks[indexPath.row]
+            let bookmark = bookmarks[indexPath.row] as NSString
+            cell?.imageView?.image = UIImage(named: "Bookmark")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            cell?.imageView?.tintColor = ColorUtils.Core.Brown
+            cell?.textLabel?.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 15)
+            cell?.textLabel?.numberOfLines = 2
             cell?.textLabel?.text = bookmark
         }
         cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
@@ -357,6 +384,17 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
             detailVC.stop = stops[indexPath.row] as? Stop
             detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
             self.navigationController?.pushViewController(detailVC, animated: true)
+        } else if tableView == bookmarksTV {
+            let bookmarkName = bookmarks[indexPath.row] as NSString
+            for stop in stops {
+                if stop.name == bookmarkName {
+                    let detailVC = StopDetailViewController()
+                    detailVC.stop = stop as? Stop
+                    detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
+                    self.navigationController?.pushViewController(detailVC, animated: true)
+                    break
+                }
+            }
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
