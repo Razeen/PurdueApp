@@ -85,6 +85,7 @@
 "INFORMATION" = "資訊";
 "LANGUAGE" = "語言";
 "LOCATION" = "地點";
+"MINUTE" = "分鐘";
 "NAME" = "名稱";
 "NORMALCASE_SIGN_IN" = "登入";
 "NORMALCASE_SIGN_OUT" = "登出";
@@ -96,6 +97,7 @@
 "SCHOOL" = "學院";
 "SPECIAL_NOTE" = "備註";
 "SIGN_IN" = "登入";
+"TIME" = "時間";
 "TRY_LATER" = "請稍候重新嘗試載入";
 "UPPERCASE_SIGN_IN" = "登入";
 "UPPERCASE_SIGN_OUT" = "登出";

@@ -41,6 +41,8 @@
 		5E4B891219D08B4E00EEB9C3 /* ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B890B19D08B4E00EEB9C3 /* ECSlidingViewController.m */; };
 		5E4B891319D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B890D19D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m */; };
 		5E4B891819D0903100EEB9C3 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B891719D0903100EEB9C3 /* SideMenuViewController.swift */; };
+		5E4BC7F21A5BC9D90005D3C1 /* RouteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4BC7F11A5BC9D90005D3C1 /* RouteDetailViewController.swift */; };
+		5E66B99D1A59C40F0036C26E /* StopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B99C1A59C40F0036C26E /* StopDetailViewController.swift */; };
 		5E6A81571A477A7C008277F2 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A81561A477A7C008277F2 /* Library.swift */; };
 		5E6A81591A47C3AD008277F2 /* LibraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A81581A47C3AD008277F2 /* LibraryDetailViewController.swift */; };
 		5E76EFC119E6C74C0059930E /* WeatherUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76EFC019E6C74C0059930E /* WeatherUtils.swift */; };
@@ -268,6 +270,8 @@
 		5E4B890D19D08B4E00EEB9C3 /* UIViewController+ECSlidingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ECSlidingViewController.m"; sourceTree = "<group>"; };
 		5E4B891619D08CE400EEB9C3 /* PurdueApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PurdueApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		5E4B891719D0903100EEB9C3 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		5E4BC7F11A5BC9D90005D3C1 /* RouteDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDetailViewController.swift; sourceTree = "<group>"; };
+		5E66B99C1A59C40F0036C26E /* StopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopDetailViewController.swift; sourceTree = "<group>"; };
 		5E6A81561A477A7C008277F2 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		5E6A81581A47C3AD008277F2 /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
 		5E76EFC019E6C74C0059930E /* WeatherUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherUtils.swift; sourceTree = "<group>"; };
@@ -619,6 +623,16 @@
 			path = ECSlidingViewController;
 			sourceTree = "<group>";
 		};
+		5E66B9951A59C3FA0036C26E /* Bus */ = {
+			isa = PBXGroup;
+			children = (
+				5EEB696719DF3F12005619BA /* BusViewController.swift */,
+				5E4BC7F11A5BC9D90005D3C1 /* RouteDetailViewController.swift */,
+				5E66B99C1A59C40F0036C26E /* StopDetailViewController.swift */,
+			);
+			name = Bus;
+			sourceTree = "<group>";
+		};
 		5E6A815A1A480704008277F2 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -710,7 +724,7 @@
 			isa = PBXGroup;
 			children = (
 				5EB289A31A32403B00CEE2AF /* Blackboard */,
-				5EEB696719DF3F12005619BA /* BusViewController.swift */,
+				5E66B9951A59C3FA0036C26E /* Bus */,
 				5E307F2A1A32328C00B19FBB /* Directory */,
 				5E307F231A32328700B19FBB /* Labs */,
 				5E6A815A1A480704008277F2 /* Library */,
@@ -1198,6 +1212,7 @@
 				5EB5FF5B19FFF82200491C22 /* PSTCollectionViewCell.m in Sources */,
 				5EB5FF2919FFF70300491C22 /* SDWebImageCompat.m in Sources */,
 				5EB5FF2A19FFF70300491C22 /* SDWebImageDecoder.m in Sources */,
+				5E66B99D1A59C40F0036C26E /* StopDetailViewController.swift in Sources */,
 				5EB5FF0C19FFF70300491C22 /* MWCaptionView.m in Sources */,
 				5EB5FF3119FFF70300491C22 /* UIImage+MultiFormat.m in Sources */,
 				5EEB696019DF3BBF005619BA /* PhotoViewController.swift in Sources */,
@@ -1236,6 +1251,7 @@
 				5E2EE9E91A4BF98E0082357F /* I18N.swift in Sources */,
 				5EEB696419DF3CE1005619BA /* BlackboardViewController.swift in Sources */,
 				5E6A81571A477A7C008277F2 /* Library.swift in Sources */,
+				5E4BC7F21A5BC9D90005D3C1 /* RouteDetailViewController.swift in Sources */,
 				5E48FD641A217649004FE8B7 /* KeychainWrapper.swift in Sources */,
 				5EDAF99D1A06C29800B954A9 /* DirectoryStudent.swift in Sources */,
 				5EE150481A0FEBC8008C9825 /* MRMessageInterceptor.m in Sources */,

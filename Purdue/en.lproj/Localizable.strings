@@ -85,6 +85,7 @@
 "INFORMATION" = "Information";
 "LANGUAGE" = "Language";
 "LOCATION" = "Location";
+"MINUTE" = "min";
 "NAME" = "Name";
 "NORMALCASE_SIGN_IN" = "Sign In";
 "NORMALCASE_SIGN_OUT" = "Sign Out";
@@ -96,6 +97,7 @@
 "SCHOOL" = "School";
 "SIGN_IN" = "Sign In";
 "SPECIAL_NOTE" = "Special Note";
+"TIME" = "Time";
 "TRY_LATER" = "Please try reloading later";
 "UPPERCASE_SIGN_IN" = "SIGN IN";
 "UPPERCASE_SIGN_OUT" = "SIGN OUT";

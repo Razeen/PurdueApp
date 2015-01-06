@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
 
     var window: UIWindow?
     var slidingViewController: ECSlidingViewController?
+    let sideMenuVC : SideMenuViewController = SideMenuViewController()
     var topViewSnapshot: UIView?
     
     var rowNames: [String]?
@@ -20,13 +21,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
+        let currentVersionString = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString")! as NSString
+        let currentVersion = (currentVersionString.stringByReplacingOccurrencesOfString(".", withString: "") as NSString).integerValue
+        if NSUserDefaults.standardUserDefaults().integerForKey("AppVersion") == 200 { // If previous version is 2.0.0
+            
+        }
+        NSUserDefaults.standardUserDefaults().setInteger(currentVersion, forKey: "AppVersion")
+        
         let viewController = BusViewController()
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
         let navigationController: UINavigationController = AppDelegate.createNavController(viewController)
         slidingViewController = ECSlidingViewController(topViewController: navigationController)
         
-        let sideMenuVC : SideMenuViewController = SideMenuViewController()
-        rowNames = sideMenuVC.rowNames
         sideMenuVC.tableView.delegate = self
         slidingViewController?.underLeftViewController = sideMenuVC
         slidingViewController?.anchorLeftRevealAmount = 250.0;
@@ -75,6 +81,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
     // MARK: - Table view delegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        rowNames = sideMenuVC.rowNames
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if let realNames = rowNames {
             var navigationController: UINavigationController?
