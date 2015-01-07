@@ -24,7 +24,7 @@ class PUNavigationBar: UINavigationBar {
         self.tintColor = UIColor(white: 0.3, alpha: 1.0)
         self.translucent = true
         self.setTitleVerticalPositionAdjustment(-barIncrease * 0.3  , forBarMetrics: UIBarMetrics.Default)
-        self.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AppleSDGothicNeo-Bold", size: CGFloat(22))!,
+        self.titleTextAttributes = [NSFontAttributeName: UIFont(name: "AppleSDGothicNeo-Bold", size: CGFloat(21))!,
             NSForegroundColorAttributeName: UIColor(white: 0.2, alpha: 1.0)]
         
         let classNamesToReposition: NSArray = ["UINavigationItemView", "UINavigationButton"]

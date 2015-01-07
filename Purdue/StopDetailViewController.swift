@@ -137,5 +137,8 @@ class StopDetailViewController: UITableViewController {
         view.addSubview(timeLabel)
         return view
     }
-
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 }

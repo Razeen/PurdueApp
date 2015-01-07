@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E07A83E1A5C842E00620288 /* QCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A8351A5C842E00620288 /* QCluster.m */; };
+		5E07A83F1A5C842E00620288 /* QNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A8371A5C842E00620288 /* QNode.m */; };
+		5E07A8401A5C842E00620288 /* QTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A83A1A5C842E00620288 /* QTree.m */; };
+		5E07A8411A5C842E00620288 /* QTreeGeometryUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A83C1A5C842E00620288 /* QTreeGeometryUtils.m */; };
+		5E07A8491A5C965100620288 /* StopAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A8481A5C965100620288 /* StopAnnotation.swift */; };
+		5E07A84E1A5CABD400620288 /* ClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A84D1A5CABD400620288 /* ClusterAnnotationView.m */; };
 		5E0B12BC1A2AF34400F57DFD /* KINWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B12BB1A2AF34400F57DFD /* KINWebBrowserViewController.m */; };
 		5E0B13051A2AF60100F57DFD /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12FF1A2AF60100F57DFD /* backbutton.png */; };
 		5E0B13061A2AF60100F57DFD /* backbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B13001A2AF60100F57DFD /* backbutton@2x.png */; };
@@ -220,6 +226,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E07A8341A5C842E00620288 /* QCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCluster.h; sourceTree = "<group>"; };
+		5E07A8351A5C842E00620288 /* QCluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCluster.m; sourceTree = "<group>"; };
+		5E07A8361A5C842E00620288 /* QNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNode.h; sourceTree = "<group>"; };
+		5E07A8371A5C842E00620288 /* QNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QNode.m; sourceTree = "<group>"; };
+		5E07A8381A5C842E00620288 /* QTree-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "QTree-Prefix.pch"; sourceTree = "<group>"; };
+		5E07A8391A5C842E00620288 /* QTree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTree.h; sourceTree = "<group>"; };
+		5E07A83A1A5C842E00620288 /* QTree.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTree.m; sourceTree = "<group>"; };
+		5E07A83B1A5C842E00620288 /* QTreeGeometryUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTreeGeometryUtils.h; sourceTree = "<group>"; };
+		5E07A83C1A5C842E00620288 /* QTreeGeometryUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTreeGeometryUtils.m; sourceTree = "<group>"; };
+		5E07A83D1A5C842E00620288 /* QTreeInsertable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTreeInsertable.h; sourceTree = "<group>"; };
+		5E07A8481A5C965100620288 /* StopAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopAnnotation.swift; sourceTree = "<group>"; };
+		5E07A84C1A5CABD400620288 /* ClusterAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClusterAnnotationView.h; sourceTree = "<group>"; };
+		5E07A84D1A5CABD400620288 /* ClusterAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClusterAnnotationView.m; sourceTree = "<group>"; };
 		5E0B12BA1A2AF34400F57DFD /* KINWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KINWebBrowserViewController.h; sourceTree = "<group>"; };
 		5E0B12BB1A2AF34400F57DFD /* KINWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KINWebBrowserViewController.m; sourceTree = "<group>"; };
 		5E0B12FF1A2AF60100F57DFD /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
@@ -456,6 +475,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E07A8331A5C842E00620288 /* QTree */ = {
+			isa = PBXGroup;
+			children = (
+				5E07A84C1A5CABD400620288 /* ClusterAnnotationView.h */,
+				5E07A84D1A5CABD400620288 /* ClusterAnnotationView.m */,
+				5E07A8341A5C842E00620288 /* QCluster.h */,
+				5E07A8351A5C842E00620288 /* QCluster.m */,
+				5E07A8361A5C842E00620288 /* QNode.h */,
+				5E07A8371A5C842E00620288 /* QNode.m */,
+				5E07A8381A5C842E00620288 /* QTree-Prefix.pch */,
+				5E07A8391A5C842E00620288 /* QTree.h */,
+				5E07A83A1A5C842E00620288 /* QTree.m */,
+				5E07A83B1A5C842E00620288 /* QTreeGeometryUtils.h */,
+				5E07A83C1A5C842E00620288 /* QTreeGeometryUtils.m */,
+				5E07A83D1A5C842E00620288 /* QTreeInsertable.h */,
+			);
+			path = QTree;
+			sourceTree = "<group>";
+		};
 		5E0B12B91A2AF34400F57DFD /* KINWebBrowser */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,6 +667,7 @@
 				5EEB696719DF3F12005619BA /* BusViewController.swift */,
 				5E4BC7F11A5BC9D90005D3C1 /* RouteDetailViewController.swift */,
 				5E66B99C1A59C40F0036C26E /* StopDetailViewController.swift */,
+				5E07A8481A5C965100620288 /* StopAnnotation.swift */,
 			);
 			name = Bus;
 			sourceTree = "<group>";
@@ -694,6 +733,7 @@
 		5EA4C2C519D5EA0700E42732 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				5E07A8331A5C842E00620288 /* QTree */,
 				5E0B12B91A2AF34400F57DFD /* KINWebBrowser */,
 				5EA841421A2396D8009A4A9F /* BButton */,
 				5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */,
@@ -1206,6 +1246,7 @@
 				5E83C03F19D7439700C883E1 /* News.swift in Sources */,
 				5EB5FF1119FFF70300491C22 /* MWTapDetectingImageView.m in Sources */,
 				5E83BFE019D66D3E00C883E1 /* APIKeys.swift in Sources */,
+				5E07A84E1A5CABD400620288 /* ClusterAnnotationView.m in Sources */,
 				5EE150421A0FEBC8008C9825 /* MRProgressOverlayView.m in Sources */,
 				5E4B891219D08B4E00EEB9C3 /* ECSlidingViewController.m in Sources */,
 				5EEB696219DF3BCC005619BA /* VideoViewController.swift in Sources */,
@@ -1225,12 +1266,14 @@
 				5EEB697019DF3F54005619BA /* MenuViewController.swift in Sources */,
 				5E8582161A210C59006E6539 /* DirectoryDetailViewController.swift in Sources */,
 				5EB5FF3519FFF70300491C22 /* UIView+WebCacheOperation.m in Sources */,
+				5E07A8491A5C965100620288 /* StopAnnotation.swift in Sources */,
 				5E307F2E1A323A9500B19FBB /* Course.swift in Sources */,
 				5E9ABA0D1A25AC9600800B25 /* FolderCell.swift in Sources */,
 				5EB5FF2C19FFF70300491C22 /* SDWebImageDownloaderOperation.m in Sources */,
 				5EB5FF1519FFF70300491C22 /* MBProgressHUD.m in Sources */,
 				5EB5FF2B19FFF70300491C22 /* SDWebImageDownloader.m in Sources */,
 				5EEB696819DF3F12005619BA /* BusViewController.swift in Sources */,
+				5E07A8411A5C842E00620288 /* QTreeGeometryUtils.m in Sources */,
 				5EE150431A0FEBC8008C9825 /* MRProgressView.m in Sources */,
 				5EE150441A0FEBC8008C9825 /* MRStopButton.m in Sources */,
 				5EE150491A0FEBC8008C9825 /* MRMethodCopier.m in Sources */,
@@ -1241,6 +1284,7 @@
 				5EA3BA3F1A4F33D20029F704 /* ColorUtils.swift in Sources */,
 				5EB5FF2819FFF70300491C22 /* SDImageCache.m in Sources */,
 				5E22189D1A36EF3C0086E49D /* MapUtils.swift in Sources */,
+				5E07A8401A5C842E00620288 /* QTree.m in Sources */,
 				5EE1504A1A0FEBC8008C9825 /* MRWeakProxy.m in Sources */,
 				5E1FB5AF1A27AB9900349305 /* MessagesCell.swift in Sources */,
 				5EB5FF2619FFF70300491C22 /* MKAnnotationView+WebCache.m in Sources */,
@@ -1260,6 +1304,7 @@
 				5EB6510F1A02BC3A00AB7257 /* Video.swift in Sources */,
 				5EEB696C19DF3F30005619BA /* LabsViewController.swift in Sources */,
 				5EB5FF6419FFF82200491C22 /* PSTGridLayoutRow.m in Sources */,
+				5E07A83E1A5C842E00620288 /* QCluster.m in Sources */,
 				5EB5FF6519FFF82200491C22 /* PSTGridLayoutSection.m in Sources */,
 				5E4B890E19D08B4E00EEB9C3 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				5EA8414D1A2396D8009A4A9F /* NSString+FontAwesome.m in Sources */,
@@ -1308,6 +1353,7 @@
 				5E4B890F19D08B4E00EEB9C3 /* ECSlidingAnimationController.m in Sources */,
 				5EB5FF1219FFF70300491C22 /* MWTapDetectingView.m in Sources */,
 				5EB5FF5919FFF82200491C22 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
+				5E07A83F1A5C842E00620288 /* QNode.m in Sources */,
 				5EEEEDF01A493D8E00F95BE1 /* Building.swift in Sources */,
 				5EB5FF6219FFF82200491C22 /* PSTGridLayoutInfo.m in Sources */,
 			);

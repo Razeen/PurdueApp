@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class BusViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class BusViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
@@ -33,8 +33,14 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
     let mapView = MKMapView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height - 84 - 44))
     let bookmarksTV = UITableView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height - 84 - 44))
     
+    var qTree = QTree()
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.reloadForLocalization()
+        
+        self.edgesForExtendedLayout = UIRectEdge.None
         self.navigationController?.setToolbarHidden(false, animated: false)
         bookmarks = NSUserDefaults.standardUserDefaults().objectForKey("Bus_Bookmarks") as NSMutableArray
         self.bookmarksTV.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
@@ -43,12 +49,11 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = NSLocalizedString("BUS_TITLE", comment: "")
         if NSUserDefaults.standardUserDefaults().objectForKey("Bus_Bookmarks") == nil {
             NSUserDefaults.standardUserDefaults().setObject(NSMutableArray(), forKey: "Bus_Bookmarks")
         }
         
-        if NSUserDefaults.standardUserDefaults().objectForKey("Bus_Routes") == nil || NSUserDefaults.standardUserDefaults().objectForKey("Bus_Stops") == nil {
+        //if NSUserDefaults.standardUserDefaults().objectForKey("Bus_Routes") == nil || NSUserDefaults.standardUserDefaults().objectForKey("Bus_Stops") == nil {
             let ScreenWidth = UIScreen.mainScreen().bounds.width
             let ScreenHeight = UIScreen.mainScreen().bounds.height
             let activityIndicatorView = MRActivityIndicatorView(frame: CGRectMake((ScreenWidth - 30) / 2, (ScreenHeight - 30) / 2, 30, 30))
@@ -63,10 +68,10 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
                     self.loadRoutesAndStops()
                 })
             })
-        } else {
-            self.setupViews()
-            self.loadRoutesAndStops()
-        }
+        //} else {
+        //    self.setupViews()
+        //    self.loadRoutesAndStops()
+        //}
     }
     
     func setupViews() {
@@ -76,6 +81,8 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.stopsTV.dataSource = self
         self.stopsTV.delegate = self
         self.stopsTV.rowHeight = 50
+        self.mapView.delegate = self
+        self.mapView.setRegion(MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(40.427821, -86.887633), 15000, 15000), animated: false)
         self.bookmarksTV.dataSource = self
         self.bookmarksTV.delegate = self
         self.bookmarksTV.rowHeight = 50
@@ -84,8 +91,6 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.view.addSubview(self.mapView)
         self.view.addSubview(self.bookmarksTV)
         self.view.bringSubviewToFront(self.routesTV)
-        
-        self.edgesForExtendedLayout = UIRectEdge.None
         
         let separatorLabel = UILabel(frame: CGRectMake(0, 0, 1, 20))
         separatorLabel.backgroundColor = UIColor.lightGrayColor()
@@ -148,6 +153,22 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
         self.setToolbarItems(itemsArray, animated: false)
     }
     
+    func reloadForLocalization() {
+        self.navigationItem.title = NSLocalizedString("BUS_TITLE", comment: "")
+        
+        self.routesButton.setTitle(I18N.localizedString("BUS_ROUTES"), forState: UIControlState.Normal)
+        self.routesButton.sizeToFit()
+        
+        self.stopsButton.setTitle(I18N.localizedString("BUS_STOPS"), forState: UIControlState.Normal)
+        self.stopsButton.sizeToFit()
+        
+        self.mapButton.setTitle(I18N.localizedString("BUS_MAP"), forState: UIControlState.Normal)
+        self.mapButton.sizeToFit()
+        
+        self.bookmarksButton.setTitle(I18N.localizedString("BUS_BOOKMARKS"), forState: UIControlState.Normal)
+        self.bookmarksButton.sizeToFit()
+    }
+    
     func drawRouteImage(color: UIColor, text: NSString) -> UIImage {
         let len: CGFloat = 34
         
@@ -178,11 +199,9 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
             let routesArray = NSJSONSerialization.JSONObjectWithData(NSData(contentsOfURL: NSURL(string: "https://citybus.doublemap.com/map/v2/routes")!)!, options: NSJSONReadingOptions.AllowFragments, error: nil) as [NSDictionary]!
             for routesDict in routesArray {
                 /**
-                
                     RoutesDict <RouteId, Route> for constant time mapping in Routes and Stops tab
                     - Time Complexity: O(1)
                     - Space Complexity: O(n)
-                
                 */
                 let currentRoute = Route()
                 currentRoute.id = routesDict["id"] as NSInteger
@@ -217,11 +236,9 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
             let stopsArray = NSJSONSerialization.JSONObjectWithData(NSData(contentsOfURL: NSURL(string: "https://citybus.doublemap.com/map/v2/stops")!)!, options: NSJSONReadingOptions.AllowFragments, error: nil) as [NSDictionary]
             for stopsDict in stopsArray {
                 /**
-                    
                     StopsDict <StopId, Stop> for constant time mapping in Routes and Stops tab
                     - Time Complexity: O(1)
                     - Space Complexity: O(n)
-                
                 */
                 if self.stopsDict[NSNumber(integer: stopsDict["id"] as NSInteger)] == nil {
                     let currentStop = Stop()
@@ -272,18 +289,77 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
                 return r1.short_name!.compare(r2.short_name!, options: NSStringCompareOptions.NumericSearch)
             })
             self.stops.sortUsingDescriptors([NSSortDescriptor(key: "id", ascending: true)])
-            self.reloadViews()
+            self.qTree = QTree()
+            for stop in self.stops {
+                self.qTree.insertObject(StopAnnotation(coordinate: (stop as Stop).coordinate, title: stop.name))
+            }
+            dispatch_async(dispatch_get_main_queue(), {
+                self.routesTV.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
+                self.stopsTV.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
+                self.reloadAnnotations()
+            })
         })
-        
     }
     
-    func reloadViews() {
-        dispatch_async(dispatch_get_main_queue(), {
-            self.routesTV.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
-            self.stopsTV.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
-            // Reload MapView and Bookmark
-        })
+    func reloadAnnotations() {
+        if self.isViewLoaded() == false {
+            return
+        }
         
+        let mapRegion = self.mapView.region
+        let minNonClusteredSpan = min(mapRegion.span.latitudeDelta, mapRegion.span.longitudeDelta) / 5
+        let objects = self.qTree.getObjectsInRegion(mapRegion, minNonClusteredSpan: minNonClusteredSpan) as NSArray
+        
+        let annotationsToRemove = (self.mapView.annotations as NSArray).mutableCopy() as NSMutableArray
+        annotationsToRemove.removeObject(self.mapView.userLocation)
+        annotationsToRemove.removeObjectsInArray(objects)
+        self.mapView.removeAnnotations(annotationsToRemove)
+        
+        let annotationsToAdd = objects.mutableCopy() as NSMutableArray
+        annotationsToAdd.removeObjectsInArray(self.mapView.annotations)
+        
+        self.mapView.addAnnotations(annotationsToAdd)
+    }
+    
+    func mapView(mapView: MKMapView!, regionDidChangeAnimated animated: Bool) {
+        self.reloadAnnotations()
+    }
+    
+    func mapView(mapView: MKMapView!, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView! {
+        if annotation.isKindOfClass(QCluster.classForCoder()) {
+            var annotationView = mapView.dequeueReusableAnnotationViewWithIdentifier(ClusterAnnotationView.reuseId()) as? ClusterAnnotationView
+            if annotationView == nil {
+                annotationView = ClusterAnnotationView(cluster: annotation)
+            }
+            annotationView!.cluster = annotation
+            return annotationView
+        } else if annotation.isKindOfClass(StopAnnotation.classForCoder()) {
+            var pinView = mapView.dequeueReusableAnnotationViewWithIdentifier("StopAnnotation") as? MKPinAnnotationView
+            if pinView == nil {
+                pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: "StopAnnotation")
+                pinView?.canShowCallout = true
+                pinView?.rightCalloutAccessoryView = UIButton.buttonWithType(UIButtonType.DetailDisclosure) as UIButton
+            } else {
+                pinView?.annotation = annotation
+            }
+            return pinView
+        }
+        return nil
+    }
+    
+    func mapView(mapView: MKMapView!, annotationView view: MKAnnotationView!, calloutAccessoryControlTapped control: UIControl!) {
+        if view.isKindOfClass(MKPinAnnotationView.classForCoder()) {
+            let title = view.annotation.title
+            for stop in stops {
+                if stop.name == title {
+                    let detailVC = StopDetailViewController()
+                    detailVC.stop = stop as? Stop
+                    detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
+                    self.navigationController?.pushViewController(detailVC, animated: true)
+                    break
+                }
+            }
+        }
     }
     
     func UIColorFromRGBString(colorString: String) -> UIColor {
