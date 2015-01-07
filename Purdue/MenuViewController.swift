@@ -209,6 +209,14 @@ class MenuViewController: UIViewController, UICollectionViewDataSource, UICollec
         return cell
     }
     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let detailVC = DiningCourtDetailViewController()
+        detailVC.diningCourtInfo = diningCourtsInfo[indexPath.row]
+        detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
+        self.navigationController?.pushViewController(detailVC, animated: true)
+        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+    }
+    
     // MARK: - Table view data source
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {

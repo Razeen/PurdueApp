@@ -15,6 +15,7 @@
 		5E07A84E1A5CABD400620288 /* ClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A84D1A5CABD400620288 /* ClusterAnnotationView.m */; };
 		5E07A8531A5D173100620288 /* MenuMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A8521A5D173100620288 /* MenuMapViewController.swift */; };
 		5E07A8551A5D1F5100620288 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A8541A5D1F5100620288 /* RestaurantDetailViewController.swift */; };
+		5E07A8571A5DB4AC00620288 /* DiningCourtDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A8561A5DB4AC00620288 /* DiningCourtDetailViewController.swift */; };
 		5E0B12BC1A2AF34400F57DFD /* KINWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B12BB1A2AF34400F57DFD /* KINWebBrowserViewController.m */; };
 		5E0B13051A2AF60100F57DFD /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12FF1A2AF60100F57DFD /* backbutton.png */; };
 		5E0B13061A2AF60100F57DFD /* backbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B13001A2AF60100F57DFD /* backbutton@2x.png */; };
@@ -40,7 +41,6 @@
 		5E4B88DF19D07E0A00EEB9C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B88DE19D07E0A00EEB9C3 /* AppDelegate.swift */; };
 		5E4B88E119D07E0A00EEB9C3 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B88E019D07E0A00EEB9C3 /* WeatherViewController.swift */; };
 		5E4B88E619D07E0A00EEB9C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B88E519D07E0A00EEB9C3 /* Images.xcassets */; };
-		5E4B88F519D07E0A00EEB9C3 /* PurdueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B88F419D07E0A00EEB9C3 /* PurdueTests.swift */; };
 		5E4B88FF19D07F9C00EEB9C3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5E4B88FE19D07F9C00EEB9C3 /* LaunchScreen.xib */; };
 		5E4B890E19D08B4E00EEB9C3 /* ECPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B890219D08B4E00EEB9C3 /* ECPercentDrivenInteractiveTransition.m */; };
 		5E4B890F19D08B4E00EEB9C3 /* ECSlidingAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E4B890419D08B4E00EEB9C3 /* ECSlidingAnimationController.m */; };
@@ -205,13 +205,6 @@
 			remoteGlobalIDString = C6BA2B091705F4E6003F0E9E;
 			remoteInfo = "static mailcore2 ios";
 		};
-		5E4B88EF19D07E0A00EEB9C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5E4B88D119D07E0A00EEB9C3 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5E4B88D819D07E0A00EEB9C3;
-			remoteInfo = Purdue;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -243,6 +236,7 @@
 		5E07A84D1A5CABD400620288 /* ClusterAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClusterAnnotationView.m; sourceTree = "<group>"; };
 		5E07A8521A5D173100620288 /* MenuMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuMapViewController.swift; sourceTree = "<group>"; };
 		5E07A8541A5D1F5100620288 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
+		5E07A8561A5DB4AC00620288 /* DiningCourtDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiningCourtDetailViewController.swift; sourceTree = "<group>"; };
 		5E0B12BA1A2AF34400F57DFD /* KINWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KINWebBrowserViewController.h; sourceTree = "<group>"; };
 		5E0B12BB1A2AF34400F57DFD /* KINWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KINWebBrowserViewController.m; sourceTree = "<group>"; };
 		5E0B12FF1A2AF60100F57DFD /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
@@ -274,9 +268,6 @@
 		5E4B88DE19D07E0A00EEB9C3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E4B88E019D07E0A00EEB9C3 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		5E4B88E519D07E0A00EEB9C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		5E4B88EE19D07E0A00EEB9C3 /* PurdueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PurdueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E4B88F319D07E0A00EEB9C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5E4B88F419D07E0A00EEB9C3 /* PurdueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurdueTests.swift; sourceTree = "<group>"; };
 		5E4B88FE19D07F9C00EEB9C3 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		5E4B890119D08B4E00EEB9C3 /* ECPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ECPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
 		5E4B890219D08B4E00EEB9C3 /* ECPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ECPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
@@ -469,13 +460,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5E4B88EB19D07E0A00EEB9C3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -504,6 +488,7 @@
 				5EEB696F19DF3F54005619BA /* MenuViewController.swift */,
 				5E07A8521A5D173100620288 /* MenuMapViewController.swift */,
 				5E07A8541A5D1F5100620288 /* RestaurantDetailViewController.swift */,
+				5E07A8561A5DB4AC00620288 /* DiningCourtDetailViewController.swift */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -594,7 +579,6 @@
 			children = (
 				5EB5FE1419FFE7A800491C22 /* Frameworks */,
 				5E4B88DB19D07E0A00EEB9C3 /* Purdue */,
-				5E4B88F119D07E0A00EEB9C3 /* PurdueTests */,
 				5E4B88DA19D07E0A00EEB9C3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -603,7 +587,6 @@
 			isa = PBXGroup;
 			children = (
 				5E4B88D919D07E0A00EEB9C3 /* Purdue.app */,
-				5E4B88EE19D07E0A00EEB9C3 /* PurdueTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -634,23 +617,6 @@
 				5E4B891719D0903100EEB9C3 /* SideMenuViewController.swift */,
 				5E4B88FE19D07F9C00EEB9C3 /* LaunchScreen.xib */,
 				5E2EE9E81A4BF98E0082357F /* I18N.swift */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		5E4B88F119D07E0A00EEB9C3 /* PurdueTests */ = {
-			isa = PBXGroup;
-			children = (
-				5E4B88F419D07E0A00EEB9C3 /* PurdueTests.swift */,
-				5E4B88F219D07E0A00EEB9C3 /* Supporting Files */,
-			);
-			path = PurdueTests;
-			sourceTree = "<group>";
-		};
-		5E4B88F219D07E0A00EEB9C3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				5E4B88F319D07E0A00EEB9C3 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1100,24 +1066,6 @@
 			productReference = 5E4B88D919D07E0A00EEB9C3 /* Purdue.app */;
 			productType = "com.apple.product-type.application";
 		};
-		5E4B88ED19D07E0A00EEB9C3 /* PurdueTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 5E4B88FB19D07E0A00EEB9C3 /* Build configuration list for PBXNativeTarget "PurdueTests" */;
-			buildPhases = (
-				5E4B88EA19D07E0A00EEB9C3 /* Sources */,
-				5E4B88EB19D07E0A00EEB9C3 /* Frameworks */,
-				5E4B88EC19D07E0A00EEB9C3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				5E4B88F019D07E0A00EEB9C3 /* PBXTargetDependency */,
-			);
-			name = PurdueTests;
-			productName = PurdueTests;
-			productReference = 5E4B88EE19D07E0A00EEB9C3 /* PurdueTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1130,10 +1078,6 @@
 					5E4B88D819D07E0A00EEB9C3 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = ZP97V36F9T;
-					};
-					5E4B88ED19D07E0A00EEB9C3 = {
-						CreatedOnToolsVersion = 6.0;
-						TestTargetID = 5E4B88D819D07E0A00EEB9C3;
 					};
 				};
 			};
@@ -1159,7 +1103,6 @@
 			projectRoot = "";
 			targets = (
 				5E4B88D819D07E0A00EEB9C3 /* Purdue */,
-				5E4B88ED19D07E0A00EEB9C3 /* PurdueTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1233,13 +1176,6 @@
 				5E0B13091A2AF60100F57DFD /* forwardbutton@2x.png in Resources */,
 				5E4B88E619D07E0A00EEB9C3 /* Images.xcassets in Resources */,
 				5EB5FF3619FFF70300491C22 /* MWPhotoBrowser.bundle in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5E4B88EC19D07E0A00EEB9C3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1320,6 +1256,7 @@
 				5EEB696C19DF3F30005619BA /* LabsViewController.swift in Sources */,
 				5EB5FF6419FFF82200491C22 /* PSTGridLayoutRow.m in Sources */,
 				5E07A83E1A5C842E00620288 /* QCluster.m in Sources */,
+				5E07A8571A5DB4AC00620288 /* DiningCourtDetailViewController.swift in Sources */,
 				5EB5FF6519FFF82200491C22 /* PSTGridLayoutSection.m in Sources */,
 				5E4B890E19D08B4E00EEB9C3 /* ECPercentDrivenInteractiveTransition.m in Sources */,
 				5EA8414D1A2396D8009A4A9F /* NSString+FontAwesome.m in Sources */,
@@ -1375,14 +1312,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5E4B88EA19D07E0A00EEB9C3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5E4B88F519D07E0A00EEB9C3 /* PurdueTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1390,11 +1319,6 @@
 			isa = PBXTargetDependency;
 			name = "static mailcore2 ios";
 			targetProxy = 5E48FD991A21A98E004FE8B7 /* PBXContainerItemProxy */;
-		};
-		5E4B88F019D07E0A00EEB9C3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 5E4B88D819D07E0A00EEB9C3 /* Purdue */;
-			targetProxy = 5E4B88EF19D07E0A00EEB9C3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1576,40 +1500,6 @@
 			};
 			name = Release;
 		};
-		5E4B88FC19D07E0A00EEB9C3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PurdueTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Purdue.app/Purdue";
-			};
-			name = Debug;
-		};
-		5E4B88FD19D07E0A00EEB9C3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = PurdueTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Purdue.app/Purdue";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1627,15 +1517,6 @@
 			buildConfigurations = (
 				5E4B88F919D07E0A00EEB9C3 /* Debug */,
 				5E4B88FA19D07E0A00EEB9C3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5E4B88FB19D07E0A00EEB9C3 /* Build configuration list for PBXNativeTarget "PurdueTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5E4B88FC19D07E0A00EEB9C3 /* Debug */,
-				5E4B88FD19D07E0A00EEB9C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
