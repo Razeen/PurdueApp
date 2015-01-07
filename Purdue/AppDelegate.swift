@@ -23,12 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
         
         let currentVersionString = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString")! as NSString
         let currentVersion = (currentVersionString.stringByReplacingOccurrencesOfString(".", withString: "") as NSString).integerValue
-        if NSUserDefaults.standardUserDefaults().integerForKey("AppVersion") == 200 { // If previous version is 2.0.0
+        if NSUserDefaults.standardUserDefaults().integerForKey("AppVersion") == 200 { // If upgraded from version 2.0.0
             
         }
         NSUserDefaults.standardUserDefaults().setInteger(currentVersion, forKey: "AppVersion")
         
-        let viewController = BusViewController()
+        let viewController = MenuViewController()
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
         let navigationController: UINavigationController = AppDelegate.createNavController(viewController)
         slidingViewController = ECSlidingViewController(topViewController: navigationController)
@@ -112,13 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
                 navigationController = AppDelegate.createNavController(webBrowser)
                 webBrowser.loadURLString("http://m.purduesports.com/index-mobile.html")
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_MENU")) {
-                let webBrowser = KINWebBrowserViewController.webBrowser()
-                webBrowser.navigationItem.title = I18N.localizedString("MENU_TITLE")
-                webBrowser.showsURLInNavigationBar = false
-                webBrowser.showsPageTitleInNavigationBar = false
-                navigationController = AppDelegate.createNavController(webBrowser)
-                webBrowser.loadURLString("http://www.housing.purdue.edu/Menus/")
-                //navigationController = AppDelegate.createNavController(MenuViewController())
+                navigationController = AppDelegate.createNavController(MenuViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_NEWS")) {
                 navigationController = AppDelegate.createNavController(NewsViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_WEATHER")) {

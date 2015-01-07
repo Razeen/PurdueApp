@@ -24,5 +24,6 @@ class ColorUtils: NSObject {
     
     struct Cool {
         static let DarkBlue = UIColor(red: 114.0/255, green: 153.0/255, blue: 198.0/255, alpha: 1)
+        static let LightBlue = UIColor(red: 126.0/255, green: 208.0/255, blue: 224.0/255, alpha: 1)
     }
 }

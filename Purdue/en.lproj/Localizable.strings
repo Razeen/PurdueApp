@@ -21,7 +21,6 @@
 "SIDEMENU_STORE" = "Store";
 
 "GAMES_TITLE" = "Sport Games";
-"MENU_TITLE" = "Menus";
 "STORE_TITLE" = "Amazon Store";
 "CALENDAR_TITLE" = "Calendar";
 "LIBRARY_TITLE" = "Library";
@@ -48,6 +47,10 @@
 "MAP_TITLE" = "Map";
 "MAP_BUILDING_SEARCH" = "Building Search";
 "MAP_BUILDING_SEARCH_PROMPT" = "Search for a building";
+
+"MENU_TITLE" = "Menus";
+"MENU_DINING_COURTS" = "Dining Courts";
+"MENU_RESTAURANTS" = "Restaurants";
 
 "PHOTOS_TITLE" = "Photo Albums";
 
@@ -79,6 +82,7 @@
 "CAREER_LOGIN" = "Career Login";
 "EMAIL" = "Email";
 "ERROR" = "Error";
+"FRIDAY" = "Fri";
 "GENERAL" = "General";
 "HOURS" = "Hours";
 "HUMIDITY" = "Humidity";
@@ -86,6 +90,7 @@
 "LANGUAGE" = "Language";
 "LOCATION" = "Location";
 "MINUTE" = "min";
+"MONDAY" = "Mon";
 "NAME" = "Name";
 "NORMALCASE_SIGN_IN" = "Sign In";
 "NORMALCASE_SIGN_OUT" = "Sign Out";
@@ -94,12 +99,17 @@
 "PHONE" = "Phone";
 "PHOTOS" = "Photos";
 "QUALIFIED_NAME" = "Qualified Name";
+"SATURDAY" = "Sat";
 "SCHOOL" = "School";
 "SIGN_IN" = "Sign In";
 "SPECIAL_NOTE" = "Special Note";
+"SUNDAY" = "Sun";
+"THURSDAY" = "Thu";
 "TIME" = "Time";
 "TRY_LATER" = "Please try reloading later";
+"TUESDAY" = "Tue";
 "UPPERCASE_SIGN_IN" = "SIGN IN";
 "UPPERCASE_SIGN_OUT" = "SIGN OUT";
 "USERNAME" = "Username";
+"WEDNESDAY" = "Wed";
 "WIND" = "Wind";

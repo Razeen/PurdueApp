@@ -21,7 +21,6 @@
 "SIDEMENU_STORE" = "商店";
 
 "GAMES_TITLE" = "體育競賽";
-"MENU_TITLE" = "菜單";
 "STORE_TITLE" = "普渡Amazon商店";
 "CALENDAR_TITLE" = "行程表";
 "LIBRARY_TITLE" = "圖書館";
@@ -48,6 +47,10 @@
 "MAP_TITLE" = "地圖";
 "MAP_BUILDING_SEARCH" = "建築物搜尋";
 "MAP_BUILDING_SEARCH_PROMPT" = "搜尋學校的建築物";
+
+"MENU_TITLE" = "菜單";
+"MENU_DINING_COURTS" = "食堂";
+"MENU_RESTAURANTS" = "餐廳";
 
 "PHOTOS_TITLE" = "相簿";
 
@@ -79,6 +82,7 @@
 "CAREER_LOGIN" = "登入帳號";
 "EMAIL" = "電子信箱";
 "ERROR" = "錯誤";
+"FRIDAY" = "星期五";
 "GENERAL" = "一般";
 "HOURS" = "時間";
 "HUMIDITY" = "濕度";
@@ -86,6 +90,7 @@
 "LANGUAGE" = "語言";
 "LOCATION" = "地點";
 "MINUTE" = "分鐘";
+"MONDAY" = "星期一";
 "NAME" = "名稱";
 "NORMALCASE_SIGN_IN" = "登入";
 "NORMALCASE_SIGN_OUT" = "登出";
@@ -94,12 +99,17 @@
 "PHONE" = "電話";
 "PHOTOS" = "張照片";
 "QUALIFIED_NAME" = "合法名";
+"SATURDAY" = "星期六";
 "SCHOOL" = "學院";
 "SPECIAL_NOTE" = "備註";
 "SIGN_IN" = "登入";
+"SUNDAY" = "星期日";
+"THURSDAY" = "星期四";
 "TIME" = "時間";
 "TRY_LATER" = "請稍候重新嘗試載入";
+"TUESDAY" = "星期二";
 "UPPERCASE_SIGN_IN" = "登入";
 "UPPERCASE_SIGN_OUT" = "登出";
 "USERNAME" = "帳號";
+"WEDNESDAY" = "星期三";
 "WIND" = "風力";

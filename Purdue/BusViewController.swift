@@ -26,7 +26,7 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
     var stopsDict = NSMutableDictionary()
     var routes = NSMutableArray()
     var stops = NSMutableArray()
-    var bookmarks = NSUserDefaults.standardUserDefaults().objectForKey("Bus_Bookmarks") as NSMutableArray
+    var bookmarks = NSMutableArray()
     
     let routesTV = UITableView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height - 84 - 44))
     let stopsTV = UITableView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height - 84 - 44))
@@ -52,6 +52,7 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
         if NSUserDefaults.standardUserDefaults().objectForKey("Bus_Bookmarks") == nil {
             NSUserDefaults.standardUserDefaults().setObject(NSMutableArray(), forKey: "Bus_Bookmarks")
         }
+        bookmarks = NSUserDefaults.standardUserDefaults().objectForKey("Bus_Bookmarks") as NSMutableArray
         
         //if NSUserDefaults.standardUserDefaults().objectForKey("Bus_Routes") == nil || NSUserDefaults.standardUserDefaults().objectForKey("Bus_Stops") == nil {
             let ScreenWidth = UIScreen.mainScreen().bounds.width

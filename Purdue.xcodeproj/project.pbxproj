@@ -13,6 +13,8 @@
 		5E07A8411A5C842E00620288 /* QTreeGeometryUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A83C1A5C842E00620288 /* QTreeGeometryUtils.m */; };
 		5E07A8491A5C965100620288 /* StopAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A8481A5C965100620288 /* StopAnnotation.swift */; };
 		5E07A84E1A5CABD400620288 /* ClusterAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A84D1A5CABD400620288 /* ClusterAnnotationView.m */; };
+		5E07A8531A5D173100620288 /* MenuMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A8521A5D173100620288 /* MenuMapViewController.swift */; };
+		5E07A8551A5D1F5100620288 /* RestaurantDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A8541A5D1F5100620288 /* RestaurantDetailViewController.swift */; };
 		5E0B12BC1A2AF34400F57DFD /* KINWebBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B12BB1A2AF34400F57DFD /* KINWebBrowserViewController.m */; };
 		5E0B13051A2AF60100F57DFD /* backbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B12FF1A2AF60100F57DFD /* backbutton.png */; };
 		5E0B13061A2AF60100F57DFD /* backbutton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B13001A2AF60100F57DFD /* backbutton@2x.png */; };
@@ -239,6 +241,8 @@
 		5E07A8481A5C965100620288 /* StopAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopAnnotation.swift; sourceTree = "<group>"; };
 		5E07A84C1A5CABD400620288 /* ClusterAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClusterAnnotationView.h; sourceTree = "<group>"; };
 		5E07A84D1A5CABD400620288 /* ClusterAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClusterAnnotationView.m; sourceTree = "<group>"; };
+		5E07A8521A5D173100620288 /* MenuMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuMapViewController.swift; sourceTree = "<group>"; };
+		5E07A8541A5D1F5100620288 /* RestaurantDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestaurantDetailViewController.swift; sourceTree = "<group>"; };
 		5E0B12BA1A2AF34400F57DFD /* KINWebBrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KINWebBrowserViewController.h; sourceTree = "<group>"; };
 		5E0B12BB1A2AF34400F57DFD /* KINWebBrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KINWebBrowserViewController.m; sourceTree = "<group>"; };
 		5E0B12FF1A2AF60100F57DFD /* backbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbutton.png; sourceTree = "<group>"; };
@@ -492,6 +496,16 @@
 				5E07A83D1A5C842E00620288 /* QTreeInsertable.h */,
 			);
 			path = QTree;
+			sourceTree = "<group>";
+		};
+		5E07A8511A5D171900620288 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				5EEB696F19DF3F54005619BA /* MenuViewController.swift */,
+				5E07A8521A5D173100620288 /* MenuMapViewController.swift */,
+				5E07A8541A5D1F5100620288 /* RestaurantDetailViewController.swift */,
+			);
+			name = Menu;
 			sourceTree = "<group>";
 		};
 		5E0B12B91A2AF34400F57DFD /* KINWebBrowser */ = {
@@ -769,7 +783,7 @@
 				5E307F231A32328700B19FBB /* Labs */,
 				5E6A815A1A480704008277F2 /* Library */,
 				5EEB696919DF3F18005619BA /* MapViewController.swift */,
-				5EEB696F19DF3F54005619BA /* MenuViewController.swift */,
+				5E07A8511A5D171900620288 /* Menu */,
 				5E9ABA0E1A25B51C00800B25 /* MyMail */,
 				5E83BFE519D7292300C883E1 /* NewsViewController.swift */,
 				5EEB695F19DF3BBF005619BA /* PhotoViewController.swift */,
@@ -1263,6 +1277,7 @@
 				5EE1503E1A0FEBC8008C9825 /* MRActivityIndicatorView.m in Sources */,
 				5EB5FF2719FFF70300491C22 /* NSData+ImageContentType.m in Sources */,
 				5EEB697219DF3F8B005619BA /* LibraryViewController.swift in Sources */,
+				5E07A8551A5D1F5100620288 /* RestaurantDetailViewController.swift in Sources */,
 				5EEB697019DF3F54005619BA /* MenuViewController.swift in Sources */,
 				5E8582161A210C59006E6539 /* DirectoryDetailViewController.swift in Sources */,
 				5EB5FF3519FFF70300491C22 /* UIView+WebCacheOperation.m in Sources */,
@@ -1353,6 +1368,7 @@
 				5E4B890F19D08B4E00EEB9C3 /* ECSlidingAnimationController.m in Sources */,
 				5EB5FF1219FFF70300491C22 /* MWTapDetectingView.m in Sources */,
 				5EB5FF5919FFF82200491C22 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
+				5E07A8531A5D173100620288 /* MenuMapViewController.swift in Sources */,
 				5E07A83F1A5C842E00620288 /* QNode.m in Sources */,
 				5EEEEDF01A493D8E00F95BE1 /* Building.swift in Sources */,
 				5EB5FF6219FFF82200491C22 /* PSTGridLayoutInfo.m in Sources */,
