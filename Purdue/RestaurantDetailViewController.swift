@@ -52,7 +52,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         let separatorLabel2 = UILabel(frame: CGRectMake(0, 0, 1, 20))
         separatorLabel2.backgroundColor = UIColor.lightGrayColor()
         
-        self.infoButton.setTitle(I18N.localizedString("MENU_DINING_COURTS"), forState: UIControlState.Normal)
+        self.infoButton.setTitle(I18N.localizedString("INFO"), forState: UIControlState.Normal)
         self.infoButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 16)
         self.infoButton.sizeToFit()
         self.infoButton.tintColor = UIColor(red: 163.0/255, green: 121.0/255, blue: 44.0/255, alpha: 1)
@@ -63,14 +63,14 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         self.infoButton.addTarget(self, action: "changedTab:", forControlEvents: UIControlEvents.TouchUpInside)
         let infoItem = UIBarButtonItem(customView: self.infoButton)
         
-        self.mapButton.setTitle(I18N.localizedString("MENU_RESTAURANTS"), forState: UIControlState.Normal)
+        self.mapButton.setTitle(I18N.localizedString("MAP_TITLE"), forState: UIControlState.Normal)
         self.mapButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 16)
         self.mapButton.sizeToFit()
         self.mapButton.tintColor = UIColor(white: 0.2, alpha: 0.8)
         self.mapButton.addTarget(self, action: "changedTab:", forControlEvents: UIControlEvents.TouchUpInside)
         let mapItem = UIBarButtonItem(customView: self.mapButton)
         
-        self.menuButton.setTitle(I18N.localizedString("MENU_RESTAURANTS"), forState: UIControlState.Normal)
+        self.menuButton.setTitle(I18N.localizedString("MENU"), forState: UIControlState.Normal)
         self.menuButton.titleLabel?.font = UIFont(name: "Avenir-Heavy", size: 16)
         self.menuButton.sizeToFit()
         self.menuButton.tintColor = UIColor(white: 0.2, alpha: 0.8)
@@ -122,6 +122,8 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         infoButton.layer.shadowRadius = 0
         mapButton.tintColor = UIColor(white: 0.2, alpha: 0.8)
         mapButton.layer.shadowRadius = 0
+        menuButton.tintColor = UIColor(white: 0.2, alpha: 0.8)
+        menuButton.layer.shadowRadius = 0
         
         sender.tintColor = ColorUtils.Legacy.OldGold
         sender.layer.shadowColor = UIColor(red: 227.0/255, green: 174.0/255, blue: 36.0/255, alpha: 1).CGColor
@@ -242,6 +244,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 30
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

@@ -86,9 +86,11 @@
 "GENERAL" = "General";
 "HOURS" = "Hours";
 "HUMIDITY" = "Humidity";
+"INFO" = "Info";
 "INFORMATION" = "Information";
 "LANGUAGE" = "Language";
 "LOCATION" = "Location";
+"MENU" = "Menu";
 "MINUTE" = "min";
 "MONDAY" = "Mon";
 "NAME" = "Name";

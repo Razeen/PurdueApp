@@ -30,7 +30,7 @@ class MenuMapViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         
         let mapView = MKMapView(frame: self.view.frame)
-        mapView.setRegion(MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(40.427821, -86.917633), 10000, 10000), animated: false)
+        mapView.setRegion(MKCoordinateRegionMakeWithDistance(CLLocationCoordinate2DMake(40.427821, -86.917633), 3000, 3000), animated: false)
         mapView.delegate = self
         self.view.addSubview(mapView)
         

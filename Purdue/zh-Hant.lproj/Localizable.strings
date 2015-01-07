@@ -86,9 +86,11 @@
 "GENERAL" = "一般";
 "HOURS" = "時間";
 "HUMIDITY" = "濕度";
+"INFO" = "資訊";
 "INFORMATION" = "資訊";
 "LANGUAGE" = "語言";
 "LOCATION" = "地點";
+"MENU" = "菜單";
 "MINUTE" = "分鐘";
 "MONDAY" = "星期一";
 "NAME" = "名稱";
