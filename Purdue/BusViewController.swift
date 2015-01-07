@@ -56,7 +56,7 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
         //if NSUserDefaults.standardUserDefaults().objectForKey("Bus_Routes") == nil || NSUserDefaults.standardUserDefaults().objectForKey("Bus_Stops") == nil {
             let ScreenWidth = UIScreen.mainScreen().bounds.width
             let ScreenHeight = UIScreen.mainScreen().bounds.height
-            let activityIndicatorView = MRActivityIndicatorView(frame: CGRectMake((ScreenWidth - 30) / 2, (ScreenHeight - 30) / 2, 30, 30))
+            let activityIndicatorView = MRActivityIndicatorView(frame: CGRectMake((ScreenWidth - 30) / 2, (ScreenHeight - 30 - 84 - 44) / 2, 30, 30))
             activityIndicatorView.tintColor = ColorUtils.Legacy.OldGold
             self.view.addSubview(activityIndicatorView)
             activityIndicatorView.startAnimating()
