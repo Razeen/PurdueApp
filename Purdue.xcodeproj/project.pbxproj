@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E009D271A5DC5FE009E1B22 /* AttributionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E009D261A5DC5FE009E1B22 /* AttributionsViewController.swift */; };
+		5E009D291A5DCB61009E1B22 /* DevTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E009D281A5DCB61009E1B22 /* DevTeamViewController.swift */; };
 		5E07A83E1A5C842E00620288 /* QCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A8351A5C842E00620288 /* QCluster.m */; };
 		5E07A83F1A5C842E00620288 /* QNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A8371A5C842E00620288 /* QNode.m */; };
 		5E07A8401A5C842E00620288 /* QTree.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E07A83A1A5C842E00620288 /* QTree.m */; };
@@ -221,6 +223,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5E009D261A5DC5FE009E1B22 /* AttributionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributionsViewController.swift; sourceTree = "<group>"; };
+		5E009D281A5DCB61009E1B22 /* DevTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevTeamViewController.swift; sourceTree = "<group>"; };
 		5E07A8341A5C842E00620288 /* QCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QCluster.h; sourceTree = "<group>"; };
 		5E07A8351A5C842E00620288 /* QCluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QCluster.m; sourceTree = "<group>"; };
 		5E07A8361A5C842E00620288 /* QNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QNode.h; sourceTree = "<group>"; };
@@ -463,6 +467,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E009D251A5DC594009E1B22 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5EBDC5AF1A3D9F7300BA2FDA /* SettingsViewController.swift */,
+				5E009D261A5DC5FE009E1B22 /* AttributionsViewController.swift */,
+				5E009D281A5DCB61009E1B22 /* DevTeamViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		5E07A8331A5C842E00620288 /* QTree */ = {
 			isa = PBXGroup;
 			children = (
@@ -713,19 +727,19 @@
 		5EA4C2C519D5EA0700E42732 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				5E07A8331A5C842E00620288 /* QTree */,
-				5E0B12B91A2AF34400F57DFD /* KINWebBrowser */,
+				5EB5FD7D19FFDF2600491C22 /* AsyncImageView */,
 				5EA841421A2396D8009A4A9F /* BButton */,
-				5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */,
 				5E48FD7D1A21A8FB004FE8B7 /* CWPopup */,
+				5E4B890019D08B4E00EEB9C3 /* ECSlidingViewController */,
 				5E48FD691A21826A004FE8B7 /* FXBlurView */,
 				5E48FD621A217649004FE8B7 /* KeychainWrapper */,
+				5E0B12B91A2AF34400F57DFD /* KINWebBrowser */,
+				5E48FD811A21A981004FE8B7 /* mailcore2.xcodeproj */,
 				5EE150151A0FEBC8008C9825 /* MRProgress */,
 				5EB5FEA819FFF70300491C22 /* MWPhotoBrowser */,
-				5EB5FD7D19FFDF2600491C22 /* AsyncImageView */,
-				5E83BFE719D729BB00C883E1 /* XMLReader */,
+				5E07A8331A5C842E00620288 /* QTree */,
 				5EA4C2C819D5ED2100E42732 /* SCLAlertView */,
-				5E4B890019D08B4E00EEB9C3 /* ECSlidingViewController */,
+				5E83BFE719D729BB00C883E1 /* XMLReader */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -756,7 +770,7 @@
 				5EEB696519DF3EFC005619BA /* ScheduleViewController.swift */,
 				5EEB696119DF3BCB005619BA /* VideoViewController.swift */,
 				5E4B88E019D07E0A00EEB9C3 /* WeatherViewController.swift */,
-				5EBDC5AF1A3D9F7300BA2FDA /* SettingsViewController.swift */,
+				5E009D251A5DC594009E1B22 /* Settings */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -1287,6 +1301,7 @@
 				5E83BFE619D7292300C883E1 /* NewsViewController.swift in Sources */,
 				5EEEEDEA1A48CEF100F95BE1 /* BuildingOverlay.swift in Sources */,
 				5EA3BA491A50E7D80029F704 /* Stop.swift in Sources */,
+				5E009D291A5DCB61009E1B22 /* DevTeamViewController.swift in Sources */,
 				5EB5FF2D19FFF70300491C22 /* SDWebImageManager.m in Sources */,
 				5EA4C2CA19D5ED2100E42732 /* SCLAlertView.swift in Sources */,
 				5EB5FF0F19FFF70300491C22 /* MWPhoto.m in Sources */,
@@ -1302,6 +1317,7 @@
 				5EE1506B1A101001008C9825 /* LabRoom.swift in Sources */,
 				5EEEEDEE1A48E9DC00F95BE1 /* BuildingOverlayView.swift in Sources */,
 				5EA3BA471A50E75B0029F704 /* Route.swift in Sources */,
+				5E009D271A5DC5FE009E1B22 /* AttributionsViewController.swift in Sources */,
 				5E4B890F19D08B4E00EEB9C3 /* ECSlidingAnimationController.m in Sources */,
 				5EB5FF1219FFF70300491C22 /* MWTapDetectingView.m in Sources */,
 				5EB5FF5919FFF82200491C22 /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,

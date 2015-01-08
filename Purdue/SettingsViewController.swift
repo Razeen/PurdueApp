@@ -12,6 +12,8 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
     
     var viewController: UIViewController?
     
+    var shouldHideSB = true
+    
     convenience override init() {
         self.init(style: UITableViewStyle.Grouped)
     }
@@ -25,7 +27,7 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         NSNotificationCenter.defaultCenter().removeObserver(self)
-        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.None)
+        UIApplication.sharedApplication().setStatusBarHidden(shouldHideSB, withAnimation: UIStatusBarAnimation.None)
     }
     
     func receivedNotification(notification: NSNotification) {
@@ -76,6 +78,7 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
     }
     
     func dismissPopup() {
+        shouldHideSB = true
         self.navigationController!.dismissPopupViewControllerAnimated(true, completion: nil)
     }
     
@@ -100,7 +103,7 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -119,7 +122,12 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == 0 {
+            return 1
+        } else if section == 1 {
+            return 2
+        }
+        return 0
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -139,6 +147,14 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
                     cell?.detailTextLabel?.text = "繁體中文"
                 }
             }
+        } else if indexPath.section == 1 {
+            if indexPath.row == 0 {
+                cell?.textLabel?.text = I18N.localizedString("DEVELOPMENT_TEAM")
+                cell?.detailTextLabel?.text = nil
+            } else if indexPath.row == 1 {
+                cell?.textLabel?.text = I18N.localizedString("ATTRIBUTIONS")
+                cell?.detailTextLabel?.text = nil
+            }
         }
         
         cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
@@ -150,6 +166,17 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
         if indexPath.section == 0 {
             if indexPath.row == 0 {
                 UIActionSheet(title: I18N.localizedString("SETTINGS_LANG_PROMPT"), delegate: self, cancelButtonTitle: I18N.localizedString("CANCEL"), destructiveButtonTitle: nil, otherButtonTitles: "English", "繁體中文").showFromRect(tableView.cellForRowAtIndexPath(indexPath)!.frame, inView: self.view, animated: true)
+            }
+        } else if indexPath.section == 1 {
+            shouldHideSB = false
+            if indexPath.row == 0 {
+                let detailVC = DevTeamViewController()
+                detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
+                self.navigationController?.pushViewController(detailVC, animated: true)
+            } else if indexPath.row == 1 {
+                let detailVC = AttributionsViewController()
+                detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
+                self.navigationController?.pushViewController(detailVC, animated: true)
             }
         }
         

@@ -77,9 +77,12 @@
 "WEATHER_SAT" = "Sat";
 
 "ADDRESS" = "Address";
+"ATTRIBUTIONS" = "Attributions";
 "CAMPUS" = "Campus";
 "CANCEL" = "Cancel";
 "CAREER_LOGIN" = "Career Login";
+"DEVELOPERS" = "Developers";
+"DEVELOPMENT_TEAM" = "Development Team";
 "EMAIL" = "Email";
 "ERROR" = "Error";
 "FRIDAY" = "Fri";
@@ -89,6 +92,7 @@
 "INFO" = "Info";
 "INFORMATION" = "Information";
 "LANGUAGE" = "Language";
+"LEAD_DEVELOPER" = "Lead Developer";
 "LOCATION" = "Location";
 "MENU" = "Menu";
 "MINUTE" = "min";
@@ -105,6 +109,7 @@
 "SCHOOL" = "School";
 "SIGN_IN" = "Sign In";
 "SPECIAL_NOTE" = "Special Note";
+"SPECIAL_THANKS" = "Special Thanks";
 "SUNDAY" = "Sun";
 "THURSDAY" = "Thu";
 "TIME" = "Time";

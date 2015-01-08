@@ -77,9 +77,12 @@
 "WEATHER_SAT" = "星期六";
 
 "ADDRESS" = "地址";
+"ATTRIBUTIONS" = "姓名標示";
 "CAMPUS" = "分校";
 "CANCEL" = "取消";
 "CAREER_LOGIN" = "登入帳號";
+"DEVELOPERS" = "開發工程師";
+"DEVELOPMENT_TEAM" = "開發團隊";
 "EMAIL" = "電子信箱";
 "ERROR" = "錯誤";
 "FRIDAY" = "星期五";
@@ -89,6 +92,7 @@
 "INFO" = "資訊";
 "INFORMATION" = "資訊";
 "LANGUAGE" = "語言";
+"LEAD_DEVELOPER" = "開發總監";
 "LOCATION" = "地點";
 "MENU" = "菜單";
 "MINUTE" = "分鐘";
@@ -105,6 +109,7 @@
 "SCHOOL" = "學院";
 "SPECIAL_NOTE" = "備註";
 "SIGN_IN" = "登入";
+"SPECIAL_THANKS" = "特別感謝";
 "SUNDAY" = "星期日";
 "THURSDAY" = "星期四";
 "TIME" = "時間";

@@ -206,13 +206,10 @@ class DiningCourtDetailViewController: UIViewController, UITableViewDataSource, 
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if tableView == infoView {
-            if indexPath.row == 0 {
-                return 50
-            } else if indexPath.row == 1 {
-                return 50
-            } else if indexPath.row == 2 {
+            if indexPath.row == 2 {
                 return 67.5
             }
+            return 50
         }
         return 0
     }
