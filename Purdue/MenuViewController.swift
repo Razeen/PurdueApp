@@ -32,13 +32,9 @@ class MenuViewController: UIViewController, UICollectionViewDataSource, UICollec
         
         self.edgesForExtendedLayout = UIRectEdge.None
         
-        /*
-        https://api.hfs.purdue.edu/menus/v2/locations/Earhart/2014-10-28
-        */
-        
         let ScreenWidth = UIScreen.mainScreen().bounds.width
         let ScreenHeight = UIScreen.mainScreen().bounds.height
-        let activityIndicatorView = MRActivityIndicatorView(frame: CGRectMake((ScreenWidth - 30) / 2, (ScreenHeight - 30 - 84) / 2, 30, 30))
+        let activityIndicatorView = MRActivityIndicatorView(frame: CGRectMake((ScreenWidth - 30) / 2, (ScreenHeight - 30 - 84 - 44) / 2, 30, 30))
         activityIndicatorView.tintColor = ColorUtils.Legacy.OldGold
         self.view.addSubview(activityIndicatorView)
         activityIndicatorView.startAnimating()

@@ -78,11 +78,14 @@
 
 "ADDRESS" = "地址";
 "ATTRIBUTIONS" = "姓名標示";
+"BREAKFAST" = "早餐";
 "CAMPUS" = "分校";
 "CANCEL" = "取消";
 "CAREER_LOGIN" = "登入帳號";
+"CLOSED" = "關閉";
 "DEVELOPERS" = "開發工程師";
 "DEVELOPMENT_TEAM" = "開發團隊";
+"DINNER" = "晚餐";
 "EMAIL" = "電子信箱";
 "ERROR" = "錯誤";
 "FRIDAY" = "星期五";
@@ -94,6 +97,8 @@
 "LANGUAGE" = "語言";
 "LEAD_DEVELOPER" = "開發總監";
 "LOCATION" = "地點";
+"LATE LUNCH" = "晚午餐";
+"LUNCH" = "午餐";
 "MENU" = "菜單";
 "MINUTE" = "分鐘";
 "MONDAY" = "星期一";
@@ -113,6 +118,8 @@
 "SUNDAY" = "星期日";
 "THURSDAY" = "星期四";
 "TIME" = "時間";
+"TODAY" = "今天";
+"TOMORROW" = "明天";
 "TRY_LATER" = "請稍候重新嘗試載入";
 "TUESDAY" = "星期二";
 "UPPERCASE_SIGN_IN" = "登入";

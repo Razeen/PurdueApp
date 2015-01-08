@@ -181,6 +181,9 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
         } else if indexPath.section == 1 {
             let dayKey = (days[indexPath.row]["Name"] as NSString).uppercaseString
             cell?.textLabel?.text = I18N.localizedString(dayKey)
+            if (NSUserDefaults.standardUserDefaults().objectForKey("AppleLanguages") as [NSString])[0] == "en" {
+                cell?.textLabel?.text = (cell!.textLabel!.text as NSString!).substringToIndex(3)
+            }
             let hours = days[indexPath.row]["Hours"] as [NSDictionary]
             var periodString = ""
             for var i = 0; i < hours.count; i++ {
