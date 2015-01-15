@@ -17,7 +17,7 @@ class StopDetailViewController: UITableViewController {
     var routeAry: [NSNumber] = []
     var etaAry: [Int] = []
     
-    let bookmarks = NSUserDefaults.standardUserDefaults().objectForKey("Bus_Bookmarks") as NSMutableArray
+    let bookmarks: NSMutableArray = (NSUserDefaults.standardUserDefaults().objectForKey("Bus_Bookmarks") as NSArray).mutableCopy() as NSMutableArray
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +66,7 @@ class StopDetailViewController: UITableViewController {
     func addToBookmarks() {
         bookmarks.addObject(stop!.name!)
         NSUserDefaults.standardUserDefaults().setObject(bookmarks, forKey: "Bus_Bookmarks")
+        NSUserDefaults.standardUserDefaults().synchronize()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "FilledStar"), style: UIBarButtonItemStyle.Done, target: self, action: "removeFromBookmarks")
         self.navigationItem.rightBarButtonItem?.tintColor = ColorUtils.Core.Brown
     }
@@ -73,6 +74,7 @@ class StopDetailViewController: UITableViewController {
     func removeFromBookmarks() {
         bookmarks.removeObject(stop!.name!)
         NSUserDefaults.standardUserDefaults().setObject(bookmarks, forKey: "Bus_Bookmarks")
+        NSUserDefaults.standardUserDefaults().synchronize()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "EmptyStar"), style: UIBarButtonItemStyle.Done, target: self, action: "addToBookmarks")
         self.navigationItem.rightBarButtonItem?.tintColor = ColorUtils.Core.Brown
     }

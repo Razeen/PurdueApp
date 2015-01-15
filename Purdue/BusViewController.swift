@@ -40,8 +40,8 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
         
         self.reloadForLocalization()
         
-        self.edgesForExtendedLayout = UIRectEdge.None
-        self.navigationController?.setToolbarHidden(false, animated: false)
+        self.navigationController?.toolbarHidden = false
+        
         bookmarks = NSUserDefaults.standardUserDefaults().objectForKey("Bus_Bookmarks") as NSMutableArray
         self.bookmarksTV.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
     }
@@ -50,9 +50,12 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
         super.viewDidLoad()
         
         if NSUserDefaults.standardUserDefaults().objectForKey("Bus_Bookmarks") == nil {
-            NSUserDefaults.standardUserDefaults().setObject(NSMutableArray(), forKey: "Bus_Bookmarks")
+            NSUserDefaults.standardUserDefaults().setObject(NSMutableArray(array: []), forKey: "Bus_Bookmarks")
+            NSUserDefaults.standardUserDefaults().synchronize()
         }
         bookmarks = NSUserDefaults.standardUserDefaults().objectForKey("Bus_Bookmarks") as NSMutableArray
+        
+        self.edgesForExtendedLayout = UIRectEdge.None
         
         //if NSUserDefaults.standardUserDefaults().objectForKey("Bus_Routes") == nil || NSUserDefaults.standardUserDefaults().objectForKey("Bus_Stops") == nil {
             let ScreenWidth = UIScreen.mainScreen().bounds.width

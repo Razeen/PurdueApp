@@ -22,7 +22,6 @@
 
 "GAMES_TITLE" = "Sport Games";
 "STORE_TITLE" = "Amazon Store";
-"CALENDAR_TITLE" = "Calendar";
 "LIBRARY_TITLE" = "Library";
 
 "BLACKBOARD_OOPS" = "Oops!";
@@ -53,6 +52,22 @@
 "MENU_RESTAURANTS" = "Restaurants";
 
 "PHOTOS_TITLE" = "Photo Albums";
+
+"SCHEDULE_TITLE" = "Schedule";
+"SCHEDULE_UNIVERSITY_EVENTS" = "University Events";
+"SCHEDULE_ACADEMIC" = "Academic";
+"SCHEDULE_ADMISSION" = "Admission";
+"SCHEDULE_ARTS_AND_CULTURE" = "Arts and Culture";
+"SCHEDULE_CAREER_PROGRAMS" = "Career Programs";
+"SCHEDULE_COLLEGE_AND_SCHOOLS" = "College and Schools";
+"SCHEDULE_CONTINUING_EDUCATION" = "Continuing Education";
+"SCHEDULE_LIBRARIES" = "Libraries";
+"SCHEDULE_PROSPECTIVE_STUDENTS" = "Prospective Students";
+"SCHEDULE_REC_SPORTS" = "Rec Sports";
+"SCHEDULE_REGISTRAR" = "Registrar";
+"SCHEDULE_DIVERSITY_AND_INCLUSIVE" = "Diversity & Inclusive Events";
+"SCHEDULE_PERSONAL_SCHEDULE" = "Personal Schedule";
+"SCHEDULE_CLASS_SCHEDULE" = "Class Schedule";
 
 "SETTINGS_TITLE" = "Settings";
 "SETTINGS_LANG_PROMPT" = "Choose a language";

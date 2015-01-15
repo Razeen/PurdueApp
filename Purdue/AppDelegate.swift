@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
         }
         NSUserDefaults.standardUserDefaults().setInteger(currentVersion, forKey: "AppVersion")
         
-        let viewController = MenuViewController()
+        let viewController = ScheduleViewController()
         viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: UIBarButtonItemStyle.Done, target: self, action: "showMenu")
         let navigationController: UINavigationController = AppDelegate.createNavController(viewController)
         slidingViewController = ECSlidingViewController(topViewController: navigationController)
@@ -91,13 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
             } else if (realNames[indexPath.row] as NSString).isEqualToString("Blackboard") {
                 navigationController = AppDelegate.createNavController(BlackboardViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_SCHEDULE")) {
-                let webBrowser = KINWebBrowserViewController.webBrowser()
-                webBrowser.navigationItem.title = I18N.localizedString("CALENDAR_TITLE")
-                webBrowser.showsURLInNavigationBar = false
-                webBrowser.showsPageTitleInNavigationBar = false
-                navigationController = AppDelegate.createNavController(webBrowser)
-                webBrowser.loadURLString("https://calendar.purdue.edu/")
-                //navigationController = AppDelegate.createNavController(ScheduleViewController())
+                navigationController = AppDelegate.createNavController(ScheduleViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_BUS")) {
                 navigationController = AppDelegate.createNavController(BusViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_MAP")) {

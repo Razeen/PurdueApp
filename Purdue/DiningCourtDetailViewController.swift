@@ -306,13 +306,18 @@ class DiningCourtDetailViewController: UIViewController, UITableViewDataSource, 
         cell?.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 17)
         cell?.detailTextLabel?.font = UIFont(name: "Avenir", size: 14)
         cell?.detailTextLabel?.numberOfLines = 0
-        cell?.accessoryType = UITableViewCellAccessoryType.None
+        cell?.accessoryView = nil
         
         if tableView == menuView {
             cell?.textLabel?.textColor = UIColor.blackColor()
             cell?.textLabel?.text = foodArray[indexPath.section][indexPath.row]["Name"] as? String
             cell?.detailTextLabel?.text = foodArray[indexPath.section][indexPath.row]["StationName"] as? String
-            cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+            if foodArray[indexPath.section][indexPath.row]["IsVegetarian"] as Int == 1 {
+                let imageView = UIImageView(image: UIImage(named: "Vegetarian")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate))
+                imageView.frame = CGRectMake(0, 0, 25, 25)
+                imageView.tintColor = UIColor(red: 102.0/255, green: 204.0/255, blue: 0, alpha: 1)
+                cell?.accessoryView = imageView
+            }
         } else if tableView == infoView {
             cell?.textLabel?.textColor = ColorUtils.Cool.DarkBlue
             if indexPath.row == 0 {

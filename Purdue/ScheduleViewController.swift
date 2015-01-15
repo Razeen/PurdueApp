@@ -9,15 +9,34 @@
 import UIKit
 
 class ScheduleViewController: UITableViewController {
+    
+    var loggedIn = false
+    
+    let sectionNames = ["SCHEDULE_UNIVERSITY_EVENTS", "SCHEDULE_PERSONAL_SCHEDULE"]
+    let rowNames = [
+        ["SCHEDULE_ACADEMIC", "SCHEDULE_ADMISSION", "SCHEDULE_ARTS_AND_CULTURE", "SCHEDULE_CAREER_PROGRAMS", "SCHEDULE_COLLEGE_AND_SCHOOLS", "SCHEDULE_CONTINUING_EDUCATION", "SCHEDULE_LIBRARIES", "SCHEDULE_PROSPECTIVE_STUDENTS", "SCHEDULE_REC_SPORTS", "SCHEDULE_REGISTRAR", "SCHEDULE_DIVERSITY_AND_INCLUSIVE"],
+        ["SCHEDULE_CLASS_SCHEDULE"]
+    ]
+    
+    let universityEventUrls = [
+        "https://calendar.purdue.edu/calendar/default.aspx?type=&view=Category&category=13-0%2c26-50&range=next365",
+        "https://calendar.purdue.edu/calendar/default.aspx?type=&view=Category&category=41-0%2c9-0&range=next365",
+        "https://calendar.purdue.edu/calendar/default.aspx?type=&view=Category&category=5-0&range=next365",
+        "https://calendar.purdue.edu/calendar/default.aspx?type=&view=Category&category=6-0&range=next365",
+        "https://calendar.purdue.edu/calendar/default.aspx?type=&view=Category&category=12-0&range=next365",
+        "https://calendar.purdue.edu/calendar/default.aspx?type=&view=Category&category=31-0&range=next365",
+        "https://calendar.purdue.edu/calendar/default.aspx?type=&view=Category&category=28-0&range=next365",
+        "https://calendar.purdue.edu/calendar/default.aspx?type=&view=Category&category=9-0&range=next365",
+        "https://calendar.purdue.edu/calendar/default.aspx?type=&view=Category&category=44-0&range=next365",
+        "https://calendar.purdue.edu/calendar/default.aspx?type=&view=Category&category=26-0&range=next365",
+        "https://calendar.purdue.edu/calendar/default.aspx?type=&view=Category&category=40-0&range=next365"
+    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.navigationItem.title = I18N.localizedString("SCHEDULE_TITLE")
+        loggedIn = AccountUtils.getUsername() != nil && AccountUtils.getPassword() != nil
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,70 +47,66 @@ class ScheduleViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return loggedIn == true ? 2 : 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return rowNames[section].count
     }
-
-    /*
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
-
-        // Configure the cell...
-
-        return cell
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let CellIdentifier = "CellIdentifier"
+        
+        var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(CellIdentifier) as? UITableViewCell
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: CellIdentifier)
+        }
+        
+        cell?.imageView?.image = UIImage(named: "Event")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        cell?.imageView?.tintColor = ColorUtils.Legacy.OldGold
+        
+        cell?.textLabel?.font = UIFont(name: "Avenir-Heavy", size: 17)
+        cell?.textLabel?.text = I18N.localizedString(rowNames[indexPath.section][indexPath.row])
+        
+        cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        
+        return cell!
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView!, canEditRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 0 {
+            let webBrowser = WebBrowserViewController()
+            webBrowser.navigationItem.title = I18N.localizedString(rowNames[indexPath.section][indexPath.row])
+            webBrowser.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
+            webBrowser.urlString = universityEventUrls[indexPath.row]
+            self.navigationController?.pushViewController(webBrowser, animated: true)
+        } else if indexPath.section == 1 {
+            let detailVC = UserScheduleViewController()
+            detailVC.navigationItem.title = I18N.localizedString(rowNames[indexPath.section][indexPath.row])
+            detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView!, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath!) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 30))
+        view.backgroundColor = ColorUtils.Legacy.OldGold
+        
+        let textLabel = UILabel(frame: CGRectMake(15.5, 0, UIScreen.mainScreen().bounds.width - 15.5, 30))
+        textLabel.font = UIFont(name: "Avenir", size: 17)
+        textLabel.text = I18N.localizedString(sectionNames[section])
+        textLabel.textAlignment = NSTextAlignment.Left
+        textLabel.textColor = UIColor.whiteColor()
+        view.addSubview(textLabel)
+        
+        return view
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView!, moveRowAtIndexPath fromIndexPath: NSIndexPath!, toIndexPath: NSIndexPath!) {
-
+    
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 30
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView!, canMoveRowAtIndexPath indexPath: NSIndexPath!) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

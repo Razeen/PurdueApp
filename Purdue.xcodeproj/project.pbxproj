@@ -31,7 +31,6 @@
 		5E22189D1A36EF3C0086E49D /* MapUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E22189C1A36EF3C0086E49D /* MapUtils.swift */; };
 		5E2EE9E91A4BF98E0082357F /* I18N.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E2EE9E81A4BF98E0082357F /* I18N.swift */; };
 		5E2EE9EB1A4BFBD30082357F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5E2EE9ED1A4BFBD30082357F /* Localizable.strings */; };
-		5E307F2E1A323A9500B19FBB /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E307F2D1A323A9500B19FBB /* Course.swift */; };
 		5E48FD5F1A216F31004FE8B7 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E48FD5E1A216F31004FE8B7 /* CFNetwork.framework */; };
 		5E48FD611A216F37004FE8B7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E48FD601A216F37004FE8B7 /* Security.framework */; };
 		5E48FD641A217649004FE8B7 /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E48FD631A217649004FE8B7 /* KeychainWrapper.swift */; };
@@ -55,6 +54,7 @@
 		5E66B99D1A59C40F0036C26E /* StopDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E66B99C1A59C40F0036C26E /* StopDetailViewController.swift */; };
 		5E6A81571A477A7C008277F2 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A81561A477A7C008277F2 /* Library.swift */; };
 		5E6A81591A47C3AD008277F2 /* LibraryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6A81581A47C3AD008277F2 /* LibraryDetailViewController.swift */; };
+		5E72CDD81A635FBB002FBCD8 /* BBAnnoucementsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E72CDD71A635FBB002FBCD8 /* BBAnnoucementsViewController.swift */; };
 		5E76EFC119E6C74C0059930E /* WeatherUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E76EFC019E6C74C0059930E /* WeatherUtils.swift */; };
 		5E83BFE019D66D3E00C883E1 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFDF19D66D3E00C883E1 /* APIKeys.swift */; };
 		5E83BFE619D7292300C883E1 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E83BFE519D7292300C883E1 /* NewsViewController.swift */; };
@@ -72,7 +72,7 @@
 		5EA8414D1A2396D8009A4A9F /* NSString+FontAwesome.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA841471A2396D8009A4A9F /* NSString+FontAwesome.m */; };
 		5EA8414E1A2396D8009A4A9F /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA841491A2396D8009A4A9F /* UIColor+BButton.m */; };
 		5EA8414F1A2396D8009A4A9F /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EA8414B1A2396D8009A4A9F /* FontAwesome.ttf */; };
-		5EB2899C1A32403100CEE2AF /* BlackboardCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB2899B1A32403100CEE2AF /* BlackboardCourseViewController.swift */; };
+		5EB2899C1A32403100CEE2AF /* BBCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB2899B1A32403100CEE2AF /* BBCourseViewController.swift */; };
 		5EB5FD8019FFDF2600491C22 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FD7F19FFDF2600491C22 /* AsyncImageView.m */; };
 		5EB5FF0C19FFF70300491C22 /* MWCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEAB19FFF70300491C22 /* MWCaptionView.m */; };
 		5EB5FF0D19FFF70300491C22 /* MWGridCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB5FEAE19FFF70300491C22 /* MWGridCell.m */; };
@@ -118,6 +118,8 @@
 		5EB6510F1A02BC3A00AB7257 /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB6510E1A02BC3A00AB7257 /* Video.swift */; };
 		5EB92BFD19DB26EC00176BCC /* MyMailFolderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB92BFC19DB26EC00176BCC /* MyMailFolderViewController.swift */; };
 		5EBDC5B01A3D9F7300BA2FDA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBDC5AF1A3D9F7300BA2FDA /* SettingsViewController.swift */; };
+		5ED83A4E1A6702C900F1C55D /* UserScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED83A4D1A6702C900F1C55D /* UserScheduleViewController.swift */; };
+		5ED83A521A67C18C00F1C55D /* WebBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED83A511A67C18C00F1C55D /* WebBrowserViewController.swift */; };
 		5EDAF99D1A06C29800B954A9 /* DirectoryStudent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EDAF99C1A06C29800B954A9 /* DirectoryStudent.swift */; };
 		5EE1503C1A0FEBC8008C9825 /* MRBlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE150181A0FEBC8008C9825 /* MRBlurView.m */; };
 		5EE1503D1A0FEBC8008C9825 /* UIImage+MRImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1501A1A0FEBC8008C9825 /* UIImage+MRImageEffects.m */; };
@@ -256,7 +258,6 @@
 		5E2EE9E81A4BF98E0082357F /* I18N.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = I18N.swift; sourceTree = "<group>"; };
 		5E2EE9EC1A4BFBD30082357F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E2EE9EE1A4BFBD50082357F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		5E307F2D1A323A9500B19FBB /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		5E48FD5E1A216F31004FE8B7 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5E48FD601A216F37004FE8B7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5E48FD631A217649004FE8B7 /* KeychainWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
@@ -292,6 +293,7 @@
 		5E66B99C1A59C40F0036C26E /* StopDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StopDetailViewController.swift; sourceTree = "<group>"; };
 		5E6A81561A477A7C008277F2 /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		5E6A81581A47C3AD008277F2 /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
+		5E72CDD71A635FBB002FBCD8 /* BBAnnoucementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBAnnoucementsViewController.swift; sourceTree = "<group>"; };
 		5E76EFC019E6C74C0059930E /* WeatherUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherUtils.swift; sourceTree = "<group>"; };
 		5E83BFDF19D66D3E00C883E1 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		5E83BFE519D7292300C883E1 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
@@ -313,7 +315,7 @@
 		5EA841481A2396D8009A4A9F /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
 		5EA841491A2396D8009A4A9F /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
 		5EA8414B1A2396D8009A4A9F /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
-		5EB2899B1A32403100CEE2AF /* BlackboardCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlackboardCourseViewController.swift; sourceTree = "<group>"; };
+		5EB2899B1A32403100CEE2AF /* BBCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBCourseViewController.swift; sourceTree = "<group>"; };
 		5EB5FD7E19FFDF2600491C22 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
 		5EB5FD7F19FFDF2600491C22 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		5EB5FEAA19FFF70300491C22 /* MWCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWCaptionView.h; sourceTree = "<group>"; };
@@ -405,6 +407,8 @@
 		5EB6510E1A02BC3A00AB7257 /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		5EB92BFC19DB26EC00176BCC /* MyMailFolderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyMailFolderViewController.swift; sourceTree = "<group>"; };
 		5EBDC5AF1A3D9F7300BA2FDA /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5ED83A4D1A6702C900F1C55D /* UserScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserScheduleViewController.swift; sourceTree = "<group>"; };
+		5ED83A511A67C18C00F1C55D /* WebBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebBrowserViewController.swift; sourceTree = "<group>"; };
 		5EDAF99C1A06C29800B954A9 /* DirectoryStudent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectoryStudent.swift; sourceTree = "<group>"; };
 		5EE150171A0FEBC8008C9825 /* MRBlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRBlurView.h; sourceTree = "<group>"; };
 		5EE150181A0FEBC8008C9825 /* MRBlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRBlurView.m; sourceTree = "<group>"; };
@@ -675,6 +679,14 @@
 			name = Library;
 			sourceTree = "<group>";
 		};
+		5E72CDD61A635FA4002FBCD8 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				5E72CDD71A635FBB002FBCD8 /* BBAnnoucementsViewController.swift */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
 		5E76EFC219E6C7510059930E /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -705,7 +717,6 @@
 				5EB6510E1A02BC3A00AB7257 /* Video.swift */,
 				5EE150681A100FE5008C9825 /* LabBuilding.swift */,
 				5EE1506A1A101001008C9825 /* LabRoom.swift */,
-				5E307F2D1A323A9500B19FBB /* Course.swift */,
 				5E6A81561A477A7C008277F2 /* Library.swift */,
 				5EEEEDEF1A493D8E00F95BE1 /* Building.swift */,
 				5EA3BA461A50E75B0029F704 /* Route.swift */,
@@ -750,6 +761,7 @@
 				5EA4C2C119D50E0600E42732 /* PUNavigationBar.swift */,
 				5E9ABA0C1A25AC9600800B25 /* FolderCell.swift */,
 				5E1FB5AE1A27AB9900349305 /* MessagesCell.swift */,
+				5ED83A511A67C18C00F1C55D /* WebBrowserViewController.swift */,
 			);
 			name = "UI Subclass";
 			sourceTree = "<group>";
@@ -767,7 +779,7 @@
 				5E9ABA0E1A25B51C00800B25 /* MyMail */,
 				5E83BFE519D7292300C883E1 /* NewsViewController.swift */,
 				5EEB695F19DF3BBF005619BA /* PhotoViewController.swift */,
-				5EEB696519DF3EFC005619BA /* ScheduleViewController.swift */,
+				5ED83A531A67D04000F1C55D /* Schedule */,
 				5EEB696119DF3BCB005619BA /* VideoViewController.swift */,
 				5E4B88E019D07E0A00EEB9C3 /* WeatherViewController.swift */,
 				5E009D251A5DC594009E1B22 /* Settings */,
@@ -817,7 +829,8 @@
 			isa = PBXGroup;
 			children = (
 				5EEB696319DF3CE1005619BA /* BlackboardViewController.swift */,
-				5EB2899B1A32403100CEE2AF /* BlackboardCourseViewController.swift */,
+				5EB2899B1A32403100CEE2AF /* BBCourseViewController.swift */,
+				5E72CDD61A635FA4002FBCD8 /* Details */,
 			);
 			name = Blackboard;
 			sourceTree = "<group>";
@@ -988,6 +1001,15 @@
 				5EB5FF5819FFF82200491C22 /* PSTGridLayoutSection.m */,
 			);
 			path = PSTCollectionView;
+			sourceTree = "<group>";
+		};
+		5ED83A531A67D04000F1C55D /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				5EEB696519DF3EFC005619BA /* ScheduleViewController.swift */,
+				5ED83A4D1A6702C900F1C55D /* UserScheduleViewController.swift */,
+			);
+			name = Schedule;
 			sourceTree = "<group>";
 		};
 		5EE150151A0FEBC8008C9825 /* MRProgress */ = {
@@ -1200,9 +1222,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5ED83A4E1A6702C900F1C55D /* UserScheduleViewController.swift in Sources */,
 				5EB5FF6319FFF82200491C22 /* PSTGridLayoutItem.m in Sources */,
 				5E4B891019D08B4E00EEB9C3 /* ECSlidingInteractiveTransition.m in Sources */,
 				5E48FD6C1A21826A004FE8B7 /* FXBlurView.m in Sources */,
+				5ED83A521A67C18C00F1C55D /* WebBrowserViewController.swift in Sources */,
 				5EB5FF0E19FFF70300491C22 /* MWGridViewController.m in Sources */,
 				5E4B88E119D07E0A00EEB9C3 /* WeatherViewController.swift in Sources */,
 				5EB5FF5D19FFF82200491C22 /* PSTCollectionViewData.m in Sources */,
@@ -1222,7 +1246,7 @@
 				5EB5FF3119FFF70300491C22 /* UIImage+MultiFormat.m in Sources */,
 				5EEB696019DF3BBF005619BA /* PhotoViewController.swift in Sources */,
 				5EB5FD8019FFDF2600491C22 /* AsyncImageView.m in Sources */,
-				5EB2899C1A32403100CEE2AF /* BlackboardCourseViewController.swift in Sources */,
+				5EB2899C1A32403100CEE2AF /* BBCourseViewController.swift in Sources */,
 				5EE1503F1A0FEBC8008C9825 /* MRCircularProgressView.m in Sources */,
 				5EE1503E1A0FEBC8008C9825 /* MRActivityIndicatorView.m in Sources */,
 				5EB5FF2719FFF70300491C22 /* NSData+ImageContentType.m in Sources */,
@@ -1232,7 +1256,6 @@
 				5E8582161A210C59006E6539 /* DirectoryDetailViewController.swift in Sources */,
 				5EB5FF3519FFF70300491C22 /* UIView+WebCacheOperation.m in Sources */,
 				5E07A8491A5C965100620288 /* StopAnnotation.swift in Sources */,
-				5E307F2E1A323A9500B19FBB /* Course.swift in Sources */,
 				5E9ABA0D1A25AC9600800B25 /* FolderCell.swift in Sources */,
 				5EB5FF2C19FFF70300491C22 /* SDWebImageDownloaderOperation.m in Sources */,
 				5EB5FF1519FFF70300491C22 /* MBProgressHUD.m in Sources */,
@@ -1307,6 +1330,7 @@
 				5EB5FF0F19FFF70300491C22 /* MWPhoto.m in Sources */,
 				5E48FD661A21767A004FE8B7 /* AccountUtils.swift in Sources */,
 				5EB5FF5A19FFF82200491C22 /* PSTCollectionView.m in Sources */,
+				5E72CDD81A635FBB002FBCD8 /* BBAnnoucementsViewController.swift in Sources */,
 				5E48FD681A217801004FE8B7 /* SignInViewController.swift in Sources */,
 				5EB5FF5C19FFF82200491C22 /* PSTCollectionViewController.m in Sources */,
 				5EB5FF2E19FFF70300491C22 /* SDWebImagePrefetcher.m in Sources */,

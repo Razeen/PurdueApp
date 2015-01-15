@@ -13,7 +13,7 @@ class BlackboardViewController: UIViewController, UITableViewDataSource, UITable
     var signInBtn: BButton?
     var viewController: UIViewController?
     let progress = MRActivityIndicatorView(frame: CGRectMake((UIScreen.mainScreen().bounds.width - 30 ) / 2, 84 + 20, 30, 30))
-    var courses: [Course] = []
+    var courses: [NSDictionary] = []
     
     override func viewWillAppear(animated: Bool) {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "receivedNotification:", name: "signInSuccess", object: nil)
@@ -36,7 +36,7 @@ class BlackboardViewController: UIViewController, UITableViewDataSource, UITable
         
         self.navigationItem.title = "Blackboard"
         
-        self.progress.tintColor = ColorUtils.Core.Brown
+        self.progress.tintColor = ColorUtils.Legacy.OldGold
         viewController = SignInViewController(source: (UIApplication.sharedApplication().delegate as AppDelegate).slidingViewController!)
         
         if AccountUtils.getUsername() == nil || AccountUtils.getPassword() == nil {
@@ -106,13 +106,7 @@ class BlackboardViewController: UIViewController, UITableViewDataSource, UITable
             // Getting Courses
             var err: NSError?
             let dict = XMLReader.dictionaryForXMLData(NSData(contentsOfURL: NSURL(string: "https://mycourses.purdue.edu/webapps/Bb-mobile-BBLEARN/enrollments?v=1&f=xml&ver=4.1.2&registration_id=11946&course_type=ALL&include_grades=false")!), error: &err) as NSDictionary!
-            let courses = ((dict["mobileresponse"] as NSDictionary)["courses"] as NSDictionary)["course"] as [NSDictionary]
-            for currCourse in courses {
-                let course = Course()
-                course.name = currCourse["name"] as NSString!
-                course.id = currCourse["bbid"] as NSString!
-                self.courses.append(course)
-            }
+            self.courses = ((dict["mobileresponse"] as NSDictionary)["courses"] as NSDictionary)["course"] as [NSDictionary]
             dispatch_async(dispatch_get_main_queue(), {
                 self.progress.stopAnimating()
                 self.progress.removeFromSuperview()
@@ -149,19 +143,40 @@ class BlackboardViewController: UIViewController, UITableViewDataSource, UITable
             cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "CellIdentifier")
         }
         
-        cell?.textLabel?.font = UIFont(name: "AppleSDGothicNeo-Medium", size: 20)
-        cell?.textLabel?.text = courses[indexPath.row].name!
+        cell?.imageView?.image = UIImage(named: "Course")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        cell?.imageView?.tintColor = ColorUtils.Legacy.OldGold
+        cell?.textLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 17)
+        cell?.textLabel?.text = courses[indexPath.row]["name"] as? String
         cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
         
         return cell!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let viewController = BlackboardCourseViewController()
-        viewController.navigationItem.title = courses[indexPath.row].name
-        viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
-        viewController.courseid = courses[indexPath.row].id
-        self.navigationController?.pushViewController(viewController, animated: true)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        let activityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        activityIndicatorView.frame = CGRectMake(0, 0, 20, 20)
+        cell?.accessoryView = activityIndicatorView
+        activityIndicatorView.startAnimating()
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+            var err: NSError?
+            let courseId = self.courses[indexPath.row]["bbid"] as? String
+            var str: NSString = "https://mycourses.purdue.edu/webapps/Bb-mobile-BBLEARN/courseMap?v=1&f=xml&ver=4.1.2&registration_id=11946&course_id=\(courseId!)"
+            let dict = XMLReader.dictionaryForXMLData(NSData(contentsOfURL: NSURL(string: str)!), error: &err) as NSDictionary!
+            var mapItems = ((dict["mobileresponse"] as NSDictionary)["map"] as NSDictionary)["map-item"] as [NSDictionary]!
+            dispatch_async(dispatch_get_main_queue(), {
+                cell?.accessoryView = nil
+                cell?.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+                let viewController = BBCourseViewController()
+                viewController.navigationItem.title = self.courses[indexPath.row]["name"] as? String
+                viewController.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")
+                viewController.courseId = courseId
+                if mapItems != nil {
+                    viewController.mapItems = mapItems
+                }
+                self.navigationController?.pushViewController(viewController, animated: true)
+            })
+        })
     }
 }
