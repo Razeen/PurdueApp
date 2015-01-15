@@ -145,6 +145,10 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
                     cell?.detailTextLabel?.text = "English"
                 } else if languageCode == "zh-Hant" {
                     cell?.detailTextLabel?.text = "繁體中文"
+                } else if languageCode == "zh-Hans" {
+                    cell?.detailTextLabel?.text = "简体中文"
+                } else if languageCode == "ja" {
+                    cell?.detailTextLabel?.text = "日本語"
                 }
             }
         } else if indexPath.section == 1 {
@@ -165,7 +169,7 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                UIActionSheet(title: I18N.localizedString("SETTINGS_LANG_PROMPT"), delegate: self, cancelButtonTitle: I18N.localizedString("CANCEL"), destructiveButtonTitle: nil, otherButtonTitles: "English", "繁體中文").showFromRect(tableView.cellForRowAtIndexPath(indexPath)!.frame, inView: self.view, animated: true)
+                UIActionSheet(title: I18N.localizedString("SETTINGS_LANG_PROMPT"), delegate: self, cancelButtonTitle: I18N.localizedString("CANCEL"), destructiveButtonTitle: nil, otherButtonTitles: "English", "繁體中文", "简体中文", "日本語").showFromRect(tableView.cellForRowAtIndexPath(indexPath)!.frame, inView: self.view, animated: true)
             }
         } else if indexPath.section == 1 {
             shouldHideSB = false
@@ -194,6 +198,10 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
                 I18N.setLanguage("en")
             } else if buttonTitle == "繁體中文" {
                 I18N.setLanguage("zh-Hant")
+            } else if buttonTitle == "简体中文" {
+                I18N.setLanguage("zh-Hans")
+            } else if buttonTitle == "日本語" {
+                I18N.setLanguage("ja")
             }
             self.navigationItem.title = I18N.localizedString("SETTINGS_TITLE")
             self.tableView.reloadData()

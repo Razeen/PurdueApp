@@ -295,6 +295,8 @@
 		5E6A81581A47C3AD008277F2 /* LibraryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryDetailViewController.swift; sourceTree = "<group>"; };
 		5E72CDD71A635FBB002FBCD8 /* BBAnnoucementsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BBAnnoucementsViewController.swift; sourceTree = "<group>"; };
 		5E76EFC019E6C74C0059930E /* WeatherUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherUtils.swift; sourceTree = "<group>"; };
+		5E78776D1A67EB54003AD8AC /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		5E78776E1A67EB5A003AD8AC /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5E83BFDF19D66D3E00C883E1 /* APIKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		5E83BFE519D7292300C883E1 /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		5E83BFE819D729BB00C883E1 /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
@@ -1126,6 +1128,8 @@
 				no,
 				zh_CN,
 				"zh-Hant",
+				"zh-Hans",
+				ja,
 			);
 			mainGroup = 5E4B88D019D07E0A00EEB9C3;
 			productRefGroup = 5E4B88DA19D07E0A00EEB9C3 /* Products */;
@@ -1368,6 +1372,8 @@
 			children = (
 				5E2EE9EC1A4BFBD30082357F /* en */,
 				5E2EE9EE1A4BFBD50082357F /* zh-Hant */,
+				5E78776D1A67EB54003AD8AC /* zh-Hans */,
+				5E78776E1A67EB5A003AD8AC /* ja */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

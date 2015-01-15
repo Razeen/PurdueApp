@@ -1,0 +1,144 @@
+/* 
+  Localizable.strings
+  Purdue
+
+  Created by George Lo on 9/25/14.
+  Copyright (c) 2014 Purdue University. All rights reserved.
+*/
+
+"SIDEMENU_SCHEDULE" = "Schedule";
+"SIDEMENU_BUS" = "Bus";
+"SIDEMENU_MAP" = "Map";
+"SIDEMENU_LABS" = "Lab";
+"SIDEMENU_GAMES" = "Games";
+"SIDEMENU_MENU" = "Menu";
+"SIDEMENU_NEWS" = "News";
+"SIDEMENU_WEATHER" = "Weather";
+"SIDEMENU_LIBRARY" = "Library";
+"SIDEMENU_PHOTOS" = "Photos";
+"SIDEMENU_VIDEOS" = "Videos";
+"SIDEMENU_DIRECTORY" = "Directory";
+"SIDEMENU_STORE" = "Store";
+
+"GAMES_TITLE" = "Sport Games";
+"STORE_TITLE" = "Amazon Store";
+"LIBRARY_TITLE" = "Library";
+
+"BLACKBOARD_OOPS" = "Oops!";
+"BLACKBOARD_SIGN_IN_PROMPT" = "Please sign in by\ntapping the button below";
+
+"BUS_TITLE" = "Bus";
+"BUS_ROUTES" = "Routes";
+"BUS_STOPS" = "Stops";
+"BUS_MAP" = "Map";
+"BUS_BOOKMARKS" = "Bookmarks";
+
+"DIRECTORY_TITLE" = "Directory";
+"DIRECTORY_SEARCH_PROMPT" = "People search";
+"DIRECTORY_ERR_NONE" = "Your search returned no results";
+"DIRECTORY_ERR_MANY" = "Your search has returned too many results";
+
+"LAB_TITLE" = "ITaP Labs";
+"LAB_CLOSED" = "Closed";
+"LAB_CLASS_IN_SESSION" = "Class in session";
+"LAB_COMPUTERS_AVAILABLE" = " computers available";
+
+"MAP_TITLE" = "Map";
+"MAP_BUILDING_SEARCH" = "Building Search";
+"MAP_BUILDING_SEARCH_PROMPT" = "Search for a building";
+
+"MENU_TITLE" = "Menus";
+"MENU_DINING_COURTS" = "Dining Courts";
+"MENU_RESTAURANTS" = "Restaurants";
+
+"PHOTOS_TITLE" = "Photo Albums";
+
+"SCHEDULE_TITLE" = "Schedule";
+"SCHEDULE_UNIVERSITY_EVENTS" = "University Events";
+"SCHEDULE_ACADEMIC" = "Academic";
+"SCHEDULE_ADMISSION" = "Admission";
+"SCHEDULE_ARTS_AND_CULTURE" = "Arts and Culture";
+"SCHEDULE_CAREER_PROGRAMS" = "Career Programs";
+"SCHEDULE_COLLEGE_AND_SCHOOLS" = "College and Schools";
+"SCHEDULE_CONTINUING_EDUCATION" = "Continuing Education";
+"SCHEDULE_LIBRARIES" = "Libraries";
+"SCHEDULE_PROSPECTIVE_STUDENTS" = "Prospective Students";
+"SCHEDULE_REC_SPORTS" = "Rec Sports";
+"SCHEDULE_REGISTRAR" = "Registrar";
+"SCHEDULE_DIVERSITY_AND_INCLUSIVE" = "Diversity & Inclusive Events";
+"SCHEDULE_PERSONAL_SCHEDULE" = "Personal Schedule";
+"SCHEDULE_CLASS_SCHEDULE" = "Class Schedule";
+
+"SETTINGS_TITLE" = "Settings";
+"SETTINGS_LANG_PROMPT" = "Choose a language";
+"SETTINGS_SIGNOUT_PROMPT" = "Are you sure you want to sign out?";
+
+"SIGNIN_PURDUE_ACCOUNT" = "Purdue Account";
+"SIGNIN_SIGN_IN" = "SIGN IN";
+"SIGNIN_ERR_USERNAME_BLANK" = "Username field cannot be blank";
+"SIGNIN_ERR_PASSWORD_BLANK" = "Password field cannot be blank";
+"SIGNIN_ERR_NOT_FOUND" = "Username/Password pair not found";
+
+"VIDEOS_TITLE" = "Videos";
+"VIDEOS_VIEWS" = "views";
+
+"WEATHER_TITLE" = "Weather";
+"WEATHER_SUN" = "Sun";
+"WEATHER_MON" = "Mon";
+"WEATHER_TUE" = "Tue";
+"WEATHER_WED" = "Wed";
+"WEATHER_THU" = "Thu";
+"WEATHER_FRI" = "Fri";
+"WEATHER_SAT" = "Sat";
+
+"ADDRESS" = "Address";
+"ATTRIBUTIONS" = "Attributions";
+"BREAKFAST" = "Breakfast";
+"CAMPUS" = "Campus";
+"CANCEL" = "Cancel";
+"CAREER_LOGIN" = "Career Login";
+"CLOSED" = "Closed";
+"DEVELOPERS" = "Developers";
+"DEVELOPMENT_TEAM" = "Development Team";
+"DINNER" = "Dinner";
+"EMAIL" = "Email";
+"ERROR" = "Error";
+"FRIDAY" = "Friday";
+"GENERAL" = "General";
+"HOURS" = "Hours";
+"HUMIDITY" = "Humidity";
+"INFO" = "Info";
+"INFORMATION" = "Information";
+"LANGUAGE" = "Language";
+"LATE LUNCH" = "Late Lunch";
+"LEAD_DEVELOPER" = "Lead Developer";
+"LOCATION" = "Location";
+"LUNCH" = "Lunch";
+"MENU" = "Menu";
+"MINUTE" = "min";
+"MONDAY" = "Monday";
+"NAME" = "Name";
+"NORMALCASE_SIGN_IN" = "Sign In";
+"NORMALCASE_SIGN_OUT" = "Sign Out";
+"OTHERS" = "Others";
+"PASSWORD" = "Password";
+"PHONE" = "Phone";
+"PHOTOS" = "Photos";
+"QUALIFIED_NAME" = "Qualified Name";
+"SATURDAY" = "Saturday";
+"SCHOOL" = "School";
+"SIGN_IN" = "Sign In";
+"SPECIAL_NOTE" = "Special Note";
+"SPECIAL_THANKS" = "Special Thanks";
+"SUNDAY" = "Sunday";
+"THURSDAY" = "Thursday";
+"TIME" = "Time";
+"TODAY" = "Today";
+"TOMORROW" = "Tomorrow";
+"TRY_LATER" = "Please try reloading later";
+"TUESDAY" = "Tuesday";
+"UPPERCASE_SIGN_IN" = "SIGN IN";
+"UPPERCASE_SIGN_OUT" = "SIGN OUT";
+"USERNAME" = "Username";
+"WEDNESDAY" = "Wednesday";
+"WIND" = "Wind";

@@ -1,0 +1,144 @@
+/* 
+  Localizable.strings
+  Purdue
+
+  Created by George Lo on 9/25/14.
+  Copyright (c) 2014 Purdue University. All rights reserved.
+*/
+
+"SIDEMENU_SCHEDULE" = "行程表";
+"SIDEMENU_BUS" = "巴士";
+"SIDEMENU_MAP" = "地图";
+"SIDEMENU_LABS" = "电脑室";
+"SIDEMENU_GAMES" = "体育竞赛";
+"SIDEMENU_MENU" = "菜单";
+"SIDEMENU_NEWS" = "新闻";
+"SIDEMENU_WEATHER" = "天气";
+"SIDEMENU_LIBRARY" = "图书馆";
+"SIDEMENU_PHOTOS" = "照片";
+"SIDEMENU_VIDEOS" = "影片";
+"SIDEMENU_DIRECTORY" = "普渡名录";
+"SIDEMENU_STORE" = "商店";
+
+"GAMES_TITLE" = "体育竞赛";
+"STORE_TITLE" = "普渡Amazon商店";
+"LIBRARY_TITLE" = "图书馆";
+
+"BLACKBOARD_OOPS" = "不好意思";
+"BLACKBOARD_SIGN_IN_PROMPT" = "请先点击下方的\n按钮登入帐号";
+
+"BUS_TITLE" = "巴士";
+"BUS_ROUTES" = "路线";
+"BUS_STOPS" = "停靠站";
+"BUS_MAP" = "地图";
+"BUS_BOOKMARKS" = "书籤";
+
+"DIRECTORY_TITLE" = "普渡名册";
+"DIRECTORY_SEARCH_PROMPT" = "搜寻教职员或学生";
+"DIRECTORY_ERR_NONE" = "您的搜寻没有回传任何结果";
+"DIRECTORY_ERR_MANY" = "您的搜寻回传过多结果";
+
+"LAB_TITLE" = "ITaP 电脑室";
+"LAB_CLOSED" = "关闭";
+"LAB_CLASS_IN_SESSION" = "上课中";
+"LAB_COMPUTERS_AVAILABLE" = "台电脑开放";
+
+"MAP_TITLE" = "地图";
+"MAP_BUILDING_SEARCH" = "建筑物搜寻";
+"MAP_BUILDING_SEARCH_PROMPT" = "搜寻学校的建筑物";
+
+"MENU_TITLE" = "菜单";
+"MENU_DINING_COURTS" = "食堂";
+"MENU_RESTAURANTS" = "餐厅";
+
+"PHOTOS_TITLE" = "相簿";
+
+"SCHEDULE_TITLE" = "行程表";
+"SCHEDULE_UNIVERSITY_EVENTS" = "学校活动";
+"SCHEDULE_ACADEMIC" = "学术性";
+"SCHEDULE_ADMISSION" = "入学";
+"SCHEDULE_ARTS_AND_CULTURE" = "艺术和文化";
+"SCHEDULE_CAREER_PROGRAMS" = "职业生涯规划";
+"SCHEDULE_COLLEGE_AND_SCHOOLS" = "大学和学校";
+"SCHEDULE_CONTINUING_EDUCATION" = "进修";
+"SCHEDULE_LIBRARIES" = "图书馆";
+"SCHEDULE_PROSPECTIVE_STUDENTS" = "未来的学生";
+"SCHEDULE_REC_SPORTS" = "Rec 体育";
+"SCHEDULE_REGISTRAR" = "登记处";
+"SCHEDULE_DIVERSITY_AND_INCLUSIVE" = "多样性和包容性";
+"SCHEDULE_PERSONAL_SCHEDULE" = "个人的行程表";
+"SCHEDULE_CLASS_SCHEDULE" = "课程表";
+
+"SETTINGS_TITLE" = "设定";
+"SETTINGS_LANG_PROMPT" = "请选择一个语言";
+"SETTINGS_SIGNOUT_PROMPT" = "您确定要登出吗？";
+
+"SIGNIN_PURDUE_ACCOUNT" = "普渡帐号";
+"SIGNIN_SIGN_IN" = "登入";
+"SIGNIN_ERR_USERNAME_BLANK" = "帐号栏位不能為空白";
+"SIGNIN_ERR_PASSWORD_BLANK" = "密码栏位不能為空白";
+"SIGNIN_ERR_NOT_FOUND" = "帐号或密码有错误";
+
+"VIDEOS_TITLE" = "影片";
+"VIDEOS_VIEWS" = "观看次数";
+
+"WEATHER_TITLE" = "天气";
+"WEATHER_SUN" = "星期日";
+"WEATHER_MON" = "星期一";
+"WEATHER_TUE" = "星期二";
+"WEATHER_WED" = "星期叁";
+"WEATHER_THU" = "星期四";
+"WEATHER_FRI" = "星期五";
+"WEATHER_SAT" = "星期六";
+
+"ADDRESS" = "地址";
+"ATTRIBUTIONS" = "姓名标示";
+"BREAKFAST" = "早餐";
+"CAMPUS" = "分校";
+"CANCEL" = "取消";
+"CAREER_LOGIN" = "登入帐号";
+"CLOSED" = "关闭";
+"DEVELOPERS" = "开发工程师";
+"DEVELOPMENT_TEAM" = "开发团队";
+"DINNER" = "晚餐";
+"EMAIL" = "电子信箱";
+"ERROR" = "错误";
+"FRIDAY" = "星期五";
+"GENERAL" = "一般";
+"HOURS" = "时间";
+"HUMIDITY" = "湿度";
+"INFO" = "资讯";
+"INFORMATION" = "资讯";
+"LANGUAGE" = "语言";
+"LEAD_DEVELOPER" = "开发总监";
+"LOCATION" = "地点";
+"LATE LUNCH" = "晚午餐";
+"LUNCH" = "午餐";
+"MENU" = "菜单";
+"MINUTE" = "分鐘";
+"MONDAY" = "星期一";
+"NAME" = "名称";
+"NORMALCASE_SIGN_IN" = "登入";
+"NORMALCASE_SIGN_OUT" = "登出";
+"OTHERS" = "其他";
+"PASSWORD" = "密码";
+"PHONE" = "电话";
+"PHOTOS" = "张照片";
+"QUALIFIED_NAME" = "合法名";
+"SATURDAY" = "星期六";
+"SCHOOL" = "学院";
+"SPECIAL_NOTE" = "备註";
+"SIGN_IN" = "登入";
+"SPECIAL_THANKS" = "特别感谢";
+"SUNDAY" = "星期日";
+"THURSDAY" = "星期四";
+"TIME" = "时间";
+"TODAY" = "今天";
+"TOMORROW" = "明天";
+"TRY_LATER" = "请稍候重新尝试载入";
+"TUESDAY" = "星期二";
+"UPPERCASE_SIGN_IN" = "登入";
+"UPPERCASE_SIGN_OUT" = "登出";
+"USERNAME" = "帐号";
+"WEDNESDAY" = "星期叁";
+"WIND" = "风力";

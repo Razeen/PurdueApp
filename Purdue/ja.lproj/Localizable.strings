@@ -1,0 +1,144 @@
+/* 
+  Localizable.strings
+  Purdue
+
+  Created by George Lo on 9/25/14.
+  Copyright (c) 2014 Purdue University. All rights reserved.
+*/
+
+"SIDEMENU_SCHEDULE" = "スケジュール";
+"SIDEMENU_BUS" = "バス";
+"SIDEMENU_MAP" = "マップ";
+"SIDEMENU_LABS" = "ラボ";
+"SIDEMENU_GAMES" = "ゲーム";
+"SIDEMENU_MENU" = "メニュー";
+"SIDEMENU_NEWS" = "ニュース";
+"SIDEMENU_WEATHER" = "天気";
+"SIDEMENU_LIBRARY" = "ライブラリ";
+"SIDEMENU_PHOTOS" = "写真";
+"SIDEMENU_VIDEOS" = "ビデオ";
+"SIDEMENU_DIRECTORY" = "ディレクトリ";
+"SIDEMENU_STORE" = "ストア";
+
+"GAMES_TITLE" = "スポーツゲーム";
+"STORE_TITLE" = "アマゾンストア";
+"LIBRARY_TITLE" = "ライブラリ";
+
+"BLACKBOARD_OOPS" = "おっと！";
+"BLACKBOARD_SIGN_IN_PROMPT" = "下のボタンをタップして\nログインしてください";
+
+"BUS_TITLE" = "バス";
+"BUS_ROUTES" = "ルート";
+"BUS_STOPS" = "停止";
+"BUS_MAP" = "マップ";
+"BUS_BOOKMARKS" = "ブックマーク";
+
+"DIRECTORY_TITLE" = "ディレクトリ";
+"DIRECTORY_SEARCH_PROMPT" = "人々は、検索";
+"DIRECTORY_ERR_NONE" = "あなたの検索結果はありませ返されません";
+"DIRECTORY_ERR_MANY" = "あなたの検索はあまりにも多くの結果を返しました";
+
+"LAB_TITLE" = "ITaP ラボ";
+"LAB_CLOSED" = "クローズド";
+"LAB_CLASS_IN_SESSION" = "セッションのクラス";
+"LAB_COMPUTERS_AVAILABLE" = " コンピューター利用できる";
+
+"MAP_TITLE" = "マップ";
+"MAP_BUILDING_SEARCH" = "ビルサーチ";
+"MAP_BUILDING_SEARCH_PROMPT" = "建物を検索する";
+
+"MENU_TITLE" = "メニュー";
+"MENU_DINING_COURTS" = "食堂";
+"MENU_RESTAURANTS" = "レストラン";
+
+"PHOTOS_TITLE" = "フォトアルバム";
+
+"SCHEDULE_TITLE" = "スケジュール";
+"SCHEDULE_UNIVERSITY_EVENTS" = "大学のイベント";
+"SCHEDULE_ACADEMIC" = "アカデミック";
+"SCHEDULE_ADMISSION" = "入場料";
+"SCHEDULE_ARTS_AND_CULTURE" = "芸術と文化";
+"SCHEDULE_CAREER_PROGRAMS" = "キャリアプログラム";
+"SCHEDULE_COLLEGE_AND_SCHOOLS" = "大学と学校";
+"SCHEDULE_CONTINUING_EDUCATION" = "継続教育";
+"SCHEDULE_LIBRARIES" = "ライブラリ";
+"SCHEDULE_PROSPECTIVE_STUDENTS" = "受験生";
+"SCHEDULE_REC_SPORTS" = "Rec スポーツ";
+"SCHEDULE_REGISTRAR" = "レジストラ";
+"SCHEDULE_DIVERSITY_AND_INCLUSIVE" = "ダイバーシティ＆インクルーシブイベント";
+"SCHEDULE_PERSONAL_SCHEDULE" = "個人スケジュール";
+"SCHEDULE_CLASS_SCHEDULE" = "クラススケジュール";
+
+"SETTINGS_TITLE" = "設定";
+"SETTINGS_LANG_PROMPT" = "言語を選択";
+"SETTINGS_SIGNOUT_PROMPT" = "あなたはあなたがサインアウトしてもよろしいですか？";
+
+"SIGNIN_PURDUE_ACCOUNT" = "パーデューアカウント";
+"SIGNIN_SIGN_IN" = "ログイン";
+"SIGNIN_ERR_USERNAME_BLANK" = "ユーザ名フィールドは空白にすることはできません";
+"SIGNIN_ERR_PASSWORD_BLANK" = "パスワードフィールドは空白にすることはできません";
+"SIGNIN_ERR_NOT_FOUND" = "ユーザ名/パスワードのペアが見つかりません";
+
+"VIDEOS_TITLE" = "ビデオ";
+"VIDEOS_VIEWS" = "ビュー回数";
+
+"WEATHER_TITLE" = "天気";
+"WEATHER_SUN" = "日曜日";
+"WEATHER_MON" = "月曜日";
+"WEATHER_TUE" = "火曜日";
+"WEATHER_WED" = "水曜日";
+"WEATHER_THU" = "木曜日";
+"WEATHER_FRI" = "金曜日";
+"WEATHER_SAT" = "土曜日";
+
+"ADDRESS" = "アドレス";
+"ATTRIBUTIONS" = "帰属";
+"BREAKFAST" = "朝食";
+"CAMPUS" = "キャンパス";
+"CANCEL" = "キャンセル";
+"CAREER_LOGIN" = "キャリアログイン";
+"CLOSED" = "閉じた";
+"DEVELOPERS" = "開発者";
+"DEVELOPMENT_TEAM" = "開発チーム";
+"DINNER" = "夕食";
+"EMAIL" = "メール";
+"ERROR" = "エラー";
+"FRIDAY" = "金曜日";
+"GENERAL" = "一般";
+"HOURS" = "時間";
+"HUMIDITY" = "湿度";
+"INFO" = "情報";
+"INFORMATION" = "情報";
+"LANGUAGE" = "言語";
+"LATE LUNCH" = "遅い昼食";
+"LEAD_DEVELOPER" = "主力開発者";
+"LOCATION" = "場所";
+"LUNCH" = "昼食";
+"MENU" = "メニュー";
+"MINUTE" = "分";
+"MONDAY" = "月曜日";
+"NAME" = "名前";
+"NORMALCASE_SIGN_IN" = "ログイン";
+"NORMALCASE_SIGN_OUT" = "ログアウト";
+"OTHERS" = "その他";
+"PASSWORD" = "パスワード";
+"PHONE" = "電話";
+"PHOTOS" = "写真";
+"QUALIFIED_NAME" = "修飾名";
+"SATURDAY" = "土曜日";
+"SCHOOL" = "学校";
+"SIGN_IN" = "ログイン";
+"SPECIAL_NOTE" = "特記事項";
+"SPECIAL_THANKS" = "スペシャルサンクス";
+"SUNDAY" = "日曜日";
+"THURSDAY" = "木曜日";
+"TIME" = "タイム";
+"TODAY" = "今日";
+"TOMORROW" = "明日";
+"TRY_LATER" = "後で再読み込みしてみてください";
+"TUESDAY" = "火曜日";
+"UPPERCASE_SIGN_IN" = "ログイン";
+"UPPERCASE_SIGN_OUT" = "ログアウト";
+"USERNAME" = "ユーザー名";
+"WEDNESDAY" = "水曜日";
+"WIND" = "風";
