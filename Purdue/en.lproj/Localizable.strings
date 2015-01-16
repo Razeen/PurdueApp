@@ -19,9 +19,9 @@
 "SIDEMENU_VIDEOS" = "Videos";
 "SIDEMENU_DIRECTORY" = "Directory";
 "SIDEMENU_STORE" = "Store";
+"SIDEMENU_CAMPUS_TOUR" = "Campus Tour";
 
 "GAMES_TITLE" = "Sport Games";
-"STORE_TITLE" = "Amazon Store";
 "LIBRARY_TITLE" = "Library";
 
 "BLACKBOARD_OOPS" = "Oops!";
@@ -53,6 +53,20 @@
 
 "PHOTOS_TITLE" = "Photo Albums";
 
+"SAFETY_TITLE" = "Safety";
+"SAFETY_EMERGENCY_RESOURCES" = "Emergency Resources";
+"SAFETY_NON_EMERGENCY_RESOURCES" = "Non-Emergency Resources";
+"SAFETY_PURDUE_ALERT" = "Purdue Alert";
+"SAFETY_FIREEVACUATION_PROCEDURES" = "Fire/Evacuation Procedures";
+"SAFETY_EVAC_PERSONS_WITH_DISABILITIES" = "Evacuation - Persons with Disabilities";
+"SAFETY_MENTAL_HEALTH_EMERGENCY" = "Mental Health Emergency";
+"SAFETY_SHELTER_IN_PLACE" = "Shelter-in-Place";
+"SAFETY_ACTIVE_SHOOTER" = "Active Shooter";
+"SAFETY_SEVERE_WEATHER_TORNADO_WARNING" = "Severe Weather/Tornado Warning";
+"SAFETY_HAZARDOUS_MATERIALS" = "Hazardous Materials";
+"SAFETY_EARTHQUAKE" = "Earthquake";
+"SAFETY_BOMB_THREAT_SUSPICIOUS_PACKAGE" = "Bomb Threat/Suspicious Package";
+
 "SCHEDULE_TITLE" = "Schedule";
 "SCHEDULE_UNIVERSITY_EVENTS" = "University Events";
 "SCHEDULE_ACADEMIC" = "Academic";
@@ -78,6 +92,8 @@
 "SIGNIN_ERR_USERNAME_BLANK" = "Username field cannot be blank";
 "SIGNIN_ERR_PASSWORD_BLANK" = "Password field cannot be blank";
 "SIGNIN_ERR_NOT_FOUND" = "Username/Password pair not found";
+
+"STORE_TITLE" = "Stores";
 
 "VIDEOS_TITLE" = "Videos";
 "VIDEOS_VIEWS" = "views";

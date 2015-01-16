@@ -158,7 +158,7 @@ class BusViewController: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func reloadForLocalization() {
-        self.navigationItem.title = NSLocalizedString("BUS_TITLE", comment: "")
+        self.navigationItem.title = I18N.localizedString("BUS_TITLE")
         
         self.routesButton.setTitle(I18N.localizedString("BUS_ROUTES"), forState: UIControlState.Normal)
         self.routesButton.sizeToFit()
