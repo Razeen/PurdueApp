@@ -26,7 +26,8 @@ class SideMenuViewController: UITableViewController {
         "Photos",
         "Videos",
         "Directory",
-        "Store"
+        "Store",
+        "Safety"
     ]
     
     var rowNames: [String] = [
@@ -44,7 +45,8 @@ class SideMenuViewController: UITableViewController {
         I18N.localizedString("SIDEMENU_PHOTOS"),
         I18N.localizedString("SIDEMENU_VIDEOS"),
         I18N.localizedString("SIDEMENU_DIRECTORY"),
-        I18N.localizedString("SIDEMENU_STORE")
+        I18N.localizedString("SIDEMENU_STORE"),
+        I18N.localizedString("SIDEMENU_SAFETY")
     ]
     
     override func viewWillAppear(animated: Bool) {
