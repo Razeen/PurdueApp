@@ -119,13 +119,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITableViewDelegate {
                 navigationController = AppDelegate.createNavController(VideoViewController())
             } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_DIRECTORY")) {
                 navigationController = AppDelegate.createNavController(DirectoryViewController())
-            } else {
+            } else if (realNames[indexPath.row] as NSString).isEqualToString(I18N.localizedString("SIDEMENU_STORE")){
                 let webBrowser = KINWebBrowserViewController.webBrowser()
                 webBrowser.navigationItem.title = I18N.localizedString("STORE_TITLE")
                 webBrowser.showsURLInNavigationBar = false
                 webBrowser.showsPageTitleInNavigationBar = false
                 navigationController = AppDelegate.createNavController(webBrowser)
                 webBrowser.loadURLString("https://purdue.amazon.com/")
+            } else {
+                navigationController = AppDelegate.createNavController(SafetyViewController())
             }
             slidingViewController?.topViewController = navigationController
             (slidingViewController?.topViewController as UINavigationController).viewControllers[0].navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "SideMenu"), style: .Done, target: self, action: "showMenu")
