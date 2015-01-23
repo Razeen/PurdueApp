@@ -10,9 +10,9 @@ Purdue-App
   - iOS: 7.0, 7.1, 8.0, 8.1
   - Device: iPhone 4/4S/5/5S/6/6+, iPad 2/3/4/Air/Air 2
 - Components
-- Main App – Purdue app for iPhone 
+  - Main App – Purdue app for iPhone 
   - Extension – iOS 8.1 Notification Center widget
-- Extension – Apple Watch (WatchKit) app
+  - Extension – Apple Watch (WatchKit) app
 - Design
   - User-Centered Design (UCD)
   - Follows iOS User Interface Guidelines (UIG)
