@@ -663,6 +663,14 @@
 			path = ECSlidingViewController;
 			sourceTree = "<group>";
 		};
+		5E5038D31A71AC2100856F7E /* Safety */ = {
+			isa = PBXGroup;
+			children = (
+				5EB62E151A6F038200DD862F /* SafetyViewController.swift */,
+			);
+			name = Safety;
+			sourceTree = "<group>";
+		};
 		5E66B9951A59C3FA0036C26E /* Bus */ = {
 			isa = PBXGroup;
 			children = (
@@ -787,7 +795,7 @@
 				5EEB696119DF3BCB005619BA /* VideoViewController.swift */,
 				5E4B88E019D07E0A00EEB9C3 /* WeatherViewController.swift */,
 				5E009D251A5DC594009E1B22 /* Settings */,
-				5EB62E151A6F038200DD862F /* SafetyViewController.swift */,
+				5E5038D31A71AC2100856F7E /* Safety */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";

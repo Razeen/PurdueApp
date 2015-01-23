@@ -12,8 +12,6 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
     
     var viewController: UIViewController?
     
-    var shouldHideSB = true
-    
     convenience override init() {
         self.init(style: UITableViewStyle.Grouped)
     }
@@ -27,7 +25,6 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         NSNotificationCenter.defaultCenter().removeObserver(self)
-        UIApplication.sharedApplication().setStatusBarHidden(shouldHideSB, withAnimation: UIStatusBarAnimation.None)
     }
     
     func receivedNotification(notification: NSNotification) {
@@ -78,7 +75,6 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
     }
     
     func dismissPopup() {
-        shouldHideSB = true
         self.navigationController!.dismissPopupViewControllerAnimated(true, completion: nil)
     }
     
@@ -92,6 +88,7 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
     
     
     func dismissViewController() {
+        UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.None)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
 
@@ -172,7 +169,7 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
                 UIActionSheet(title: I18N.localizedString("SETTINGS_LANG_PROMPT"), delegate: self, cancelButtonTitle: I18N.localizedString("CANCEL"), destructiveButtonTitle: nil, otherButtonTitles: "English", "繁體中文", "简体中文", "日本語").showFromRect(tableView.cellForRowAtIndexPath(indexPath)!.frame, inView: self.view, animated: true)
             }
         } else if indexPath.section == 1 {
-            shouldHideSB = false
+            UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.None)
             if indexPath.row == 0 {
                 let detailVC = DevTeamViewController()
                 detailVC.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "Back"), style: .Done, target: self.navigationController, action: "popViewControllerAnimated:")

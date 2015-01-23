@@ -20,6 +20,7 @@
 "SIDEMENU_DIRECTORY" = "Directory";
 "SIDEMENU_STORE" = "Store";
 "SIDEMENU_CAMPUS_TOUR" = "Campus Tour";
+"SIDEMENU_SAFETY" = "Safety";
 
 "GAMES_TITLE" = "Sport Games";
 "LIBRARY_TITLE" = "Library";
@@ -54,8 +55,7 @@
 "PHOTOS_TITLE" = "Photo Albums";
 
 "SAFETY_TITLE" = "Safety";
-"SAFETY_EMERGENCY_RESOURCES" = "Emergency Resources";
-"SAFETY_NON_EMERGENCY_RESOURCES" = "Non-Emergency Resources";
+"SAFETY_RESOURCES" = "Resources";
 "SAFETY_PURDUE_ALERT" = "Purdue Alert";
 "SAFETY_FIREEVACUATION_PROCEDURES" = "Fire/Evacuation Procedures";
 "SAFETY_EVAC_PERSONS_WITH_DISABILITIES" = "Evacuation - Persons with Disabilities";
