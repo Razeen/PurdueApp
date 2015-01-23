@@ -8,7 +8,7 @@ Purdue-App
   - 2.0.0
 - Compatibility
   - iOS: 7.0, 7.1, 8.0, 8.1
-  - Device: iPhone 4/4S/5/5S/6/6+
+  - Device: iPhone 4/4S/5/5S/6/6+, iPad 2/3/4/Air/Air 2
 - Components
 - Main App – Purdue app for iPhone 
   - Extension – iOS 8.1 Notification Center widget
@@ -19,22 +19,18 @@ Purdue-App
   - Mainly flat design with minor material design
   - Beautiful Typography, using San-serif typeface for headings and clean serif font for detail text
 - Libraries
-  - Google Maps SDK for iOS
-  - TUSafariActivity
-  - ARChromeActivity
-  - KINWebBrowser
+  - AsyncImageView
   - BButton
-  - MailCore 2
   - CWPopup
+  - ECSlidingViewController
   - FXBlurView
   - KeychainWrapper
-  - SMCalloutView
+  - KINWebBrowser
+  - MailCore 2
   - MRProgress
   - MWPhotoBrowser
-  - AsyncImageView
-  - XMLReader
   - SCLAlertView
-  - ECSlidingViewController
+  - XMLReader
 - Programming Language
   - Swift
 
