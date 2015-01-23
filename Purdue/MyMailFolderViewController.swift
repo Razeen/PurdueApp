@@ -70,7 +70,8 @@ class MyMailFolderViewController: UIViewController, UITableViewDataSource, UITab
             let gestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissPopup")
             gestureRecognizer.delegate = self
             self.view.addGestureRecognizer(gestureRecognizer)
-        } else {
+        }
+        else {
             loadFolders()
         }
     }
