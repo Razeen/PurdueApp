@@ -146,6 +146,10 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
                     cell?.detailTextLabel?.text = "简体中文"
                 } else if languageCode == "ja" {
                     cell?.detailTextLabel?.text = "日本語"
+                } else if languageCode == "ko-KR" {
+                    cell?.detailTextLabel?.text = "한국의"
+                } else if languageCode == "es" {
+                    cell?.detailTextLabel?.text = "español"
                 }
             }
         } else if indexPath.section == 1 {
@@ -166,7 +170,7 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 0 {
             if indexPath.row == 0 {
-                UIActionSheet(title: I18N.localizedString("SETTINGS_LANG_PROMPT"), delegate: self, cancelButtonTitle: I18N.localizedString("CANCEL"), destructiveButtonTitle: nil, otherButtonTitles: "English", "繁體中文", "简体中文", "日本語").showFromRect(tableView.cellForRowAtIndexPath(indexPath)!.frame, inView: self.view, animated: true)
+                UIActionSheet(title: I18N.localizedString("SETTINGS_LANG_PROMPT"), delegate: self, cancelButtonTitle: I18N.localizedString("CANCEL"), destructiveButtonTitle: nil, otherButtonTitles: "English", "繁體中文", "简体中文", "日本語", "한국의", "español").showFromRect(tableView.cellForRowAtIndexPath(indexPath)!.frame, inView: self.view, animated: true)
             }
         } else if indexPath.section == 1 {
             UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.None)
@@ -199,6 +203,10 @@ class SettingsViewController: UITableViewController, UIActionSheetDelegate, UIGe
                 I18N.setLanguage("zh-Hans")
             } else if buttonTitle == "日本語" {
                 I18N.setLanguage("ja")
+            } else if buttonTitle == "한국의" {
+                I18N.setLanguage("ko-KR")
+            } else if buttonTitle == "español" {
+                I18N.setLanguage("es")
             }
             self.navigationItem.title = I18N.localizedString("SETTINGS_TITLE")
             self.tableView.reloadData()

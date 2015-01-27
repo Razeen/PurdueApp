@@ -1,0 +1,160 @@
+/* 
+  Localizable.strings
+  Purdue
+
+  Created by George Lo on 9/25/14.
+  Copyright (c) 2014 Purdue University. All rights reserved.
+*/
+
+"SIDEMENU_SCHEDULE" = "일정";
+"SIDEMENU_BUS" = "버스";
+"SIDEMENU_MAP" = "지도";
+"SIDEMENU_LABS" = "랩";
+"SIDEMENU_GAMES" = "게임";
+"SIDEMENU_MENU" = "메뉴";
+"SIDEMENU_NEWS" = "뉴스";
+"SIDEMENU_WEATHER" = "날씨";
+"SIDEMENU_LIBRARY" = "도서관";
+"SIDEMENU_PHOTOS" = "사진";
+"SIDEMENU_VIDEOS" = "비디오";
+"SIDEMENU_DIRECTORY" = "주소록";
+"SIDEMENU_STORE" = "가게";
+"SIDEMENU_CAMPUS_TOUR" = "캠퍼스 투어";
+"SIDEMENU_SAFETY" = "안전";
+
+"GAMES_TITLE" = "운동 경기";
+"LIBRARY_TITLE" = "도서관";
+
+"BLACKBOARD_OOPS" = "으악!";
+"BLACKBOARD_SIGN_IN_PROMPT" = "아래 버튼을 눌러\n가입해 주세요.";
+
+"BUS_TITLE" = "버스";
+"BUS_ROUTES" = "경로";
+"BUS_STOPS" = "정류소";
+"BUS_MAP" = "지도";
+"BUS_BOOKMARKS" = "북마크";
+
+"DIRECTORY_TITLE" = "주소록";
+"DIRECTORY_SEARCH_PROMPT" = "사람 찾기";
+"DIRECTORY_ERR_NONE" = "에러: 결과가 없습니다.";
+"DIRECTORY_ERR_MANY" = "에러: 너무 많은 결과가 있습니다.";
+
+"LAB_TITLE" = "ITaP 컴퓨터 랩";
+"LAB_CLOSED" = "닫힘";
+"LAB_CLASS_IN_SESSION" = "수업 중";
+"LAB_COMPUTERS_AVAILABLE" = "이용 가능";
+
+"MAP_TITLE" = "지도";
+"MAP_BUILDING_SEARCH" = "건물 검색";
+"MAP_BUILDING_SEARCH_PROMPT" = "건물 검색";
+
+"MENU_TITLE" = "메뉴";
+"MENU_DINING_COURTS" = "다이닝 코트";
+"MENU_RESTAURANTS" = "음식점";
+
+"PHOTOS_TITLE" = "사진첩";
+
+"SAFETY_TITLE" = "안전";
+"SAFETY_RESOURCES" = "응급 상황";
+"SAFETY_PURDUE_ALERT" = "비상 상황";
+"SAFETY_FIREEVACUATION_PROCEDURES" = "화제 경보";
+"SAFETY_EVAC_PERSONS_WITH_DISABILITIES" = "장애인 대비";
+"SAFETY_MENTAL_HEALTH_EMERGENCY" = "정신 상태 응급상황";
+"SAFETY_SHELTER_IN_PLACE" = "대피소";
+"SAFETY_ACTIVE_SHOOTER" = "총기 테러범 경보";
+"SAFETY_SEVERE_WEATHER_TORNADO_WARNING" = "토네이도 경보";
+"SAFETY_HAZARDOUS_MATERIALS" = "위험 물질 경보";
+"SAFETY_EARTHQUAKE" = "지진";
+"SAFETY_BOMB_THREAT_SUSPICIOUS_PACKAGE" = "폭발물/의심스러운 물품 위험";
+
+"SCHEDULE_TITLE" = "스케쥴";
+"SCHEDULE_UNIVERSITY_EVENTS" = "학교 소식";
+"SCHEDULE_ACADEMIC" = "학업";
+"SCHEDULE_ADMISSION" = "입학";
+"SCHEDULE_ARTS_AND_CULTURE" = "예술과 문화";
+"SCHEDULE_CAREER_PROGRAMS" = "커리어 프로그램";
+"SCHEDULE_COLLEGE_AND_SCHOOLS" = "대학";
+"SCHEDULE_CONTINUING_EDUCATION" = "지속 교육";
+"SCHEDULE_LIBRARIES" = "도서관";
+"SCHEDULE_PROSPECTIVE_STUDENTS" = "장래 학생";
+"SCHEDULE_REC_SPORTS" = "스포츠 센터";
+"SCHEDULE_REGISTRAR" = "등록";
+"SCHEDULE_DIVERSITY_AND_INCLUSIVE" = "다문화 이벤트";
+"SCHEDULE_PERSONAL_SCHEDULE" = "개인 스케쥴";
+"SCHEDULE_CLASS_SCHEDULE" = "수업 시간표";
+
+"SETTINGS_TITLE" = "설정";
+"SETTINGS_LANG_PROMPT" = "언어를 선택하세요";
+"SETTINGS_SIGNOUT_PROMPT" = "로그아웃 하시겠습니까?";
+
+"SIGNIN_PURDUE_ACCOUNT" = "퍼듀 계정";
+"SIGNIN_SIGN_IN" = "로그인";
+"SIGNIN_ERR_USERNAME_BLANK" = "아이디를 입력하세요";
+"SIGNIN_ERR_PASSWORD_BLANK" = "비밀번호를 입력하세요";
+"SIGNIN_ERR_NOT_FOUND" = "아이디/비밀번호를 잘못 입력하셨습니다.";
+
+"STORE_TITLE" = "가게";
+
+"VIDEOS_TITLE" = "비디오";
+"VIDEOS_VIEWS" = "보기";
+
+"WEATHER_TITLE" = "날씨";
+"WEATHER_SUN" = "일요일";
+"WEATHER_MON" = "월요일";
+"WEATHER_TUE" = "화요일";
+"WEATHER_WED" = "수요일";
+"WEATHER_THU" = "목요일";
+"WEATHER_FRI" = "금요일";
+"WEATHER_SAT" = "토요일";
+
+"ADDRESS" = "주소";
+"ATTRIBUTIONS" = "속성";
+"BREAKFAST" = "아침";
+"CAMPUS" = "컴퍼스";
+"CANCEL" = "취소";
+"CAREER_LOGIN" = "로그인";
+"CLOSED" = "닫힘";
+"DEVELOPERS" = "계발자";
+"DEVELOPMENT_TEAM" = "계발 팀";
+"DINNER" = "저녁";
+"EMAIL" = "이메일";
+"ERROR" = "오류";
+"FRIDAY" = "금요일";
+"GENERAL" = "일반";
+"HOURS" = "시간";
+"HUMIDITY" = "습도";
+"INFO" = "정보";
+"INFORMATION" = "정보";
+"LANGUAGE" = "언어";
+"LATE LUNCH" = "늦은 점심 (점저)";
+"LEAD_DEVELOPER" = "최고 계발자";
+"LOCATION" = "위치";
+"LUNCH" = "점심";
+"MENU" = "메뉴";
+"MINUTE" = "분";
+"MONDAY" = "월요일";
+"NAME" = "이름";
+"NORMALCASE_SIGN_IN" = "로그인";
+"NORMALCASE_SIGN_OUT" = "로그아웃";
+"OTHERS" = "그 외";
+"PASSWORD" = "비밀번호";
+"PHONE" = "전화";
+"PHOTOS" = "사진";
+"QUALIFIED_NAME" = "적절한 이름";
+"SATURDAY" = "토요일";
+"SCHOOL" = "학교";
+"SIGN_IN" = "로그인";
+"SPECIAL_NOTE" = "특별한 알림";
+"SPECIAL_THANKS" = "감사한 분들";
+"SUNDAY" = "일요일";
+"THURSDAY" = "목요일";
+"TIME" = "시간";
+"TODAY" = "오늘";
+"TOMORROW" = "내일";
+"TRY_LATER" = "잠시후 다시 로딩해 주세요";
+"TUESDAY" = "화요일";
+"UPPERCASE_SIGN_IN" = "로그인";
+"UPPERCASE_SIGN_OUT" = "로그아웃";
+"USERNAME" = "아이디";
+"WEDNESDAY" = "수요일";
+"WIND" = "바람";
